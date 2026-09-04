@@ -39,23 +39,197 @@
     </div>
   </div>
 
-    <div class="gate-panel">
-    <div class="gate-card">
-      <div class="gate-lock">🔒</div>
-      <h2>实战篇 · 完整版章节</h2>
-      <p class="gate-ch">本章属于「实战篇 · 懂特例」完整版内容，随知识星球附件分发。</p>
-      <ul class="gate-points">
-        <li>8 章特例全景：VFA · 间接分红 · 亏损 · PAA · 再保 · 列报 · 披露 · 衔接</li>
-        <li>官方例题分步演算 + 本站专属演算例（例A–例H）+ 章末自测判分</li>
-        <li>加入星球即可下载完整版，本地打开即读</li>
-      </ul>
-      <div class="gate-links">
-        <a href="premium.html" class="gate-cta">如何获得完整版 →</a>
-        <a href="ch12.html">← 回免费章节继续读</a>
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>分保摊回未到期责任资产是"分入公司欠我的钱"吗？它和应收分保账款什么关系？</li>
+      <li>分出合同组初始确认时，"净成本与购买之前发生的事项有关"要走哪条特殊通道？这条通道防的是什么？</li>
+      <li>为什么再保险合同不适用 VFA？亏损摊回部分又是怎么从分出端"长"出来的？</li>
+    </ol>
+    <p class="hint">提示：抓住镜像原则——第9、10、11 章负债侧的每一条规则（CSM、亏损、收入、费用），到分出端全部左右手互换；特殊规定只处理镜像照不到的角落（净成本追溯、亏损摊回、期限错配）。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、大原则：一面镜子</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要素</th><th>签发的保险合同（负债侧）</th><th>分出的再保险合同（资产侧）</th></tr></thead>
+        <tbody>
+          <tr><td>主体计量对象</td><td>未到期责任负债（FCF+RA+CSM）</td><td><strong>分保摊回未到期责任资产</strong>（FCF+RA−CSM 结构镜像）</td></tr>
+          <tr><td>损益科目</td><td>保险服务收入 / 保险合同赔付和费用 / 承保财务损益</td><td><strong>摊回保险服务费用 / 分出保费的分摊 / 分出再保险财务损益</strong></td></tr>
+          <tr><td>亏损</td><td>亏损部分（负债中确认、摊回）</td><td><strong>亏损摊回部分</strong>（资产中确认、随时间摊回）</td></tr>
+          <tr><td>分入端</td><td colspan="2">分入的再保险合同 = 分入人<strong>签发的保险合同</strong>，按一般规则计量（亏损合同组特殊规定也适用）；但再保合同组<strong>不适用 VFA</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>镜像的意义：分出公司在损益表上先按全额确认直接业务的收入与赔付（看不见再保），再用"分出保费的分摊 + 摊回保险服务费用 + 分出再保险财务损益"三条线把再保的净影响补回来——<strong>损益表呈现的是"自留口径"</strong>，报表使用者同时能看到直接业务规模与再保缓释效果。</p>
+
+    <h3>1.1 分保摊回未到期责任资产：科目与规则</h3>
+    <div class="guide-quote">
+      "分出的再保险合同组中相关合同初始确认时，根据计量的非金融风险调整和合同服务边际，借记或贷记本科目下'非金融风险调整'和'合同服务边际'明细科目，贷记或借记本科目下'未来现金流量现值'明细科目；分出再保险合同组对应亏损合同组的，对于亏损摊回部分，借记本科目，贷记'摊回保险服务费用'科目。……再保险分入人向企业提供服务时，企业应借记'分出保费的分摊'科目，贷记本科目。"
+      <span class="src">——《应用指南2022》第三章（三）"分保摊回未到期责任资产"</span>
+    </div>
+
+    <p>两条分出特有的通道：</p>
+    <ul>
+      <li><strong>净成本追溯通道</strong>（科目（九）"分出保费的分摊"）：初始确认分出合同组时，若<strong>净成本与购买之前发生的事项有关</strong>（如分保附带追溯性责任、承保的是已发生赔案），按净成本金额"借：分出保费的分摊，贷：分保摊回未到期责任资产"——相当于已"买到"的服务（对已发生赔付的保障）直接费用化，不再挂资产等摊销。这条通道防的是：把"买历史赔款"伪装成"买未来服务"，虚增资产；</li>
+      <li><strong>亏损摊回通道</strong>：直接业务是亏损合同组时，分出合同使分出人<strong>有权摊回</strong>部分亏损 → 在分保摊回资产中确认"亏损摊回部分"，贷记摊回保险服务费用（对冲直接业务的亏损费用），随后随剩余责任期摊回调整。</li>
+    </ul>
+
+    <h3>1.2 金融变动额：分出再保险财务损益</h3>
+    <div class="guide-quote">
+      "期末，对于由货币时间价值及金融风险的影响导致的分保摊回未到期责任资产账面价值的变动额，如果企业在合同组合层面选择将保险合同金融变动额分解计入当期保险财务损益和其他综合收益，借记或贷记'分出再保险财务损益'科目，借记或贷记'其他综合收益——分出再保险合同金融变动额'科目，贷记或借记本科目；如果企业未行使该选择权，借记或贷记'分出再保险财务损益'科目，贷记或借记本科目。"
+      <span class="src">——《应用指南2022》第三章（三）"</span>
+    </div>
+    <p>与负债侧完全平行（第12章），只是科目独立——直接业务与分出业务的金融变动额<strong>不得相互抵销</strong>，OCI 也是两条明细线（"承保合同金融变动额" vs "分出再保险合同金融变动额"）。</p>
+
+    <h3>1.3 几条再保特有的修正（本站依据准则第八章归纳）</h3>
+    <ul>
+      <li><strong>分组更宽松</strong>：分出合同组不要求按盈利性分层那么细（可以单一盈利性层级），因为再保获取时点、定价机制与直接业务不同；</li>
+      <li><strong>期限错配</strong>：分出合同组预期存续期与对应直接业务不同（再保常更长），摊回服务费用与分出保费的分摊按<strong>再保合同自身</strong>的责任单元与期间确认；</li>
+      <li><strong>投资成分</strong>：摊回的投资成分，"借记'分保摊回已发生赔款资产'，贷记'分保摊回未到期责任资产'"（科目（四）原文）——资产内部结转，不进损益，与签发端镜像；</li>
+      <li><strong>PAA 简化</strong>：符合条件的分出合同组同样可以采用保费分配法（摊回端简化）；</li>
+      <li><strong>列报</strong>：分保摊回资产与保险合同负债<strong>分别列示</strong>，不得以净额抵销（第18章）。</li>
+    </ul>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例E（本站演算）：成数分保的初始确认与首年损益</summary>
+      <div class="fold-body">
+        <p><strong>背景（本站依据准则方法编制）：</strong>甲公司签发三年期直接业务合同组（即例26 的合同组：保费 1,800、赔付每年 400、现值 1,089、RA 120、CSM 591），随后按 <strong>40% 成数比例</strong>分出给乙公司，分保费 720（1,800×40%）于期初支付，无获取成本。假设分出组现金流与直接业务同比例，折现率同为 5%。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 分出端初始确认（镜像例26 表12）</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>分保摊回未到期责任资产（借方为正）</th><th>金额</th></tr></thead>
+              <tbody>
+                <tr><td>未来现金流出现值（摊回赔付 40%：1,089×40%）</td><td class="num">435.6</td></tr>
+                <tr><td>非金融风险调整（40%：120×40%）</td><td class="num">48</td></tr>
+                <tr><td>减：合同服务边际（40%）</td><td class="num">(236.4)</td></tr>
+                <tr><td><strong>资产初始账面价值</strong></td><td class="num"><strong>247.2</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          分录（依科目（三）原文结构）：借 分保摊回未到期责任资产——现值 435.6、RA 48；贷——CSM 236.4；同时收付分保费：借 未到期责任负债（直接业务）720，贷 银行存款 720（分保费从直接业务负债口径划出）。镜像要点：负债侧 FCF 为净流入 711（贷方 CSM 591），资产侧变成净流出 435.6+48−720 相关净额、CSM 记<strong>减项</strong>（挣的是"省下的赔付"，摊回服务提供时确认）。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 第1年损益（与直接业务同比例）</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>损益项</th><th>直接业务</th><th>分出摊回（40%）</th><th>自留净额</th></tr></thead>
+              <tbody>
+                <tr><td>保险服务收入 / 分出保费的分摊（调减收入视角）</td><td class="num">647</td><td class="num">258.8</td><td class="num">388.2</td></tr>
+                <tr><td>赔付 / 摊回保险服务费用</td><td class="num">400</td><td class="num">160</td><td class="num">240</td></tr>
+                <tr><td>承保财务损益 / 分出再保险财务损益</td><td class="num">84</td><td class="num">33.6</td><td class="num">50.4</td></tr>
+              </tbody>
+            </table>
+          </div>
+          摊回的 160 与 33.6 与直接业务同方向同比例对冲——再保没有改变总量（同折现率、同假设时），只把 40% 的波动转给了乙公司。实务中乙公司折现率、假设不同，两边才会出现差异。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 亏损摊回情形（对照）</div>
+          若例26 合同组改为初始亏损 400（第15章例A 口径），分出后乙公司承担 40%：甲公司确认亏损摊回部分 160——借 分保摊回未到期责任资产 160，贷 摊回保险服务费用 160，直接业务的"亏损保险合同损益 400"被对冲到自留 240，随后双方各自按剩余责任期摊回。这是再保"缓释亏损"在报表上的直接体现。
+        </div>
       </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch17">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">1</span>分入的再保险合同，在分入人的报表上如何处理？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>作为分出业务的镜像资产</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>适用 VFA 浮动收费法</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>作为自己签发的保险合同，按一般规则计量</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>按金融工具准则作为衍生工具处理</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。分入端无特殊计量模型——就是签发的保险合同（含亏损合同组规定）；但再保险合同（无论分入分出）不适用 VFA。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">2</span>分出合同组初始确认时，净成本与购买之前发生的事项有关（如承保已发生赔案）。正确的处理是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>全额确认为分保摊回未到期责任资产，按剩余责任期摊销</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>按净成本金额借记"分出保费的分摊"，贷记分保摊回资产——对应的服务已"买到"，直接费用化</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>计入当期其他综合收益</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>递延至赔付摊回时确认</span></div>
+      </div>
+      <div class="quiz-explain">B 正确（科目（三）(1) 原文）。追溯性分保买的是"已发生事项"的保障，不是未来服务，没有可摊销的资产基础。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">3</span>摊回的投资成分发生时，分出公司的分录是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>借：分保摊回已发生赔款资产；贷：分保摊回未到期责任资产——资产内部结转，不进损益</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>借：摊回保险服务费用；贷：分保摊回资产——进损益</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>借：银行存款；贷：保险服务收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>借：分出再保险财务损益；贷：分保摊回资产</span></div>
+      </div>
+      <div class="quiz-explain">A 正确（科目（四）(1) 原文）。投资成分两端（签发、分出）都不触碰损益，与第11章的镜像一致。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>直接业务的承保财务损益与分出业务的分出再保险财务损益，在利润表上？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>必须合并成单一"保险财务损益"列示</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>可以任意抵销后净额列示</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>只列直接业务，分出部分进附注</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>分别列示，不相互抵销</span></div>
+      </div>
+      <div class="quiz-explain">D 正确。科目独立（承保财务损益 vs 分出再保险财务损益）、OCI 明细也分列，让使用者看清再保的财务影响。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">5</span>直接业务为亏损合同组、分出 40%。亏损摊回部分的确认对分出公司损益的影响是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>增加当期亏损（借：摊回保险服务费用）</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>冲减当期亏损（借：分保摊回资产，贷：摊回保险服务费用）</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>无影响，只调整资产</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>计入 OCI</span></div>
+      </div>
+      <div class="quiz-explain">B 正确（科目（三）原文："对于亏损摊回部分，借记本科目，贷记'摊回保险服务费用'科目"）。亏损摊回把分出比例的亏损"转嫁"效果立刻体现，随后按剩余期间摊回调整。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
     </div>
   </div>
 
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>镜像原则</strong></td><td>分出端 = 负债侧规则左右互换（资产、四组科目、亏损、金融变动额）</td></tr>
+          <tr><td><strong>分入端</strong></td><td>视同自己签发的保险合同；再保合同不适用 VFA</td></tr>
+          <tr><td><strong>净成本追溯</strong></td><td>与过去事项有关的净成本 → 直接进"分出保费的分摊"，不挂资产</td></tr>
+          <tr><td><strong>亏损摊回</strong></td><td>直接业务亏损的分出比例 → 资产 + 贷记摊回保险服务费用，随后摊回</td></tr>
+          <tr><td><strong>投资成分</strong></td><td>摊回的投资成分资产内部结转，不进损益</td></tr>
+          <tr><td><strong>金融变动额</strong></td><td>独立科目（分出再保险财务损益）与 OCI 明细，不与直接业务抵销</td></tr>
+          <tr><td><strong>简化与列报</strong></td><td>符合条件的分出组可用 PAA；分保摊回资产与负债分别列示</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch17">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
   <div class="section">
     <h2><span class="icon">🔗</span>五、知识连接</h2>
     <div class="link-map">
@@ -122,5 +296,6 @@
   </div>
 </div>
 <script src="guide.js"></script>
+  <script src="gate.js"></script>
 </body>
 </html>
