@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第06章 履约现金流量 FCF · CAS25 精读</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html"><span class="logo-icon">25</span> CAS25 精读</a>
+  <div class="topnav-links">
+    <a href="index.html">知识地图</a>
+    <a href="ch01.html">入门篇</a>
+    <a href="ch06.html" class="active">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">知识地图</a><span class="separator">›</span><span>进阶篇</span><span class="separator">›</span><strong>第06章 履约现金流量 FCF</strong>
+  </div>
+
+  <div class="page-header">
+    <h1>第06章 · 履约现金流量 FCF</h1>
+    <p class="subtitle">进阶篇开篇。负债计量的第一大积木：未来现金流量估计。这一章回答三个实务中最容易出错的问题——<strong>哪些现金流进 FCF、哪些不进、用什么姿势估计</strong>。指南给出了 15 项应含、8 项不含的完整清单，以及"无偏概率加权"的四条硬要求。</p>
+    <div class="tag-row">
+      <span class="tag">进阶篇 · 第 1/7 章</span>
+      <span class="tag">预计用时 30 分钟</span>
+      <span class="tag">对应指南：第六章（一）1（1）（2）</span>
+    </div>
+  </div>
+
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>预计未来新保单的保费和赔付，为什么<strong>不能</strong>放进现有合同组的 FCF？判断的依据是什么？</li>
+      <li>费差（费用风险）属于 FCF 的哪一块——现金流估计、折现率还是 RA？</li>
+      <li>期末后、报表报出前发生的巨灾，要不要调整期末的 FCF 估计？</li>
+    </ol>
+    <p class="hint">提示：FCF 是"边界内的无偏概率加权"。边界（boundary）和"无偏"（unbiased）两个词，本章的坑基本都埋在这里。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、FCF 的三块积木与估计四要求</h2>
+
+    <div class="formula">
+      <span class="label">履约现金流量（FCF）</span>
+      <span class="eq">FCF = 与履行保险合同直接相关的未来现金流量的估计（现值） + 非金融风险调整（RA）</span>
+      <span class="eq">其中"现值" = 现金流估计 × 货币时间价值及金融风险调整（折现率，见第07章）</span>
+    </div>
+
+    <div class="guide-quote">
+      "履约现金流量包括与履行保险合同直接相关的未来现金流量的估计、货币时间价值及金融风险调整和非金融风险调整。履约现金流量的估计不考虑企业自身的不履约风险。"
+      <span class="src">——《应用指南2022》第六章（一）初始计量</span>
+    </div>
+
+    <p>注意两点：①FCF <strong>不含</strong>企业自身不履约风险（自己赖账的风险不反映在负债里）；②现金流估计、折现率、RA 三者<strong>分别估计</strong>，不得在现金流里"顺手"塞进风险补偿（那是 RA 的活）。</p>
+
+    <h3>1.1 现金流估计的四条硬要求</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要求</th><th>内容</th><th>常见误区</th></tr></thead>
+        <tbody>
+          <tr><td><strong>① 无偏概率加权</strong></td><td>取所有可能结果的概率加权平均，而非"最可能结果"；需考虑巨额损失情景，但不必穷尽每一种情景</td><td class="hl-red">用"最可能赔付额"代替期望值；为平滑利润在情景间"挑数字"</td></tr>
+          <tr><td><strong>② 市场变量盯市</strong></td><td>利率、证券价格等市场变量的估计必须与可观察市场价格一致；死亡率等非市场变量内部数据与外部数据按说服力赋权</td><td class="hl-red">明知市场利率变了仍沿用旧折现假设</td></tr>
+          <tr><td><strong>③ 当前信息为基础</strong></td><td>每期末根据当时情况更新；期末后发生的事项不能作为期末当时的证据</td><td class="hl-red">期后事项"倒灌"期末估计（见例20）</td></tr>
+          <tr><td><strong>④ 与折现分别估计</strong></td><td>现金流与折现率分开估计；除非用"复制资产组合法"等整体估计技术更合适</td><td class="hl-red">在现金流里加风险边际，又在折现率里再加一遍</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 通胀口径要配平</div>
+      指南特别提醒：现金流用<strong>名义</strong>（含通胀）口径，折现率就必须含通胀溢价；现金流用<strong>实际</strong>口径，折现率就要剔除通胀。一边含一边不含，是计量事故的高发区。
+    </div>
+
+    <h3>1.2 合同边界：15 项进、8 项不进</h3>
+    <p>合同边界决定了"哪些现金流算这份合同的事"。核心判据是<strong>实质性义务</strong>：企业当前已被现有合同条款实质约束的义务，才在边界内。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>序</th><th>应包含在 FCF 中（指南第六章（一）1（2））</th></tr></thead>
+        <tbody>
+          <tr><td>①</td><td>从保单持有人处收到的保费（含批改、分期保费）及其相关现金流量</td></tr>
+          <tr><td>②</td><td>已报告未付赔款、已发生未报告赔款，以及未来承担实质性义务的赔款</td></tr>
+          <tr><td>③</td><td>随基础项目回报而变动的、向保单持有人支付或代其支付的款项</td></tr>
+          <tr><td>④</td><td>未分拆的嵌入衍生工具（嵌入选择权及保证利益）产生的支付</td></tr>
+          <tr><td>⑤</td><td>直接归属于合同组合的保险获取现金流量分摊至该合同的部分</td></tr>
+          <tr><td>⑥</td><td>理赔费用（调查、处理、解决索赔的成本，含律师费、理赔人员薪酬等）</td></tr>
+          <tr><td>⑦</td><td>未来以非现金方式结算保险事项的赔偿义务成本</td></tr>
+          <tr><td>⑧</td><td>保单管理和维持费用（转换、复效等批改成本、续期佣金）</td></tr>
+          <tr><td>⑨</td><td>由保险合同直接产生或分摊至合同的流转税等（增值税、保险保障基金缴费）</td></tr>
+          <tr><td>⑩</td><td>代扣代缴保单持有人的相关税费</td></tr>
+          <tr><td>⑪</td><td>追偿产生的预计现金流入（损余物资、代位追偿）</td></tr>
+          <tr><td>⑫</td><td>系统合理分摊的可直接归属于保险合同的固定及可变费用（会计、HR、IT 支持及折旧租金水电等）</td></tr>
+          <tr><td>⑬</td><td>为提高保单持有人保障受益水平而进行投资活动的成本</td></tr>
+          <tr><td>⑭</td><td>为保单持有人提供投资回报服务 / 管理基础项目的投资相关服务成本</td></tr>
+          <tr><td>⑮</td><td>合同条款明确规定向保单持有人收取的其他费用</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>序</th><th>不应包含在 FCF 中</th><th>去了哪里</th></tr></thead>
+        <tbody>
+          <tr><td>①</td><td>企业的投资回报</td><td>资产端单独确认计量列报</td></tr>
+          <tr><td>②</td><td>分出的再保险合同产生的现金流量</td><td>分出再保合同单独计量（第17章）</td></tr>
+          <tr><td>③</td><td>未来保险合同（现有边界外）的现金流量</td><td>签发时再确认</td></tr>
+          <tr><td>④</td><td>不可直接归属于该合同组合的支出（产品开发、培训成本）</td><td>发生时计入当期损益</td></tr>
+          <tr><td>⑤</td><td>履约过程中人力或资源的<strong>非正常损耗</strong></td><td>发生时计入当期损益</td></tr>
+          <tr><td>⑥</td><td>所得税（合同明确向保单持有人收取的除外）</td><td>所得税准则</td></tr>
+          <tr><td>⑦</td><td>不同账户之间不改变向保单持有人支付金额的资金往来</td><td>不产生合同计量影响</td></tr>
+          <tr><td>⑧</td><td>已从保险合同分拆出的其他成分产生的现金流量</td><td>适用其他准则（第03章）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 费差的位置</div>
+      费用风险（费差的不确定性）<strong>不是现金流项目</strong>，而是通过 <strong>RA</strong> 反映的——指南明确非金融风险调整"包含保险风险和其他非金融风险，例如失效风险和费用风险"。而费用本身的<strong>期望值</strong>（⑫⑬⑭⑮ 项）在现金流里。一句话：<strong>期望费用进现金流，费用不确定性进 RA</strong>。
+    </div>
+
+    <h3>1.3 边界不重新评估</h3>
+    <div class="guide-quote">
+      "保险合同初始确认后，企业不应重新评估保险合同边界，除非后续企业对其重新设定价格或承诺利益水平的实际能力因情况变化而发生变化，或因合同条款修改而导致合同边界发生实质性变化。"
+      <span class="src">——《应用指南2022》第六章（一）1（2）</span>
+    </div>
+    <p>这条规则与第04章"监管限制下可重新分组"的思路相呼应：初始确认时把边界画好，之后一般不动；只有重新定价<strong>能力</strong>变化或合同修改，才触发重画。对保单持有人选择权（续约、退保、停止交费），若其现金流量在边界内，就应当估计持有人如何行使，RA 还要反映实际行为偏离预期的风险。</p>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例20（指南第六章）：巨灾保险的"30% 概率"与期后事项</summary>
+      <div class="fold-body">
+        <p><strong>题面：</strong>甲公司签发一组巨灾保险合同。20×1 年末，根据所有合理可获取的信息，在该组责任期剩余的 6 个月内，估计有 30% 的概率会发生一场属于保险责任范围内的大风暴。20×2 年 3 月，甲公司 20×1 年度报表尚未报出前，大风暴<strong>真的发生了</strong>。问：20×1 年末的 FCF 应按多少概率计量？</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 直觉陷阱</div>
+          "都 3 月了风暴都来了，负债肯定要按 100% 赔付计量吧？"——这是最常见的直觉，也是本章要拆掉的错觉。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 套用"当前信息"要求</div>
+          20×1 年末估计时点可获得的信息只有"30% 概率"。20×2 年 3 月风暴发生，属于<strong>期后事项</strong>，它使期末的不确定事项变成事实，但<strong>不能为期末当时的情况提供证据</strong>。因此 20×1 年末仍按 30% 概率的概率加权结果计量。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 期后事项怎么办</div>
+          指南明确：应根据《企业会计准则第29号——资产负债表日后事项》，在 20×1 年度报表中将其作为<strong>非调整事项披露</strong>——账不动、话要说。
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-title">💡 与审定的关系</div>
+          "期末后发生的事项使期末不确定的事项变成事实，并不意味着该事项能为期末当时的情况提供证据"——这句话是 CAS25 与旧准备金实务最微妙的一处分水岭。审计师问"你为什么期后都赔付了还计这么少"时，答案就在这条原则里。
+        </div>
+      </div>
+    </details>
+
+    <details class="fold example-fold">
+      <summary>📖 例21 现值构成回顾（指南第六章）：1,089 这个数怎么来的</summary>
+      <div class="fold-body">
+        <p><strong>回顾：</strong>100 份三年期合同，初始确认后立即收到保费 1,800 元，预计每年末现金流出 400 元，折现率 5%。</p>
+
+        <div class="fold-step">
+          <div class="step-label">逐年折现（负债口径：流出为正）</div>
+          第 1 年：400 ÷ 1.05 = 381；第 2 年：400 ÷ 1.05² = 363；第 3 年：400 ÷ 1.05³ = 346。<br>
+          合计 <strong>1,089</strong>（= 400 × (0.9524 + 0.9070 + 0.8638)）。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">FCF₀ 与 CSM₀</div>
+          FCF₀（现值部分）= 1,089 − 1,800 = <strong>−711</strong>；加 RA 120 → −591 < 0，为厚利合同，CSM₀ = <strong>591</strong>。
+        </div>
+
+        <div class="callout callout-key">
+          <div class="callout-title">🔑 本章视角的重新审视</div>
+          用本章的清单复核：每年 400 元是边界内赔款（清单②），保费 1,800 是流入（清单①），折现率 5% 与现金流特征一致（通胀口径配平）——这道"原型题"的每一项，现在都能在指南的清单里找到出处。这就是"由浅入深"的意义：第01章你只需要算对，本章你要能说出每一步的<strong>准则依据</strong>。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch06">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">1</span>下列哪项应包含在现有合同组的履约现金流量中？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>预计明年新签保单的保费收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>分出再保险合同的摊回款</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>续期佣金支出（因持有人继续支付边界内保费）</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>公司整体的投资回报</span></div>
+      </div>
+      <div class="quiz-explain">C 正确（清单⑧）。A 是现有边界外的未来合同（不含③）；B 属分出再保合同单独计量（不含②）；D 属资产端（不含①）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">2</span>费用风险（费差的不确定性）应通过什么反映？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>非金融风险调整 RA</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>现金流估计的额外加成</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>折现率的风险溢价</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>合同服务边际</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。指南明确 RA 包含保险风险和其他非金融风险"例如失效风险和费用风险"；期望费用进现金流，不确定性进 RA，且 RA 须单独估计不得隐含在前两者中。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">3</span>关于"无偏概率加权平均"，正确的是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>取最可能发生的结果</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>必须识别并模拟每一种可能的情景</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>可以剔除发生巨额损失的极端情景使其更平滑</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>须考虑巨额损失情景的概率，但无须穷尽所有情景</span></div>
+      </div>
+      <div class="quiz-explain">D 正确。指南要求情景"包括现有合同发生巨额损失的概率，但不包括未来可能签订的合同可能发生的赔付"；简单模型结果在可接受范围内时无须大规模随机模拟。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">4</span>资产负债表日后、报表报出前发生了重大赔付事件，企业应当？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>调整期末 FCF 估计，把赔付全额计进期末负债</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>期末估计不变，作为非调整事项在报表中披露</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>按期后信息重新计算整个报告期收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>等下一年度报表再反映</span></div>
+      </div>
+      <div class="quiz-explain">B 正确（例20）。期后事项不能为期末情况提供证据，按 CAS29 作为非调整事项披露。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">5</span>合同初始确认后，何时可以重新评估保险合同边界？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>每个资产负债表日都应重新评估</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>利率发生重大变化时</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>重新设定价格或承诺利益水平的实际能力变化，或合同条款修改导致边界实质变化时</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>任何时候都不能重新评估</span></div>
+      </div>
+      <div class="quiz-explain">C 正确（指南第六章（一）1（2））。边界一经确定原则上不重估，只有定价/承诺能力的实际变化或合同修改才触发。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
+    </div>
+  </div>
+
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>FCF 组成</strong></td><td>未来现金流估计（现值）+ 货币时间价值及金融风险调整（折现率）+ 非金融风险调整</td></tr>
+          <tr><td><strong>估计四要求</strong></td><td>无偏概率加权 / 市场变量盯市 / 当前信息为基础 / 与折现分别估计</td></tr>
+          <tr><td><strong>应含 15 项</strong></td><td>保费、赔款、随基础项目回报变动款项、嵌入衍生工具、IACF 分摊、理赔费用、非现金结算成本、维持费用、流转税、代扣税、追偿、分摊固定可变费用、投资受益活动成本、投资服务成本、合同明定收费</td></tr>
+          <tr><td><strong>不含 8 项</strong></td><td>投资回报、分出再保现金流、边界外未来合同、不可归属支出、非正常损耗、所得税、账户间资金往来、已分拆成分</td></tr>
+          <tr><td><strong>边界规则</strong></td><td>初始确认后不重估，除非重新定价能力变化或合同修改</td></tr>
+          <tr><td><strong>不履约风险</strong></td><td>FCF 不考虑企业自身不履约风险</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch06">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
+  <div class="section">
+    <h2><span class="icon">🔗</span>五、知识连接</h2>
+    <div class="link-map">
+      <div class="link-card prereq">
+        <h4>⬆ 前置知识</h4>
+        <a href="ch01.html">第01章 一张图看懂 CAS25 <span class="why">——负债公式里 FCF 的位置</span></a>
+        <a href="ch03.html">第03章 合并与分拆 <span class="why">——"已分拆成分的现金流不进 FCF"的源头</span></a>
+        <a href="ch04.html">第04章 分组与确认 <span class="why">——IACF 为何作为第⑤项进入 FCF</span></a>
+      </div>
+      <div class="link-card next">
+        <h4>⬇ 后续哪里会用到</h4>
+        <a href="ch07.html">第07章 折现率 <span class="why">——FCF 三块积木的第二块</span></a>
+        <a href="ch10.html">第10章 后续计量全景 <span class="why">——现金流估计变更如何滚动进负债</span></a>
+        <a href="ch13.html">第13章 VFA 浮动收费法 <span class="why">——"随基础项目回报变动的现金流量"（清单③）的特殊计量</span></a>
+        <a href="ch14.html">第14章 间接分红产品 <span class="why">——相机现金流量如何分解</span></a>
+      </div>
+      <div class="link-card law">
+        <h4>📜 CAS25 原文对照</h4>
+        <a href="cas25.html#a20">第二十条 计量单元</a>
+        <a href="cas25.html#a21">第二十一条 履约现金流量</a>
+        <a href="cas25.html#a24">第二十四条 合同边界</a>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="ch05.html">
+        <span class="nav-label">上一章</span>
+        <div class="nav-title">← 第05章 十三个会计科目总览</div>
+      </a>
+      <a class="next-ch" href="ch07.html">
+        <span class="nav-label">下一章</span>
+        <div class="nav-title">第07章 折现率 →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 第06章 履约现金流量 FCF</p>
+    <p style="margin-top:6px">内容依据《企业会计准则第25号——保险合同应用指南2022》编写 · 仅供学习交流</p>
+  </div>
+
+</div>
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <img class="brand-logo" src="assets/xihong-logo.jpg" alt="西红精算 Logo">
+    <div class="brand-copy">
+      <div class="bt">西红精算 · 用数据讲保险，用真心做科普</div>
+      <div class="bs">本知识库由一线在职精算师维护，配套公众号长期连载与知识星球答疑社区。</div>
+      <div class="bl">
+        <a href="about.html">关于西红精算</a>
+        <a href="premium.html">完整版解锁</a>
+        <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球</a>
+      </div>
+    </div>
+    <div class="brand-qrs">
+      <div class="brand-qr">
+        <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码">
+        <div class="qn">公众号</div>
+      </div>
+      <div class="brand-qr zsxq">
+        <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码">
+        <div class="qn">知识星球</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
