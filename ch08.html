@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第08章 非金融风险调整 RA · CAS25 精读</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html"><span class="logo-icon">25</span> CAS25 精读</a>
+  <div class="topnav-links">
+    <a href="index.html">知识地图</a>
+    <a href="ch01.html">入门篇</a>
+    <a href="ch06.html" class="active">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">知识地图</a><span class="separator">›</span><span>进阶篇</span><span class="separator">›</span><strong>第08章 非金融风险调整 RA</strong>
+  </div>
+
+  <div class="page-header">
+    <h1>第08章 · 非金融风险调整 RA</h1>
+    <p class="subtitle">负债计量的第三块积木。RA 是企业因承担非金融风险而要求的<strong>补偿</strong>——它不是现金流、不是折现率溢价，而是独立的第三项。旧准则叫"风险边际"，CAS25 给了它明确的定义、单独估计的原则和五个行为特征。</p>
+    <div class="tag-row">
+      <span class="tag">进阶篇 · 第 3/7 章</span>
+      <span class="tag">预计用时 25 分钟</span>
+      <span class="tag">对应指南：第六章（一）3</span>
+    </div>
+  </div>
+
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>RA 回答的问题是"企业<strong>要价多少</strong>才愿意担这个险"，还是"这个险<strong>要赔多少</strong>"？两者差在哪？</li>
+      <li>操作风险为什么不在 RA 里？失效风险、费用风险在不在？</li>
+      <li>例26 的 RA 120 元，三年里分别以什么金额、走什么科目进损益？</li>
+    </ol>
+    <p class="hint">提示：RA 的释放（run-off）进的是<strong>保险服务收入</strong>——服务风险逐渐解除，对应的风险补偿逐渐挣到手。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、RA 的定义与范围</h2>
+
+    <div class="guide-quote">
+      "非金融风险调整，是指企业在履行保险合同时，因承担非金融风险导致的未来现金流量在金额和时间方面的不确定性而要求得到的补偿。非金融风险调整也反映了企业在确定因承担该风险而要求的补偿时所包含的、因风险分散而获益的程度，及有利和不利的结果，以体现企业的风险厌恶程度。"
+      <span class="src">——《应用指南2022》第六章（一）3</span>
+    </div>
+
+    <p>三个关键词：</p>
+    <ul>
+      <li><strong>补偿（compensation）</strong>——是"要价"不是"赔付"：期望赔付已经含在现金流里，RA 是在此基础上为不确定性多收的钱；</li>
+      <li><strong>分散获益</strong>——企业拿多少，还要看它通过组合分散掉了多少风险：分散能力越强，要求的补偿可以越低；</li>
+      <li><strong>风险厌恶</strong>——不利结果与有利结果不对称地被看待，这是 RA 为正的根源。</li>
+    </ul>
+
+    <h3>1.1 范围：含什么、不含什么</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>包含</th><th>不包含</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>保险风险</strong>（赔付频率与金额、时间的不确定性）<br>
+              <strong>其他非金融风险</strong>：失效风险（退保行为偏离预期）、<strong>费用风险</strong>（费差）等
+            </td>
+            <td>
+              <strong>一般操作风险</strong>（并非由保险合同产生的风险）<br>
+              企业自身<strong>不履约风险</strong>（整个 FCF 都不考虑）<br>
+              <strong>金融风险</strong>（在折现率里反映，货币时间价值及金融风险调整）
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 单独估计原则</div>
+      "企业应当<strong>单独估计</strong>非金融风险调整，不得在未来现金流量和折现率的估计中隐含非金融风险调整。"——实践中常见的毛病是现金流里偷偷打了保守折扣（隐含边际），那 RA 就被重复计提了。CAS25 要求：现金流归现金流（无偏），折现率归折现率（金融风险），RA 单独摆出来。这也让"三差分析"（第11章延伸）有了干净的口径。
+    </div>
+
+    <h3>1.2 RA 的五个行为特征</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>特征</th><th>含义</th><th>直觉</th></tr></thead>
+        <tbody>
+          <tr><td><strong>① 低频高严重 &gt; 高频低严重</strong></td><td>同样期望损失，发生频率低但严重程度高的风险，RA 更高</td><td>巨灾险比车险"吓人"</td></tr>
+          <tr><td><strong>② 期限越长 RA 越高</strong></td><td>相似风险，期限长的合同 RA 更高</td><td>不确定性随时间累积</td></tr>
+          <tr><td><strong>③ 分布越分散 RA 越高</strong></td><td>概率分布分散的比集中的 RA 高</td><td>方差大要多收费</td></tr>
+          <tr><td><strong>④ 了解越少 RA 越高</strong></td><td>对当前估计及其趋势了解得越少，RA 越高</td><td>信息不足本身就是风险</td></tr>
+          <tr><td><strong>⑤ 不确定性减少则 RA 减少</strong></td><td>新经验使金额和时间的不确定性减少时，RA 下降；反之上升</td><td>时间推移、风险解除，补偿随之挣得</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>特征⑤正是 RA"释放"的理论基础：随着服务提供、不确定性消化，RA 逐步转入<strong>保险服务收入</strong>。计量上可以按覆盖单元均匀释放（如例26 每年 40），也可以按风险解除模式释放（如例27 按有效人数 30→20→10）。</p>
+
+    <h3>1.3 估计技术：指南不点名、但常用三种</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>技术</th><th>思路</th><th>特点</th></tr></thead>
+        <tbody>
+          <tr><td><strong>置信区间法</strong></td><td>取现金流分布某一置信水平（如 75%）的分位数与期望值之差</td><td>实务最常用；置信水平的选择是重大会计判断（第19章要披露）</td></tr>
+          <tr><td><strong>资本成本法</strong></td><td>为承担非金融风险占用的资本 × 单位资本要求回报</td><td>与偿付能力资本（偿二代）口径衔接自然</td></tr>
+          <tr><td><strong>边际成本法</strong></td><td>市场为转移该风险索要的边际价格</td><td>理论上最贴定义，但可观察数据少</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>指南未强制指定技术，只要求结果符合定义与五个特征——这为不同公司的 RA 留出了个性空间，也是同业不可比性的来源之一。</p>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解：RA 的两种释放节奏</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例26（指南第六章）：RA 120 元的三年释放</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>例26 合同组初始 RA 120 元，指南设定"非金融风险调整预计将在责任期内每年均匀地释放 40 元并确认为损益"，责任期各年责任单元相等。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · RA 余额滚动</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th></th><th>期初</th><th>第1年末</th><th>第2年末</th><th>第3年末</th></tr></thead>
+              <tbody>
+                <tr><td>RA 余额</td><td class="num">120</td><td class="num">80</td><td class="num">40</td><td class="num">0</td></tr>
+                <tr><td>当年释放（→保险服务收入）</td><td class="num">—</td><td class="num">40</td><td class="num">40</td><td class="num">40</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 释放进收入的证据</div>
+          指南表13/15/16 中，RA 列每年出现"与当年服务相关的变动 40（第3年 30）"——它构成保险服务收入的一部分：第1年收入 647 = 400 + <strong>40</strong> + 207。注意第2年末估计调整：第3年 RA 从 40 改为 30（差 10 与第3年赔付估计 400→280 的下调联动），调整额 10 计入与未来服务相关变动、<strong>调整 CSM</strong>（第10章展开）。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 对比：RA 要计息吗？</div>
+          不计息。指南滚动表中"保险财务损益"行只作用于未来现金流量现值列和 CSM 列，RA 列的变动只有释放（当年服务）与估计调整（未来服务）——RA 是风险补偿，不是货币债权，不随时间增值。
+        </div>
+      </div>
+    </details>
+
+    <details class="fold example-fold">
+      <summary>📖 例27（指南第六章）：RA 30 元按有效人数释放 30→20→10→0</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>200 份三年期万能险，初始 RA 30 元，"假设其在责任期内均匀地确认为损益"；每年末死亡 1 人，有效人数 200→199→198→197。指南表17 显示各年末 RA 为 20 / 10 / 0。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 读出释放节奏</div>
+          RA 余额 30 → 20 → 10 → 0，每年释放 10 元进保险服务收入（第1年分录"借：未到期责任负债 150，贷：保险服务收入 150"的构成之一）。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 对比两例</div>
+          例26 按<strong>责任单元</strong>均匀释放（与 CSM 摊销同步）；例27 的合同是投资成分占绝对主导的万能险，服务节奏更贴近账户运作。两例说明：<strong>释放模式跟风险解除/服务提供模式走</strong>，没有唯一公式，但要系统合理、一贯应用。
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-title">💡 RA 变动的两条通道</div>
+          与未来服务相关的 RA 变动（如第3年预期 40→30）→ <strong>调整 CSM</strong>；与当年服务相关的 RA 变动（当年释放）→ <strong>进收入</strong>。另外，若企业选择区分"货币时间价值及金融风险影响导致的 RA 变动"，那部分作为保险合同金融变动额处理（第12章）——例26/27 均选择不区分。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch08">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">1</span>RA 的本质是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>预期赔付的保守估计</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>折现率中的风险溢价</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>企业因承担非金融风险的不确定性而要求得到的补偿</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>偿付能力监管要求的资本</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。A 混淆了 RA 与现金流（现金流须无偏）；B 混淆了 RA 与金融风险调整；D 是监管口径，RA 是会计口径（资本成本法只是估计技术之一）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">2</span>下列哪项不属于 RA 的范围？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>一般操作风险</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>失效风险</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>费用风险</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>保险风险</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。指南明文：RA 包含保险风险和其他非金融风险（如失效风险、费用风险），不包括并非由保险合同产生的风险，例如一般操作风险。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">3</span>"单独估计 RA，不得在未来现金流量和折现率的估计中隐含"——违反后果是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>RA 偏低</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>风险补偿可能被重复计提或口径不清</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>折现率必须重算</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>CSM 直接减为零</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。隐含边际会造成重复或遗漏，且使三差（利差/死差/费差）的归因口径失真。单独估计是干净计量的前提。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>关于 RA 的五个特征，错误的是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>期限长的合同比期限短的 RA 高</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>概率分布分散的比集中的 RA 高</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>了解越少，RA 越高</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>新经验使不确定性减少时，RA 增加</span></div>
+      </div>
+      <div class="quiz-explain">D 错误（应为减少）。特征⑤：不确定性减少 → RA 减少，这正是 RA 随服务提供而释放的逻辑。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">5</span>例26 中，第 3 年 RA 的释放额与第 2 年不同（30 vs 40），原因是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>RA 计息累积</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>第3年服务量减少</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>第2年末将与未来服务相关的 RA 估计从 40 下调至 30，差额 10 已调整 CSM</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>会计差错更正</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。与未来服务相关的 RA 变动（−10）调整 CSM（分录⑨：借 现值 114、RA 10，贷 CSM 124），随后按更新后余额释放。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
+    </div>
+  </div>
+
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>定义</strong></td><td>承担非金融风险的不确定性而<strong>要求得到的补偿</strong>，反映分散获益程度与风险厌恶</td></tr>
+          <tr><td><strong>范围</strong></td><td>含：保险风险、失效风险、费用风险等；不含：一般操作风险、不履约风险、金融风险</td></tr>
+          <tr><td><strong>估计原则</strong></td><td>单独估计；技术不强制（置信区间法/资本成本法/边际成本法）</td></tr>
+          <tr><td><strong>五特征</strong></td><td>低频高严重＞高频低严重；期限长＞短；分散＞集中；了解少＞了解多；不确定性减→RA 减</td></tr>
+          <tr><td><strong>释放</strong></td><td>随服务提供进保险服务收入（例26 按责任单元 40/40/40，例27 按有效人数 10/10/10）</td></tr>
+          <tr><td><strong>变动分流</strong></td><td>当年释放→收入；未来变动→调 CSM；金融影响部分（选择区分时）→金融变动额</td></tr>
+          <tr><td><strong>不计息</strong></td><td>滚动表中财务损益只作用现值与 CSM 列</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch08">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
+  <div class="section">
+    <h2><span class="icon">🔗</span>五、知识连接</h2>
+    <div class="link-map">
+      <div class="link-card prereq">
+        <h4>⬆ 前置知识</h4>
+        <a href="ch06.html">第06章 履约现金流 FCF <span class="why">——费差进 RA、期望费用进现金流</span></a>
+        <a href="ch07.html">第07章 折现率 <span class="why">——金融风险在折现率，非金融风险在 RA</span></a>
+      </div>
+      <div class="link-card next">
+        <h4>⬇ 后续哪里会用到</h4>
+        <a href="ch09.html">第09章 合同服务边际 CSM <span class="why">——FCF+RA 定符号、定 CSM</span></a>
+        <a href="ch10.html">第10章 后续计量全景 <span class="why">——RA 释放与估计调整在滚动表中的位置</span></a>
+        <a href="ch11.html">第11章 保险收入与费用 <span class="why">——RA 释放是收入的组成之一</span></a>
+        <a href="ch19.html">第19章 披露 <span class="why">——RA 变动与所用技术须披露</span></a>
+      </div>
+      <div class="link-card law">
+        <h4>📜 CAS25 原文对照</h4>
+        <a href="cas25.html#a26">第二十六条 非金融风险调整</a>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="ch07.html">
+        <span class="nav-label">上一章</span>
+        <div class="nav-title">← 第07章 折现率</div>
+      </a>
+      <a class="next-ch" href="ch09.html">
+        <span class="nav-label">下一章</span>
+        <div class="nav-title">第09章 合同服务边际 CSM →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 第08章 非金融风险调整 RA</p>
+    <p style="margin-top:6px">内容依据《企业会计准则第25号——保险合同应用指南2022》编写 · 仅供学习交流</p>
+  </div>
+
+</div>
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <img class="brand-logo" src="assets/xihong-logo.jpg" alt="西红精算 Logo">
+    <div class="brand-copy">
+      <div class="bt">西红精算 · 用数据讲保险，用真心做科普</div>
+      <div class="bs">本知识库由一线在职精算师维护，配套公众号长期连载与知识星球答疑社区。</div>
+      <div class="bl">
+        <a href="about.html">关于西红精算</a>
+        <a href="premium.html">完整版解锁</a>
+        <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球</a>
+      </div>
+    </div>
+    <div class="brand-qrs">
+      <div class="brand-qr">
+        <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码">
+        <div class="qn">公众号</div>
+      </div>
+      <div class="brand-qr zsxq">
+        <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码">
+        <div class="qn">知识星球</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
