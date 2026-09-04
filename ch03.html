@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第03章 合并与分拆 · CAS25 精读</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html"><span class="logo-icon">25</span> CAS25 精读</a>
+  <div class="topnav-links">
+    <a href="index.html">知识地图</a>
+    <a href="ch01.html" class="active">入门篇</a>
+    <a href="ch06.html">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">知识地图</a><span class="separator">›</span><span>入门篇</span><span class="separator">›</span><strong>第03章 合并与分拆</strong>
+  </div>
+
+  <div class="page-header">
+    <h1>第03章 · 合并与分拆</h1>
+    <p class="subtitle">保险合同往往不是"纯保险"：账户价值、嵌入选择权、附赠服务都可能藏在一张保单里。本章回答三个问题：哪些合同要合起来算？哪些成分要剥出去算？剥不出去的怎么办？</p>
+    <div class="tag-row">
+      <span class="tag">入门篇 · 第 3/5 章</span>
+      <span class="tag">预计用时 30 分钟</span>
+      <span class="tag">对应指南：第四章（二）合并 ·（三）分拆</span>
+    </div>
+  </div>
+
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>判断"可明确区分的投资成分"要过哪两道关？"高度关联"有哪两种具体表现？</li>
+      <li>嵌入衍生工具在什么条件下必须从保险合同中分拆？分拆顺序为什么是"先衍生工具、再投资成分、最后服务承诺"？</li>
+      <li>一张含账户价值 + 死亡给付的寿险保单（指南例14），账户价值为什么<strong>不能</strong>分拆？</li>
+    </ol>
+    <p class="hint">提示：分拆的本质是"把不属于保险的部分交给别的准则"，分拆结果直接决定进入 CAS25 计量的现金流量范围（第06章合同边界的起点）。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、合并：什么时候"几份合同算一份"</h2>
+
+    <div class="guide-quote">
+      "与相同或相关联的合同对方订立的一个保险合同集合或一系列保险合同，可能实现或旨在实现某一整体商业目的，企业应当将这些保险合同合并为一个整体进行会计处理，以反映此类合同的商业实质。"
+      <span class="src">——《应用指南2022》第四章（二）保险合同的合并</span>
+    </div>
+
+    <p>两种典型情形要合并：</p>
+    <ul>
+      <li><strong>完全抵销</strong>：一项合同的权利义务与同一时间、同一对方订立的另一合同<strong>完全抵销</strong>——合并结果不存在任何权利义务；</li>
+      <li><strong>互为前提</strong>：两项合同的权利义务<strong>互为前提、互相依赖</strong>——合并反映整体商业实质。</li>
+    </ul>
+    <div class="callout callout-warning">
+      <div class="callout-title">⚠️ 常见误区</div>
+      保单持有人<strong>同时购买多份保单</strong>或<strong>加保以获得价格折扣</strong>，不足以表明合同旨在实现某一整体商业目的——不能据此合并。合并看的是权利义务的实质依赖，不是购买行为本身。
+    </div>
+
+    <h2>二、分拆：三步剥离，剩下的进 CAS25</h2>
+    <p>实务中保险合同可能是"混装"的：保险保障 + 储蓄投资 + 服务承诺 + 嵌入选择权。分拆按固定顺序进行：</p>
+
+    <div class="diagram-box">
+      <svg viewBox="0 0 920 170" xmlns="http://www.w3.org/2000/svg" style="min-width:820px">
+        <defs>
+          <marker id="arw3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#0d3b66"/>
+          </marker>
+        </defs>
+        <g font-size="12.5" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+          <rect x="12" y="55" width="150" height="62" rx="8" fill="#f0f4f8" stroke="#0d3b66"/>
+          <text x="87" y="80" fill="#0d3b66" text-anchor="middle" font-weight="700">混装保险合同</text>
+          <text x="87" y="100" fill="#718096" text-anchor="middle" font-size="11">可能含多种成分</text>
+
+          <rect x="205" y="18" width="200" height="56" rx="8" fill="#2d8659"/>
+          <text x="305" y="41" fill="#fff" text-anchor="middle" font-weight="700">第①步 嵌入衍生工具</text>
+          <text x="305" y="60" fill="#d9f2e3" text-anchor="middle" font-size="11">CAS22 三条件 → 金融工具准则</text>
+
+          <rect x="205" y="96" width="200" height="56" rx="8" fill="#1a5a8a"/>
+          <text x="305" y="119" fill="#fff" text-anchor="middle" font-weight="700">第②步 投资成分</text>
+          <text x="305" y="138" fill="#cfe4f5" text-anchor="middle" font-size="11">可明确区分 → 金融工具准则</text>
+
+          <rect x="460" y="18" width="210" height="56" rx="8" fill="#c05621"/>
+          <text x="565" y="41" fill="#fff" text-anchor="middle" font-weight="700">第③步 商品/非保险服务</text>
+          <text x="565" y="60" fill="#fdebd7" text-anchor="middle" font-size="11">可明确区分 → CAS14 收入</text>
+
+          <rect x="715" y="55" width="190" height="62" rx="8" fill="#0d3b66"/>
+          <text x="810" y="80" fill="#fff" text-anchor="middle" font-weight="700">剩余 = 保险成分</text>
+          <text x="810" y="100" fill="#cfe4f5" text-anchor="middle" font-size="11">作为整体适用 CAS25</text>
+
+          <line x1="162" y1="70" x2="200" y2="46" stroke="#0d3b66" stroke-width="2" marker-end="url(#arw3)"/>
+          <line x1="162" y1="100" x2="200" y2="124" stroke="#0d3b66" stroke-width="2" marker-end="url(#arw3)"/>
+          <line x1="405" y1="46" x2="455" y2="46" stroke="#0d3b66" stroke-width="2" marker-end="url(#arw3)"/>
+          <line x1="415" y1="124" x2="710" y2="95" stroke="#0d3b66" stroke-width="2" marker-end="url(#arw3)"/>
+          <line x1="670" y1="46" x2="710" y2="66" stroke="#0d3b66" stroke-width="2" marker-end="url(#arw3)"/>
+          <text x="565" y="152" fill="#718096" font-size="11">顺序：先分拆衍生工具和投资成分，再考虑服务承诺（指南第四章（三）3）</text>
+        </g>
+      </svg>
+    </div>
+
+    <h3>3.1 第①步：嵌入衍生工具</h3>
+    <p>典型如<strong>退保选择权</strong>。依据 CAS22，同时符合三个条件才分拆：①经济特征和风险与主合同<strong>不紧密相关</strong>；②与嵌入衍生工具相同条款的单独工具<strong>符合衍生工具定义</strong>；③混合合同<strong>不以 FVTPL 计量</strong>。分拆出的衍生工具适用金融工具准则——但"嵌入衍生工具本身是保险合同且适用本准则"的除外（如保险合同内的年金转换选择权实质是保险责任的，不拆）。</p>
+
+    <h3>3.2 第②步：投资成分——本章的重头戏</h3>
+    <div class="guide-quote">
+      "投资成分，是指无论保险事项是否发生，企业均须根据保险合同要求偿还给保单持有人的金额。"
+      <span class="src">——《应用指南2022》第四章（三）2</span>
+    </div>
+    <p>投资成分的<strong>定义</strong>很宽（凡"无论如何都要还"的金额都是），但<strong>可分拆的</strong>只有"可明确区分"的。判断要过两道关：</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>条件</th><th>具体表现</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="2"><strong>第一关：非高度关联</strong></td><td>① 两者<strong>不可单独计量</strong>（一个成分的价值随另一个变动而变动）</td></tr>
+          <tr><td>② 持有人<strong>无法单独获益</strong>，只能两者同时存在时获益（一个失效/到期导致另一个也失效/到期）</td></tr>
+          <tr><td><strong>第二关：可单独出售</strong></td><td>签发企业或其他方<strong>能在相同市场或地区单独出售</strong>与投资成分条款相同的合同（无须全面排查市场，考虑合理可得信息即可）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 高度关联是"一票否决"</div>
+      两关是"与"的关系：<strong>任何一关不过，投资成分都不可明确区分</strong>，就不能分拆，只能留在保险成分里随 FCF 一起计量。判断"不可单独获益"时，看的是<strong>合同条款的生死联动</strong>——死亡给付 = 账户价值 + 6,000 元、退保给付 = 账户价值，两者同生共死，账户价值高度关联（指南例14）。
+    </div>
+
+    <h3>3.3 第③步：商品或非保险合同服务承诺</h3>
+    <p>分拆完衍生工具和投资成分后，再看有没有"可明确区分的商品或非保险合同服务承诺"——标准是保单持有人能<strong>单独使用或与其他易于获得的资源一起使用而受益</strong>。两个"不可明确区分"条件：现金流量及风险与保险成分高度关联；企业提供重大整合服务。</p>
+    <p>注意：<strong>为履行合同必须实施的活动本身不是服务承诺</strong>——理赔活动、资产管理活动是企业履约的手段，没有向持有人额外转让商品或服务，不拆（指南例16）。只有<strong>单独收费、市场可独立购买</strong>的服务（如例17 的理赔外包服务）才拆出去适用 CAS14。</p>
+
+    <h3>3.4 剩余保险成分：原则上"整体处理、不再细拆"</h3>
+    <p>剩余部分（含未拆的嵌入衍生工具、不可明确区分的投资成分、不可明确区分的服务承诺）作为一个整体适用本准则。两个例外方向：</p>
+    <ul>
+      <li><strong>该拆不拆</strong>：仅简化手续拼装的多项保险成分且定价是各自简单相加 → 不作为整体，应拆为多项保险合同（指南例18：银行团体合同中借款人各自选择购买、单独定价 → 每个借款人一份保险合同）；</li>
+      <li><strong>主险 + 附加险</strong>：按"能否分开销售定价、是否同时失效、风险是否相互依赖"三因素判断是否分拆。</li>
+    </ul>
+    <div class="callout callout-info">
+      <div class="callout-title">💡 合并与分拆的"互斥校验"</div>
+      合并规定与分拆规定运用后应得出<strong>相同判断结果</strong>：判断应分拆的成分，不应再通过合并"拆了又合"，反之亦然——两条规则是同一商业实质的两个视角。
+    </div>
+
+    <h3>3.5 分拆之后：现金流量怎么分</h3>
+    <p>初始确认时，合同现金流量先扣除已分拆嵌入衍生工具和可明确区分投资成分的流量，再按 CAS14 在<strong>保险成分与服务承诺</strong>之间分摊流入；与各成分直接相关的流出归各成分，不直接相关的流出按"系统合理、反映该成分为单独合同时的预计流出"分摊。<strong>分摊至保险成分的现金流量，就是第06章 FCF 计量的起点。</strong></p>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>三、例题精解：账户价值分拆吗？理赔服务分拆吗？</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例14（指南第四章）：含账户价值的寿险合同——投资成分不可明确区分</summary>
+      <div class="fold-body">
+        <p><strong>题面：</strong>甲公司签发含账户价值的人寿保险合同，签发时收到保费 1,200 元。账户价值随持有人自愿缴费而增加、随特定资产投资回报变动、因扣费而减少。条款约定：<strong>身故给付 = 账户价值 + 6,000 元；退保给付 = 账户价值</strong>。市场上另有金融机构在销售<strong>条款相同但不含保险保障</strong>的投资产品。该合同已通过重大保险风险测试。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 先自己判断</div>
+          市场上能单独买到同条款投资产品——"可单独出售"这一关过了吗？能分拆吗？
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 第一关：高度关联测试</div>
+          死亡给付和退保给付都以<strong>账户价值</strong>为基数；保险保障服务与账户价值<strong>同时存在、同时失效或满期</strong>——一个成分失效会导致另一个失效 → 持有人无法单独获益 → <strong>高度关联成立</strong>。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 结论</div>
+          虽然"可单独出售"这一关通过（市场上有同条款投资产品），但<strong>高度关联一票否决</strong>：账户价值不构成可明确区分的投资成分，<strong>不从保险合同中分拆</strong>，整体适用 CAS25。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 4 步 · 顺带的观察</div>
+          账户价值留在保险成分内意味着：它的变动将进入履约现金流量、进而影响 CSM 滚动——这正是第14章"间接分红产品"（BBA + 相机抉择分解）要处理的世界。而如果它被分拆，这张保单将一分为二，一半走 CAS25、一半走金融工具准则。
+        </div>
+      </div>
+    </details>
+
+    <details class="fold example-fold">
+      <summary>📖 例17（指南第四章）：单独收费的理赔服务——可明确区分的服务承诺</summary>
+      <div class="fold-body">
+        <p><strong>题面：</strong>甲保险公司与乙公司签订保险合同：起赔点 250 万元，超起赔点 100% 保障。同时无论赔付是否超过起赔点，甲公司<strong>单独收费</strong>为乙公司雇员处理医疗赔付（理赔外包），收费与市场价格一致，市场上有企业单独提供同类外包服务。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 受益独立性</div>
+          若甲公司不提供理赔服务，乙公司需自行处理或另雇供应商 → 乙公司从该服务中获得的利益<strong>独立于</strong>保险保障服务。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 关联度与整合</div>
+          理赔服务现金流量与保险保障现金流量<strong>不是高度关联</strong>（无论是否出险都要提供、都单独收费），且甲公司<strong>未提供重大整合服务</strong>。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 结论</div>
+          理赔服务是<strong>可明确区分的服务</strong>，应当分拆并适用《企业会计准则第14号——收入》。<strong>对照例16</strong>：合同内生的理赔活动不拆、单独收费的理赔服务要拆——分水岭是"是否向持有人转让了额外的、可单独受益的服务"。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch03">
+    <h2><span class="icon">🧪</span>四、实战自测</h2>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">1</span>投资成分的定义是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>合同中与投资账户对应的资产</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>无论保险事项是否发生，企业均须偿还给保单持有人的金额</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>嵌入衍生工具中与金融风险相关的部分</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>保费中超过风险保费的部分</span></div>
+      </div>
+      <div class="quiz-explain">B 正确（指南第四章（三）2 原文）。注意"定义"与"可分拆"是两个层次：所有"无论如何都要还"的金额都是投资成分，但只有可明确区分的才分拆。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">2</span>例14 中，账户价值未能分拆的关键原因是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>市场上没有同条款投资产品</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>公司不愿意分拆</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>保险保障与账户价值同生共死、高度关联，持有人无法单独获益</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>账户价值金额不重大</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。高度关联（无法单独获益/不可单独计量）是一票否决项，与可单独出售的结论无关。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">3</span>分拆的正确顺序是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>嵌入衍生工具 → 可明确区分的投资成分 → 可明确区分的商品或非保险服务承诺</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>投资成分 → 嵌入衍生工具 → 服务承诺</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>同时进行，不分先后</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>服务承诺 → 投资成分 → 衍生工具</span></div>
+      </div>
+      <div class="quiz-explain">A 正确（指南第四章（三）3：先分拆嵌入衍生工具和可明确区分的投资成分后，再考虑分拆服务承诺）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>下列哪项活动通常<strong>不</strong>从保险合同中分拆？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>单独收费、市场有同类供给的理赔外包服务</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>合同内生的理赔处理活动</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>满足 CAS22 分拆条件的嵌入衍生工具</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>可单独出售且非高度关联的投资成分</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。为履约必须实施的活动未向持有人转让额外商品或服务，不构成可分拆的承诺（指南例16）。A 对应例17，应拆。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">5</span>关于合并与分拆的关系，正确的是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>先分拆后可以再合并，两者独立运用</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>合并优先于分拆</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>两套规定的运用应得出相同的判断结果，不应"拆了又合"或"合了又拆"</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>分拆优先于合并</span></div>
+      </div>
+      <div class="quiz-explain">C 正确（指南第四章（三）4 末段）。两者是同一商业实质的不同视角，结果必须自洽。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
+    </div>
+  </div>
+
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>五、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>合并</strong></td><td>同对方 + 整体商业目的：完全抵销 / 互为前提；多单折扣≠合并</td></tr>
+          <tr><td><strong>分拆顺序</strong></td><td>嵌入衍生工具（CAS22 三条件）→ 可明确区分投资成分 → 可明确区分商品/服务承诺（CAS14）</td></tr>
+          <tr><td><strong>投资成分两关</strong></td><td>非高度关联（不可单独计量 / 无法单独获益）＋ 可单独出售；高度关联一票否决</td></tr>
+          <tr><td><strong>服务承诺</strong></td><td>持有人能单独或与其他易得资源共同受益才拆；履约必经活动（理赔、资管）不拆</td></tr>
+          <tr><td><strong>剩余部分</strong></td><td>整体适用 CAS25（含未拆衍生工具、不可区分投资成分/服务）；拼装式多成分除外（例18）；主附险三因素</td></tr>
+          <tr><td><strong>流量分摊</strong></td><td>扣除已拆成分流量后，按 CAS14 分摊流入，直接/系统合理分摊流出 → 进入 FCF</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch03">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
+  <div class="section">
+    <h2><span class="icon">🔗</span>六、知识连接</h2>
+    <div class="link-map">
+      <div class="link-card prereq">
+        <h4>⬆ 前置知识</h4>
+        <a href="ch02.html">第02章 什么是保险合同 <span class="why">——先识别为保险合同，才有分拆问题</span></a>
+        <a href="ch01.html">第01章 主线流程第②步 <span class="why">——"分拆合并"在主线中的位置</span></a>
+      </div>
+      <div class="link-card next">
+        <h4>⬇ 后续哪里会用到</h4>
+        <a href="ch04.html">第04章 分组与确认 <span class="why">——分拆后的保险成分进入组合分组</span></a>
+        <a href="ch06.html">第06章 履约现金流 FCF <span class="why">——不可区分投资成分留在 FCF 中滚动计量</span></a>
+        <a href="ch11.html">第11章 保险收入与费用 <span class="why">——投资成分从收入费用中剔除的列报影响</span></a>
+      </div>
+      <div class="link-card law">
+        <h4>📜 CAS25 原文对照</h4>
+        <a href="cas25.html#a8">第八条 合同合并</a>
+        <a href="cas25.html#a9">第九条 分拆</a>
+        <a href="cas25.html#a10">第十条 合同现金流量分摊</a>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="ch02.html">
+        <span class="nav-label">上一章</span>
+        <div class="nav-title">← 第02章 什么是保险合同</div>
+      </a>
+      <a class="next-ch" href="ch04.html">
+        <span class="nav-label">下一章</span>
+        <div class="nav-title">第04章 分组与确认 →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 第03章 合并与分拆</p>
+    <p style="margin-top:6px">内容依据《企业会计准则第25号——保险合同应用指南2022》编写 · 仅供学习交流</p>
+  </div>
+
+</div>
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <img class="brand-logo" src="assets/xihong-logo.jpg" alt="西红精算 Logo">
+    <div class="brand-copy">
+      <div class="bt">西红精算 · 用数据讲保险，用真心做科普</div>
+      <div class="bs">本知识库由一线在职精算师维护，配套公众号长期连载与知识星球答疑社区。</div>
+      <div class="bl">
+        <a href="about.html">关于西红精算</a>
+        <a href="premium.html">完整版解锁</a>
+        <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球</a>
+      </div>
+    </div>
+    <div class="brand-qrs">
+      <div class="brand-qr">
+        <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码">
+        <div class="qn">公众号</div>
+      </div>
+      <div class="brand-qr zsxq">
+        <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码">
+        <div class="qn">知识星球</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
