@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第09章 合同服务边际 CSM · CAS25 精读</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html"><span class="logo-icon">25</span> CAS25 精读</a>
+  <div class="topnav-links">
+    <a href="index.html">知识地图</a>
+    <a href="ch01.html">入门篇</a>
+    <a href="ch06.html" class="active">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">知识地图</a><span class="separator">›</span><span>进阶篇</span><span class="separator">›</span><strong>第09章 合同服务边际 CSM</strong>
+  </div>
+
+  <div class="page-header">
+    <h1>第09章 · 合同服务边际 CSM（初始确认）</h1>
+    <p class="subtitle">CSM 是 CAS25 最有性格的设计：<strong>首日利得递延、首日亏损立即确认</strong>。本章聚焦初始确认——三项之和公式、零下限规则、IACF 的角色转换，以及"初始负债等于零"这个反直觉的教学点。后续滚动请看第10章。</p>
+    <div class="tag-row">
+      <span class="tag">进阶篇 · 第 4/7 章</span>
+      <span class="tag">预计用时 25 分钟</span>
+      <span class="tag">对应指南：第六章（一）初始计量</span>
+    </div>
+  </div>
+
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>初始计量的"三项之和"是哪三项？为什么 IACF 资产的终止确认要算进来？</li>
+      <li>厚利合同的初始确认时点上，保险合同负债恰好等于零——为什么一个"将要赚钱"的合同，账面负债是零？</li>
+      <li>亏损合同组的初始负债等于什么？CSM 又等于什么？</li>
+    </ol>
+    <p class="hint">提示：把 CSM 理解成"负的负债"——它把首日利得压在负债里，让未来收入变厚、而不是首日利润变厚。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、初始计量：三项之和定乾坤</h2>
+
+    <div class="guide-quote">
+      "企业应当在合同组初始确认时计算下列各项之和：（1）履约现金流量；（2）在该日终止确认保险获取现金流量资产以及其他相关资产或负债对应的现金流量；（3）合同组内合同在该日产生的现金流量。上述各项之和反映为现金净流入的，企业应当将其确认为合同服务边际；反映为现金净流出即合同组在初始确认时发生首日亏损的，企业应当将上述各项之和计入当期损益，即亏损保险合同损益，同时，将该亏损部分增加未到期责任负债账面价值。"
+      <span class="src">——《应用指南2022》第六章（一）初始计量</span>
+    </div>
+
+    <div class="formula">
+      <span class="label">初始确认判断（本站负债口径：流出为正、流入为负）</span>
+      <span class="eq">三项之和 = FCF₀（含RA） + IACF资产终止确认额 + 当日产生的现金流量</span>
+      <span class="eq">&lt; 0（净流入）→ 厚利合同：CSM₀ = −三项之和，首日利润 = 0</span>
+      <span class="eq">≥ 0（净流出）→ 亏损合同：首日亏损 = 三项之和进损益，CSM₀ = 0</span>
+    </div>
+
+    <h3>1.1 为什么 IACF 要参与初始计量</h3>
+    <p>佣金在合同签发前已付、挂在"保险获取现金流量资产"上（第04章）。合同组初始确认时，这份资产<strong>终止确认</strong>、其金额转入合同组计量——相当于"过去的投入折算进这份生意的本钱"。逻辑：卖保单赚不赚钱，要看<strong>全部成本</strong>，佣金不能游离在计量之外。这正是第②项的用意。</p>
+
+    <h3>1.2 亏损合同的初始处理</h3>
+    <ul>
+      <li>亏损金额借记<strong>亏损保险合同损益</strong>（立即进损益）；</li>
+      <li>同时<strong>亏损部分</strong>（loss component）增加未到期责任负债账面价值——它像一块"负 CSM"，未来通过冲抵收入转回（第15章专讲）；</li>
+      <li>此时合同组 CSM = 0，保险合同负债 = 履约现金流量（指南明文）。</li>
+    </ul>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 不对称设计的逻辑</div>
+      首日利得递延（进 CSM）、首日亏损立即确认——这不是会计保守主义拍脑袋，而是<strong>控制理论的推论</strong>：未来服务还没提供，利得不应提前确认（收益实现有赖于履约）；而亏损反映的是现有义务超额，义务已经站在那里，就该立刻认。会计上叫"不对称"，经济上叫"如实反映"。
+    </div>
+
+    <h3>1.3 保费的三种时点归宿</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>情形</th><th>处理</th><th>对应指南表述</th></tr></thead>
+        <tbody>
+          <tr><td>初始确认时或之前收到/应收</td><td>直接进 FCF（作为流入，第06章清单①）</td><td>例21/26：保费 1,800 计入初始计量</td></tr>
+          <tr><td>责任期内收到（既有合同）</td><td>与未来服务相关 → 经验调整 + 估计变更，<strong>调整 CSM</strong></td><td>第六章（二）1（3）①：采用初始折现率计量的保费经验调整</td></tr>
+          <tr><td>未来新合同的保费</td><td>边界外，不进计量</td><td>第六章（一）1（2）：不得确认为保险合同负债</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>第二种是实务重点：期缴保单每期缴费，实际与预期的差额（经验调整）按<strong>初始锁定折现率</strong>折现后调 CSM；预期未来缴费的变更同样调 CSM。保费从此不再是"收入"，而是负债计量的输入。</p>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例21 情形1（指南第六章）：初始负债为什么恰好是零</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>保费 1,800 立即收到，流出现值 1,089，RA 120，折现率 5%。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 三项之和</div>
+          FCF₀ 现值 = 1,089 − 1,800 = −711；加 RA 120 → −591；无 IACF 资产、当日无其他现金流量。<strong>三项之和 = −591（净流入）</strong>。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 确认 CSM</div>
+          CSM₀ = 591。初始保险合同负债 = FCF（−711 + 120 = −591）+ CSM 591 = <strong>0</strong>。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 直觉校准</div>
+          "收了 1,800、欠 1,089 的赔付义务加 120 的风险补偿，净头寸是 +591 的资产"——但会计不让你确认首日资产（那是没挣到的钱），于是放一个 +591 的 CSM 进负债把它压平。负债归零、利润归零、未来收入归 591+：这就是 CSM 的"蓄水池"角色。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 4 步 · 对照分录（指南原文）</div>
+          借：未到期责任负债——未来现金流量现值 711<br>
+          　贷：未到期责任负债——非金融风险调整 120<br>
+          　　　未到期责任负债——合同服务边际 591<br>
+          <span style="color:var(--text-muted)">（同一科目的三个明细对转，净额为零；收到保费后再贷记现值 1,800，负债转为 1,089+120+591 = 1,800）</span>
+        </div>
+      </div>
+    </details>
+
+    <details class="fold example-fold">
+      <summary>📖 例21 情形2 + IACF 延伸：亏损确认与佣金结转（本站组合演算）</summary>
+      <div class="fold-body">
+        <p><strong>Part A · 情形2（官方）：</strong>每年流出 800，流出现值 2,179。三项之和 = 2,179 − 1,800 + 120 = <strong>+499（净流出）</strong> → 亏损合同。</p>
+        <div class="fold-step">
+          <div class="step-label">亏损的账务（指南原文）</div>
+          借：亏损保险合同损益 499　贷：未到期责任负债 499<br>
+          初始负债 = 履约现金流量 499（= 2,179 + 120 − 1,800），CSM = 0，亏损部分 499 挂账待冲抵。
+        </div>
+
+        <p><strong>Part B · IACF 延伸（本站依指南方法编制）：</strong>设签发前已付佣金 100（挂 IACF 资产），其余同情形1。三项之和 = −591 + 100 = −491 → CSM₀ = 491。分录：借：未到期责任负债——现值 711、IACF资产相关处理贷方 100；贷：RA 120、CSM 491（净额仍为零）。<strong>佣金把未来利润削掉 100</strong>——本钱计量的完整性，就在这 100 里。</p>
+
+        <div class="callout callout-info">
+          <div class="callout-title">💡 与第04章例19 的分工</div>
+          例19 讲 IACF 的<strong>生</strong>（发生、分摊、减值），本章讲它的<strong>灭</strong>（终止确认进组）。一个资产的一生，恰在初始确认时点完成角色转换：从"预付款"变成"利润的减项"。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch09">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">1</span>初始确认的"三项之和"不包括？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>履约现金流量（含 RA）</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>未来新合同组的预期保费</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>终止确认 IACF 资产对应的现金流量</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>合同组内合同在初始确认当日的现金流量</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。未来新合同在边界外，不属于任何现有组的初始计量；A、C、D 正是三项之和的构成。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">2</span>厚利合同组初始确认时，保险合同负债等于？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>零（FCF 与 CSM 恰好对冲）</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>履约现金流量</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>CSM</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>首日利得</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。负债 = FCF（−591）+ CSM（591）= 0。B 是亏损合同的特征；首日利得永不上表。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">3</span>责任期内收到的既有合同期缴保费，应？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>立即确认为保险服务收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>计入当期损益的其他收益</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>按初始锁定折现率计量的经验调整，调整 CSM</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>直接增加留存收益</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。与未来服务相关的保费经验调整按初始折现率折现后调 CSM（指南第六章（二）1（3）①）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>亏损合同组的初始确认，正确的说法是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>亏损进 CSM，随服务递延确认</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>亏损递延到期末确认</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>初始负债等于零</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>亏损立即进损益，亏损部分增加负债账面价值，CSM 为零</span></div>
+      </div>
+      <div class="quiz-explain">D 正确。A 恰好说反（利得递延、亏损立即）；C 是厚利合同的特征；亏损合同初始负债 = 履约现金流量。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">5</span>首日利得递延、首日亏损立即确认的"不对称"，其内在逻辑是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>为了避免企业操纵利润的制度设计，无经济含义</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>利得实现依赖未来履约而应递延；亏损反映现有义务超额应立即如实反映</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>与国际准则不一致的中国特色</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>仅为简化实务操作</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。CAS25 与 IFRS17 在此完全趋同：控制理论下，未履约的服务带来的是"未挣"的利得；而义务超出现有经济利益的部分，在初始确认时点已是事实。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
+    </div>
+  </div>
+
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>三项之和</strong></td><td>FCF（含RA）+ 终止确认 IACF 等资产/负债 + 当日产生的现金流量</td></tr>
+          <tr><td><strong>符号判断</strong></td><td>净流入 → CSM（首日利润 0）；净流出 → 亏损立即进损益（CSM = 0）</td></tr>
+          <tr><td><strong>厚利合同初始</strong></td><td>负债 = 0；收到保费后负债 = 流出现值 + RA + CSM</td></tr>
+          <tr><td><strong>亏损合同初始</strong></td><td>负债 = 履约现金流量；亏损部分增加负债、未来冲抵收入</td></tr>
+          <tr><td><strong>IACF 结转</strong></td><td>初始确认时终止确认，金额进组计量（削薄 CSM）</td></tr>
+          <tr><td><strong>保费三时点</strong></td><td>初始→进 FCF；期内→经验调整调 CSM；未来新单→边界外不计量</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch09">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
+  <div class="section">
+    <h2><span class="icon">🔗</span>五、知识连接</h2>
+    <div class="link-map">
+      <div class="link-card prereq">
+        <h4>⬆ 前置知识</h4>
+        <a href="ch06.html">第06章 履约现金流 FCF <span class="why">——三项之和的主体</span></a>
+        <a href="ch07.html">第07章 折现率 <span class="why">——锁定利率从此跟随合同组终身</span></a>
+        <a href="ch08.html">第08章 非金融风险调整 RA <span class="why">——FCF 的第三块，先加 RA 再判符号</span></a>
+        <a href="ch04.html">第04章 分组与确认 <span class="why">——IACF 资产从哪来、何时灭</span></a>
+      </div>
+      <div class="link-card next">
+        <h4>⬇ 后续哪里会用到</h4>
+        <a href="ch10.html">第10章 后续计量全景 <span class="why">——CSM 的五大调整与摊销</span></a>
+        <a href="ch11.html">第11章 保险收入与费用 <span class="why">——CSM 摊销是收入的三大组成之一</span></a>
+        <a href="ch13.html">第13章 VFA 浮动收费法 <span class="why">——VFA 下 CSM 还要吸收基础项目份额变动</span></a>
+        <a href="ch15.html">第15章 亏损部分 <span class="why">——亏损合同的"负 CSM"机制</span></a>
+      </div>
+      <div class="link-card law">
+        <h4>📜 CAS25 原文对照</h4>
+        <a href="cas25.html#a27">第二十七条 首日损益</a>
+        <a href="cas25.html#a29">第二十九条 CSM 五调整</a>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="ch08.html">
+        <span class="nav-label">上一章</span>
+        <div class="nav-title">← 第08章 非金融风险调整 RA</div>
+      </a>
+      <a class="next-ch" href="ch10.html">
+        <span class="nav-label">下一章 · 全站核心章</span>
+        <div class="nav-title">第10章 后续计量全景 →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 第09章 合同服务边际 CSM</p>
+    <p style="margin-top:6px">内容依据《企业会计准则第25号——保险合同应用指南2022》编写 · 仅供学习交流</p>
+  </div>
+
+</div>
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <img class="brand-logo" src="assets/xihong-logo.jpg" alt="西红精算 Logo">
+    <div class="brand-copy">
+      <div class="bt">西红精算 · 用数据讲保险，用真心做科普</div>
+      <div class="bs">本知识库由一线在职精算师维护，配套公众号长期连载与知识星球答疑社区。</div>
+      <div class="bl">
+        <a href="about.html">关于西红精算</a>
+        <a href="premium.html">完整版解锁</a>
+        <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球</a>
+      </div>
+    </div>
+    <div class="brand-qrs">
+      <div class="brand-qr">
+        <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码">
+        <div class="qn">公众号</div>
+      </div>
+      <div class="brand-qr zsxq">
+        <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码">
+        <div class="qn">知识星球</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
