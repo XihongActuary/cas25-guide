@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAS25 精读 · 企业会计准则第25号——保险合同 学习知识库</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html">
+    <span class="logo-icon">25</span> CAS25 精读
+  </a>
+  <div class="topnav-links">
+    <a href="index.html" class="active">知识地图</a>
+    <a href="ch01.html">入门篇</a>
+    <a href="ch06.html">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="page-header">
+    <h1>CAS25 精读 · 保险合同准则学习知识库</h1>
+    <p class="subtitle">以《企业会计准则第25号——保险合同应用指南2022》（财政部会计司编写组编著）为核心读本，三阶学习路径：懂框架 → 懂计量 → 懂特例。每章开篇设问、例题分步演算、自测即时判分，前后知识点全程连接。</p>
+    <div class="tag-row">
+      <span class="tag">核心读本：应用指南2022版</span>
+      <span class="tag">官方例题 例1–例30 全索引</span>
+      <span class="tag">问题驱动 · 由浅入深</span>
+      <span class="tag">学习仪表盘</span>
+    </div>
+  </div>
+
+  <!-- 学习仪表盘 -->
+  <div class="dashboard" id="dashboard">
+    <h3>📊 我的学习仪表盘</h3>
+    <div class="progress-bar"><div class="fill" id="dash-fill" style="width:0%"></div></div>
+    <p style="text-align:right;font-size:13px;color:var(--text-muted)">总进度 <strong id="dash-pct">0%</strong></p>
+    <div class="stats-row">
+      <div class="stat"><div class="num" id="stat-read">0</div><div class="label">已读章节</div></div>
+      <div class="stat"><div class="num" id="stat-total">20</div><div class="label">章节总数</div></div>
+      <div class="stat"><div class="num" id="stat-quiz">0</div><div class="label">已完成自测</div></div>
+      <div class="stat"><div class="num" id="stat-avg">—</div><div class="label">自测平均分</div></div>
+    </div>
+    <div class="wrong-list" id="dash-wrong"><span style="color:var(--text-muted)">暂无错题记录，完成章节自测后自动汇总到这里。</span></div>
+    <button class="btn-reset" id="dash-reset">清空学习记录</button>
+    <p style="font-size:11.5px;color:var(--text-muted);margin-top:8px">进度数据仅保存在本机浏览器（localStorage），不上传任何服务器。</p>
+  </div>
+
+  <!-- ============ 入门篇 ============ -->
+  <div class="level-section">
+    <div class="level-title">
+      <span class="lv-badge lv1">入门篇 · 懂框架</span>
+      <h2>先看懂整张地图</h2>
+      <span class="lv-desc">不带公式上路，只解决"是什么、改了什么、往哪走"</span>
+    </div>
+    <div class="chapter-list">
+      <a class="chapter-item" href="ch01.html" data-ch="ch01">
+        <span class="ch-num">01</span>
+        <span class="ch-info">
+          <span class="ch-title">一张图看懂 CAS25</span>
+          <span class="ch-sub">主线流程 · 四大变化 · 三大模型</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item" href="ch02.html" data-ch="ch02">
+        <span class="ch-num">02</span>
+        <span class="ch-info">
+          <span class="ch-title">什么是保险合同</span>
+          <span class="ch-sub">适用范围 · 重大保险风险测试</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item" href="ch03.html" data-ch="ch03">
+        <span class="ch-num">03</span>
+        <span class="ch-info">
+          <span class="ch-title">合并与分拆</span>
+          <span class="ch-sub">嵌入衍生工具 · 投资成分 · 服务承诺</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item" href="ch04.html" data-ch="ch04">
+        <span class="ch-num">04</span>
+        <span class="ch-info">
+          <span class="ch-title">分组与确认</span>
+          <span class="ch-sub">组合 → 组 → 三时点确认 · 获取现金流</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item" href="ch05.html" data-ch="ch05">
+        <span class="ch-num">05</span>
+        <span class="ch-info">
+          <span class="ch-title">十三个会计科目总览</span>
+          <span class="ch-sub">科目地图 · 借贷方向一览</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============ 进阶篇 ============ -->
+  <div class="level-section">
+    <div class="level-title">
+      <span class="lv-badge lv2">进阶篇 · 懂计量</span>
+      <h2>通用模型四要素逐个击破</h2>
+      <span class="lv-desc">履约现金流 → 折现率 → 风险调整 → 合同服务边际，配滚动机制与账务处理</span>
+    </div>
+    <div class="chapter-list">
+      <a class="chapter-item" href="ch06.html" data-ch="ch06">
+        <span class="ch-num">06</span>
+        <span class="ch-info">
+          <span class="ch-title">履约现金流 FCF</span>
+          <span class="ch-sub">15项应含 · 8项不含 · 合同边界</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item" href="ch07.html" data-ch="ch07">
+        <span class="ch-num">07</span>
+        <span class="ch-info">
+          <span class="ch-title">折现率</span>
+          <span class="ch-sub">自上而下 vs 自下而上 · 首日锁定</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item" href="ch08.html" data-ch="ch08">
+        <span class="ch-num">08</span>
+        <span class="ch-info">
+          <span class="ch-title">非金融风险调整 RA</span>
+          <span class="ch-sub">五特征 · 单独估计 · 不含操作风险</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item" href="ch09.html" data-ch="ch09">
+        <span class="ch-num">09</span>
+        <span class="ch-info">
+          <span class="ch-title">合同服务边际 CSM</span>
+          <span class="ch-sub">首日确认 · 滚动吸收 · 摊销</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item" href="ch10.html" data-ch="ch10">
+        <span class="ch-num">10</span>
+        <span class="ch-info">
+          <span class="ch-title">后续计量全景</span>
+          <span class="ch-sub">未到期责任负债滚动表 · 经验调整</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item" href="ch11.html" data-ch="ch11">
+        <span class="ch-num">11</span>
+        <span class="ch-info">
+          <span class="ch-title">保险收入与费用</span>
+          <span class="ch-sub">服务收入组成 · 投资成分剔除</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item" href="ch12.html" data-ch="ch12">
+        <span class="ch-num">12</span>
+        <span class="ch-info">
+          <span class="ch-title">OCI 与保险合同金融变动额</span>
+          <span class="ch-sub">三种分解方法 · 利源拆解</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============ 实战篇 ============ -->
+  <div class="level-section">
+    <div class="level-title">
+      <span class="lv-badge lv3">实战篇 · 懂特例</span>
+      <h2>特殊模型与全流程落地</h2>
+      <span class="lv-desc">VFA · 亏损 · PAA · 再保 · OCI · 列报披露 · 新旧衔接 · <strong style="color:#6b4fa0">🔒 完整版（星球口令解锁）</strong></span>
+    </div>
+    <div class="chapter-list">
+      <a class="chapter-item locked" href="ch13.html" data-ch="ch13">
+        <span class="ch-num">13</span>
+        <span class="ch-info">
+          <span class="ch-title">VFA 浮动收费法</span>
+          <span class="ch-sub">🔒 完整版 · 直接参与分红 · CSM 吸收市值变动</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item locked" href="ch14.html" data-ch="ch14">
+        <span class="ch-num">14</span>
+        <span class="ch-info">
+          <span class="ch-title">间接分红产品</span>
+          <span class="ch-sub">🔒 完整版 · 不满足 VFA 的分红险 · 相机抉择</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item locked" href="ch15.html" data-ch="ch15">
+        <span class="ch-num">15</span>
+        <span class="ch-info">
+          <span class="ch-title">亏损部分 Loss Component</span>
+          <span class="ch-sub">🔒 完整版 · 立即确认 · 冲抵未来收入</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item locked" href="ch16.html" data-ch="ch16">
+        <span class="ch-num">16</span>
+        <span class="ch-info">
+          <span class="ch-title">PAA 保费分摊法</span>
+          <span class="ch-sub">🔒 完整版 · 一年期简化 · 收入确认节奏</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item locked" href="ch17.html" data-ch="ch17">
+        <span class="ch-num">17</span>
+        <span class="ch-info">
+          <span class="ch-title">再保险合同</span>
+          <span class="ch-sub">🔒 完整版 · 分出 · 分入 · 亏损摊回</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item locked" href="ch18.html" data-ch="ch18">
+        <span class="ch-num">18</span>
+        <span class="ch-info">
+          <span class="ch-title">列报</span>
+          <span class="ch-sub">🔒 完整版 · 资产负债表 · 利润表结构重塑</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item locked" href="ch19.html" data-ch="ch19">
+        <span class="ch-num">19</span>
+        <span class="ch-info">
+          <span class="ch-title">披露</span>
+          <span class="ch-sub">🔒 完整版 · 金额 · 判断 · 风险三层信息</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+      <a class="chapter-item locked" href="ch20.html" data-ch="ch20">
+        <span class="ch-num">20</span>
+        <span class="ch-info">
+          <span class="ch-title">新旧衔接与过渡期</span>
+          <span class="ch-sub">🔒 完整版 · 全面追溯 · 修正追溯 · 公允价值法</span>
+        </span>
+        <span class="ch-state todo">未读</span>
+      </a>
+    </div>
+  </div>
+
+  <a class="unlock-cta" href="premium.html">
+    <span>
+      <span class="uc-t">🔓 解锁实战篇完整版（第13–20章）</span>
+      <span class="uc-d">8 章特例精讲 + 官方例题完整演算 + 例A–例H 专属演算 · 阅读口令见知识星球置顶帖</span>
+    </span>
+    <span class="uc-arrow">了解解锁方式 →</span>
+  </a>
+
+  <div class="section">
+    <h2><span class="icon">🧭</span>怎么用这套知识库</h2>
+    <div class="two-col">
+      <div>
+        <h3>每章固定六段式</h3>
+        <ol>
+          <li><strong>开篇三问</strong>——先看问题，带着问题读，读完回来检验能否作答；</li>
+          <li><strong>概念精讲</strong>——穿插《应用指南》原文引用（黄底引文框，标章节出处）；</li>
+          <li><strong>例题精解</strong>——官方例题分步折叠演算，先自己动笔，再逐步展开核对；</li>
+          <li><strong>实战自测</strong>——3~5题即时判分，错题自动进仪表盘错题本；</li>
+          <li><strong>一表小结</strong>——章末浓缩成一张表，适合复习时快速回顾；</li>
+          <li><strong>知识连接</strong>——标明前置章节与后续应用，知识不是孤岛。</li>
+        </ol>
+      </div>
+      <div>
+        <h3>三条使用建议</h3>
+        <ul>
+          <li><strong>按序读</strong>：三篇递进设计，跳章会缺前置概念（每章连接卡会提醒）；</li>
+          <li><strong>先答后看</strong>：例题和自测都建议先给出自己的答案再展开，错题比做对更有价值；</li>
+          <li><strong>常回仪表盘</strong>：错题清单是最好的复习索引，考前重点扫错题本。</li>
+        </ul>
+        <div class="callout callout-info">
+          <div class="callout-title">关于引用</div>
+          本库核心内容依据《企业会计准则第25号——保险合同应用指南2022》（财政部会计司编写组编著，中国财政经济出版社，2022年10月）编写，属公开出版物；引用处均标注原书章节。观点性讲解与讲解框架为本库独立撰写。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brand-section">
+    <h2><span class="icon">🌱</span>关于西红精算</h2>
+    <div class="brand-flex">
+      <div class="bcol-main">
+        <p><strong>西红精算</strong>——用数据讲保险，用真心做科普。由一线在职精算师主理，把条款背后的逻辑、模型背后的判断、报表背后的取舍，翻译成结构清晰、可复用的参考资料。本站 CAS25 精读知识库即出自其「知识分享」主线。</p>
+        <p style="margin-top:10px;font-size:13.5px;color:var(--text-muted)">公众号是广播，知识星球是客厅：前者每周 1–2 篇成稿连载，后者承载草稿讨论、代码片段、报错追问与本库阅读口令。系列知识库（IFRS17 · F3 寿险评估 · 科目八 ALM · 科目六财务管理 · C-ROSS 偿付能力）共享同一星球会员。</p>
+        <div class="bl" style="margin-top:12px;font-size:13.5px;display:flex;gap:18px;flex-wrap:wrap">
+          <a href="about.html" style="color:var(--primary-light)">品牌与系列知识库 →</a>
+          <a href="premium.html" style="color:var(--primary-light)">完整版解锁 →</a>
+          <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener" style="color:#b53d2e;font-weight:600">知识星球 · t.zsxq.com/kkpnw</a>
+        </div>
+      </div>
+      <div class="bcol-side">
+        <div class="planet-card">
+          <div class="pc-t">🪐 西红精算 · 知识星球</div>
+          <div class="pc-d">解锁本库实战篇完整版，同步解锁系列全部知识库；附精算备考与实务答疑社区。口令在星球<strong>置顶帖</strong>公布。</div>
+          <a class="pc-link" href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">扫码 / 点击加入星球 →</a>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:14px;justify-content:center">
+          <div class="brand-qr" style="text-align:center">
+            <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码" style="width:78px;height:78px;border-radius:6px;border:1px solid var(--border-light)">
+            <div style="font-size:11.5px;color:var(--text-muted);margin-top:4px">公众号</div>
+          </div>
+          <div class="brand-qr zsxq" style="text-align:center">
+            <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码" style="width:78px;height:78px;border-radius:6px;border:1px solid var(--border-light);outline:2px solid rgba(181,61,46,.25);outline-offset:2px">
+            <div style="font-size:11.5px;color:var(--text-muted);margin-top:4px">知识星球</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 保险合同准则学习知识库 · 内容依据《企业会计准则第25号——保险合同应用指南2022》编写</p>
+    <p style="margin-top:6px">仅供学习交流使用 · 学习进度仅存于本机浏览器</p>
+  </div>
+
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
