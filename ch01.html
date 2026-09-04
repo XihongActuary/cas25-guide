@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第01章 一张图看懂 CAS25 · CAS25 精读</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html">
+    <span class="logo-icon">25</span> CAS25 精读
+  </a>
+  <div class="topnav-links">
+    <a href="index.html">知识地图</a>
+    <a href="ch01.html" class="active">入门篇</a>
+    <a href="ch06.html">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">知识地图</a>
+    <span class="separator">›</span>
+    <span>入门篇</span>
+    <span class="separator">›</span>
+    <strong>第01章 一张图看懂 CAS25</strong>
+  </div>
+
+  <div class="page-header">
+    <h1>第01章 · 一张图看懂 CAS25</h1>
+    <p class="subtitle">不带公式上路：先看懂新准则改变了什么、保险合同会计的主线流程怎么走、三大计量模型分别管哪类业务。读完本章，你应该能在 3 分钟内向同事讲清楚 CAS25 的骨架。</p>
+    <div class="tag-row">
+      <span class="tag">入门篇 · 第 1/5 章</span>
+      <span class="tag">预计用时 25 分钟</span>
+      <span class="tag">对应指南：总体要求（第一章）</span>
+    </div>
+  </div>
+
+  <!-- ① 开篇三问 -->
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>CAS25 相比旧准则，<strong>到底改变了什么</strong>？（至少说出四件事）</li>
+      <li>保险合同负债由哪几块构成？为什么旧准则的"准备金"要拆成这几块？</li>
+      <li>同样是卖保险，为什么有的合同用 BBA、有的用 VFA、有的用 PAA？判断的依据是什么？</li>
+    </ol>
+    <p class="hint">建议：先凭现有认知写下答案（哪怕只是直觉），读完本章再对照修正——错得越具体，学得越牢。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、CAS25 是什么，为什么要有它</h2>
+    <p>《企业会计准则第25号——保险合同》（CAS25）规范保险合同的<strong>确认、计量和列报</strong>，与国际会计准则理事会（IASB）的 IFRS17 全面趋同。财政部 2020 年修订发布，境内上市保险公司自 2023 年起执行。</p>
+    <p>一句话理解改革的动因：<span class="hl">旧准则下"保费收入"既包含保障、又包含储蓄投资，利润确认节奏与业务实质脱节，不同公司、不同市场之间不可比</span>。CAS25 把"保险的归保险、投资的归投资"，让利润表第一次讲清楚了保险公司到底靠什么赚钱。</p>
+
+    <div class="guide-quote">
+      "本准则要求对保险合同进行分组，并将合同组作为计量单元……保险合同负债的计量应当包含以下组成要素：一是履约现金流量，包括与履行保险合同直接相关的未来现金流量的估计、货币时间价值及金融风险调整、非金融风险调整；二是合同服务边际，即企业因在未来提供保险合同服务而将于未来确认的未赚利润。"
+      <span class="src">——《应用指南2022》第一章 总体要求</span>
+    </div>
+
+    <h3>1.1 四大变化：新旧准则一张对比表</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>维度</th><th>旧准则</th><th>CAS25（新准则）</th><th>变化本质</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>负债构成</strong></td>
+            <td>未到期责任准备金 + 未决赔款准备金等，口径由准备金评估惯例主导</td>
+            <td>履约现金流（未来现金流现值 + 非金融风险调整）+ 合同服务边际</td>
+            <td class="hl">首日利得不再进利润，未赚利润(CSM)随服务释放</td>
+          </tr>
+          <tr>
+            <td><strong>收入列报</strong></td>
+            <td>保费收入（含投资成分）</td>
+            <td>保险服务收入（扣除投资成分，反映服务对价）</td>
+            <td class="hl">投资成分从收入中剔除，规模保费≠收入</td>
+          </tr>
+          <tr>
+            <td><strong>亏损确认</strong></td>
+            <td>准备金不足时通过计提补足，确认相对滞后</td>
+            <td>亏损合同立即确认亏损，后续通过"亏损部分"冲抵未来收入</td>
+            <td class="hl">会计亏损立即确认原则</td>
+          </tr>
+          <tr>
+            <td><strong>披露</strong></td>
+            <td>相对原则性</td>
+            <td>金额、判断、风险三层详细披露要求</td>
+            <td class="hl">可比性与透明度大幅提高</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 记忆锚点</div>
+      四大变化可以压缩成一句：<strong>"负债拆细、收入挤水、亏损快认、披露加码"</strong>。
+    </div>
+
+    <h3>1.2 主线流程：保险合同的一生</h3>
+    <p>无论产品多复杂，CAS25 下所有保险合同都走同一条主线。把这张图刻进脑子，后面十九章都是对其中某个环节的放大：</p>
+
+    <div class="diagram-box">
+      <svg viewBox="0 0 920 150" xmlns="http://www.w3.org/2000/svg" style="min-width:820px">
+        <defs>
+          <marker id="arw" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#0d3b66"/>
+          </marker>
+        </defs>
+        <!-- 步骤框 -->
+        <g font-size="13" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+          <rect x="10" y="30" width="105" height="56" rx="8" fill="#2d8659"/>
+          <text x="62" y="53" fill="#fff" text-anchor="middle" font-weight="700">①识别</text>
+          <text x="62" y="72" fill="#d9f2e3" text-anchor="middle" font-size="11">是不是保险合同?</text>
+
+          <rect x="155" y="30" width="105" height="56" rx="8" fill="#2d8659"/>
+          <text x="207" y="53" fill="#fff" text-anchor="middle" font-weight="700">②分拆合并</text>
+          <text x="207" y="72" fill="#d9f2e3" text-anchor="middle" font-size="11">投资/衍生成分剥离</text>
+
+          <rect x="300" y="30" width="105" height="56" rx="8" fill="#0d3b66"/>
+          <text x="352" y="53" fill="#fff" text-anchor="middle" font-weight="700">③分组</text>
+          <text x="352" y="72" fill="#cfe4f5" text-anchor="middle" font-size="11">组合→组(计量单元)</text>
+
+          <rect x="445" y="30" width="105" height="56" rx="8" fill="#0d3b66"/>
+          <text x="497" y="53" fill="#fff" text-anchor="middle" font-weight="700">④初始计量</text>
+          <text x="497" y="72" fill="#cfe4f5" text-anchor="middle" font-size="11">FCF+RA→CSM/亏损</text>
+
+          <rect x="590" y="30" width="105" height="56" rx="8" fill="#c05621"/>
+          <text x="642" y="53" fill="#fff" text-anchor="middle" font-weight="700">⑤后续计量</text>
+          <text x="642" y="72" fill="#fdebd7" text-anchor="middle" font-size="11">滚动·吸收·摊销</text>
+
+          <rect x="735" y="30" width="105" height="56" rx="8" fill="#c05621"/>
+          <text x="787" y="53" fill="#fff" text-anchor="middle" font-weight="700">⑥列报披露</text>
+          <text x="787" y="72" fill="#fdebd7" text-anchor="middle" font-size="11">新利润表+披露</text>
+
+          <!-- 箭头 -->
+          <line x1="115" y1="58" x2="150" y2="58" stroke="#0d3b66" stroke-width="2" marker-end="url(#arw)"/>
+          <line x1="260" y1="58" x2="295" y2="58" stroke="#0d3b66" stroke-width="2" marker-end="url(#arw)"/>
+          <line x1="405" y1="58" x2="440" y2="58" stroke="#0d3b66" stroke-width="2" marker-end="url(#arw)"/>
+          <line x1="550" y1="58" x2="585" y2="58" stroke="#0d3b66" stroke-width="2" marker-end="url(#arw)"/>
+          <line x1="695" y1="58" x2="730" y2="58" stroke="#0d3b66" stroke-width="2" marker-end="url(#arw)"/>
+
+          <text x="460" y="120" fill="#718096" font-size="11.5">绿色=入门篇范围　蓝色=进阶篇主战场　橙色=实战篇与全流程落地</text>
+        </g>
+      </svg>
+    </div>
+
+    <h3>1.3 三大计量模型：一张表选对模型</h3>
+    <p>走完主线 ①②③ 之后，到了计量环节，合同会被分流到三个模型之一。选模型的顺序是<strong>先看特殊性（VFA），再看简化条件（PAA），剩下的走默认（BBA）</strong>：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>模型</th><th>全称</th><th>管哪类合同</th><th>核心特征</th><th>对应章</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>BBA</strong></td>
+            <td>一般模型（Building Block Approach）</td>
+            <td>所有保险合同的<strong>默认模型</strong></td>
+            <td>履约现金流四要素逐块计量，首日利得进 CSM 递延</td>
+            <td><a href="ch06.html">06–12章</a></td>
+          </tr>
+          <tr>
+            <td><strong>VFA</strong></td>
+            <td>浮动收费法（Variable Fee Approach）</td>
+            <td>具有<strong>直接参与分红特征</strong>的合同（清晰可辨认的基础项目+相当大部分回报分享）</td>
+            <td>CSM 吸收基础项目市值变动，企业与客户"共担涨跌"</td>
+            <td><a href="ch13.html">13章</a></td>
+          </tr>
+          <tr>
+            <td><strong>PAA</strong></td>
+            <td>保费分摊法（Premium Allocation Approach）</td>
+            <td>责任期<strong>不超过一年</strong>（或满足条件选择适用）的合同</td>
+            <td>近似按保费收入节奏确认，简化处理</td>
+            <td><a href="ch16.html">16章</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-warning">
+      <div class="callout-title">⚠️ 常见误区</div>
+      模型选择不是"挑一个最有利的"，而是<strong>由合同特征客观决定</strong>：VFA 要在合同开始日逐条检验三条件（详见第13章），PAA 要满足责任期等条件（详见第16章）。不满足就回到 BBA——所以先把 BBA 学扎实，是一切的地基。
+    </div>
+
+    <h3>1.4 负债公式初见面</h3>
+    <div class="formula">
+      <span class="label">保险合同负债（BBA 初始计量）</span>
+      <span class="eq">保险合同负债 = 履约现金流量（FCF） + 合同服务边际（CSM）</span>
+      <span class="label" style="margin-top:8px">其中</span>
+      <span class="eq">FCF = 未来现金流现值（折现） + 非金融风险调整（RA）</span>
+    </div>
+    <p>注意本站统一采用<strong>负债口径</strong>：<span class="hl">流出为正、流入为负</span>。对签发人（保险公司）而言，保费是流入（记负）、赔付和费用是流出（记正）。这套符号约定贯穿全站所有例题，第06章会专门解释为什么用它。</p>
+    <p>而 CSM 有一个"零下限"规则：</p>
+    <div class="formula">
+      <span class="label">首日判断（厚利 or 亏损）</span>
+      <span class="eq">FCF₀ + RA₀ &lt; 0 → 厚利合同 → CSM₀ = −(FCF₀ + RA₀) &gt; 0</span>
+      <span class="eq">FCF₀ + RA₀ ≥ 0 → 亏损合同 → 首日亏损立即进损益，CSM₀ = 0</span>
+    </div>
+    <p>首日亏损立即确认、首日利得递延——这个"不对称"是 CAS25 最有性格的设计，第09章会拆解它的逻辑。</p>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解：首日是赚是亏？</h2>
+    <p>下面是《应用指南》例21的完整演算——它只用加减乘除，却是全书后续一切复杂计算的原型：<strong>先算 FCF，加上 RA，判断符号，得到 CSM 或亏损</strong>。请先自己动笔算，再逐步展开核对。</p>
+
+    <details class="fold example-fold">
+      <summary>📖 例21（指南第六章）：100份三年期合同，两种赔付预期的初始计量</summary>
+      <div class="fold-body">
+        <p><strong>题面：</strong>甲公司签发100份责任期为3年的保险合同（构成一个合同组），初始确认后立即收到保费1,800元。市场上反映该现金流量特征的折现率为5%，初始确认时非金融风险调整（RA）为120元。</p>
+        <ul>
+          <li><strong>情形1</strong>：预计每年末现金流出400元（三年合计1,200元）；</li>
+          <li><strong>情形2</strong>：预计每年末现金流出800元（三年合计2,400元）。</li>
+        </ul>
+        <p>问：两种情形下，初始确认时分别确认 CSM 还是亏损？金额是多少？</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 先自己判断</div>
+          情形1收到的保费（1,800）比未来赔付现值大还是小？情形2呢？——先写下你的直觉答案再继续。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 折现未来现金流（负债口径：流出为正、流入为负）</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>项目</th><th>情形1</th><th>情形2</th></tr></thead>
+              <tbody>
+                <tr><td>每年现金流出 × 折现因子合计</td>
+                  <td class="num">400×(0.9524+0.9070+0.8638) = 1,089</td>
+                  <td class="num">800×(0.9524+0.9070+0.8638) = 2,179</td></tr>
+                <tr><td>保费现金流入（记负）</td><td class="num">−1,800</td><td class="num">−1,800</td></tr>
+                <tr class="total-row"><td>FCF₀（未含 RA）</td><td class="num">−711</td><td class="num">+379</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 加上非金融风险调整</div>
+          情形1：FCF₀ + RA₀ = −711 + 120 = <strong>−591</strong>；情形2：FCF₀ + RA₀ = 379 + 120 = <strong>+499</strong>。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 4 步 · 判断符号，得出结论</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>判断</th><th>情形1</th><th>情形2</th></tr></thead>
+              <tbody>
+                <tr><td>FCF₀ + RA₀ 符号</td><td class="num">−591（净流入）</td><td class="num">+499（净流出）</td></tr>
+                <tr><td>合同性质</td><td class="hl-green">厚利合同</td><td class="hl-red">亏损合同</td></tr>
+                <tr><td>CSM₀</td><td class="num">591</td><td class="num">0</td></tr>
+                <tr><td>首日损益</td><td class="num">0（利得递延进CSM）</td><td class="num">亏损 499，立即进损益</td></tr>
+                <tr class="total-row"><td>初始确认时保险合同负债</td><td class="num">591</td><td class="num">499</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 5 步 · 对照账务处理（指南原文分录）</div>
+          <p>情形1（厚利）：借：未到期责任负债——未来现金流量现值 711；贷：未到期责任负债——非金融风险调整 120，未到期责任负债——合同服务边际 591。</p>
+          <p>情形2（亏损）：借：亏损保险合同损益 499；贷：未到期责任负债 499。</p>
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-title">💡 这道题的"原型价值"</div>
+          全书所有复杂例题——VFA、再保、OCI 分解——追到根上都是这五步：折现 → 加 RA → 判符号 → 定 CSM/亏损 → 写分录。做对了这一题，后面的例题只是在这五步上叠加变化。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch01">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+    <p style="font-size:13.5px;color:var(--text-muted)">点击选项即时判分，错题自动进入首页仪表盘错题本。</p>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">1</span>CAS25 下保险合同负债由哪两部分构成？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>未到期责任准备金 + 未决赔款准备金</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>履约现金流量 + 合同服务边际</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>预期保费收入 + 预期赔付支出</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>法定准备金 + 偿付能力资本</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。A 是旧准则口径；C 是现金流要素而非负债构成；D 混淆了会计计量与偿付能力监管。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">2</span>新准则利润表中，"保费收入"发生了什么变化？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>口径不变，只是科目改名</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>全部保费不再确认为收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>确认为保险服务收入，且剔除投资成分，反映服务对价</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>规模保费直接列示为收入</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。CAS25 仅列报与保险服务相关的收入，投资成分不确认为收入——这是"收入挤水"的核心。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">3</span>某合同组初始计量：FCF₀ = −200，RA₀ = 50。应确认？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>CSM = 150</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>亏损 150 立即进损益</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>CSM = 250</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>CSM = 200</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。FCF₀+RA₀ = −150 &lt; 0，为厚利合同，CSM₀ = −(−150) = 150。（对照例21情形1的算法。）</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">4</span>三大模型的适用判断顺序，正确的是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>先检验是否满足 VFA 三条件，再看 PAA 简化条件，都不满足走 BBA</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>自由选择对公司最有利的模型</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>所有分红险一律用 VFA</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>先看 PAA，因为最简单</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。模型由合同特征客观决定：VFA 是"特殊通道"，PAA 是"简化通道"，BBA 是默认。C 错在间接分红产品恰恰走 BBA（详见第14章）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">5</span>关于 CSM 的"零下限"规则，下列说法正确的是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>CSM 可以为负，反映预期亏损</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>CSM 为负时自动清零，亏损递延到以后期间</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>CSM 不得为负，首日亏损立即进损益，但亏损转回后可继续计提 CSM</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>亏损合同组的 CSM 等于亏损金额</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。"不得为负 + 损失冲抵后可恢复"是 CSM 的标志性规则（指南总体要求及第六章），首日亏损不进 CSM 而是立即确认——亏损立即确认、利得递延的不对称设计。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
+    </div>
+  </div>
+
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>准则定位</strong></td><td>规范保险合同的确认、计量、列报，与 IFRS17 趋同，2023 年起执行</td></tr>
+          <tr><td><strong>四大变化</strong></td><td>负债拆细（FCF+RA+CSM）、收入挤水（剔除投资成分）、亏损快认（立即确认）、披露加码</td></tr>
+          <tr><td><strong>主线流程</strong></td><td>识别 → 分拆合并 → 分组 → 初始计量 → 后续计量 → 列报披露</td></tr>
+          <tr><td><strong>负债公式</strong></td><td>保险合同负债 = FCF（现值 + RA）+ CSM；符号口径：流出为正、流入为负</td></tr>
+          <tr><td><strong>首日判断</strong></td><td>FCF₀+RA₀ &lt; 0 → 厚利，CSM₀ = −(FCF₀+RA₀)；≥ 0 → 亏损立即进损益，CSM₀ = 0</td></tr>
+          <tr><td><strong>三大模型</strong></td><td>BBA（默认）/ VFA（直接参与分红）/ PAA（责任期≤1年简化）</td></tr>
+          <tr><td><strong>计量单元</strong></td><td>合同组（组合细分而来），不是单张保单</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch01">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
+  <div class="section">
+    <h2><span class="icon">🔗</span>五、知识连接</h2>
+    <div class="link-map">
+      <div class="link-card prereq">
+        <h4>⬆ 前置知识</h4>
+        <p style="font-size:13px;color:var(--text-muted)">本章是起点，无前置章节。若对"折现"本身不熟悉，建议先掌握货币时间价值的基本计算（现值/复利折现）。</p>
+      </div>
+      <div class="link-card next">
+        <h4>⬇ 后续哪里会用到</h4>
+        <a href="ch02.html">第02章 什么是保险合同 <span class="why">——主线流程第①步"识别"的展开</span></a>
+        <a href="ch04.html">第04章 分组与确认 <span class="why">——"合同组"这个计量单元怎么来的</span></a>
+        <a href="ch09.html">第09章 合同服务边际 CSM <span class="why">——本章 CSM 五行公式的完整机制</span></a>
+        <a href="ch13.html">第13章 VFA 浮动收费法 <span class="why">——"相当大部分回报分享"到底怎么判断</span></a>
+      </div>
+      <div class="link-card law">
+        <h4>📜 CAS25 原文对照</h4>
+        <a href="cas25.html">准则全文总览（11 章 120 条）</a>
+        <a href="cas25.html#a20">第二十条 计量单元</a>
+        <a href="cas25.html#a27">第二十七条 首日损益</a>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="index.html">
+        <span class="nav-label">返回</span>
+        <div class="nav-title">🏠 知识地图</div>
+      </a>
+      <a class="next-ch" href="ch02.html">
+        <span class="nav-label">下一章</span>
+        <div class="nav-title">第02章 什么是保险合同 →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 第01章 一张图看懂 CAS25</p>
+    <p style="margin-top:6px">内容依据《企业会计准则第25号——保险合同应用指南2022》编写 · 仅供学习交流</p>
+  </div>
+
+</div>
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <img class="brand-logo" src="assets/xihong-logo.jpg" alt="西红精算 Logo">
+    <div class="brand-copy">
+      <div class="bt">西红精算 · 用数据讲保险，用真心做科普</div>
+      <div class="bs">本知识库由一线在职精算师维护，配套公众号长期连载与知识星球答疑社区。</div>
+      <div class="bl">
+        <a href="about.html">关于西红精算</a>
+        <a href="premium.html">完整版解锁</a>
+        <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球</a>
+      </div>
+    </div>
+    <div class="brand-qrs">
+      <div class="brand-qr">
+        <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码">
+        <div class="qn">公众号</div>
+      </div>
+      <div class="brand-qr zsxq">
+        <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码">
+        <div class="qn">知识星球</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
