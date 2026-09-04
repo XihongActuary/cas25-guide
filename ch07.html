@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第07章 折现率 · CAS25 精读</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html"><span class="logo-icon">25</span> CAS25 精读</a>
+  <div class="topnav-links">
+    <a href="index.html">知识地图</a>
+    <a href="ch01.html">入门篇</a>
+    <a href="ch06.html" class="active">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">知识地图</a><span class="separator">›</span><span>进阶篇</span><span class="separator">›</span><strong>第07章 折现率</strong>
+  </div>
+
+  <div class="page-header">
+    <h1>第07章 · 折现率</h1>
+    <p class="subtitle">负债计量的第二大积木。折现率是 FCF 中"货币时间价值及金融风险调整"的载体，也是新准则下保险公司利润波动最大的单一驱动因素。本章讲清楚三件事：<strong>用哪条曲线、怎么从市场上得到它、初始确认后还能不能换</strong>。</p>
+    <div class="tag-row">
+      <span class="tag">进阶篇 · 第 2/7 章</span>
+      <span class="tag">预计用时 25 分钟</span>
+      <span class="tag">对应指南：第六章（一）2</span>
+    </div>
+  </div>
+
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>"自上而下"和"自下而上"两种方法，起点分别是什么？各自要做什么调整、<strong>不必</strong>做什么调整？</li>
+      <li>随基础项目回报变动的现金流量，能用同一条折现率一起折现吗？</li>
+      <li>市场利率降了，已确认合同组的折现率要不要跟着降？（答案藏在"首日锁定"里）</li>
+    </ol>
+    <p class="hint">提示：折现率问题的本质是"找一条与负债现金流量特征匹配的市场曲线"——期限、币种、流动性，三个维度都对齐。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、折现率的基本要求</h2>
+
+    <div class="guide-quote">
+      "折现率应当基于与保险合同具有一致现金流量特征（例如期限、币种和流动性等）的金融工具当前的可观察市场数据（如有）确定，且不考虑与保险合同现金流量无关但影响可观察市场数据的其他因素。"
+      <span class="src">——《应用指南2022》第六章（一）2</span>
+    </div>
+
+    <p>拆开这句话：<strong>基准</strong>是市场上真实交易出来的收益率曲线；<strong>一致性</strong>要求期限、币种、流动性三对齐；<strong>纯净性</strong>要求剔除与合同无关的因素（比如参照工具里含的信用风险溢价）。另外别忘了第06章的配平原则——名义现金流配名义利率，实际现金流配实际利率，避免重复或遗漏通胀。</p>
+
+    <h3>1.1 一类合同、两条现金流、两种处理</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>现金流量类型</th><th>折现率要求</th><th>典型产品</th></tr></thead>
+        <tbody>
+          <tr><td><strong>不随基础项目回报变动</strong></td><td>反映适当币种、持有人不承担信用风险（或可忽略）的金融工具收益率曲线，并调整流动性特征差异</td><td>传统寿险、意外险、健康险</td></tr>
+          <tr><td><strong>随基础项目回报变动</strong></td><td>采用反映该变动的折现率；或先对现金流量调整、再用反映调整后的折现率</td><td>投连险、直接参与分红险（VFA）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>两类流量企业可以<strong>分拆后用不同折现率</strong>，也可以<strong>不分拆用一条综合折现率</strong>（需借助随机建模或风险中性技术确定）。含最低保证回报的流量"不是仅随基础项目回报变动"——即使保证金额低于预期回报，也要对折现率做反映保证影响的调整。</p>
+
+    <h3>1.2 无可观察数据时：两条路线</h3>
+    <p>负债的期限常常比市场上任何一只债券都长，找不到完全匹配的可观察利率时，指南给出两条估计路线：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>维度</th><th>自下而上（Bottom-up）</th><th>自上而下（Top-down）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>起点</strong></td><td>高流动性无风险收益率曲线</td><td>以公允价值计量的参照资产组合的内含收益率曲线</td></tr>
+          <tr><td><strong>调整</strong></td><td>调整流动性特征差异（金融工具 vs 保险合同）</td><td>剔除与保险合同不相关的因素：①资产现金流与合同现金流的金额/时间/不确定性差异；②仅与资产有关的信用风险溢价</td></tr>
+          <tr><td><strong>不必做</strong></td><td>——</td><td>不必就流动性特征差异再调整</td></tr>
+          <tr><td><strong>参照组合选择</strong></td><td>——</td><td>无限制；但选债务工具（而非权益工具）作起点，剔除调整较少</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 两法结果不同，都不用调</div>
+      指南明说：两种方法得到的曲线可能不同——各自调整都固有受限、自上而下法还缺乏流动性调整——但企业<strong>无须</strong>因所选方法与另一方法结果不同而调整。选一条、用到底、说清楚。
+    </div>
+
+    <h3>1.3 首日锁定：折现率的"终身制"</h3>
+    <p>后续计量中，CSM 计息利率与"与未来服务相关的估计变更"的折现，都沿用<strong>合同组初始确认时</strong>确定的不随基础项目回报变动的折现率（加权平均）。看指南第六章（二）1 的两处规定：</p>
+    <ul>
+      <li>CSM 当期计息利率 = <strong>初始确认时</strong>不随基础项目回报变动的现金流量所适用的加权平均利率（当期新增合同导致加权平均利率变化的，自期初起用新利率）；</li>
+      <li>与未来服务相关的经验调整和估计变更，采用<strong>合同组初始确认时所适用</strong>的折现率计量。</li>
+    </ul>
+    <p>这就是"首日锁定"：市场利率后续怎么走，都不改变存量合同的折现率。市场利率变动的影响通过<strong>保险合同金融变动额</strong>（第12章）在负债上反映——分全额进损益或分解进 OCI 两条路，但不再回头改折现率假设。</p>
+
+    <div class="callout callout-warning">
+      <div class="callout-title">⚠️ 别混淆两个"利率"</div>
+      <strong>计量折现率</strong>（初始锁定，决定 CSM 计息与估计变更的折现）与<strong>当期市场利率</strong>（决定金融变动额的计息）是两套东西。第10章例26 里"计息 84 = 55 + 29"用的就是初始 5% 锁定利率；若第12章选择 OCI 分解，市场利率变动部分则走金融变动额通道。
+    </div>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解：折现率一动，负债抖三抖</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例21 敏感性演算（本站依指南第六章方法编制）：5% → 4% → 6%</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>沿用例21 情形1 的现金流：保费 1,800 立即收到，每年末流出 400 × 3 年。分别用 4%、5%、6% 折现，观察 CSM 的变化。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 三档折现因子</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>折现率</th><th>3 年年金现值系数</th><th>流出现值</th><th>FCF₀ 现值（−1,800 后）</th><th>＋RA 120</th><th>CSM₀</th></tr></thead>
+              <tbody>
+                <tr><td>4%</td><td class="num">2.7751</td><td class="num">1,110</td><td class="num">−690</td><td class="num">−570</td><td class="num hl-green">570</td></tr>
+                <tr><td>5%</td><td class="num">2.7232</td><td class="num">1,089</td><td class="num">−711</td><td class="num">−591</td><td class="num hl-green">591</td></tr>
+                <tr><td>6%</td><td class="num">2.6730</td><td class="num">1,069</td><td class="num">−731</td><td class="num">−611</td><td class="num hl-green">611</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 两个观察</div>
+          ① 折现率降 1 个百分点，CSM 从 591 降到 570（−21）；升 1 个百分点，CSM 升到 611（+20）——<strong>负债折现率与 CSM 反向</strong>：利率越低、流出现值越大、未来利润越薄。② 无论利率怎么动，只要 FCF₀+RA₀ &lt; 0，性质仍是厚利合同——折现率改变的是金额，通常不改变首日判断的符号。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 锁定效应</div>
+          假设初始确认时市场利率 5%，一年后降到 4%：已确认合同组的 CSM 计息仍按 5%（首日锁定）；市场利率变化对负债的影响作为<strong>保险合同金融变动额</strong>处理（不分解则全额进承保财务损益；分解则部分进 OCI，第12章展开）。
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-title">💡 这就是"利差"波动的会计机制</div>
+          资产端按市场利率重估、负债端按锁定利率计息，两端的错配正是新准则下利润表波动的主要来源。第12章的 OCI 分解选择，本质上是给这种波动装一个"缓冲阀"。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch07">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">1</span>"自上而下的方法"的起点是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>高流动性的无风险收益率曲线</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>以公允价值计量的参照资产组合的内含收益率曲线</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>公司自身的投资收益率</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>银行间同业拆借利率</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。A 是自下而上的起点；自上而下从参照资产组合出发，剔除与合同无关的因素（现金流特征差异、信用风险溢价），且不必做流动性调整。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">2</span>自上而下法中，无须进行的调整是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>剔除资产现金流与合同现金流金额、时间、不确定性的差异</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>剔除仅与组合内资产有关的信用风险溢价</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>保险合同与参照组合的流动性特征差异调整</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>A 和 B 都是须进行的调整</span></div>
+      </div>
+      <div class="quiz-explain">C 正确（D 说法也对但不是"无须"项）。自上而下法不必就流动性差异再调整——指南明文；A、B 是应剔除的无关因素。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">3</span>现金流采用名义口径（含通胀）时，折现率应当？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>使用包含通胀影响的折现率</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>使用剔除通胀的实际利率</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>用通胀率作为折现率</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>任意选择，只要披露</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。名义配名义、实际配实际，避免重复考虑或遗漏通胀因素。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>合同组初始确认后市场利率大幅下降，存量合同组的 CSM 计息利率？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>跟随市场利率下调</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>每个报告期末重新估计</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>改为资产端实际投资收益率</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>沿用初始确认时确定的锁定利率</span></div>
+      </div>
+      <div class="quiz-explain">D 正确（首日锁定）。市场利率变动通过保险合同金融变动额反映（第12章），不回头改 CSM 计息利率。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">5</span>含最低保证回报、其余随基础项目回报变动的现金流量？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>属于"仅随基础项目回报变动"，直接用基础项目折现率</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>不是仅随基础项目回报变动，应对已反映回报变动的折现率进行调整以反映保证的影响</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>必须整体按无风险利率折现</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>不能折现</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。即使保证金额低于基础项目预计回报，该流量也非"仅随"回报变动，需调整折现率反映保证。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
+    </div>
+  </div>
+
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>基本要求</strong></td><td>基于与合同现金流量特征（期限/币种/流动性）一致的金融工具当前可观察市场数据，剔除无关因素</td></tr>
+          <tr><td><strong>两类流量</strong></td><td>不随基础项目回报变动（无风险曲线+流动性调整）；随基础项目回报变动（反映变动的折现率，或调整流量后折现）</td></tr>
+          <tr><td><strong>自下而上</strong></td><td>无风险曲线 + 流动性调整</td></tr>
+          <tr><td><strong>自上而下</strong></td><td>参照资产组合内含曲线 − 无关因素（现金流差异、信用溢价），不必调流动性</td></tr>
+          <tr><td><strong>两法差异</strong></td><td>结果可以不同，无须相互调整</td></tr>
+          <tr><td><strong>首日锁定</strong></td><td>CSM 计息与未来服务相关估计变更均用初始锁定利率；市场变动走金融变动额</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch07">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
+  <div class="section">
+    <h2><span class="icon">🔗</span>五、知识连接</h2>
+    <div class="link-map">
+      <div class="link-card prereq">
+        <h4>⬆ 前置知识</h4>
+        <a href="ch06.html">第06章 履约现金流 FCF <span class="why">——折现率是 FCF 三块积木的第二块；名义口径配平原则</span></a>
+        <a href="ch01.html">第01章 一张图看懂 CAS25 <span class="why">——例21 的 5% 从哪来</span></a>
+      </div>
+      <div class="link-card next">
+        <h4>⬇ 后续哪里会用到</h4>
+        <a href="ch08.html">第08章 非金融风险调整 RA <span class="why">——第三块积木，与折现率分别估计</span></a>
+        <a href="ch10.html">第10章 后续计量全景 <span class="why">——锁定利率如何驱动 CSM 计息</span></a>
+        <a href="ch12.html">第12章 OCI 与金融变动额 <span class="why">——市场利率变动去哪儿</span></a>
+        <a href="ch13.html">第13章 VFA 浮动收费法 <span class="why">——随基础项目回报变动流量的专属计量</span></a>
+      </div>
+      <div class="link-card law">
+        <h4>📜 CAS25 原文对照</h4>
+        <a href="cas25.html#a25">第二十五条 折现率</a>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="ch06.html">
+        <span class="nav-label">上一章</span>
+        <div class="nav-title">← 第06章 履约现金流 FCF</div>
+      </a>
+      <a class="next-ch" href="ch08.html">
+        <span class="nav-label">下一章</span>
+        <div class="nav-title">第08章 非金融风险调整 RA →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 第07章 折现率</p>
+    <p style="margin-top:6px">内容依据《企业会计准则第25号——保险合同应用指南2022》编写 · 仅供学习交流</p>
+  </div>
+
+</div>
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <img class="brand-logo" src="assets/xihong-logo.jpg" alt="西红精算 Logo">
+    <div class="brand-copy">
+      <div class="bt">西红精算 · 用数据讲保险，用真心做科普</div>
+      <div class="bs">本知识库由一线在职精算师维护，配套公众号长期连载与知识星球答疑社区。</div>
+      <div class="bl">
+        <a href="about.html">关于西红精算</a>
+        <a href="premium.html">完整版解锁</a>
+        <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球</a>
+      </div>
+    </div>
+    <div class="brand-qrs">
+      <div class="brand-qr">
+        <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码">
+        <div class="qn">公众号</div>
+      </div>
+      <div class="brand-qr zsxq">
+        <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码">
+        <div class="qn">知识星球</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
