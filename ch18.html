@@ -39,23 +39,207 @@
     </div>
   </div>
 
-    <div class="gate-panel">
-    <div class="gate-card">
-      <div class="gate-lock">🔒</div>
-      <h2>实战篇 · 完整版章节</h2>
-      <p class="gate-ch">本章属于「实战篇 · 懂特例」完整版内容，随知识星球附件分发。</p>
-      <ul class="gate-points">
-        <li>8 章特例全景：VFA · 间接分红 · 亏损 · PAA · 再保 · 列报 · 披露 · 衔接</li>
-        <li>官方例题分步演算 + 本站专属演算例（例A–例H）+ 章末自测判分</li>
-        <li>加入星球即可下载完整版，本地打开即读</li>
-      </ul>
-      <div class="gate-links">
-        <a href="premium.html" class="gate-cta">如何获得完整版 →</a>
-        <a href="ch12.html">← 回免费章节继续读</a>
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>新利润表上找不到"保费收入"了，收入变成了什么？保险公司靠这张表怎么讲故事？</li>
+      <li>保险合同资产与保险合同负债在资产负债表上能不能抵销？分出的分保摊回资产呢？</li>
+      <li>OCI 里有哪两条保险专属明细？"承保合同金融变动额"与"分出再保险合同金融变动额"为什么必须分开？</li>
+    </ol>
+    <p class="hint">提示：列报的每个"不能合并"，背后都是一条信息需求——监管、投资者、分析师各取所需。把第11、12、17 章的科目名当积木，本章就是拼装图纸。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、资产负债表：三块独立地皮</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>列报项目</th><th>内容</th><th>抵销规则</th></tr></thead>
+        <tbody>
+          <tr><td><strong>保险合同负债</strong>（或资产）</td><td>未到期责任负债 + 已发生赔款负债（签发业务，含分入再保）</td><td rowspan="2">同一合同组的组成部分合并列示；<strong>签发的保险合同与分出的再保险合同不得抵销</strong>；多个合同组合之间负债与资产原则上分别列示，满足特定条件（法律上的同一对手方、同时结算意图与能力等）方可按净额列示</td></tr>
+          <tr><td><strong>分保摊回资产</strong></td><td>分保摊回未到期责任资产 + 分保摊回已发生赔款资产（分出业务）</td></tr>
+          <tr><td><strong>保险获取现金流量资产</strong></td><td>IACF 相关的资产（支付早于初始确认时产生）</td><td>不得与保险合同负债抵销</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 "保费收入"去哪了</div>
+      旧利润表的"已赚保费"没了，取而代之的是<strong>保险服务收入</strong>——保费收到的当期，资产（银行存款）增加、保险合同负债增加，<strong>损益表纹丝不动</strong>；收入随服务提供逐期转出。第11章的"负债减少=收入"原则在报表层面落地。这是新准则给投资者最大的读表变化：利润不再随保费大进大出，而是随服务释放。
+    </div>
+
+    <h3>1.1 利润表：四条线讲完保险生意</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>利润表项目</th><th>对应科目（指南第三章）</th><th>对应章</th></tr></thead>
+        <tbody>
+          <tr><td><strong>保险服务收入</strong></td><td>保险服务收入</td><td>第11章</td></tr>
+          <tr><td><strong>保险服务费用</strong></td><td>保险合同赔付和费用（含亏损部分确认转回）+ 分出保费的分摊/摊回保险服务费用的影响</td><td>第11、15、17章</td></tr>
+          <tr><td><strong>承保财务损益</strong></td><td>承保财务损益（货币时间价值及金融风险影响，损益部分）</td><td>第12章</td></tr>
+          <tr><td><strong>分出再保险财务损益</strong></td><td>分出再保险财务损益</td><td>第17章</td></tr>
+          <tr><td><strong>其他综合收益</strong></td><td>OCI——承保合同金融变动额；OCI——分出再保险合同金融变动额（两条明细，不抵销）</td><td>第12、17章</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>读表逻辑：<strong>保险服务业绩</strong>（收入 − 费用）回答"保障与账管服务挣了多少"；<strong>投资业绩与财务成本</strong>（承保财务损益、分出再保险财务损益，以及资产端投资收益）回答"金融那头怎么样"。两类业绩泾渭分明——这是准则刻意设计的可读性。</p>
+
+    <h3>1.2 会计科目全景（指南第三章，11 组核心科目）</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>类别</th><th>科目</th><th>一句话职责</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="2">负债类</td><td>未到期责任负债 / 已发生赔款负债</td><td>保险合同负债的两个组成（第10章滚动表的两张脸）</td></tr>
+          <tr><td>（分出端为资产）分保摊回未到期责任资产 / 分保摊回已发生赔款资产</td><td>再保镜像资产（第17章）</td></tr>
+          <tr><td>资产类</td><td>保险获取现金流量资产</td><td>付早了的获取成本（初始确认前支付）</td></tr>
+          <tr><td rowspan="4">损益类</td><td>保险服务收入 / 保险合同赔付和费用</td><td>服务对价与支出（第11章）</td></tr>
+          <tr><td>承保财务损益 / 分出再保险财务损益</td><td>金融变动额的损益通道（第12章）</td></tr>
+          <tr><td>亏损保险合同损益</td><td>亏损确认与转回（第15章）</td></tr>
+          <tr><td>分出保费的分摊 / 摊回保险服务费用</td><td>分出端服务费用化与摊回（第17章）</td></tr>
+          <tr><td>过渡类</td><td>待结转支出</td><td>归集与合同履约直接相关、待分摊至合同组的手续费佣金税费等（期末无余额）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>1.3 中期报表与列报衔接（回顾）</h3>
+    <p>第11章例28 讲过中期估计的政策选择（年度调整法 vs 不调整法）；列报端对应要求：该政策作为<strong>会计政策</strong>在附注中披露，同一准则适用范围内一致应用。此外，外币合同组的汇兑差额计入当期损益；与计入 OCI 的金额相关的汇兑差额计入 OCI（指南第六章（四））——列报与计量政策一一对表。</p>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解：把例26 搬上报表</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例F（本站演算）：例26 合同组三年的报表呈现</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>把例26（第10、11章）三年的分录按新准则报表格式重排（无再保、无 OCI 分解）。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 利润表（三年并列）</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>项目</th><th>第1年</th><th>第2年</th><th>第3年</th></tr></thead>
+              <tbody>
+                <tr><td>保险服务收入</td><td class="num">647</td><td class="num">719</td><td class="num">603</td></tr>
+                <tr><td>保险服务费用</td><td class="num">(400)</td><td class="num">(300)</td><td class="num">(280)</td></tr>
+                <tr><td><strong>保险服务业绩</strong></td><td class="num"><strong>247</strong></td><td class="num"><strong>419</strong></td><td class="num"><strong>323</strong></td></tr>
+                <tr><td>承保财务损益</td><td class="num">(84)</td><td class="num">(58)</td><td class="num">(27)</td></tr>
+                <tr><td><strong>净利润影响</strong></td><td class="num"><strong>163</strong></td><td class="num"><strong>361</strong></td><td class="num"><strong>296</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          保费 1,800 只在第1年资产负债表上露了一面（存款 +1,800、负债 +1,800），利润表上从未出现——它被切成了三年的服务收入与三年的财务成本。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 资产负债表（各年末）</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>保险合同负债</th><th>第1年末</th><th>第2年末</th><th>第3年末</th></tr></thead>
+              <tbody>
+                <tr><td>未到期责任负债（现值 + RA + CSM）</td><td class="num">1,237</td><td class="num">576</td><td class="num">0</td></tr>
+                <tr><td>已发生赔款负债（当年已付清）</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+              </tbody>
+            </table>
+          </div>
+          阅读顺序：先看负债（还欠客户多少），再看收入怎么从负债里"长"出来——第10章滚动表与报表完全对得上。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 若 40% 分出 + OCI 分解（叠加上下文）</div>
+          资产负债表：保险合同负债（自留全额口径按合同组合列示）与分保摊回资产<strong>分列</strong>；利润表：保险服务费用中并入"分出保费的分摊"、新增"摊回保险服务费用"（贷方）与"分出再保险财务损益"行；OCI 出现两条独立明细。报表使用者由此能算出自留与服务转移两个口径——这正是准则拒绝抵销的原因。
+        </div>
       </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch18">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">1</span>收到趸缴保费 1,800 元当期，利润表的直接反应是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>确认收入 1,800</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>无直接影响（存款与保险合同负债同增）</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>确认递延收益 1,800</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>计入 OCI</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。保费进负债；收入随服务提供确认（例F：三年 647/719/603）。"保费收入"在新利润表上消失。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">2</span>下列资产负债表列报做法，正确的是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>签发的保险合同负债与分保摊回资产直接抵销，按净额列示</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>未到期责任负债与已发生赔款负债分别列示</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>保险获取现金流量资产与保险合同负债抵销</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>各合同组合的资产与负债自由轧差</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。A、D 错（分出与签发不得抵销；组合间抵销须满足严格的净额列示条件）；C 错（IACF 资产不得与负债抵销）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">3</span>新利润表结构中，"保险服务业绩"最贴近的构成是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>保险服务收入 − 保险服务费用</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>保险服务收入 − 承保财务损益</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>保费 − 赔付</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>投资收益 − 承保财务损益</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。服务业绩与投资业绩分列：前者=收入−费用（第11章口径），后者看金融变动额与资产端投资收益的对照。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>OCI 中保险合同相关的两条独立明细是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>现金流量套期储备与外币折算差额</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>OCI——已发生赔款与 OCI——未到期责任</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>OCI——CSM 与 OCI——RA</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>OCI——承保合同金融变动额 与 OCI——分出再保险合同金融变动额</span></div>
+      </div>
+      <div class="quiz-explain">D 正确（科目（三）(4)、科目（十二）原文的明细名称）。直接业务与分出业务的金融变动额在 OCI 也分别归集，不得抵销。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">5</span>"待结转支出"科目的特点是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>期末余额等于未摊销的获取成本</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>归集与合同履约直接相关、待分摊至合同组的手续费佣金税费等，期末应无余额</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>核算亏损部分的摊回</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>资产负债表上作为保险合同资产列示</span></div>
+      </div>
+      <div class="quiz-explain">B 正确（科目（十一））。它是过渡池：先归集、期末分摊进各合同组（借本科目，贷待结转支出），期末清零。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
     </div>
   </div>
 
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>资产负债表</strong></td><td>保险合同负债（未到期+已发生）/ 分保摊回资产 / IACF 资产三块分立；签发与分出不得抵销</td></tr>
+          <tr><td><strong>利润表</strong></td><td>保险服务收入、保险服务费用、承保财务损益、分出再保险财务损益——保费概念退场</td></tr>
+          <tr><td><strong>业绩二分</strong></td><td>服务业绩（收入−费用）与投资/财务业绩分列</td></tr>
+          <tr><td><strong>OCI</strong></td><td>承保合同金融变动额与分出再保险合同金融变动额两条独立明细</td></tr>
+          <tr><td><strong>亏损</strong></td><td>确认与转回单列"亏损保险合同损益"，使用者可见</td></tr>
+          <tr><td><strong>中期</strong></td><td>估计调整政策作为会计政策披露、一致应用（例28）</td></tr>
+          <tr><td><strong>外币</strong></td><td>汇兑差额进损益；与 OCI 相关部分进 OCI</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch18">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
   <div class="section">
     <h2><span class="icon">🔗</span>五、知识连接</h2>
     <div class="link-map">
@@ -122,5 +306,6 @@
   </div>
 </div>
 <script src="guide.js"></script>
+  <script src="gate.js"></script>
 </body>
 </html>
