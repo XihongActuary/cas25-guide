@@ -86,6 +86,23 @@ body{font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC",system-ui,
   border:1px solid var(--blue-line)}
 .qr-cap{font-size:13px;font-weight:600;color:var(--blue);letter-spacing:1px}
 .qr-note{font-size:12px;color:var(--muted)}
+
+.unlock-box{margin-top:16px;background:var(--gold-bg);border:1px solid var(--gold-line);
+  border-radius:var(--radius);padding:18px 22px}
+.unlock-head{font-size:14.5px;font-weight:700;color:var(--gold)}
+.unlock-row{display:flex;gap:10px;margin-top:10px}
+.unlock-input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--gold-line);border-radius:9px;
+  font-size:14px;background:#fff;outline:none;color:var(--ink)}
+.unlock-input:focus{border-color:var(--gold)}
+.unlock-btn{flex:none;padding:0 22px;border:none;border-radius:9px;background:var(--gold);
+  color:#fff;font-size:14px;font-weight:600;cursor:pointer}
+.unlock-btn:hover{filter:brightness(1.06)}
+.unlock-msg{font-size:12.5px;color:var(--muted);margin-top:8px}
+.unlock-msg.ok{color:var(--green)}
+.unlock-msg.err{color:var(--red)}
+.unlock-msg a{color:var(--blue)}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.unlock-row.shake{animation:shake .3s}
 .btn{display:block;text-align:center;margin-top:14px;padding:11px 0;border-radius:9px;
   font-size:15px;font-weight:600;text-decoration:none;transition:filter .15s}
 .btn:hover{filter:brightness(1.08)}
@@ -158,6 +175,10 @@ body{font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC",system-ui,
     </div>
     <div class="cards" id="cards"></div>
     <div class="anchor" id="math-anchor"></div>
+        <div class="unlock-box">
+      <div class="unlock-head">🔑 已有口令？</div>
+      <div class="unlock-msg">完整版随知识星球附件分发：星友下载附件包后，打开其中任意实战篇章节输入口令，一次输入、本机长期有效。</div>
+    </div>
   </section>
 
   <section class="sec faq">
@@ -253,7 +274,7 @@ let cards=`
     <div class="qr-box">
       <img src="${p.qr}" alt="知识星球二维码">
       <div class="qr-cap">扫码直达 · 长按识别</div>
-      <div class="qr-note">口令一次输入 · 本机长期有效</div>
+      <div class="qr-note">进圈后在置顶帖领取阅读口令</div>
     </div>
     <a class="btn btn-hot" href="${p.link}" target="_blank" rel="noopener">加入星球，解锁完整版</a>
   </div>`;
@@ -274,6 +295,8 @@ if(s.enable){
   $("math-anchor").innerHTML=`一个星球账号，同步解锁西红精算系列全部知识库的完整版：<a href="about.html">查看知识库系列 →</a>`;
 }
 $("cards").innerHTML=cards;
+
+/* 公开版：无口令校验 */
 
 $("faq").innerHTML=CONFIG.faq.map(f=>`
   <details><summary>${f.q}</summary><p>${f.a}</p></details>`).join("");
