@@ -39,23 +39,183 @@
     </div>
   </div>
 
-    <div class="gate-panel">
-    <div class="gate-card">
-      <div class="gate-lock">🔒</div>
-      <h2>实战篇 · 完整版章节</h2>
-      <p class="gate-ch">本章属于「实战篇 · 懂特例」完整版内容，随知识星球附件分发。</p>
-      <ul class="gate-points">
-        <li>8 章特例全景：VFA · 间接分红 · 亏损 · PAA · 再保 · 列报 · 披露 · 衔接</li>
-        <li>官方例题分步演算 + 本站专属演算例（例A–例H）+ 章末自测判分</li>
-        <li>加入星球即可下载完整版，本地打开即读</li>
-      </ul>
-      <div class="gate-links">
-        <a href="premium.html" class="gate-cta">如何获得完整版 →</a>
-        <a href="ch12.html">← 回免费章节继续读</a>
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>披露的总目标是什么？两句话（对应负债变动与业绩两个维度）怎么表述？</li>
+      <li>调节表为什么是披露的核心形式？（提示：第10章滚动表本身就是一张调节表）</li>
+      <li>VFA 合同多出哪类专属披露？它回答报表使用者什么担心？</li>
+    </ol>
+    <p class="hint">提示：把披露清单当作"第10章滚动表 + 第12章拆分政策 + 第15章亏损"的对外公开版——所有披露项都能在前十九章找到计量出处。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、披露的总目标</h2>
+
+    <p>本站依据 CAS25 披露规定归纳（指南第十章原文未在精读素材范围内）：披露应当帮助报表使用者评估——</p>
+    <ul>
+      <li><strong>保险合同负债（及分保摊回资产）变动所体现的金额、时点与不确定性</strong>；</li>
+      <li><strong>保险服务业绩与投资业绩的金额与来源</strong>。</li>
+    </ul>
+
+    <p>由这两条总目标拆出的披露族谱（按"表内到表外"排序）：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>族</th><th>核心披露项</th><th>计量出处</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="4"><strong>① 调节表族</strong>（连接期初期末）</td><td>保险合同负债账面价值调节表（含 FCF、RA、CSM 各组成的当期变动）</td><td>第10章滚动表</td></tr>
+          <tr><td>CSM 期初期末调节：新合同、计息、未来服务相关变动、汇兑、摊销、亏损部分</td><td>第10章五大调整</td></tr>
+          <tr><td>已发生赔款负债变动（发生、支付、估计变更）</td><td>第11章费用</td></tr>
+          <tr><td>分保摊回资产的对应调节</td><td>第17章</td></tr>
+          <tr><td rowspan="3"><strong>② 变动归因族</strong>（解释"为什么变"）</td><td>经验调整 vs 估计变更 vs 金融变动额的分解</td><td>第10章"当年/未来服务"</td></tr>
+          <tr><td>当期确认的保险服务收入、费用、亏损确认与转回</td><td>第11、15章</td></tr>
+          <tr><td>保险合同金融变动额的当期金额与损益/OCI 分解</td><td>第12章</td></tr>
+          <tr><td rowspan="3"><strong>③ 假设与不确定性族</strong></td><td>重大会计估计与判断：折现率方法（自下而上/自上而下）、RA 所用技术与特征、通胀假设身份</td><td>第07、08章</td></tr>
+          <tr><td>非金融假设变更对损益的敏感性分析</td><td>第06章敏感性</td></tr>
+          <tr><td>金融假设变更敏感性（利率、权益价格等）</td><td>第12章</td></tr>
+          <tr><td rowspan="3"><strong>④ 政策与口径族</strong></td><td>会计政策：金融变动额全额/分解、中期估计调整政策、PAA 适用范围</td><td>第11、12、16章</td></tr>
+          <tr><td>VFA 合同专属：基础项目公允价值、负债对基础项目回报的联动、企业享有份额、两者匹配程度、基础项目汇总财务信息</td><td>第13章</td></tr>
+          <tr><td>再保：分出合同组的摊回资产信息、亏损摊回、再保对手集中度</td><td>第17章</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 披露的"原理解读"：调节表是万能钥匙</div>
+      CAS25 披露的默认形态是<strong>期初余额 + 当期变动分解 = 期末余额</strong>——这正是第10章滚动表（表13/15/16）的对外版本。编制者做对了计量，披露只是"把工作底稿洗一遍交给读者"；反之，披露做不出来，往往说明计量口径本身没有理顺。备考与实务的连接点也在这里：读懂官方例题的滚动表，等于提前读懂了调节表披露。
+    </div>
+
+    <h3>1.1 VFA 专属披露的深意</h3>
+    <p>VFA 合同的负债盯基础项目，但<strong>负债 ≠ 资产公允价值</strong>（隔着 RA、CSM、不随回报变动的流量）。报表使用者最担心的正是"资产负债表两端各说各话"。因此准则要求披露：负债与基础项目回报的联动关系、企业享有份额、以及<strong>两者匹配程度的信息</strong>——例25 那种"当期账面收益率法让损益天然对冲"的机制是否成立、缺口多大，全部摊开给市场看。</p>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解：给例26 写一张调节表</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例G（本站演算）：例26 第2年 CSM 调节表披露</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>以例26 第2年（表15）数据，编制实务披露格式的 CSM 期初期末调节表。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 调节表主体</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>合同服务边际调节</th><th>金额</th></tr></thead>
+              <tbody>
+                <tr><td>期初余额（第1年末）</td><td class="num">413</td></tr>
+                <tr><td>计提利息（初始折现率 5%）</td><td class="num">21</td></tr>
+                <tr><td>与未来服务相关的履约现金流量变动（赔付估计 −114、RA −10）</td><td class="num">124</td></tr>
+                <tr><td>汇兑差额</td><td class="num">—</td></tr>
+                <tr><td>当期摊销（计入保险服务收入）</td><td class="num">(279)</td></tr>
+                <tr><td><strong>期末余额（第2年末）</strong></td><td class="num"><strong>279</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 配套归因披露</div>
+          同一年度还须披露：经验调整（实赔 300 vs 预期 400 → +100 计入收入）、估计变更（与未来服务相关 −124 的构成）、当期保险服务收入 719 与费用 300、承保财务损益 58。报表使用者据此能完整复演"负债为什么从 1,237 降到 576"——第10章讲过的每一行，披露里都有一席。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 敏感性披露示意（定性）</div>
+          若赔付假设 +10%（第3年 280→308），CSM 期末将减少约 27（(308−280)/1.05）；若折现率 −1%，负债上升、CSM/损益如何联动（走金融变动额通道）——准则要求的是让使用者看到"假设动了、报表会怎么动"的方向与量级。
+        </div>
       </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch19">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">1</span>CAS25 披露的总目标不包括？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>评估保险合同负债变动所体现的金额、时点与不确定性</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>评估保险服务业绩与投资业绩</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>评估公司偿付能力充足率</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>理解负债金额变动的驱动因素</span></div>
+      </div>
+      <div class="quiz-explain">C 正确（即 C 不属于）。偿付能力充足率是偿二代监管口径，不属于会计披露目标——会计准则与监管规则各管一段。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">2</span>披露的默认"万能形态"是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>期初余额 + 当期变动分解 = 期末余额的调节表</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>五年趋势柱状图</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>管理层讨论与分析</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>关键绩效指标表</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。调节表是准则披露的核心形式，与第10章滚动表同构。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">3</span>下列哪项属于 VFA 合同的专属披露？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>PAA 的适用范围</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>负债与基础项目回报的联动关系、企业享有份额及两者匹配程度</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>中期估计调整政策</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>已发生赔款负债的估计变更</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。A、C 是通用政策披露；D 是所有合同组的调节内容；只有 B 回答 VFA 特有的"资产负债两张皮"问题。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>例G 调节表中，"与未来服务相关的履约现金流量变动 +124"的构成是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>实赔与预期的经验差异</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>第2年 CSM 计息</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>保费收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>第3年赔付估计 400→280 的现值影响 114 + RA 估计 40→30 的影响 10</span></div>
+      </div>
+      <div class="quiz-explain">D 正确（指南表15 注6）。估计变更与经验调整的区分（A vs D）是披露归因的核心考点。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">5</span>敏感性披露的目的是让使用者了解？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>公司未来的发展战略</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>假设（如赔付、利率）变动对损益与负债的方向与量级影响</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>审计意见的类型</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>分部报告的构成</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。对应披露总目标中"不确定性"维度——金额不只是点估计，还是一个分布。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
     </div>
   </div>
 
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>总目标</strong></td><td>负债变动的金额/时点/不确定性 + 服务与投资业绩的来源</td></tr>
+          <tr><td><strong>调节表族</strong></td><td>负债、CSM、已发生赔款、分保摊回——滚动表的公开版</td></tr>
+          <tr><td><strong>归因族</strong></td><td>经验调整/估计变更/金融变动额三分</td></tr>
+          <tr><td><strong>假设族</strong></td><td>折现率方法、RA 技术与特征、非金融/金融敏感性</td></tr>
+          <tr><td><strong>政策族</strong></td><td>金融变动额处理、中期政策、PAA 范围</td></tr>
+          <tr><td><strong>VFA 专属</strong></td><td>基础项目与负债的联动、份额、匹配程度</td></tr>
+          <tr><td><strong>再保</strong></td><td>摊回资产信息、亏损摊回、对手集中度</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch19">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
   <div class="section">
     <h2><span class="icon">🔗</span>五、知识连接</h2>
     <div class="link-map">
@@ -122,5 +282,6 @@
   </div>
 </div>
 <script src="guide.js"></script>
+  <script src="gate.js"></script>
 </body>
 </html>
