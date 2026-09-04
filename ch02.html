@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第02章 什么是保险合同 · CAS25 精读</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html"><span class="logo-icon">25</span> CAS25 精读</a>
+  <div class="topnav-links">
+    <a href="index.html">知识地图</a>
+    <a href="ch01.html" class="active">入门篇</a>
+    <a href="ch06.html">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">知识地图</a><span class="separator">›</span><span>入门篇</span><span class="separator">›</span><strong>第02章 什么是保险合同</strong>
+  </div>
+
+  <div class="page-header">
+    <h1>第02章 · 什么是保险合同</h1>
+    <p class="subtitle">一切从定义出发：不是所有"长得像保险"的合同都是保险合同。本章拆解保险合同的定义要件、保险风险与金融风险的分界线、重大保险风险测试的操作步骤，以及五类边界合同的去向。</p>
+    <div class="tag-row">
+      <span class="tag">入门篇 · 第 2/5 章</span>
+      <span class="tag">预计用时 30 分钟</span>
+      <span class="tag">对应指南：第二章 适用范围 · 第四章（一）识别</span>
+    </div>
+  </div>
+
+  <!-- ① 开篇三问 -->
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>一份合同要成为 CAS25 意义上的保险合同，必须同时满足哪几个要件？</li>
+      <li>重大保险风险测试的<strong>两个条件</strong>分别是什么？实务上常用的量化参考（如 5%）指什么？</li>
+      <li>万能险、财务担保、信用卡豁免条款、天气衍生工具——这四类"边缘合同"分别走向哪里？</li>
+    </ol>
+    <p class="hint">提示：第 1 章说"先识别、再计量"，识别这一步的输出决定整本准则是否适用，错判一步、后面全错。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、定义拆解：四个要件缺一不可</h2>
+
+    <div class="guide-quote">
+      "保险合同，是指企业（合同签发人）与保单持有人约定，在特定保险事项对保单持有人产生不利影响时给予其赔偿，并因此承担源于保单持有人重大保险风险的合同。"
+      <span class="src">——《应用指南2022》第二章 关于适用范围</span>
+    </div>
+
+    <p>把定义拆开，得到四个要件：</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要件</th><th>含义</th><th>反面示例</th></tr></thead>
+        <tbody>
+          <tr><td><strong>① 特定保险事项</strong></td><td>产生保险风险的<strong>不确定未来事项</strong>：发生概率、发生时间、赔付金额至少一项不确定</td><td>确定要付的款项不是保险事项</td></tr>
+          <tr><td><strong>② 对保单持有人产生不利影响</strong></td><td>不利影响是签发人赔付的<strong>合约性前提条件</strong></td><td>衍生工具：只要标的价格变动就付款，与持有人是否受损无关（指南例4 信用风险缓释凭证）</td></tr>
+          <tr><td><strong>③ 给予赔偿</strong></td><td>现金赔付或非现金赔付（提供商品/服务）均可（指南例1、例2）</td><td>——</td></tr>
+          <tr><td><strong>④ 重大保险风险</strong></td><td>从保单持有人转移至签发人的、除金融风险之外的风险须<strong>重大</strong>（需逐项测试）</td><td>仅承担金融风险的合同不是保险合同</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2.1 保险风险 vs 金融风险：一条分界线</h3>
+    <p>这是本章最重要的一张表。判断顺序建议：<strong>先看风险是否"从持有人转移来"，再看它是不是金融风险，最后看是否重大</strong>。</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>维度</th><th>保险风险</th><th>金融风险</th></tr></thead>
+        <tbody>
+          <tr><td><strong>来源</strong></td><td>不确定未来事项对持有人的<strong>不利影响</strong></td><td>利率、价格、汇率、指数、信用等级等<strong>变量变动</strong></td></tr>
+          <tr><td><strong>赔付前提</strong></td><td>须以持有人受损为合约性前提</td><td>无须持有人受损即付款</td></tr>
+          <tr><td><strong>典型例子</strong></td><td>车损、死亡、疾病、火灾、长寿</td><td>保证结算利率、指数挂钩给付</td></tr>
+          <tr><td><strong>准则归宿</strong></td><td>CAS25</td><td>金融工具相关准则（CAS22/23/24/37）</td></tr>
+          <tr><td><strong>可以并存吗</strong></td><td colspan="2">可以。合同可同时含两类风险（指南例7 终身寿险含 1% 保证利率 + 身故多付 30%；例8 CPI 挂钩年金），只要保险风险重大，就是保险合同</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-warning">
+      <div class="callout-title">⚠️ 三个"冒牌"保险风险</div>
+      <ul>
+        <li><strong>失效风险 / 续保风险</strong>——持有人取消合同早于/晚于预期，属签发人的定价风险，不是从持有人转移来的风险；</li>
+        <li><strong>费用风险</strong>——签发人自身管理成本超预期，持有人并未受损，不是保险风险；</li>
+        <li><strong>与合同一方特定相关的非金融变量</strong>——如"乙那辆车的残值"（例5），变量与一方特定相关，不是金融风险；但若同时转移了重大保险风险，仍是保险合同。</li>
+      </ul>
+      <p style="margin-top:6px">注意一个巧妙的反转：企业把<strong>自己</strong>的失效/费用风险通过<strong>分出再保险</strong>转给分入人时，对分入人而言这构成了保险风险——该再保险合同适用 CAS25。</p>
+    </div>
+
+    <h3>2.2 重大保险风险测试：两条件、一个参考阈值</h3>
+    <div class="guide-quote">
+      "企业应当评估各单项合同的保险风险是否重大……认定同时符合下列条件的合同转移了重大保险风险：1. 至少在一个具有商业实质的情形下，发生合同约定的保险事项可能导致签发人支付重大额外金额……2. 至少在一个具有商业实质的情形下，发生合同约定的保险事项可能导致签发人按现值计算遭受损失。"
+      <span class="src">——《应用指南2022》第四章（一）保险合同的识别</span>
+    </div>
+    <ul>
+      <li><strong>条件一（额外金额测试）</strong>：保险事项发生时比不发生时<strong>多支付</strong>金额的现值——即使发生概率极小也算。实务参考：额外金额占"事项不发生时应付金额现值"的比例<strong>超过 5%</strong> 通常视为重大；</li>
+      <li><strong>条件二（损失测试）</strong>：至少在一个情形下，保险事项发生使签发人<strong>未来现金流出现值 &gt; 流入现值</strong>（按现值算亏损）。再保险例外：分入人几乎不可能亏损时，只要把分出部分几乎所有的保险风险都接下来，仍视为重大；</li>
+      <li><strong>额外金额不含</strong>：少收的未来管理费、免收的退保手续费（经济损失并非保险风险所致）、针对未造成持有人重大损失事项的赔付、通过分出再保险摊回的金额（例13：1 元损失赔 10 万元——不构成额外金额，因为持有人并未发生重大损失）。</li>
+    </ul>
+
+    <h3>2.3 测试之后不再回头</h3>
+    <p>合同开始日经评估符合保险合同定义的，<strong>后续不再重新评估</strong>，除非合同因修改而终止确认并被确认为一项新合同。同时，测试须以<strong>单项合同</strong>为基础——组合整体发生重大损失的可能性很小，不代表单合同的保险风险不重大。</p>
+
+    <h3>2.4 边界合同去向总图</h3>
+    <p>第二章用五小节处理"边缘合同"，加上其他准则的排除项，汇总成一张"分流表"：</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>合同类型</th><th>关键特征</th><th>去向</th><th>指南例</th></tr></thead>
+        <tbody>
+          <tr><td><strong>财务担保合同</strong></td><td>债务人不偿付时赔付持有人损失</td><td>政策选择：曾按保险准则处理的可选 CAS25（逐单、不可撤销）；其他情形适用金融工具准则</td><td>——</td></tr>
+          <tr><td><strong>固定收费服务合同</strong></td><td>符合三条件：定价不反映单个持有人风险、以服务而非现金补偿、风险源于使用而非成本</td><td>政策选择：CAS14 或 CAS25（逐单、不可撤销）</td><td>例9 道路救援</td></tr>
+          <tr><td><strong>赔偿限于持有人支付义务</strong></td><td>赔偿仅清算持有人自身债务（如贷款余额）</td><td>政策选择：金融工具准则或 CAS25（按组合）</td><td>例10 信贷保险</td></tr>
+          <tr><td><strong>相机参与分红特征投资合同</strong></td><td>保证金额 + 相机决定的附加金额，不转移重大保险风险</td><td>签发保险合同的企业签发的 → CAS25；否则金融工具准则</td><td>例11 万能险</td></tr>
+          <tr><td><strong>其他准则排除项</strong></td><td>质量保证条款销售、余值担保、或有对价、职工薪酬、无形资产/租赁相关</td><td>CAS14 / CAS21 / CAS20 / CAS9 等</td><td>——</td></tr>
+          <tr><td><strong>内部保险</strong></td><td>集团内部、总分机构之间</td><td>合并报表层面不存在合同，不适用</td><td>——</td></tr>
+          <tr><td><strong>风险全部转回的"伪再保"</strong></td><td>赔付差额随经验全额返还，风险转回分出人</td><td>金融工具或服务合同</td><td>——</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 一句话记忆</div>
+      识别的输出只有三种：<strong>保险合同（进 CAS25）/ 边界合同（政策选择或分流其他准则）/ 非保险合同（金融工具或收入准则）</strong>。政策选择"一经作出、不得撤销"，且要注意选择层级不同——财务担保与固定收费按<strong>单项合同</strong>，赔偿限于支付义务按<strong>组合</strong>，相机参与分红按<strong>签发人身份</strong>。
+    </div>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解：大病保险协议的双重测试</h2>
+    <p>指南例15 是"重大保险风险测试 + 投资成分识别"的复合题，一道题串起本章和下一章。先自己读题作答，再逐步展开。</p>
+
+    <details class="fold example-fold">
+      <summary>📖 例15（指南第二章/第四章）：政府大病医疗保险协议——转移保险风险了吗？</summary>
+      <div class="fold-body">
+        <p><strong>题面：</strong>20×1年甲公司与乙市政府机构签订《城镇居民大病医疗保险协议》，责任期一年。条款约定：</p>
+        <ul>
+          <li>若最终赔付率<strong>不足 95%</strong>：甲公司在正常赔款之外另行支付 保费×(95%−赔付率)，上限为保费的 <strong>15%</strong>；</li>
+          <li>若赔付率<strong>高于 110%</strong>：政府机构向甲公司支付 保费×(赔付率−110%)；</li>
+          <li>历史经验显示赔付率低于 80% 的概率非常低。不考虑其他履约现金流量和货币时间价值。</li>
+        </ul>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 先自己判断</div>
+          这份协议对甲公司而言，最坏要净付出多少？最好能收多少？不利情形下会亏损吗？
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 条件一：额外金额测试</div>
+          保险事项不发生（赔付率极低）时，甲公司最少要支付保费的 15%（返还下限）；保险事项发生（赔付率高企）时，净赔付最多达到保费的 <strong>110%</strong>。额外金额 = 110% − 15% = 保费的 95%，占不发生情形应付金额（15%）的比例 = 95%/15% ≈ <strong>633%</strong>，远超 5% 参考阈值 → 支付<strong>重大额外金额</strong> ✓
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 条件二：损失测试</div>
+          净赔付最高达保费的 110% &gt; 100% → 甲公司按现值计算<strong>遭受损失</strong> ✓。两个条件同时满足，协议转移了重大保险风险，是保险合同。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 4 步 · 顺手识别投资成分</div>
+          无论保险事项是否发生，甲公司必须支付的最低金额 = 保费的 15%——这就是<strong>投资成分</strong>（无论是否出险都要偿还的金额）。但由于它与保险成分一起失效或到期、高度关联，属于<strong>不可明确区分</strong>的投资成分，<strong>不从保险合同中分拆</strong>（详见第03章）。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 5 步 · 政策含义</div>
+          该协议体现"收支平衡、保本微利"：低赔付率时公司返还（净支出仍达保费的 92% = 77%+15%），高赔付率时政府补贴封顶 110%。指南特别提示：<strong>若封顶比例 ≤ 100%，则条件二不成立，协议不转移重大保险风险</strong>——一个条款参数的改变就能翻转结论，测试必须逐合同做。
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-title">💡 举一反三</div>
+          同类结构还出现在例12（固定给付终身寿险：死亡是确定的，但<strong>死亡时点</strong>不确定，提前死亡使固定名义给付的现值增加 → 现值意义上的额外金额）——名义金额固定不代表没有保险风险。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch02">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">1</span>保险合同定义中，赔付的"合约性前提条件"是指？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>签发人已收取全额保费</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>保险事项对保单持有人产生不利影响</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>保单持有人已履行如实告知义务</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>监管机构已批准该产品条款</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。"不利影响是赔付前提"正是保险合同区别于衍生工具的关键（指南第二章保险风险部分）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">2</span>关于失效风险、续保风险与费用风险，正确的说法是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>都是保险风险，因为都影响签发人赔付金额</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>都不是保险风险，因为不是从保单持有人处转移的、对其造成不利影响的风险</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>费用风险是保险风险，失效风险不是</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>都是金融风险，适用金融工具准则</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。三者都不满足"持有人已面临的风险转移给签发人"的要件。但通过分出再保险转移这些风险时，对分入人构成保险风险。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">3</span>重大保险风险测试中"5%"参考阈值比较的两个量是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>额外金额现值 ÷ 保险事项不发生时应付金额现值</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>额外金额现值 ÷ 保费收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>预期赔付现值 ÷ 保费现值</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>最大赔付额 ÷ 平均赔付额</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。分母是"事项不发生情形下企业支付金额的现值"（指南第四章（一）1）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>甲保险公司同时签发普通寿险和一份不转移保险风险的万能型保单（最低保证结算利率 1%，实际结算利率由公司相机决定且构成利益重要部分，身故金等于账户价值）。该万能保单适用？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>金融工具准则，因为不转移保险风险</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>CAS14 收入准则</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>不适用任何准则</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>CAS25，因为签发人同时签发其他保险合同</span></div>
+      </div>
+      <div class="quiz-explain">D 正确（指南例11）。具有相机参与分红特征的投资合同 + 签发人签发保险合同 → 强制适用 CAS25，不得适用金融工具准则。其计量特殊规定见第14章。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">5</span>一份合同在 20×1 年合同开始日测试为保险合同，20×3 年公司经营策略变化，认为该产品"实际上更像投资产品"。正确处理是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>20×3 年重新执行重大保险风险测试并重分类</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>按持有意图重分类为金融负债</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>不再重新评估，继续按保险合同处理，除非合同修改导致终止确认并作为新合同</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>管理层可选择重评估或不重评估</span></div>
+      </div>
+      <div class="quiz-explain">C 正确（指南第四章（一））。评估只在合同开始日做一次，防止后续"选择性重分类"。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
+    </div>
+  </div>
+
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>定义四要件</strong></td><td>特定保险事项（不确定）＋ 对持有人不利影响（赔付前提）＋ 给予赔偿（现金/非现金）＋ 重大保险风险</td></tr>
+          <tr><td><strong>风险分界</strong></td><td>保险风险从持有人转移而来；金融风险源于市场变量；两者可并存，保险风险重大即保险合同</td></tr>
+          <tr><td><strong>三个冒牌货</strong></td><td>失效/续保风险、费用风险、与一方特定相关的非金融变量（不是金融风险，也非保险风险）</td></tr>
+          <tr><td><strong>测试两条件</strong></td><td>①重大额外金额（参考：占不发生情形应付现值 &gt;5%）②至少一个情形按现值亏损；再保险例外条款</td></tr>
+          <tr><td><strong>测试单元</strong></td><td>单项合同；开始日一次定性，后续不重评（修改终止确认除外）</td></tr>
+          <tr><td><strong>边界分流</strong></td><td>财务担保（逐单选择）、固定收费服务（逐单选择 CAS14/CAS25）、赔偿限于支付义务（按组合选择）、相机参与分红投资合同（看签发人身份）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch02">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
+  <div class="section">
+    <h2><span class="icon">🔗</span>五、知识连接</h2>
+    <div class="link-map">
+      <div class="link-card prereq">
+        <h4>⬆ 前置知识</h4>
+        <a href="ch01.html">第01章 一张图看懂 CAS25 <span class="why">——主线流程第①步"识别"的定位</span></a>
+      </div>
+      <div class="link-card next">
+        <h4>⬇ 后续哪里会用到</h4>
+        <a href="ch03.html">第03章 合并与分拆 <span class="why">——识别为保险合同后，还要剥掉嵌入衍生工具与投资成分</span></a>
+        <a href="ch06.html">第06章 履约现金流 FCF <span class="why">——"不可明确区分的投资成分"将留在 FCF 中计量</span></a>
+        <a href="ch14.html">第14章 间接分红产品 <span class="why">——例11 那张万能保单的计量特殊规定</span></a>
+        <a href="ch17.html">第17章 再保险合同 <span class="why">——"几乎全部风险转移"例外条款的展开</span></a>
+      </div>
+      <div class="link-card law">
+        <h4>📜 CAS25 原文对照</h4>
+        <a href="cas25.html#a2">第二条 保险合同定义</a>
+        <a href="cas25.html#a3">第三条 适用范围</a>
+        <a href="cas25.html#a7">第七条 重大保险风险测试</a>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="ch01.html">
+        <span class="nav-label">上一章</span>
+        <div class="nav-title">← 第01章 一张图看懂 CAS25</div>
+      </a>
+      <a class="next-ch" href="ch03.html">
+        <span class="nav-label">下一章</span>
+        <div class="nav-title">第03章 合并与分拆 →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 第02章 什么是保险合同</p>
+    <p style="margin-top:6px">内容依据《企业会计准则第25号——保险合同应用指南2022》编写 · 仅供学习交流</p>
+  </div>
+
+</div>
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <img class="brand-logo" src="assets/xihong-logo.jpg" alt="西红精算 Logo">
+    <div class="brand-copy">
+      <div class="bt">西红精算 · 用数据讲保险，用真心做科普</div>
+      <div class="bs">本知识库由一线在职精算师维护，配套公众号长期连载与知识星球答疑社区。</div>
+      <div class="bl">
+        <a href="about.html">关于西红精算</a>
+        <a href="premium.html">完整版解锁</a>
+        <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球</a>
+      </div>
+    </div>
+    <div class="brand-qrs">
+      <div class="brand-qr">
+        <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码">
+        <div class="qn">公众号</div>
+      </div>
+      <div class="brand-qr zsxq">
+        <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码">
+        <div class="qn">知识星球</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
