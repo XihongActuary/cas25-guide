@@ -39,23 +39,210 @@
     </div>
   </div>
 
-    <div class="gate-panel">
-    <div class="gate-card">
-      <div class="gate-lock">🔒</div>
-      <h2>实战篇 · 完整版章节</h2>
-      <p class="gate-ch">本章属于「实战篇 · 懂特例」完整版内容，随知识星球附件分发。</p>
-      <ul class="gate-points">
-        <li>8 章特例全景：VFA · 间接分红 · 亏损 · PAA · 再保 · 列报 · 披露 · 衔接</li>
-        <li>官方例题分步演算 + 本站专属演算例（例A–例H）+ 章末自测判分</li>
-        <li>加入星球即可下载完整版，本地打开即读</li>
-      </ul>
-      <div class="gate-links">
-        <a href="premium.html" class="gate-cta">如何获得完整版 →</a>
-        <a href="ch12.html">← 回免费章节继续读</a>
-      </div>
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>PAA 的适用条件是什么？"责任期不超过一年"就自动适用吗，还是可以选择？反过来，责任期一年以上的合同一定不能用吗？</li>
+      <li>PAA 下的未到期责任负债里有什么、没什么？（提示：RA？CSM？折现？）</li>
+      <li>PAA 的收入确认与旧准则的"已赚保费"神似，但有一个东西是旧准则没有的——是什么？</li>
+    </ol>
+    <p class="hint">提示：PAA 不是回到过去，而是"新准则的原则 + 简化的执行"。简化掉的只是计量复杂度，<strong>概念框架完全换了</strong>——连科目都不叫"未到期责任准备金"了。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、适用条件：谁可以上快车道</h2>
+
+    <p>本站依据 CAS25 简化处理规定归纳（应用指南对应原文未在精读素材范围内）：</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>条件（满足其一即可）</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td><strong>① 责任期不超过一年</strong></td><td>合同组中各合同的<strong>责任期</strong>（coverage period）不超过一年。注意是责任期不是合同期：一份多年期合同的剩余责任期若在过渡后不足一年，也可能落入条件</td></tr>
+          <tr><td><strong>② 信息与成本权衡</strong></td><td>企业合理预计：采用 PAA 计量产生的信息，与一般模型相比<strong>无重大差异</strong>（常见于赔付发生模式与保费收入模式基本一致的合同）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-info">
+      <div class="callout-title">💡 是"可以"不是"必须"</div>
+      PAA 是一项<strong>会计政策选择</strong>（在合同组层面作出）：满足条件①的合同组，企业也可以坚持用一般模型；反过来不满足条件的不能强行用。政策一旦选定须一致应用。另外：PAA 只改<strong>后续计量</strong>的简化路径，<strong>合同分组、边界识别、亏损测试等前置规则不变</strong>——分组仍按盈利性（初始即为亏损的单独成组）、边界仍按实质义务划定。
+    </div>
+
+    <h3>1.1 PAA 的负债：不建积木，只挂"未赚"金额</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>项目</th><th>一般模型</th><th>PAA</th></tr></thead>
+        <tbody>
+          <tr><td>未到期责任负债</td><td>履约现金流量现值 + RA + CSM（逐项滚动）</td><td><strong>简化</strong>：主要由已收保费中"尚未赚取"的部分 + 已发生但未摊销的获取成本相关金额构成</td></tr>
+          <tr><td>非金融风险调整 RA</td><td>单独估计</td><td><strong>不单独估计</strong>（隐含在未赚保费中；若单独估计过，也可包含在负债里）</td></tr>
+          <tr><td>CSM</td><td>设立并滚动摊销</td><td><strong>不设立</strong>——首日损益通过"保费与预期赔付大体相当"的简化假设被推迟到责任期</td></tr>
+          <tr><td>折现</td><td>全部流量折现</td><td>责任期一年以内且金额变动不重大 → <strong>可不折现</strong>；超过一年且变动显著 → 折现</td></tr>
+          <tr><td>已发生赔款负债</td><td>履约现金流量</td><td>同口径（赔案发生时确认）；<strong>可调整</strong>货币时间价值及金融风险的影响，若调整，按<strong>赔案发生时</strong>确定的折现率确定计入各期损益的金额</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>1.2 收入与费用：朴素但换骨</h3>
+    <ul>
+      <li><strong>收入</strong>：当期确认的保险服务收入 = 当期<strong>赚取的保费</strong>（而非收到的）− 投资成分 − 相关调整，实质接近旧准则"已赚保费"逻辑，但口径按新准则的收入原则定义（反映服务提供模式）；</li>
+      <li><strong>费用</strong>：当期发生赔款及其他相关费用（剔除投资成分）+ 保险获取现金流量的摊销；</li>
+      <li><strong>科目联动</strong>（指南第三章科目处理原文）：采用 PAA 的，保险获取现金流量的摊销"借记'保险合同赔付和费用'科目，贷记本科目（未到期责任负债）"——获取成本随保费赚取同步进费用，不经过收入。</li>
+    </ul>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 PAA 唯一"不许省"的：亏损测试</div>
+      简化的是计量，不是审慎。合同组若<strong>初始即为亏损</strong>（预期赔付+费用+摊回成本 &gt; 未赚保费），PAA 依然要求：亏损部分当期确认、后续摊回（第15章机制原样适用，只是亏损金额以简化口径估计）。这也是为什么亏损合同组必须单独分组——PAA 快车道不豁免亏损规则。
     </div>
   </div>
 
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例C（本站演算）：一年期家财险的 PAA 全流程</summary>
+      <div class="fold-body">
+        <p><strong>背景（本站依据准则方法编制）：</strong>20×1年7月1日签发 1,000 份一年期家财险，保费合计 600（7月1日收到），预期赔付 450、维持费用 50；获取成本（IACF）60 于签发时支付。假设赔付按全年均匀概率分布发生，年末实际发生赔付 440（全部为保险成分），折现影响不重大。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 签发时：保费挂负债</div>
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr><td>借：银行存款 600</td></tr>
+                <tr><td>　　贷：未到期责任负债 600</td></tr>
+              </tbody>
+            </table>
+          </div>
+          初始确认时点 = 合同组开始日（首份合同责任期起点 7月1日）。<strong>注意</strong>：预期赔付（450+50=500）&lt; 保费 − 获取成本相关回收（600 − 60 = 540），不亏损 → 无亏损确认，无需 CSM。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 年末（半年责任期已过）：赚一半</div>
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr><td>借：未到期责任负债 300</td></tr>
+                <tr><td>　　贷：保险服务收入 300（600×1/2）</td></tr>
+                <tr><td>借：保险合同赔付和费用 440</td></tr>
+                <tr><td>　　贷：已发生赔款负债 440（当期实际发生）</td></tr>
+                <tr><td>借：保险合同赔付和费用 30</td></tr>
+                <tr><td>　　贷：未到期责任负债 30（IACF 摊销 60×1/2）</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 半年度损益与余额</div>
+          保险服务业绩 = 300 − 440 − 30 = <strong>−170</strong>（赔付集中在前半年属经验偏差，不追溯已确认收入——与例28 乙公司"不调整法"同理）；年末未到期责任负债 = 600 − 300 − 30 = <strong>270</strong>（未赚保费 300 − 未摊销获取成本 30 的简化近似），已发生赔款负债 440 待支付。若合同含投资成分（如储蓄型账户），给付时直接负债内部结转，收入费用均不含。
+        </div>
+      </div>
+    </details>
+
+    <details class="fold example-fold">
+      <summary>📖 例D（本站演算）：PAA 下的亏损测试</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>同上设定，但预期赔付 560、维持费用 50（市场激进定价）。</p>
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 识别亏损</div>
+          预期流出合计 = 560 + 50 = 610；可回收对价 = 600 − 60 = 540 → 亏损 70。虽然 PAA 不建 CSM，亏损照样要确认：签发时（随服务提供确认亦可）"借：亏损保险合同损益/保险服务费用，贷：未到期责任负债"，后续按剩余责任期摊回。
+        </div>
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 与一般模型的差异</div>
+          同一亏损在一般模型下的金额 = FCF+RA−保费现值（折现且含 RA），PAA 下是未折现的简化估计——<strong>金额可能不同，方向必须一致</strong>。这也是条件②"信息无重大差异"存在的意义：若简化和精细算出来差得远，就不该用 PAA。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch16">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">1</span>关于 PAA 适用条件的说法，正确的是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>责任期不超过一年的合同组可以采用，也可以选择一般模型</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>责任期超过一年的合同一律不得采用</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>所有合同组都必须先用 PAA</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>亏损合同组不得采用 PAA</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。PAA 是政策选择；另一通道是"预计信息与一般模型无重大差异"。B 忽略条件②（重大赔付可能跨年后但确认差异不大的长期合同也可能符合）；D 错——亏损合同组可用 PAA，但亏损测试与确认不免除。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">2</span>PAA 下通常【不】做的事是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>将已收保费挂入未到期责任负债</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>赔付发生时确认保险合同赔付和费用</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>单独估计非金融风险调整并设立 CSM 滚动摊销</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>摊销保险获取现金流量</span></div>
+      </div>
+      <div class="quiz-explain">C 正确（即 C 是"不做的事"）。PAA 不单独估计 RA、不设 CSM；D 依然要做（借保险合同赔付和费用，贷未到期责任负债）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">3</span>PAA 下，企业若调整已发生赔款负债以反映货币时间价值及金融风险，计入各期保险财务损益的金额应按什么折现率确定？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>资产负债表日最新市场利率</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>赔案发生时确定的、反映不随基础项目回报变动的现金流量特征的折现率</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>合同组初始确认时的加权平均利率</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>当期实际分摊率</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。指南第六章（二）4 原文：按赔案发生时确定的折现率确定已发生赔款负债的金融变动额计入各期损益的金额——赔案发生即锁定，不再随后续利率重估。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>PAA 与旧准则"已赚保费"模式的本质区别，不包括？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>概念框架重构（保险合同负债而非未到期责任准备金）</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>收入费用剔除投资成分</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>亏损部分须确认并摊回</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>保费收到当期全额确认收入</span></div>
+      </div>
+      <div class="quiz-explain">D 不属于（也是错的）。PAA 收入按赚取节奏确认，而非收付实现——表面上像已赚保费，但底层的负债观、投资成分剔除与亏损机制都是新的。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">5</span>例C 中，签发日收保费 600、付获取成本 60。签发日对损益的影响是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>0（保费挂负债，获取成本资本化于负债计量，不亏损则不进损益）</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>收入 600</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>费用 60</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>利润 540</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。PAA 下保费收取不确认收入；IACF 通过负债（未到期责任负债的减项/摊回机制）随赚取进度进费用；只有亏损测试触发时损益才有动静。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
+    </div>
+  </div>
+
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>适用条件</strong></td><td>责任期≤1 年；或预计信息与一般模型无重大差异；政策选择、一致应用</td></tr>
+          <tr><td><strong>负债</strong></td><td>未赚保费口径的简化负债；不单独估 RA、不设 CSM；短期且不重大可不折现</td></tr>
+          <tr><td><strong>收入</strong></td><td>当期赚取的保费（剔投资成分），反映服务模式</td></tr>
+          <tr><td><strong>费用</strong></td><td>当期实际赔款及费用 + IACF 摊销；已发生赔款负债同口径</td></tr>
+          <tr><td><strong>金融影响</strong></td><td>赔款负债调整时按赔案发生时锁定利率计损益</td></tr>
+          <tr><td><strong>亏损测试</strong></td><td>必须做：亏损确认（当期损益）+ 摊回（费用端）</td></tr>
+          <tr><td><strong>不变的</strong></td><td>分组、合同边界、投资成分剔除、中期政策选择</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch16">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
   <div class="section">
     <h2><span class="icon">🔗</span>五、知识连接</h2>
     <div class="link-map">
@@ -122,5 +309,6 @@
   </div>
 </div>
 <script src="guide.js"></script>
+  <script src="gate.js"></script>
 </body>
 </html>
