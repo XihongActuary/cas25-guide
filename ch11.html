@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第11章 保险服务收入与费用 · CAS25 精读</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html"><span class="logo-icon">25</span> CAS25 精读</a>
+  <div class="topnav-links">
+    <a href="index.html">知识地图</a>
+    <a href="ch01.html">入门篇</a>
+    <a href="ch06.html" class="active">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">知识地图</a><span class="separator">›</span><span>进阶篇</span><span class="separator">›</span><strong>第11章 保险服务收入与费用</strong>
+  </div>
+
+  <div class="page-header">
+    <h1>第11章 · 保险服务收入与费用</h1>
+    <p class="subtitle">负债计量讲完了，钱从哪儿"挣"出来？CAS25 用一个颠覆性思路回答：<strong>收入不是收到的保费，而是负债的合理减少</strong>。保费进的是负债，服务干了活，负债才转成收入。这一章把收入与费用的每一块拼图拆开——它们正是第10章滚动表里"与当年服务相关的变动"这一行的损益化表达。</p>
+    <div class="tag-row">
+      <span class="tag">进阶篇 · 第 6/7 章</span>
+      <span class="tag">预计用时 25 分钟</span>
+      <span class="tag">对应指南：第六章（二）2、3、（三）3</span>
+    </div>
+  </div>
+
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>收到的保费是不是当期收入？如果不是，它先进哪里、再以什么节奏变成收入？</li>
+      <li>保险服务收入由哪几块组成？"与未来服务不相关的保费经验调整"为什么也算收入？</li>
+      <li>例26 三年收入 647 / 719 / 603，合计 1,969；三年赔付合计 980。保费才 1,800，收入怎么会超过保费？多出来的部分从哪来？</li>
+    </ol>
+    <p class="hint">提示：收入里含着<strong>折现的转回</strong>——赔付是折现入账的，逐年计息滚大，而计息走的是"保险财务损益"科目。收入 − 费用 − 财务损益，三者相抵才是真金白银。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、收入总额原则：先定总量，再定节奏</h2>
+
+    <div class="guide-quote">
+      "对于每一组保险合同，企业确认的保险服务收入总额应当等于企业因提供保险合同服务而有权取得的总对价，考虑货币时间价值及金融风险的影响，并扣除投资成分后的金额。"
+      <span class="src">——《应用指南2022》第六章（二）2</span>
+    </div>
+
+    <p>这句话定了两件事：</p>
+    <ul>
+      <li><strong>总量</strong>：收入总额 = 有权取得的总对价（考虑货币时间价值及金融风险）− <strong>投资成分</strong>。客户"存款"的部分（如万能险账户价值中相当于储金的份额）永远不是收入；</li>
+      <li><strong>节奏</strong>：确认方式应当"反映向保单持有人提供保险合同服务的模式"——总量锁死，各期怎么分，跟服务走。</li>
+    </ul>
+
+    <h3>1.1 当期收入的组成（未采用保费分配法的合同组）</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>组成</th><th>内容</th><th>对应滚动表位置</th></tr></thead>
+        <tbody>
+          <tr>
+            <td rowspan="4"><strong>① 未到期责任负债当期减少额中，因当期提供服务而预计取得的对价</strong></td>
+            <td>期初预计在当期发生的、与提供服务有关的<strong>保险服务费用</strong></td>
+            <td>现值列"与当年服务相关的变动"（如例26 第1年 400）</td>
+          </tr>
+          <tr><td><strong>非金融风险调整的减少</strong>（当期释放）</td><td>RA 列（如 40 / 40 / 30）</td></tr>
+          <tr><td><strong>合同服务边际的摊销</strong></td><td>CSM 列（如 207 / 279 / 293）</td></tr>
+          <tr><td><strong>其他</strong>：与当期（未来服务无关的）服务相关的经验调整，如实赔低于预期</td><td>例26 第2年：400 − 300 = 100</td></tr>
+          <tr>
+            <td><strong>② 保险获取现金流量（IACF）的摊销</strong></td>
+            <td>佣金、手续费等获取成本随时间流逝系统摊销，反映"这类现金流对应的保费的收回"</td>
+            <td>例26 假设无 IACF；例29 再保场景将遇到</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 一个反直觉设计：实赔少了，收入反而多了</div>
+      例26 第2年实际赔付 300，比期初预计的 400 少 100。这 100 元不是"费用节省"，而是<strong>计入收入</strong>——因为期初预计当期发生 400 已按"预计取得的对价"包含在收入里，实际只干了 300 的活，负债少减少 100，差额作为经验调整转入收入。费用端则按<strong>实际</strong>发生额 300 记账。收入与费用的这种"预计 vs 实际"错位，正是死差（赔付经验差异）进损益的通道。
+    </div>
+
+    <h3>1.2 哪些负债变动不许进收入（七项排除清单）</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>不确认收入的变动</th><th>为什么</th></tr></thead>
+        <tbody>
+          <tr><td>① 收取保费的现金流入</td><td>保费进负债，不是收入（第9章"保费三时点归宿"）</td></tr>
+          <tr><td>② 与当期投资成分相关的变动</td><td>对价里已剔除投资成分，存取款不构成服务对价</td></tr>
+          <tr><td>③ 保单贷款相关现金流量</td><td>保单持有人自己的钱，企业只是过手</td></tr>
+          <tr><td>④ 代扣代缴流转税（如增值税）</td><td>代收代付，不是企业挣的</td></tr>
+          <tr><td>⑤ 保险合同金融变动额</td><td>货币时间价值及金融风险的影响，单列到保险财务损益或 OCI（第12章）</td></tr>
+          <tr><td>⑥ 保险获取现金流量本身</td><td>获取时进"与未来服务相关"的资产/负债，只有<strong>摊销</strong>部分才进收入</td></tr>
+          <tr><td>⑦ 因合同转让终止确认保险合同</td><td>不是提供服务，是合同出表</td></tr>
+          <tr><td>⑧ 分摊至未到期责任负债亏损部分的金额</td><td>亏损部分企业预计<strong>无权取得对价</strong>，摊回不进收入，走保险服务费用（亏损转回，第15章）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>1.3 保险服务费用：收入的"镜像 + 当期实际"</h3>
+    <div class="guide-quote">
+      "当期保险服务费用应当包括当期发生赔款及其他相关费用、保险获取现金流量的摊销、亏损部分的确认及转回和已发生赔款负债相关履约现金流量变动，不得包含保险合同中的投资成分。"
+      <span class="src">——《应用指南2022》第六章（二）3</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>保险服务收入</th><th>保险服务费用</th></tr></thead>
+        <tbody>
+          <tr><td><strong>口径</strong></td><td>未到期责任负债的"预计"减少（对价视角）</td><td>当期发生赔款等的"实际"金额（支出视角）</td></tr>
+          <tr><td><strong>组成</strong></td><td>预计费用 + RA 释放 + CSM 摊销 + 经验调整 + IACF 摊销</td><td>当期发生赔款及其他相关费用 + IACF 摊销 + 亏损确认及转回 + 已发生赔款负债履约现金流量变动</td></tr>
+          <tr><td><strong>投资成分</strong></td><td>剔除</td><td>剔除</td></tr>
+          <tr><td><strong>两者关系</strong></td><td colspan="2">收入 − 费用 = 当期保险服务业绩；差额主要来自经验调整（死差/费差）与 CSM 摊销、RA 释放</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>注意两点：① 已发生赔款负债的后续变动（如案情发展导致的估计变更）直接进<strong>当期费用</strong>——已发生部分与未来服务无关，不碰 CSM；② 亏损部分的确认及转回放在费用端（第15章展开：确认亏损时多记费用，转回时冲减费用）。</p>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解：收入的三年拼图</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例26（指南第六章）：收入 647 / 719 / 603 逐块拆解</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>例26 合同组三年责任期，第10章已完整演算负债滚动。这里换损益视角，看每年"借：未到期责任负债，贷：保险服务收入"的数字是怎么拼出来的。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 三年收入逐块拆</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>收入组成</th><th>第1年</th><th>第2年</th><th>第3年</th><th>说明</th></tr></thead>
+              <tbody>
+                <tr><td>期初预计当期发生的费用</td><td class="num">400</td><td class="num">400</td><td class="num">280</td><td>第3年按第2年末修订后估计 280</td></tr>
+                <tr><td>RA 当期释放</td><td class="num">40</td><td class="num">40</td><td class="num">30</td><td>第3年按修订后 30</td></tr>
+                <tr><td>CSM 摊销</td><td class="num">207</td><td class="num">279</td><td class="num">293</td><td>(591+29)/3；(413+124+21)/2；(279+14)/1</td></tr>
+                <tr><td>经验调整（与未来服务无关）</td><td class="num">—</td><td class="num">100</td><td class="num">—</td><td>第2年实赔 300 &lt; 预计 400</td></tr>
+                <tr><td><strong>保险服务收入合计</strong></td><td class="num"><strong>647</strong></td><td class="num"><strong>719</strong></td><td class="num"><strong>603</strong></td><td>分录(6)(11)(15)</td></tr>
+                <tr><td>保险服务费用（实际赔付）</td><td class="num">400</td><td class="num">300</td><td class="num">280</td><td>分录(3)(7)(12)</td></tr>
+                <tr><td><strong>保险服务业绩</strong></td><td class="num"><strong>247</strong></td><td class="num"><strong>419</strong></td><td class="num"><strong>323</strong></td><td>= 表13/15/16 "与当年服务相关的变动"行</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 总账闭合：为什么收入合计超过保费</div>
+          三年服务收入合计 1,969 &gt; 保费 1,800，"多"的 169 恰好等于三年保险财务损益 84 + 58 + 27。链条是：赔付按<strong>折现值</strong>进入滚动表（初始 1,089 而非 1,200），负债每年计息滚大，计息走"承保财务损益"（借方，费用 169）；而收入端每年确认的"预计费用"是含息滚大后的全额（400 而非折现值）。所以：
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr><td>保险服务收入 1,969 − 保险服务费用 980 = 保险服务业绩 <strong>989</strong></td></tr>
+                <tr><td>保险服务业绩 989 − 承保财务损益 169 = 三年税前利润 <strong>820</strong></td></tr>
+                <tr><td>验证：保费 1,800 − 赔付 980（400+300+280）= <strong>820</strong> ✓</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 费用端的两个细节</div>
+          ① 分录(3)(7)(12) 的科目是"保险合同赔付和费用"，金额是<strong>实际</strong>发生额 400 / 300 / 280——费用按实际，收入按预计，差异（第2年 100）沉淀在收入侧的经验调整里；② 例26 无投资成分、无 IACF，费用表干净；实务中万能险的费用还要先剔除投资成分（例27 的 4,524 元赔付全部为投资成分，直接从未到期责任负债转已发生赔款负债，<strong>既不进收入也不进费用</strong>）。
+        </div>
+      </div>
+    </details>
+
+    <details class="fold example-fold">
+      <summary>📖 例28（指南第六章）：中期报表的两种政策——甲 3,500 vs 乙 4,000</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>甲、乙公司各签发同样的两年期合同组：保费 20,000，预期赔付 10,000，初始 CSM 均为 10,000，责任单元每半年相等（折现率为 0）。20×1 年 12 月（即上半年报表已出）双双改变预期：第 2 年将多赔 3,000（与未来服务相关 → 调减 CSM）。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 甲公司：年度报表中"调整"中期估计</div>
+          上半年按当时估计摊销 CSM，确认收入 2,500（10,000/4）。12 月估计变更后，年底先调 CSM：摊销前余额 7,000（10,000 − 3,000），再按<strong>全年</strong>重算摊销：全年收入 3,500（7,000/2）→ 下半年摊销 1,000（3,500 − 2,500）。年末 CSM 3,500。逻辑：年度报表视中期估计为"暂定"，年报口径一步到位。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 乙公司：年度报表中"不调整"中期估计</div>
+          上半年同样确认 2,500；7 月初 CSM 7,500（10,000 − 2,500）。12 月变更后余额 4,500（7,500 − 3,000），在<strong>剩余 1.5 年</strong>内摊销：下半年收入 1,500（4,500/1.5×0.5）。全年收入 4,000，年末 CSM 3,000。逻辑：把中期已确认数当作既成事实，只影响未来。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 对比表（指南表27）</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>项目</th><th>20×1上半年</th><th>20×1下半年</th><th>20×1合计</th><th>20×1年末CSM</th></tr></thead>
+              <tbody>
+                <tr><td>甲公司（年度调整法）</td><td class="num">2,500</td><td class="num">1,000</td><td class="num">3,500</td><td class="num">3,500</td></tr>
+                <tr><td>乙公司（不调整法）</td><td class="num">2,500</td><td class="num">1,500</td><td class="num">4,000</td><td class="num">3,000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          两者差异 500 的本质：甲把估计变更的影响"追认"到下半年前的全年视角，乙只让它影响剩余期间。<strong>同一经济事实、同一准则，因政策选择不同而利润表不同</strong>——政策须在适用范围内一致应用，且属于会计政策选择（变更需追溯）。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch11">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">1</span>20×1年1月1日收到趸缴保费 1,800 元，当年应确认的保险服务收入是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>1,800 元，收付实现</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>1,800 元扣除预计赔付后的净额</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>保费先进负债，按服务提供节奏转为收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>0 元，趸缴合同到期一次确认</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。保费收取是负债变动，不确认收入；收入按未到期责任负债因当期服务而发生的"对价性减少"+ IACF 摊销确认（例26 第1年 647）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">2</span>下列哪一项【不属于】当期保险服务收入的组成？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>合同服务边际的摊销</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>分摊至未到期责任负债亏损部分的金额</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>非金融风险调整当期释放</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>保险获取现金流量的摊销</span></div>
+      </div>
+      <div class="quiz-explain">B 正确（即选 B 的选项不属于收入）。亏损部分企业预计无权取得对价，其分摊金额不进收入——亏损的确认与转回走保险服务费用（第15章）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">3</span>例26 第2年收入 719 元中，"100 元"的性质是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>与未来服务无关的经验调整：实赔 300 低于期初预计 400 的差额，计入收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>CSM 计息</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>投资成分的剔除</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>折现率变更导致的金融变动额</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。第2年实赔 300 &lt; 预计 400，差额 100 是与当年（未来服务无关）相关的经验调整，计入收入；费用按实际 300 记。这就是死差进损益的通道。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>关于保险服务费用，错误的是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>包括当期发生赔款及其他相关费用</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>包括保险获取现金流量的摊销</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>包括亏损部分的确认及转回</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>包括保险合同中约定的满期给付里的投资成分</span></div>
+      </div>
+      <div class="quiz-explain">D 错误。保险服务费用不得包含投资成分——投资成分的给付直接在负债内部结转（如例27 分录"借：未到期责任负债 4,524，贷：已发生赔款负债 4,524"），不触碰损益。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">5</span>例28 中，乙公司 20×1 年全年收入 4,000 元、年末 CSM 3,000 元；甲公司 3,500 元、3,500 元。造成 500 元差异的原因是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>两公司初始 CSM 不同</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>甲在年度报表中调整中期估计（按全年重算），乙不调整（只影响剩余期间）</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>甲把估计变更计入当期损益</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>乙少计了经验调整</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。初始 CSM 都是 10,000；估计变更（多赔 3,000）两公司都调减 CSM（不进损益），差异纯粹来自中期估计是否在年报中回溯重算的会计政策选择。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
+    </div>
+  </div>
+
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>总额原则</strong></td><td>收入总额 = 有权取得的总对价（含货币时间价值及金融风险影响）− 投资成分</td></tr>
+          <tr><td><strong>当期组成</strong></td><td>① 预计费用 + RA 释放 + CSM 摊销 + 其他（经验调整）；② IACF 摊销</td></tr>
+          <tr><td><strong>排除清单</strong></td><td>保费流入 / 投资成分 / 保单贷款 / 代扣流转税 / 金融变动额 / IACF 本身 / 合同转让 / 亏损部分分摊</td></tr>
+          <tr><td><strong>费用口径</strong></td><td>当期实际发生（预计的收入 vs 实际的费用，差异 = 经验调整进收入）</td></tr>
+          <tr><td><strong>费用组成</strong></td><td>当期发生赔款及费用 + IACF 摊销 + 亏损确认及转回 + 已发生赔款负债变动；不含投资成分</td></tr>
+          <tr><td><strong>总账验证</strong></td><td>例26：收入 1,969 − 赔付 980 − 财务损益 169 = 820 = 保费 1,800 − 赔付 980</td></tr>
+          <tr><td><strong>中期政策</strong></td><td>年度调整法（甲 3,500）vs 不调整法（乙 4,000），合同组合内一致应用</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch11">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
+  <div class="section">
+    <h2><span class="icon">🔗</span>五、知识连接</h2>
+    <div class="link-map">
+      <div class="link-card prereq">
+        <h4>⬆ 前置知识</h4>
+        <a href="ch08.html">第08章 非金融风险调整 RA <span class="why">——RA 释放是收入第二块</span></a>
+        <a href="ch09.html">第09章 合同服务边际 CSM <span class="why">——CSM 摊销是收入第三块</span></a>
+        <a href="ch10.html">第10章 后续计量全景 <span class="why">——滚动表"与当年服务相关的变动"即收入+费用</span></a>
+      </div>
+      <div class="link-card next">
+        <h4>⬇ 后续哪里会用到</h4>
+        <a href="ch12.html">第12章 OCI 与金融变动额 <span class="why">——收入排除的"金融变动额"去哪了</span></a>
+        <a href="ch15.html">第15章 亏损合同 <span class="why">——亏损确认/转回在费用端的展开</span></a>
+        <a href="ch16.html">第16章 保费分配法 PAA <span class="why">——收入费用的简化确认</span></a>
+        <a href="ch18.html">第18章 列报 <span class="why">——收入与费用在利润表同口径列示</span></a>
+      </div>
+      <div class="link-card law">
+        <h4>📜 CAS25 原文对照</h4>
+        <a href="cas25.html#a31">第三十一条 收入与费用</a>
+        <a href="cas25.html#a32">第三十二条 IACF 摊销</a>
+        <a href="cas25.html#a37">第三十七条 中期报表</a>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="ch10.html">
+        <span class="nav-label">上一章</span>
+        <div class="nav-title">← 第10章 后续计量全景</div>
+      </a>
+      <a class="next-ch" href="ch12.html">
+        <span class="nav-label">下一章</span>
+        <div class="nav-title">第12章 OCI 与金融变动额 →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 第11章 保险服务收入与费用</p>
+    <p style="margin-top:6px">内容依据《企业会计准则第25号——保险合同应用指南2022》编写 · 仅供学习交流</p>
+  </div>
+
+</div>
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <img class="brand-logo" src="assets/xihong-logo.jpg" alt="西红精算 Logo">
+    <div class="brand-copy">
+      <div class="bt">西红精算 · 用数据讲保险，用真心做科普</div>
+      <div class="bs">本知识库由一线在职精算师维护，配套公众号长期连载与知识星球答疑社区。</div>
+      <div class="bl">
+        <a href="about.html">关于西红精算</a>
+        <a href="premium.html">完整版解锁</a>
+        <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球</a>
+      </div>
+    </div>
+    <div class="brand-qrs">
+      <div class="brand-qr">
+        <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码">
+        <div class="qn">公众号</div>
+      </div>
+      <div class="brand-qr zsxq">
+        <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码">
+        <div class="qn">知识星球</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
