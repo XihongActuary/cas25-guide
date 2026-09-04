@@ -39,23 +39,223 @@
     </div>
   </div>
 
-    <div class="gate-panel">
-    <div class="gate-card">
-      <div class="gate-lock">🔒</div>
-      <h2>实战篇 · 完整版章节</h2>
-      <p class="gate-ch">本章属于「实战篇 · 懂特例」完整版内容，随知识星球附件分发。</p>
-      <ul class="gate-points">
-        <li>8 章特例全景：VFA · 间接分红 · 亏损 · PAA · 再保 · 列报 · 披露 · 衔接</li>
-        <li>官方例题分步演算 + 本站专属演算例（例A–例H）+ 章末自测判分</li>
-        <li>加入星球即可下载完整版，本地打开即读</li>
-      </ul>
-      <div class="gate-links">
-        <a href="premium.html" class="gate-cta">如何获得完整版 →</a>
-        <a href="ch12.html">← 回免费章节继续读</a>
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>CSM 为什么不能为负？这条铁律与"资产负债表不能高估资产、低估负债"的审慎原则是什么关系？</li>
+      <li>亏损确认之后，负债中的"亏损部分"以什么节奏走损益？它进收入还是进费用？金融变动额为什么被排除在外？</li>
+      <li>情况好转时"抵销 → 转回 → 重建 CSM"三步的顺序是什么？为什么有利变动不能直接变成利润？</li>
+    </ol>
+    <p class="hint">提示：把 CSM 想成"只能存钱、不能透支"的账户——透支（亏损）必须当场还（进损益），后续盈余先还旧账（抵销亏损），还清了才能重新存（重建 CSM）。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、铁律：CSM 不能为负</h2>
+
+    <div class="guide-quote">
+      "与未来服务相关的履约现金流量的变动金额，但履约现金流量增加额超过合同服务边际账面价值所导致的亏损部分，以及履约现金流量减少额抵销的未到期责任负债的亏损部分除外，上述'导致的亏损部分'或'抵销的亏损部分'应当计入当期损益。"
+      <span class="src">——《应用指南2022》第六章（二）1（3）</span>
+    </div>
+
+    <p>这句话浓缩了亏损机制的三个触发点：</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>触发点</th><th>条件</th><th>处理</th></tr></thead>
+        <tbody>
+          <tr><td><strong>① 初始亏损</strong></td><td>初始确认时：履约现金流量（FCF+RA）&gt; 对价（保费等）与 IACF 合计</td><td>超出部分确认为<strong>亏损部分</strong>，计入当期损益；CSM 保持 0，负债按全额计量</td></tr>
+          <tr><td><strong>② 后续新亏损</strong></td><td>FCF 增加额超过 CSM 账面价值</td><td>超出部分进当期损益（亏损确认），不调 CSM</td></tr>
+          <tr><td><strong>③ 有利变动</strong></td><td>FCF 减少额抵销亏损部分</td><td>先抵销亏损部分（不重建 CSM），抵完有余才重建</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 为什么"不对称"</div>
+    首日利得进 CSM 慢慢挣（例21 情形1），首日亏损立即进损益——很多人觉得"亏待"了亏损合同。但这是审慎性的必然选择：利得是"预计的"，藏着不确认顶多是保守；亏损也是"预计的"，藏起来就是<strong>少记负债、虚增净资产</strong>。IFRS17 与 CAS25 在这里与负债计量的审慎传统保持一致。
+    </div>
+
+    <h3>1.1 亏损确认之后：负债里的"三户分账"</h3>
+    <p>亏损合同组的未到期责任负债在概念上分成三块，各有各的损益通道：</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>负债构成</th><th>后续变动的去向</th></tr></thead>
+        <tbody>
+          <tr><td><strong>履约现金流量（现值 + RA）</strong></td><td>金融变动额（计息、金融风险）→ 承保财务损益/OCI；估计变更 → 按一般规则调 CSM 或进损益</td></tr>
+          <tr><td><strong>亏损部分</strong>（已确认亏损在负债中的余额）</td><td>按"若非亏损合同"的损益模式逐期<strong>摊回</strong>，计入保险服务费用（贷方，冲减费用）；<strong>金融变动额除外</strong>——它随全体负债的金融口径走</td></tr>
+          <tr><td><strong>CSM（可能后续重建）</strong></td><td>正常摊销进收入</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>摊回的直觉：确认亏损时一次性把"未来三年都不挣钱"记到了今天；但服务毕竟要一年一年提供，责任一年一年解除，所以把亏损按服务节奏"摊回"（减少各期费用），让损益表反映"如果当初不亏，这些年本来的样子"。</p>
+
+    <h3>1.2 科目与分录：亏损保险合同损益</h3>
+    <div class="guide-quote">
+      "（八）'亏损保险合同损益'……期末，对于未到期责任负债亏损部分的确认或转回，借记或贷记本科目，贷记或借记'未到期责任负债'科目。"
+      <span class="src">——《应用指南2022》第三章（八）"亏损保险合同损益"</span>
+    </div>
+    <p>配套的还有两条科目规则：①亏损部分的<strong>分摊</strong>（摊回）："借记'未到期责任负债'科目，贷记'保险合同赔付和费用'科目"——负债减少、费用冲减；②亏损的确认与转回走"亏损保险合同损益"，与"保险服务费用"分列，让报表使用者单独看到亏损的确认与转回轨迹。</p>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解：亏损的一生</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例A（本站演算）：初始亏损 280 的确认与两年摊回</summary>
+      <div class="fold-body">
+        <p><strong>背景（本站依据指南方法编制）：</strong>趸缴保费 1,000，责任期 2 年；初始估计流出现值 1,200、RA 80；IACF 0；折现率 5%；各年责任单元相等。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 首日：确认亏损</div>
+          履约现金流量 = 1,200 + 80 − 1,000（保费流入现值）= <strong>280</strong> &gt; 0 → 无 CSM，全额确认亏损：
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr><td>借：亏损保险合同损益 280</td></tr>
+                <tr><td>　　贷：未到期责任负债——亏损部分 280</td></tr>
+              </tbody>
+            </table>
+          </div>
+          负债按 FCF+RA 全额计量（含亏损部分），报表上"首日就亏 280"。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 两年摊回</div>
+          假设无估计变更，亏损部分随服务提供均匀摊回（责任单元相等）：
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th></th><th>期初</th><th>第1年末</th><th>第2年末</th></tr></thead>
+              <tbody>
+                <tr><td>亏损部分余额</td><td class="num">280</td><td class="num">140</td><td class="num">0</td></tr>
+                <tr><td>当年摊回（冲减保险合同赔付和费用）</td><td class="num">—</td><td class="num">140</td><td class="num">140</td></tr>
+              </tbody>
+            </table>
+          </div>
+          分录：借 未到期责任负债 140；贷 保险合同赔付和费用 140。注意摊回<strong>不是收入</strong>（第11章排除清单第⑧项），而是费用的冲减——亏损合同的"收入"天然偏少，费用端补偿。
+        </div>
       </div>
+    </details>
+
+    <details class="fold example-fold">
+      <summary>📖 例B（本站演算）：情况好转——抵销、转回、重建 CSM</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>沿用例A。第1年末，公司修订未来赔付估计：流出现值下降 200（与未来服务相关的估计变更）。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 三步顺序</div>
+          此时账面：亏损部分余额 140（摊回后）、CSM 0。有利变动 200 的处理顺序：
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>步骤</th><th>金额</th><th>处理</th></tr></thead>
+              <tbody>
+                <tr><td>① 抵销亏损部分</td><td class="num">140</td><td>亏损部分清零，<strong>不产生利润</strong>（借：未到期责任负债，贷：亏损保险合同损益——转回）</td></tr>
+                <tr><td>② 剩余部分</td><td class="num">60</td><td>调整 CSM：借：未到期责任负债——现值 60；贷：CSM 60</td></tr>
+                <tr><td>③ 后续</td><td class="num">60</td><td>第2年摊销 60 进保险服务收入</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 为什么 140 不许直接变利润</div>
+          亏损的"转回"与减值的转回同构：确认亏损时压低了当期损益，转回只是把多记的亏损吐回来（科目上冲减"亏损保险合同损益"），但不越过损益表直接注资利润。而超出部分 60 之所以进 CSM，是因为合同组<strong>重新回到了盈利轨道</strong>——对未来的有利预期按 CSM 规则慢慢挣。若修订来自金融假设（如折现率），则走金融变动额通道，与本例（非金融估计变更）不同。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 与 VFA / 再保的联动</div>
+          第13章已见 VFA 版本（"基础项目公允价值中企业享有份额的减少额超过 CSM 账面价值所导致的亏损部分"）；第17章将见再保版本（分出合同组的"亏损摊回部分"是分保摊回资产的组成）。亏损机制是全准则通用的"安全阀"：任何模型下，负债超过蓄水池容量的部分都必须当场入损益。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch15">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">1</span>初始确认时，合同组履约现金流量为净流出 280（保费现值已扣减），则？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>确认 CSM −280，逐年摊销为负收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>确认亏损部分 280 计入当期损益，CSM 保持为零</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>将 CSM 与亏损部分各记 140</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>递延到赔付发生时再确认亏损</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。CSM 不能为负：超出对价的履约现金流量作为亏损部分一次性计入当期损益，负债按全额计量。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">2</span>未到期责任负债中亏损部分的逐期摊回，计入？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>保险服务收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>承保财务损益</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>冲减保险合同赔付和费用（费用端）</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>其他综合收益</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。摊回走费用端（借 未到期责任负债，贷 保险合同赔付和费用）；亏损部分分摊的金额不得计入保险服务收入（第11章排除清单）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">3</span>亏损合同组后续出现与未来服务相关的有利估计变更（FCF 减少 200），账面亏损部分余额 140。正确的处理顺序是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>先抵销亏损部分 140（转回，不入收入），超出部分 60 调增 CSM 待摊销</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>200 全部确认为当期保险服务收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>200 全部计入 OCI</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>200 全部调整 CSM</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。指南原文：履约现金流量减少额抵销的未到期责任负债的亏损部分"应当计入当期损益"（转回）；只有抵销后仍有余的部分才调整 CSM。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>关于亏损部分摊回时"金融变动额除外"的理解，最准确的是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>亏损合同不用计提利息</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>金融变动额可以忽略不计</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>金融变动额计入亏损部分</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>负债的计息与金融风险影响按金融变动额通道处理（损益或 OCI），不进入亏损摊回的节奏</span></div>
+      </div>
+      <div class="quiz-explain">D 正确。亏损摊回模拟的是"若非亏损"的服务节奏；货币时间价值及金融风险的影响单独按第12章政策处理，两股流量不混流。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">5</span>"亏损保险合同损益"科目核算的内容是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>亏损合同组的保险服务收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>未到期责任负债亏损部分的确认或转回</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>亏损部分各期的摊回</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>已发生赔款负债的估计变更</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。确认与转回走本科目（第三章科目（八））；摊回走"保险合同赔付和费用"（贷方冲减）；C 与 B 是两条不同的分录线，D 与亏损无关。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
     </div>
   </div>
 
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>铁律</strong></td><td>CSM 不能为负；负债超过蓄水池容量的部分当场进损益</td></tr>
+          <tr><td><strong>初始亏损</strong></td><td>履约现金流量（含保费流入）净流出 → 亏损部分计入当期损益，负债全额计量</td></tr>
+          <tr><td><strong>后续亏损</strong></td><td>FCF 增加额超过 CSM 账面价值 → 超出部分进损益</td></tr>
+          <tr><td><strong>摊回</strong></td><td>按"若非亏损"的服务节奏冲减各期保险合同赔付和费用；金融变动额除外</td></tr>
+          <tr><td><strong>好转三步</strong></td><td>抵销亏损部分（转回）→ 抵完有余 → 重建 CSM 慢慢挣</td></tr>
+          <tr><td><strong>科目</strong></td><td>确认/转回：亏损保险合同损益；摊回：保险合同赔付和费用（贷方）</td></tr>
+          <tr><td><strong>联动</strong></td><td>VFA（第13章）、再保亏损摊回（第17章）、披露（第19章）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch15">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
   <div class="section">
     <h2><span class="icon">🔗</span>五、知识连接</h2>
     <div class="link-map">
@@ -122,5 +322,6 @@
   </div>
 </div>
 <script src="guide.js"></script>
+  <script src="gate.js"></script>
 </body>
 </html>
