@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>公式速查 · CAS25 精读</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html">
+    <span class="logo-icon">25</span> CAS25 精读
+  </a>
+  <div class="topnav-links">
+    <a href="index.html">知识地图</a>
+    <a href="ch01.html">入门篇</a>
+    <a href="ch06.html">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html" class="active">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">知识地图</a>
+    <span class="separator">›</span>
+    <strong>公式速查</strong>
+  </div>
+
+  <div class="page-header">
+    <h1>公式速查 · 一页装下 CAS25 的全部公式</h1>
+    <p class="subtitle">按"初始计量 → 后续滚动 → 利润表 → 三大特例 → 再保 → 衔接"排列，每条公式标注出处章节和一道对应例题——考前扫这一页，等于扫完二十章。</p>
+    <div class="tag-row">
+      <span class="tag">负债口径：流出为正、流入为负</span>
+      <span class="tag">每条公式配出处 + 例题</span>
+      <span class="tag">适合考前速览</span>
+    </div>
+  </div>
+
+  <div class="callout callout-warning">
+    <div class="callout-title">⚠️ 全站符号约定（读公式前必看）</div>
+    本站所有公式采用<strong>负债口径</strong>：现金流出（赔付、维持费用）记<strong>正</strong>，现金流入（保费）记<strong>负</strong>。因此"FCF+RA &lt; 0"意味着净流入（厚利合同），符号方向与其他教材（资产口径）可能相反——以语义判断为准，不要死记符号。
+  </div>
+
+  <!-- 一、初始计量 -->
+  <div class="section">
+    <h2><span class="icon">🧱</span>一、初始计量（第06–09章）</h2>
+
+    <div class="formula">
+      <span class="label">保险合同负债构成（BBA 初始） · 第01/09章</span>
+      <span class="eq">保险合同负债 = 履约现金流量（FCF） + 合同服务边际（CSM）</span>
+      <span class="label" style="margin-top:8px">履约现金流量的展开 · 第06章</span>
+      <span class="eq">FCF = Σ [ E(CFₜ) ÷ (1+i)ᵗ ] + RA</span>
+      <span class="eq">（未来现金流量概率加权现值 + 非金融风险调整）</span>
+      <span class="label" style="margin-top:8px">首日判断（零下限）· 第09章</span>
+      <span class="eq">FCF₀ + RA₀ &lt; 0 → CSM₀ = −(FCF₀ + RA₀)（厚利，利得递延）</span>
+      <span class="eq">FCF₀ + RA₀ ≥ 0 → CSM₀ = 0，亏损 = FCF₀ + RA₀ 立即进损益</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例21</a>（情形1 CSM=591 / 情形2 亏损499）</p>
+    </div>
+
+    <div class="formula">
+      <span class="label">获取现金流（IACF）初始处理 · 第04章</span>
+      <span class="eq">IACF ≤ 预期从相关合同收回的现金流 → 确认"获取现金流资产"</span>
+      <span class="eq">IACF &gt; 可收回部分 → 差额当期费用化</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例19</a>（40,000 元佣金三年之旅）</p>
+    </div>
+  </div>
+
+  <!-- 二、后续计量 -->
+  <div class="section">
+    <h2><span class="icon">🔄</span>二、后续计量：CSM 滚动与摊销（第09–10章）</h2>
+
+    <div class="formula">
+      <span class="label">CSM 期初→期末滚动（五大调整）· 第09–10章</span>
+      <span class="eq">CSM期末 = CSM期初 + 计息 + 估计变更与模型差异调整 + 亏损转回(负) − 当期摊销</span>
+      <span class="eq">计息 = CSM期初 × 初始锁定利率 i₀</span>
+      <span class="label" style="margin-top:8px">当期摊销（按责任单元）· 第09章</span>
+      <span class="eq">当期摊销 = (CSM期初 + 计息 + 当期调整) × [ 当期责任单元 ÷ 剩余责任单元总数 ]</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例26</a>（CSM 591 → 413 → 124 → 0）、例27（万能险 404 → 400 → 458 → 0）</p>
+    </div>
+
+    <div class="formula">
+      <span class="label">未到期责任负债期末余额 · 第10章</span>
+      <span class="eq">负债期末 = 负债期初 + 当期FCF估计变更 + RA重估 + CSM调整净额 + 金融变动额(计息+折现率变动)</span>
+      <span class="eq"> − 当期履约现金流实际发生(赔付流出) + 已到期转入已发生赔款负债</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例26/27</a> 的三年滚动表（表12–16、表17–26）</p>
+    </div>
+  </div>
+
+  <!-- 三、利润表 -->
+  <div class="section">
+    <h2><span class="icon">📈</span>三、利润表三线（第11–12章）</h2>
+
+    <div class="formula">
+      <span class="label">保险服务收入（组成法）· 第11章</span>
+      <span class="eq">当期收入 = 预计当期履约费用 + RA当期释放 + CSM当期摊销 ± 经验调整分担额 ± IACF摊销</span>
+      <span class="eq">（总额原则：合同总对价 − 投资成分，按服务进度分配到各期）</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例26</a>（647/719/603）、<a href="examples.html">例28</a>（甲3,500 vs 乙4,000）</p>
+    </div>
+
+    <div class="formula">
+      <span class="label">保险服务费用 · 第11章</span>
+      <span class="eq">当期费用 = 当期赔付及费用(不含投资成分) − 投资成分划转 + RA当期释放 + 亏损部分当期变动</span>
+      <span class="eq">承保损益 = 保险服务收入 − 保险服务费用</span>
+    </div>
+
+    <div class="formula">
+      <span class="label">保险合同金融变动额及其分解 · 第12章</span>
+      <span class="eq">金融变动额 = 货币时间价值及金融风险调整变动 + 金融假设变更影响</span>
+      <span class="eq">金融变动额 = 计入损益(保险财务损益) + 计入OCI（若选择分解政策）</span>
+      <span class="eq">硬约束①：整个责任期内计入 OCI 的累计金额为零　硬约束②：方法前后一致</span>
+    </div>
+  </div>
+
+  <!-- 四、OCI 三法 -->
+  <div class="section">
+    <h2><span class="icon">✂️</span>四、金融变动额分解三法（第12章）</h2>
+
+    <div class="formula">
+      <span class="label">法一：实际分摊率法 · 第12章</span>
+      <span class="eq">r 满足：剩余现金流按 r 折现的现值 = 当前负债 − 已计入OCI的累计变动</span>
+      <span class="eq">计入损益的利率 = r（如 10% → 7.48%），市场利率即时变动进 OCI</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例23</a>（r=7.48%，损益 284/234/251，OCI 累计 149/79/0）</p>
+    </div>
+
+    <div class="formula">
+      <span class="label">法二：预期结算利率法 · 第12章</span>
+      <span class="eq">计入损益的利率 = 初始预期结算利率 × 调整因子 K</span>
+      <span class="eq">K 使：初始预计应付金额按初始利率与按 K 调整后利率折现的现值相等（如 K = 1.01854）</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例24</a>（K=1.01854，损益 284/312/169）</p>
+    </div>
+
+    <div class="formula">
+      <span class="label">法三：当期账面收益率法（VFA 专用）· 第12/13章</span>
+      <span class="eq">计入损益的金额 = 基础项目当期账面收益率 × 期初负债（不含金融变动部分）</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例25</a>（资产损益=负债损益 300/330/363，天然对冲）</p>
+    </div>
+  </div>
+
+  <!-- 五、VFA -->
+  <div class="section">
+    <h2><span class="icon">🧮</span>五、VFA 浮动收费法（第13章）</h2>
+
+    <div class="formula">
+      <span class="label">VFA 判断三条件 · 第13章</span>
+      <span class="eq">① 条款明确指向清晰可辨认的基础项目　② 企业预计支付持有人相当大部分回报</span>
+      <span class="eq">③ 应付金额变动的大部分随基础项目价值变动而变动</span>
+    </div>
+
+    <div class="formula">
+      <span class="label">浮动收费与 CSM 吸收 · 第13章</span>
+      <span class="eq">浮动收费 = 基础项目公允价值 − 预计应付持有人金额（现值口径，如例30：5,862 = 5,000 + 450/1.05 + 478/1.05²）</span>
+      <span class="eq">CSM 调整额 = 企业份额当期变动 × ( 期初 CSM ÷ 期初企业份额 )</span>
+      <span class="eq">企业份额 = 1 − 持有人份额（如例29：基础项目+500、持有人70%→企业150）</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例29</a>（衍生工具对冲两情形）、<a href="examples.html">例30</a>（投连险 5,862）</p>
+    </div>
+  </div>
+
+  <!-- 六、亏损部分 -->
+  <div class="section">
+    <h2><span class="icon">📉</span>六、亏损部分（第15章）</h2>
+
+    <div class="formula">
+      <span class="label">亏损部分的确认与摊回 · 第15章</span>
+      <span class="eq">初始亏损 = FCF₀ + RA₀ （&gt;0 时），借记"亏损保险合同损益"</span>
+      <span class="eq">当期冲抵收入 = 亏损部分 × [ 当期责任单元 ÷ 剩余责任单元 ]（贷记保险服务费用）</span>
+      <span class="eq">后续好转：先用有利变动抵销未摊回亏损部分 → 抵尽后重建 CSM → 再有剩余才进损益</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例A</a>（亏损280 两年摊回）、<a href="examples.html">例B</a>（抵销→重建CSM 60）</p>
+    </div>
+  </div>
+
+  <!-- 七、PAA -->
+  <div class="section">
+    <h2><span class="icon">⚡</span>七、PAA 保费分摊法（第16章）</h2>
+
+    <div class="formula">
+      <span class="label">PAA 简化与底线 · 第16章</span>
+      <span class="eq">期末负债 = 未到期部分对应的保费（近似按时间进度/风险进度分摊）</span>
+      <span class="eq">当期收入 ≈ 当期到期的保费（可作简化：收入 = 已赚保费口径）</span>
+      <span class="eq">亏损测试不能省：负债 &gt; 相关 IACF 资产 → 超出部分确认亏损并调增负债</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例C</a>（一年期家财险600）、<a href="examples.html">例D</a>（亏损测试）</p>
+    </div>
+  </div>
+
+  <!-- 八、再保 -->
+  <div class="section">
+    <h2><span class="icon">🪞</span>八、再保险（第17章）</h2>
+
+    <div class="formula">
+      <span class="label">分保摊回资产初始计量（镜像原则）· 第17章</span>
+      <span class="eq">分保摊回未到期责任资产 = 摊回未来现金流量现值 − 摊回非金融风险调整 + 摊回CSM</span>
+      <span class="eq">（与签发人负债方向镜像：例E 中 40% 成数分保 → 资产 247.2 = 435.6 + 48 − 236.4）</span>
+      <span class="label" style="margin-top:8px">分保净成本追溯 · 第17章</span>
+      <span class="eq">净流出 → 比照 IACF 摊销　净流入 → 直接调整 CSM</span>
+      <span class="eq">亏损摊回 = 直接业务亏损 × 预计摊回比例（借分保资产，贷摊回保险服务费用）</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例E</a>（成数分保镜像例26）</p>
+    </div>
+  </div>
+
+  <!-- 九、衔接 -->
+  <div class="section">
+    <h2><span class="icon">🚉</span>九、新旧衔接（第20章）</h2>
+
+    <div class="formula">
+      <span class="label">过渡日 CSM（公允价值法）· 第20章</span>
+      <span class="eq">CSM过渡日 = 剩余对价 − RA过渡日 − FCF过渡日</span>
+      <span class="eq">结果为负 → 确认亏损（CSM=0）；不追溯调整对比信息</span>
+      <span class="label" style="margin-top:8px">三法选择 · 第20章</span>
+      <span class="eq">全面追溯（重述对比期） / 修正追溯（调整期初权益） / 公允价值法（重新起算）</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">对应例题：<a href="examples.html">例H</a>（三法对比：CSM 40 / 25 / 亏损−170）</p>
+    </div>
+  </div>
+
+  <!-- 十、RA 估计 -->
+  <div class="section">
+    <h2><span class="icon">🎲</span>十、RA 三种估计技术（第08章）</h2>
+
+    <div class="formula">
+      <span class="label">非金融风险调整的估计技术 · 第08章</span>
+      <span class="eq">置信区间法：RA = 现金流量分布置信区间（如75%分位）与期望值之差</span>
+      <span class="eq">条件尾部期望法：RA = 不利情景期望 − 无条件期望</span>
+      <span class="eq">成本资本法：RA = 非金融风险所需资本 × 资本成本率</span>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:8px">三法可选其一或组合，结果应定期校准（对应例20：巨灾"30%概率"的情景估计）</p>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="glossary.html">
+        <span class="nav-label">上一站</span>
+        <div class="nav-title">← 术语表</div>
+      </a>
+      <a class="next-ch" href="examples.html">
+        <span class="nav-label">下一站</span>
+        <div class="nav-title">例题库 →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 公式速查</p>
+    <p style="margin-top:6px">内容依据《企业会计准则第25号——保险合同应用指南2022》编写 · 仅供学习交流</p>
+  </div>
+
+</div>
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <img class="brand-logo" src="assets/xihong-logo.jpg" alt="西红精算 Logo">
+    <div class="brand-copy">
+      <div class="bt">西红精算 · 用数据讲保险，用真心做科普</div>
+      <div class="bs">本知识库由一线在职精算师维护，配套公众号长期连载与知识星球答疑社区。</div>
+      <div class="bl">
+        <a href="about.html">关于西红精算</a>
+        <a href="premium.html">完整版解锁</a>
+        <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球</a>
+      </div>
+    </div>
+    <div class="brand-qrs">
+      <div class="brand-qr">
+        <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码">
+        <div class="qn">公众号</div>
+      </div>
+      <div class="brand-qr zsxq">
+        <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码">
+        <div class="qn">知识星球</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
