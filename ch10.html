@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第10章 后续计量全景 · CAS25 精读</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html"><span class="logo-icon">25</span> CAS25 精读</a>
+  <div class="topnav-links">
+    <a href="index.html">知识地图</a>
+    <a href="ch01.html">入门篇</a>
+    <a href="ch06.html" class="active">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">知识地图</a><span class="separator">›</span><span>进阶篇</span><span class="separator">›</span><strong>第10章 后续计量全景</strong>
+  </div>
+
+  <div class="page-header">
+    <h1>第10章 · 后续计量全景：负债滚动表</h1>
+    <p class="subtitle">全站核心章。初始确认之后，负债像一条河流：计息使其上涨、摊销与释放使其下降、经验与估计变动改变河道。本章用指南例26 的<strong>三年完整滚动表</strong>，把 CSM 五大调整、经验调整与估计变更的分流、收入的构成，一次性串成闭环。</p>
+    <div class="tag-row">
+      <span class="tag">进阶篇 · 第 5/7 章</span>
+      <span class="tag">预计用时 40 分钟</span>
+      <span class="tag">对应指南：第六章（二）后续计量</span>
+    </div>
+  </div>
+
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>合同服务边际的"五大调整"是哪五项？哪些履约现金流量变动<strong>不能</strong>调整 CSM？</li>
+      <li>例26 第 2 年：实际赔付 300（预期 400）、第 3 年预期从 400 下调到 280——这两件事分别走什么通道？对当期损益有什么不同影响？</li>
+      <li>三年收入 647 / 719 / 603，各自的构成是什么？为什么第 2 年最大？</li>
+    </ol>
+    <p class="hint">提示：滚动表只有六类动作——期初余额、年初现金流量、财务损益（计息）、与未来服务相关变动、与当年服务相关变动、年末现金流量。所有复杂业务都能塞进这六行。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、后续计量的两张负债与一张滚动表</h2>
+
+    <div class="guide-quote">
+      "企业应当在资产负债表日通过未到期责任负债与已发生赔款负债对保险合同组进行后续计量。未到期责任负债包括资产负债表日分摊至保险合同组的、与未到期责任有关的履约现金流量和当日该合同组的合同服务边际。"
+      <span class="src">——《应用指南2022》第六章（二）后续计量</span>
+    </div>
+
+    <p>已发生赔款负债（现值 + RA，无 CSM）承接出险后的赔案；未到期责任负债（现值 + RA + CSM）承载尚未到期的责任。本章聚焦后者的滚动。对不具有直接参与分红特征的合同组（BBA），CSM 期末账面价值 = 期初 + 五大调整：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>调整</th><th>内容</th><th>方向直觉</th></tr></thead>
+        <tbody>
+          <tr><td><strong>① 当期归入的新合同</strong></td><td>当期新归入该组的合同对 CSM 的影响金额</td><td>新本钱入池</td></tr>
+          <tr><td><strong>② 计提利息</strong></td><td>按初始锁定的不随基础项目回报变动的加权平均折现率计息</td><td>货币时间价值</td></tr>
+          <tr><td><strong>③ 与未来服务相关的履约现金流量变动</strong></td><td>按初始锁定折现率计量的保费经验调整、未到期现值估计变更、投资成分/保单贷款的预计-实际差额、与未来服务相关的 RA 变动等</td><td>河道改向：利好加厚、利空削薄（撞零即亏损）</td></tr>
+          <tr><td><strong>④ 汇兑差额</strong></td><td>外币合同组的 CSM 汇兑变动</td><td>汇率通道</td></tr>
+          <tr><td><strong>⑤ 当期摊销</strong></td><td>按责任单元（利益金额或数量 × 责任期）平均分摊，计入保险服务收入</td><td>蓄水池放水</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-warning">
+      <div class="callout-title">⚠️ 四类变动不调整 CSM</div>
+      ① 货币时间价值及金融风险及其变动导致的现值变动（走金融变动额通道）；② 企业选择作为金融变动额的 RA 变动；③ <strong>已发生赔款负债</strong>的估计变更（那是当期费用的事）；④ 除保费经验调整外的其他经验调整。核心口诀：<strong>金融的归金融（损益/OCI），已发生的归当期（费用），未来的才归 CSM</strong>。
+    </div>
+
+    <h3>1.1 经验调整 vs 估计变更：一表分清</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>维度</th><th>经验调整（experience adjustment）</th><th>估计变更（estimate change）</th></tr></thead>
+        <tbody>
+          <tr><td><strong>对象</strong></td><td><strong>当期</strong>实际与预期的差额</td><td><strong>未来</strong>现金流量估计的修改</td></tr>
+          <tr><td><strong>例26 第2年</strong></td><td>赔付：预期 400 vs 实际 300 → 差 100</td><td>第3年预期 400→280、RA 40→30</td></tr>
+          <tr><td><strong>计量利率</strong></td><td>初始锁定折现率（指南要求）</td><td>初始锁定折现率（指南要求）</td></tr>
+          <tr><td><strong>分流</strong></td><td>与当年服务相关 → <strong>进收入</strong>（第11章）；保费经验调整与未来服务相关 → 调 CSM</td><td>与未来服务相关 → <strong>调 CSM</strong></td></tr>
+          <tr><td><strong>当期损益影响</strong></td><td>通过收入科目体现</td><td>不直接进损益（除非撞零转亏损）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>注意一个精妙设计：赔付经验调整与赔付估计变更<strong>方向相同时合计</strong>处理——第2年少赔的 100（经验）与第3年少赔的 120 折现 114（估计），对 CSM 与收入的影响路径并不相同，需要分步落表（见例题第 2 步）。</p>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解：例26 三年完整滚动</h2>
+    <p>以下数字全部来自指南例26（表12–表16 与 15 笔分录）。先记住背景，然后逐年展开。</p>
+
+    <details class="fold example-fold">
+      <summary>📖 第 0 步 · 背景与初始计量（表12）</summary>
+      <div class="fold-body">
+        <p>100 份三年期合同，20×1 年 1 月 1 日初始确认并立即收到保费 1,800；预计每年末流出 400；折现率 5%（锁定）；RA 120，每年均匀释放；责任单元三年相等；无投资成分。</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>项目</th><th>初始确认时</th><th>第1年末</th><th>第2年末</th></tr></thead>
+            <tbody>
+              <tr><td>未来现金流出现值</td><td class="num">1,089</td><td class="num">744</td><td class="num">381 → <strong>267</strong>（估计修改后）</td></tr>
+              <tr><td>非金融风险调整</td><td class="num">120</td><td class="num">80</td><td class="num">40 → <strong>30</strong>（估计修改后）</td></tr>
+              <tr><td>合同服务边际</td><td class="num">591</td><td class="num">413</td><td class="num">279</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>初始三项之和 = (1,089 − 1,800) + 120 = −591 → CSM 591，初始负债 0（第09章已推导）。</p>
+      </div>
+    </details>
+
+    <details class="fold example-fold">
+      <summary>📖 第 1 年（表13）：计息 84，收入 647，年末负债 1,237</summary>
+      <div class="fold-body">
+        <div class="fold-step">
+          <div class="step-label">滚动表（负债口径，正数=负债构成）</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>动作</th><th>现值</th><th>RA</th><th>CSM</th><th>负债合计</th></tr></thead>
+              <tbody>
+                <tr><td>新合同初始确认</td><td class="num">−711</td><td class="num">+120</td><td class="num">+591</td><td class="num">0</td></tr>
+                <tr><td>年初现金流量（收保费）</td><td class="num">+1,800</td><td class="num">—</td><td class="num">—</td><td class="num">1,800</td></tr>
+                <tr><td>保险财务损益（计息 5%）</td><td class="num">+55</td><td class="num">—</td><td class="num">+29</td><td class="num">84</td></tr>
+                <tr><td>与当年服务相关变动</td><td class="num">—</td><td class="num">−40</td><td class="num">−207</td><td class="num">−247</td></tr>
+                <tr><td>年末现金流量（付赔款）</td><td class="num">−400</td><td class="num">—</td><td class="num">—</td><td class="num">−400</td></tr>
+                <tr class="total-row"><td>年末余额</td><td class="num">744</td><td class="num">80</td><td class="num">413</td><td class="num">1,237</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="fold-step">
+          <div class="step-label">三个数字的来历</div>
+          计息 84 = 现值 (1,089)×5% = 55 + CSM 591×5% = 29；CSM 摊销 207 = (591+29)÷3（责任单元均分）；收入 <strong>647 = 400（预计赔付）+ 40（RA 释放）+ 207（CSM 摊销）</strong>。实际赔付恰与预期一致，无经验调整。
+        </div>
+        <div class="fold-step">
+          <div class="step-label">与第05章分录互认</div>
+          七笔分录（初始→保费→赔付→支付→计息→收入→年末余额）与这张表逐行对应——第05章是"分录视角"，本章是"表格视角"，一体两面。
+        </div>
+      </div>
+    </details>
+
+    <details class="fold example-fold">
+      <summary>📖 第 2 年（表15）：经验调整 100、估计变更 −124、收入 719、年末负债 576</summary>
+      <div class="fold-body">
+        <p><strong>当年两件事：</strong>① 实际赔付 300（预期 400）；② 第 3 年预期赔付下调至 280、RA 下调至 30。</p>
+
+        <div class="fold-step">
+          <div class="step-label">滚动表</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>动作</th><th>现值</th><th>RA</th><th>CSM</th><th>负债合计</th></tr></thead>
+              <tbody>
+                <tr><td>年初余额</td><td class="num">744</td><td class="num">80</td><td class="num">413</td><td class="num">1,237</td></tr>
+                <tr><td>保险财务损益（计息）</td><td class="num">+37</td><td class="num">—</td><td class="num">+21</td><td class="num">58</td></tr>
+                <tr><td>与未来服务相关变动</td><td class="num">−114</td><td class="num">−10</td><td class="num">+124</td><td class="num">0</td></tr>
+                <tr><td>与当年服务相关变动</td><td class="num">−100</td><td class="num">−40</td><td class="num">−279</td><td class="num">−419</td></tr>
+                <tr><td>年末现金流量（实付 300）</td><td class="num">−300</td><td class="num">—</td><td class="num">—</td><td class="num">−300</td></tr>
+                <tr class="total-row"><td>年末余额</td><td class="num">267</td><td class="num">30</td><td class="num">279</td><td class="num">576</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">关键解读 1 · 两件事两种通道</div>
+          实付 300 < 预期 400：差的 100 是<strong>经验调整</strong>，与当年服务相关 → 与实付 300 一起体现在收入里；第 3 年预期 400→280：折现 (400−280)/1.05 = 114 是<strong>估计变更</strong>，与未来服务相关 → 加上 RA 变动 10，合计 <strong>调增 CSM 124</strong>（分录⑨：借 现值 114、RA 10；贷 CSM 124）。当期损益一分钱不动——利好在未来。
+        </div>
+        <div class="fold-step">
+          <div class="step-label">关键解读 2 · 收入为什么不降反升</div>
+          收入 <strong>719 = 400（预计赔付，含经验调整 100 + 实付 300）+ 40（RA 释放）+ 279（CSM 摊销）</strong>。CSM 摊销 279 = (413 + 124 + 21) ÷ 2——估计利好先加厚 CSM，再按剩余两年责任单元均摊，所以比第 1 年的 207 还大。
+        </div>
+        <div class="fold-step">
+          <div class="step-label">关键解读 3 · 计息的锁定利率</div>
+          58 = 744×5%（现值）+ 413×5%（CSM）——用的仍是初始 5%，与当年市场利率无关（第07章）。
+        </div>
+      </div>
+    </details>
+
+    <details class="fold example-fold">
+      <summary>📖 第 3 年（表16）：收入 603，负债清零，全剧终</summary>
+      <div class="fold-body">
+        <div class="fold-step">
+          <div class="step-label">滚动表</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>动作</th><th>现值</th><th>RA</th><th>CSM</th><th>负债合计</th></tr></thead>
+              <tbody>
+                <tr><td>年初余额</td><td class="num">267</td><td class="num">30</td><td class="num">279</td><td class="num">576</td></tr>
+                <tr><td>保险财务损益（计息）</td><td class="num">+13</td><td class="num">—</td><td class="num">+14</td><td class="num">27</td></tr>
+                <tr><td>与当年服务相关变动</td><td class="num">—</td><td class="num">−30</td><td class="num">−293</td><td class="num">−323</td></tr>
+                <tr><td>年末现金流量（实付 280）</td><td class="num">−280</td><td class="num">—</td><td class="num">—</td><td class="num">−280</td></tr>
+                <tr class="total-row"><td>年末余额</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="fold-step">
+          <div class="step-label">解读</div>
+          实际 280 = 修改后预期，无新经验调整；收入 <strong>603 = 280 + 30（RA 释放）+ 293（CSM 摊销）</strong>，其中 293 = 279 + 14（含当年计息的余额全数摊完）。现值 267 + 计息 13 − 支付 280 = 0——三条河道同时归零。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">三年总账（验证）</div>
+          收入合计 1,969 = 赔付 980（400+300+280）+ RA 120 + CSM 本息 649 + 经验调整净额 100 + 估计变更影响？——直接验现金：保费 1,800 − 赔付 980 = <strong>820</strong>；损益表：收入 1,969 − 赔付和费用 980 − 承保财务损益 169 = <strong>820</strong> ✓。账是平的：三年利润恰等于现金净流入。
+        </div>
+
+        <div class="callout callout-key">
+          <div class="callout-title">🔑 这张滚动表值得打印贴墙</div>
+          六行动作（期初/年初现金/计息/未来服务/当年服务/年末现金）可以装载<strong>任何</strong> BBA 合同组：万能险的相机调整（第14章）、VFA 的基础项目份额变动（第13章）、亏损部分的确认转回（第15章），都是往"与未来服务相关变动"或"与当年服务相关变动"里填新行而已。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch10">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">1</span>下列哪项不调整 CSM？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>已发生赔款负债的估计变更</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>与未来服务相关的未到期现值估计变更</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>按初始折现率计量的保费经验调整</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>当期归入该组的新合同</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。已发生赔案的估计变更属于当期费用范畴，不进 CSM。B、C 是五大调整③的内容，D 是调整①。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">2</span>例26 第 2 年实际赔付 300（预期 400），差额 100 的处理是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>调整 CSM 100</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>直接冲减当期费用 100</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>与当年服务相关的经验调整，通过保险服务收入体现</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>计入其他综合收益</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。赔付经验调整与当年服务相关，随收入确认（收入 719 中含 100）；注意与保费经验调整（与未来服务相关、调 CSM）区分。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">3</span>例26 第 2 年末预计第 3 年赔付 400→280，CSM 因此？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>减少 114</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>增加 124（现值 114 + RA 10）</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>增加 120（名义差额）</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>不变</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。(400−280)/1.05 = 114 按 5% 锁定利率折现，加 RA 变动 10，合计调增 CSM 124（分录⑨）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>例26 三年 CSM 滚动的正确序列是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>591 → 413 → 155 → 0</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>591 → 384 → 279 → 0</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>591 → 413 → 296 → 0</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>591 → 413 → 279 → 0</span></div>
+      </div>
+      <div class="quiz-explain">D 正确。第1年 591+29−207 = 413；第2年 413+21+124−279 = 279；第3年 279+14−293 = 0。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">5</span>CSM 摊销的责任单元，指南要求考虑？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>仅剩余年限</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>每项合同所提供的利益金额或数量及预计责任期</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>保费金额</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>赔付发生的时间分布</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。指南：先识别责任单元（利益金额或数量 × 预计责任期），CSM 平均分摊至每一责任单元。例26 用"各年责任单元相等"，例30 用"当年有效人数"。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
+    </div>
+  </div>
+
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>两张负债</strong></td><td>未到期责任负债（现值+RA+CSM）滚动；已发生赔款负债（现值+RA）</td></tr>
+          <tr><td><strong>CSM 五大调整</strong></td><td>新合同 / 计息（锁定利率）/ 与未来服务相关变动 / 汇兑 / 摊销</td></tr>
+          <tr><td><strong>不调 CSM 的四类</strong></td><td>金融风险及变动现值变动、选定作金融变动额的 RA 变动、已发生赔款估计变更、非保费经验调整</td></tr>
+          <tr><td><strong>经验调整</strong></td><td>当期实际 vs 预期；赔付类→收入，保费类→CSM；按锁定利率计量</td></tr>
+          <tr><td><strong>估计变更</strong></td><td>未来流量修改；与未来服务相关→CSM；按锁定利率计量</td></tr>
+          <tr><td><strong>例26 三年</strong></td><td>收入 647/719/603；计息 84/58/27；负债 1,237/576/0；CSM 591→413→279→0</td></tr>
+          <tr><td><strong>利润恒等式</strong></td><td>三年利润 820 = 保费 1,800 − 赔付 980（现金验证）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch10">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
+  <div class="section">
+    <h2><span class="icon">🔗</span>五、知识连接</h2>
+    <div class="link-map">
+      <div class="link-card prereq">
+        <h4>⬆ 前置知识</h4>
+        <a href="ch09.html">第09章 合同服务边际 CSM <span class="why">——初始 591 从哪来</span></a>
+        <a href="ch08.html">第08章 非金融风险调整 RA <span class="why">——RA 释放 40/40/30 的通道</span></a>
+        <a href="ch07.html">第07章 折现率 <span class="why">——锁定利率与计息 55/37/13</span></a>
+        <a href="ch05.html">第05章 十三个会计科目总览 <span class="why">——滚动表与七笔分录的对应</span></a>
+      </div>
+      <div class="link-card next">
+        <h4>⬇ 后续哪里会用到</h4>
+        <a href="ch11.html">第11章 保险收入与费用 <span class="why">——647/719/603 的完整口径</span></a>
+        <a href="ch12.html">第12章 OCI 与金融变动额 <span class="why">——计息之外的市场利率通道</span></a>
+        <a href="ch13.html">第13章 VFA 浮动收费法 <span class="why">——滚动表在 VFA 下的变体</span></a>
+        <a href="ch15.html">第15章 亏损部分 <span class="why">——CSM 撞零之后的机制</span></a>
+      </div>
+      <div class="link-card law">
+        <h4>📜 CAS25 原文对照</h4>
+        <a href="cas25.html#a28">第二十八条 后续计量结构</a>
+        <a href="cas25.html#a30">第三十条 摊销与责任单元</a>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="ch09.html">
+        <span class="nav-label">上一章</span>
+        <div class="nav-title">← 第09章 合同服务边际 CSM</div>
+      </a>
+      <a class="next-ch" href="ch11.html">
+        <span class="nav-label">下一章</span>
+        <div class="nav-title">第11章 保险收入与费用 →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 第10章 后续计量全景</p>
+    <p style="margin-top:6px">内容依据《企业会计准则第25号——保险合同应用指南2022》编写 · 仅供学习交流</p>
+  </div>
+
+</div>
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <img class="brand-logo" src="assets/xihong-logo.jpg" alt="西红精算 Logo">
+    <div class="brand-copy">
+      <div class="bt">西红精算 · 用数据讲保险，用真心做科普</div>
+      <div class="bs">本知识库由一线在职精算师维护，配套公众号长期连载与知识星球答疑社区。</div>
+      <div class="bl">
+        <a href="about.html">关于西红精算</a>
+        <a href="premium.html">完整版解锁</a>
+        <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球</a>
+      </div>
+    </div>
+    <div class="brand-qrs">
+      <div class="brand-qr">
+        <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码">
+        <div class="qn">公众号</div>
+      </div>
+      <div class="brand-qr zsxq">
+        <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码">
+        <div class="qn">知识星球</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
