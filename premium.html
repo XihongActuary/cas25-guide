@@ -311,14 +311,8 @@ $("cards").innerHTML=cards;
   const inp=$("unlock-input"),btn=$("unlock-btn"),msg=$("unlock-msg");
   function already(){try{return localStorage.getItem(KEY)==='1'}catch(e){return false}}
   function showOk(){
-    const online=location.protocol.indexOf('http')===0;
-    if(online){
-      box.innerHTML='<div class="unlock-head">🔓 口令正确 · 已确认星友身份</div>'+
-        '<div class="unlock-msg ok">完整版随星球附件分发：在星球下载附件包，本地打开即读实战篇全文 · <a href="index.html">返回知识地图</a></div>';
-    }else{
-      box.innerHTML='<div class="unlock-head">🔓 本机已解锁 · 实战篇全站开放</div>'+
-        '<div class="unlock-msg ok">口令一次输入，本机长期有效 · <a href="ch13.html">前往第13章 VFA →</a> · <a href="index.html">返回知识地图</a></div>';
-    }
+    box.innerHTML='<div class="unlock-head">🔓 本机已解锁 · 实战篇全站开放</div>'+
+      '<div class="unlock-msg ok">口令一次输入，本机长期有效 · <a href="ch13.html">前往第13章 VFA →</a> · <a href="index.html">返回知识地图</a></div>';
   }
   if(already()){showOk();return;}
   function go(){
