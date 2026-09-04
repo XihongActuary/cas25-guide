@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第12章 OCI 与保险合同金融变动额 · CAS25 精读</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html"><span class="logo-icon">25</span> CAS25 精读</a>
+  <div class="topnav-links">
+    <a href="index.html">知识地图</a>
+    <a href="ch01.html">入门篇</a>
+    <a href="ch06.html" class="active">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">知识地图</a><span class="separator">›</span><span>进阶篇</span><span class="separator">›</span><strong>第12章 OCI 与保险合同金融变动额</strong>
+  </div>
+
+  <div class="page-header">
+    <h1>第12章 · OCI 与保险合同金融变动额</h1>
+    <p class="subtitle">进阶篇收官章。负债随市场利率起舞，损益表要不要跟着跳？CAS25 给了一个精妙的分流阀：<strong>保险合同金融变动额</strong>——货币时间价值及金融风险的影响，可以全额进损益，也可以拆成"进损益的"和"进 OCI 的"。拆分的方法就是本章三道官方例题：实际分摊率法、预期结算利率法、当期账面收益率法。</p>
+    <div class="tag-row">
+      <span class="tag">进阶篇 · 第 7/7 章</span>
+      <span class="tag">预计用时 30 分钟</span>
+      <span class="tag">对应指南：第六章（二）4</span>
+    </div>
+  </div>
+
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>保险合同金融变动额包括哪些变动？通胀假设有时算金融风险、有时不算——分界线在哪？</li>
+      <li>"分解计入损益和 OCI"的两条硬约束是什么？（提示：一条关于期间总额，一条关于方法匹配）</li>
+      <li>例23 中市场利率从 10% 跌到 5%，为什么甲公司第 2 年计入损益的利率却从 10% 变成 7.48%——而不是直接改成 5%？</li>
+    </ol>
+    <p class="hint">提示：OCI 是"缓冲垫"不是"垃圾桶"——计入 OCI 的金额必须在合同组期限内<strong>全额回吐</strong>（累计归零），拆分方法要确保"拉直"之后损益总额等于金融变动额总额。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、什么是保险合同金融变动额</h2>
+
+    <div class="guide-quote">
+      "企业应当将货币时间价值及金融风险的影响导致的未到期责任负债和已发生赔款负债账面价值变动额，作为保险合同金融变动额。"
+      <span class="src">——《应用指南2022》第六章（二）4</span>
+    </div>
+
+    <p>拆开看，它对应滚动表里三处"金融味道"的变动：</p>
+    <ul>
+      <li><strong>货币时间价值</strong>：负债的计息（折现的转回）——例26 里每年 84 / 58 / 27 的"承保财务损益"；</li>
+      <li><strong>金融风险及其变动</strong>：市场利率变动导致的未来现金流量现值变化（例23 中第1年末现值从 2,839 跳到 3,272，其中含估计变更的金融影响）；</li>
+      <li><strong>RA 的金融部分</strong>（企业选择区分时）：货币时间价值及金融风险影响导致的 RA 变动额，也作为金融变动额处理。</li>
+    </ul>
+
+    <div class="callout callout-info">
+      <div class="callout-title">💡 通胀假设的"身份判定"</div>
+      指南给了明确分界：<strong>基于价格指数</strong>或<strong>基于与资产收益、通胀率挂钩的资产价格</strong>的通胀假设 → 与金融风险有关，进金融变动额；<strong>基于企业预期的特定价格变化</strong>（如本公司医疗服务价格走势判断）→ 与金融风险无关，走现金流估计变更。同一个"通胀"字，身份完全不同。另外，<strong>基础项目价值变动（新增和领取除外）导致的合同组计量变动，属于货币时间价值及金融风险的影响</strong>——这句话是第13章 VFA 的桥梁。
+    </div>
+
+    <h3>1.1 会计政策选择：全额损益 vs 分解</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>方案</th><th>做法</th><th>适合谁</th></tr></thead>
+        <tbody>
+          <tr><td><strong>全额计入当期损益</strong></td><td>金融变动额 = 保险财务损益</td><td>负债不随资产回报变动、或资产多按摊余成本/公允价值计量（如例26）</td></tr>
+          <tr><td><strong>分解计入</strong></td><td>系统合理方法确定各期进损益的金额，<strong>差额进 OCI</strong></td><td>选择在合同组合层面作出，须考虑持有的相关资产及其会计处理</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>两条硬约束（指南原文）：</p>
+    <ul>
+      <li><strong>总额归零</strong>：合同组期限内计入 OCI 的金融变动额总额为零——进损益的各期合计必须等于金融变动额总额。OCI 只是时间差，不是豁免；</li>
+      <li><strong>方法一致</strong>：若 RA 的金融部分也分解，其分解方法必须与未来现金流量变动额的分解方法一致；且分解"无须考虑不影响合同现金流量的因素"——资产回报不影响合同现金流量的，就不该把它纳入分解基准。</li>
+    </ul>
+
+    <h3>1.2 非直接参与分红合同：怎么选拆分方法</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>情形</th><th>方法</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>金融假设变更对支付金额<strong>不具有重大影响</strong></td>
+            <td>初始确认时确定的折现率（不随基础项目回报变动）</td>
+            <td>最简单：每期损益 = 负债 × 锁定利率，剩余进 OCI</td>
+          </tr>
+          <tr>
+            <td rowspan="2">金融假设变更对支付金额<strong>具有重大影响</strong>（如结算利率随资产回报浮动的合同）</td>
+            <td><strong>实际分摊率法</strong></td>
+            <td>内含利率 r，每期末更新，把更新后的金融变动额总额在剩余期限内系统分摊（例23）</td>
+          </tr>
+          <tr>
+            <td><strong>预期结算利率法</strong></td>
+            <td>基于当期结算利息与未来预期结算利息分摊（例24），适用于用结算利率定应付金额的合同</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>1.3 直接参与分红合同（VFA）：当期账面收益率法</h3>
+    <p>企业<strong>持有基础项目</strong>的，必须用<strong>当期账面收益率法</strong>：计入当期保险财务损益的金额 = 基础项目按相关会计准则计入当期损益的金额，两者<strong>相抵后净额为零</strong>——让资产端和负债端在损益表上"同频共振"，天然消除会计错配（例25）。不持有基础项目的（或某些期间不持有），退回非 VFA 的两法之一；持有状态切换时，变更前计入 OCI 的累计金额视同沿用原方法在以后期间回吐，<strong>不得重述比较信息、不得重算</strong>。</p>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 三法的共同灵魂</div>
+      实际分摊率法的 r、预期结算利率法的调整因子 K、当期账面收益率法的资产损益——三者都在干同一件事：<strong>给"进损益"挑一个平滑且最终闭合的基准</strong>。利率跌了，不是立刻按新利率确认损益（那会让损益表随市场大起大落），而是解一个"余下期间拉直"的方程，让 OCI 当缓冲、损益走平滑路径、合同到期时缓冲清零。
+    </div>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解：三法对决</h2>
+
+    <p>例23、例24 同一底稿（100 份三年期合同、趸缴 3,000 元、第1年末市场利率 10%→5%），只换利益分配政策与拆分方法；例25 换成 VFA 合同。三例对照着读，方法差异一目了然。</p>
+
+    <details class="fold example-fold">
+      <summary>📖 例23（指南第六章）：实际分摊率法——r 从 10% 更新为 7.48%</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>保费 3,000 元投资 2 年期 10% 固息债券（到期再投 1 年期）；利益分配政策为责任期末投资资产余额的 94.64% 付给保单持有人。初始：预期资产 3,993（3,000×1.1³）、应付 3,779、<strong>现值 2,839</strong>（3,779/1.1³）。第1年末市场利率降至 5%：资产再投资预期降为 3,812（3,000×1.1²×1.05）、应付 3,608、现值 3,272（3,608/1.05²）。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 为什么 r ≠ 5%</div>
+          金融变动额总额 = 3,608 − 2,839 = <strong>769</strong>。约束：各期计入损益之和 = 769，且第1年已按 10% 计了 284（2,839×10%）。若第2、3年直接按 5%，合计将小于 769，OCI 无法归零。于是解方程（第1年末更新 r）：
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr><td>2,839×10% + 2,839×1.10×r + 2,839×1.10×(1+r)×r = 769</td></tr>
+                <tr><td>解得 <strong>r = 7.48%</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          r 是"拉直"后的等效利率：比旧 10% 低（利率确实跌了）、比新 5% 高（要补回第1年多计的部分）。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 指南表8：损益、OCI 三年全图</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>项目</th><th>初始</th><th>第1年末</th><th>第2年末</th><th>第3年末</th></tr></thead>
+              <tbody>
+                <tr><td>未来现金流量现值</td><td class="num">2,839</td><td class="num">3,272</td><td class="num">3,436</td><td class="num">3,608</td></tr>
+                <tr><td>当年实际分摊率</td><td class="num">—</td><td class="num">10%</td><td class="num">7.48%</td><td class="num">7.48%</td></tr>
+                <tr><td>当年金融变动额</td><td class="num">—</td><td class="num">433</td><td class="num">164</td><td class="num">172</td></tr>
+                <tr><td>其中：计入保险财务损益</td><td class="num">—</td><td class="num">284</td><td class="num">234</td><td class="num">251</td></tr>
+                <tr><td>OCI（累计）</td><td class="num">—</td><td class="num">149</td><td class="num">79</td><td class="num">0</td></tr>
+              </tbody>
+            </table>
+          </div>
+          验证：284 + 234 + 251 = 769 ✓；OCI 从 149 一路回吐到 0 ✓。现值行：3,608/1.05² = 3,272；3,608/1.05 = 3,436。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 读表要点</div>
+          第1年金融变动额 433 中，损益只认 284，多出来的 149 是市场利率下跌导致的现值上升，进 OCI"暂存"；第2、3年每期损益（234 / 251）都大于当期金融变动额（164 / 172），差额就是在回吐 OCI。损益表看到的是一条平滑的"10% → 7.48%"路径，市场冲击被全部吸收在 OCI。
+        </div>
+      </div>
+    </details>
+
+    <details class="fold example-fold">
+      <summary>📖 例24（指南第六章）：预期结算利率法——调整因子 K = 1.01854</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>沿用例23，利益分配政策改为"结算利率 = 投资收益率 − 2 个百分点"（初始 10% 投资收益率 → 8% 结算利率），账户价值 3,000 → 3,240 → 3,499 → 3,779，现值仍 2,839。第1年末利率下跌：第3年结算利率预计改为 3%（5%−2%），第3年末账户价值调整为 3,604（3,000×1.08²×1.03），金融变动额总额 = 3,604 − 2,839 = <strong>765</strong>。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 解出调整因子 K</div>
+          拆分基准从"资产内含利率"换成"结算利率"：设调整后结算利率 = (1+8%)×K − 1，K 满足总额闭合：
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr><td>2,839×[(1.08)K−1] + 2,839×[(1.08)K]×[(1.08)K−1] + 2,839×[(1.08)K]²×[(1.03)K−1] = 765</td></tr>
+                <tr><td>解得 <strong>K = 1.01854</strong>；第1、2年调整后结算利率 = 10.002%，第3年 = 4.910%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          直觉：8% 的结算利率"不够分"765 的金融变动额（每年才 8% 出头），K 把各年利率整体乘大一点，拉到能闭合为止。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 指南表10</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>项目</th><th>初始</th><th>第1年末</th><th>第2年末</th><th>第3年末</th></tr></thead>
+              <tbody>
+                <tr><td>未来现金流量现值</td><td class="num">2,839</td><td class="num">3,269</td><td class="num">3,432</td><td class="num">3,604</td></tr>
+                <tr><td>调整后预期结算利率</td><td class="num">—</td><td class="num">10.002%</td><td class="num">10.002%</td><td class="td num">4.910%</td></tr>
+                <tr><td>当年金融变动额</td><td class="num">—</td><td class="num">430</td><td class="num">163</td><td class="num">172</td></tr>
+                <tr><td>其中：计入保险财务损益</td><td class="num">—</td><td class="num">284</td><td class="num">312</td><td class="num">169</td></tr>
+                <tr><td>OCI（累计）</td><td class="num">—</td><td class="num">146</td><td class="num">(3)</td><td class="num">0</td></tr>
+              </tbody>
+            </table>
+          </div>
+          验证：284 + 312 + 169 = 765 ✓。注意 OCI 出现<strong>负数回吐</strong>（第2年 163 − 312 = −149，累计 146 → −3）——第2年计入损益 312 超过当期金融变动额 163，把前年暂存全额吐回还倒挂，第3年再反向补齐归零。这与例23 的单调回吐路径不同，因为 K 法前两年统一用 10.002% 的高利率。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 两法对比</div>
+          底稿相同（市场利率同样 10%→5%），实际分摊率法解"内含利率 r"、预期结算利率法解"结算利率调整因子 K"；r 直接作用于负债现值，K 作用于合同约定的结算利率。选择依据是指南那句"对于使用结算利率确定应付保单持有人金额的合同，采用预期结算利率法"——合同现金流怎么定，拆分基准就跟着怎么走。
+        </div>
+      </div>
+    </details>
+
+    <details class="fold example-fold">
+      <summary>📖 例25（指南第六章）：VFA + 当期账面收益率法——损益 300 / 330 / 363</summary>
+      <div class="fold-body">
+        <p><strong>背景：</strong>100 份 VFA 合同，保费 3,000 元投资 3 年期到期一次还本付息固息债券（基础项目），分类为<strong>FVOCI 金融资产</strong>；期满按基础项目公允价值的 95%（扣 5% 资产管理费）支付保单持有人。债券实际利率 10%，各年末公允价值 3,622 / 3,803 / 3,993。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 指南表11 全景</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>项目</th><th>初始</th><th>第1年末</th><th>第2年末</th><th>第3年末</th></tr></thead>
+              <tbody>
+                <tr><td>债券公允价值</td><td class="num">3,000</td><td class="num">3,622</td><td class="num">3,803</td><td class="num">3,993</td></tr>
+                <tr><td>债券摊余成本（×1.10 滚动）</td><td class="num">3,000</td><td class="num">3,300</td><td class="num">3,630</td><td class="num">3,993</td></tr>
+                <tr><td>债券计入损益（利息）</td><td class="num">—</td><td class="num">300</td><td class="num">330</td><td class="num">363</td></tr>
+                <tr><td>当年保险合同金融变动额</td><td class="num">—</td><td class="num">622</td><td class="num">181</td><td class="num">190</td></tr>
+                <tr><td><strong>计入保险财务损益（=资产损益）</strong></td><td class="num">—</td><td class="num"><strong>300</strong></td><td class="num"><strong>330</strong></td><td class="num"><strong>363</strong></td></tr>
+                <tr><td>计入 OCI</td><td class="num">—</td><td class="num">322</td><td class="num">(149)</td><td class="num">(173)</td></tr>
+                <tr><td>OCI 累计</td><td class="num">—</td><td class="num">322</td><td class="num">173</td><td class="num">0</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · "相抵为零"怎么读</div>
+          损益表上：资产端 FVOCI 债券确认利息收入 300（公允价值波动进资产端 OCI），负债端金融变动额 622 中只把 300 计入保险财务损益——两边同额相抵，<strong>净零</strong>。负债端剩余 322（= 622 − 300，市场利率下行导致的负债增值）进保险合同 OCI，与资产端 OCI（公允价值 − 摊余成本 = 322）也同额相抵。利润表与净资产双重免疫于市场利率波动——这就是"资产用什么节奏、负债就用什么节奏"的错配消除设计。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 与例23/24 的根本差异</div>
+          例23/24 的拆分基准是解方程解出来的"等效利率"（r 或 K），例25 的拆分基准直接<strong>抄资产端的账</strong>——FVOCI 债券计入损益 300/330/363，负债端照单全收。这要求企业确实持有基础项目；不持有（或某期间起不持有）的，退回实际分摊率法或预期结算利率法，且切换时 OCI 累计额不得重算。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch12">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">1</span>下列哪项属于保险合同金融变动额？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>实赔低于预期的经验调整</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>货币时间价值及金融风险的影响导致的未到期责任负债账面价值变动</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>赔付频率估计的变更</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>CSM 摊销</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。A、C 是非金融估计/经验变动（A 进收入、C 调 CSM），D 是服务对价的释放，都不是金融变动额。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">2</span>"分解计入损益和 OCI"政策的选择层面与约束是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>合同组层面选择；OCI 总额须为零</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>合同层面选择；OCI 可留存至处置</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>合同组合层面选择；合同组期限内计入 OCI 总额为零，损益合计等于金融变动额总额</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>公司整体层面选择；无总额约束</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。指南要求在合同组合层面作出选择、考虑持有的相关资产及其会计处理；分解必须确保期限内 OCI 总额为零——拉直后损益合计与金融变动额总额相等。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">3</span>例23 中，第 1 年末市场利率已跌至 5%，第 2 年计入损益的实际分摊率却是 7.48%。7.48% 的含义是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>使剩余期间损益分摊总额与金融变动额总额闭合（OCI 归零）的内含利率，每期末更新</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>新旧利率的简单平均（10%+5%）/2</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>债券的到期收益率</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>结算利率减 2 个百分点</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。r 由闭合方程解出：2,839×10% + 2,839×1.10×r + 2,839×1.10×(1+r)×r = 769。它兼顾了"利率确实降了"（低于 10%）和"第1年已多计损益需要回补"（高于 5%）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>例25 中，第 1 年负债端金融变动额 622 元，计入保险财务损益的却是 300 元。300 的确定依据是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>2,839×10.002% 的等效利率</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>初始确认时锁定的折现率</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>当期结算利息金额</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>持有的基础项目（FVOCI 债券）按会计准则计入当期损益的金额</span></div>
+      </div>
+      <div class="quiz-explain">D 正确。持有基础项目的 VFA 合同必须用当期账面收益率法：负债端计入损益 = 资产端计入损益（300/330/363），相抵净额为零，消除错配。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">5</span>企业此前不持有基础项目（用实际分摊率法），后因情况变化开始持有基础项目。已计入 OCI 的累计金额应如何处理？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>重述以前期间比较信息，按当期账面收益率法重算</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>视同沿用原方法将累计金额计入以后期间的保险财务损益，不重述、不重算</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>一次性转入留存收益</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>在 OCI 中永久留存</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。指南明确：变更日基于变更前最近时点假设的 OCI 累计额，视同沿用原方法回吐；不得重述比较信息、不得重新计算、变更后不得再改假设。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
+    </div>
+  </div>
+
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>定义</strong></td><td>货币时间价值及金融风险的影响导致的未到期责任负债与已发生赔款负债账面价值变动额</td></tr>
+          <tr><td><strong>通胀判定</strong></td><td>价格指数/挂钩资产价格 → 金融；企业预期的特定价格变化 → 非金融</td></tr>
+          <tr><td><strong>政策选择</strong></td><td>全额进损益，或分解进损益+OCI；合同组合层面选择，考虑资产及其会计处理</td></tr>
+          <tr><td><strong>硬约束</strong></td><td>期限内 OCI 总额为零（损益合计 = 金融变动额总额）；RA 金融部分分解方法须与现金流一致</td></tr>
+          <tr><td><strong>非 VFA 三情形</strong></td><td>影响不重大 → 锁定折现率；影响重大 → 实际分摊率法（r=7.48%）/ 预期结算利率法（K=1.01854）</td></tr>
+          <tr><td><strong>VFA</strong></td><td>持有基础项目 → 当期账面收益率法（损益=资产损益，相抵为零，例25 表11）；不持有 → 退回非 VFA 两法</td></tr>
+          <tr><td><strong>切换规则</strong></td><td>持有状态变更：OCI 累计额视同沿用原方法回吐，不重述、不重算</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch12">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
+  <div class="section">
+    <h2><span class="icon">🔗</span>五、知识连接</h2>
+    <div class="link-map">
+      <div class="link-card prereq">
+        <h4>⬆ 前置知识</h4>
+        <a href="ch07.html">第07章 折现率 <span class="why">——货币时间价值的源头</span></a>
+        <a href="ch10.html">第10章 后续计量全景 <span class="why">——滚动表"保险财务损益"行</span></a>
+        <a href="ch11.html">第11章 保险收入与费用 <span class="why">——收入排除清单里的"金融变动额"</span></a>
+      </div>
+      <div class="link-card next">
+        <h4>⬇ 后续哪里会用到</h4>
+        <a href="ch13.html">第13章 VFA 直接参与分红 <span class="why">——基础项目回报联动的完整规则</span></a>
+        <a href="ch14.html">第14章 间接参与分红 <span class="why">——例22 相机分解与本章两法配合</span></a>
+        <a href="ch16.html">第16章 保费分配法 PAA <span class="why">——已发生赔款负债金融变动的特殊利率</span></a>
+        <a href="ch18.html">第18章 列报 <span class="why">——OCI 在报表中的位置</span></a>
+      </div>
+      <div class="link-card law">
+        <h4>📜 CAS25 原文对照</h4>
+        <a href="cas25.html#a33">第三十三条 保险合同金融变动额</a>
+        <a href="cas25.html#a34">第三十四条 OCI 政策选择</a>
+        <a href="cas25.html#a38">第三十八条 外币折算</a>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="ch11.html">
+        <span class="nav-label">上一章</span>
+        <div class="nav-title">← 第11章 保险服务收入与费用</div>
+      </a>
+      <a class="next-ch" href="ch13.html">
+        <span class="nav-label">下一章</span>
+        <div class="nav-title">第13章 VFA 直接参与分红特征 →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 第12章 OCI 与保险合同金融变动额</p>
+    <p style="margin-top:6px">内容依据《企业会计准则第25号——保险合同应用指南2022》编写 · 仅供学习交流</p>
+  </div>
+
+</div>
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <img class="brand-logo" src="assets/xihong-logo.jpg" alt="西红精算 Logo">
+    <div class="brand-copy">
+      <div class="bt">西红精算 · 用数据讲保险，用真心做科普</div>
+      <div class="bs">本知识库由一线在职精算师维护，配套公众号长期连载与知识星球答疑社区。</div>
+      <div class="bl">
+        <a href="about.html">关于西红精算</a>
+        <a href="premium.html">完整版解锁</a>
+        <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球</a>
+      </div>
+    </div>
+    <div class="brand-qrs">
+      <div class="brand-qr">
+        <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码">
+        <div class="qn">公众号</div>
+      </div>
+      <div class="brand-qr zsxq">
+        <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码">
+        <div class="qn">知识星球</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
