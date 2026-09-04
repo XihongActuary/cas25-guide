@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第04章 分组与确认 · CAS25 精读</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html"><span class="logo-icon">25</span> CAS25 精读</a>
+  <div class="topnav-links">
+    <a href="index.html">知识地图</a>
+    <a href="ch01.html" class="active">入门篇</a>
+    <a href="ch06.html">进阶篇</a>
+    <a href="ch13.html">实战篇</a>
+    <a href="glossary.html">术语表</a>
+    <a href="formulas.html">公式速查</a>
+    <a href="examples.html">例题库</a>
+    <a href="cas25.html">CAS25原文</a>
+    <a href="premium.html" class="nav-unlock">🔓 完整版</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">知识地图</a><span class="separator">›</span><span>入门篇</span><span class="separator">›</span><strong>第04章 分组与确认</strong>
+  </div>
+
+  <div class="page-header">
+    <h1>第04章 · 分组与确认</h1>
+    <p class="subtitle">CAS25 的计量单元不是单张保单，而是"合同组"。为什么？怎么分？什么时候确认？销售佣金（保险获取现金流量）为什么在合同还没确认时就先挂资产？本章一次讲清。</p>
+    <div class="tag-row">
+      <span class="tag">入门篇 · 第 4/5 章</span>
+      <span class="tag">预计用时 30 分钟</span>
+      <span class="tag">对应指南：第五章 分组和确认</span>
+    </div>
+  </div>
+
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>从"组合"到"组"要经过哪两层细分？一个合同组的构成条件（签发日间隔、获利水平）是什么？</li>
+      <li>确认合同组的"三时点取最早"是哪三个时点？为什么"发生亏损"也能触发确认？</li>
+      <li>保险获取现金流量资产的本质是什么？它的减值测试为什么要"按组比较、再按续约比较"？</li>
+    </ol>
+    <p class="hint">提示：本章是全站的"地基章"——后面所有计量（FCF、CSM、亏损）都以合同组为单位，分错组，所有数字都会跟着错。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、为什么要分组：大数法则的会计化</h2>
+    <p>保险的经营模式是"大量签发类似合同，赌其中一部分发生赔付"。单个合同结果与预期的偏差很大，大量合同的偏差会相互抵销。<strong>把合同放在一起计量，正是对这一商业模式的最忠实反映</strong>——这就是 CAS25 以合同组为计量单元的理由（指南第五章开篇）。</p>
+
+    <h3>1.1 两层结构：组合 → 组</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>层级</th><th>定义</th><th>示例</th></tr></thead>
+        <tbody>
+          <tr><td><strong>保险合同组合</strong></td><td>具有<strong>相似风险</strong>且<strong>统一管理</strong>的合同（一般按产品线）</td><td>企业财产险组合、货物运输险组合；趸缴年金与期缴定期寿险风险不同 → 不同组合</td></tr>
+          <tr><td><strong>保险合同组</strong></td><td>组合进一步细分；由一项或多项<strong>签发日间隔不超过 1 年</strong>且<strong>预计获利水平相似</strong>的合同组成</td><td>同一货运险组合按年度分出的各年合同组</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>评估以<strong>单项合同</strong>为基础逐项归属，但有合理可靠信息表明多合同同组时可多项一起评估；</li>
+      <li>组合至少要分出三个组（这是底线）：</li>
+    </ul>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>底线三组</th><th>内容</th><th>计量含义</th></tr></thead>
+        <tbody>
+          <tr class="hl-red"><td><strong>① 初始确认时存在亏损的合同组</strong></td><td>首日 FCF+RA &gt; 0 的合同</td><td>首日亏损立即进损益（第15章亏损部分机制）</td></tr>
+          <tr class="hl-green"><td><strong>② 初始确认时无显著可能性未来发生亏损的合同组</strong></td><td>厚利且稳的合同</td><td>CSM 正常滚动，未来不利变动先冲 CSM</td></tr>
+          <tr><td><strong>③ 剩余合同组</strong></td><td>介于两者之间：现在不亏但未来亏损可能性显著</td><td>后续变动可能触发亏损确认</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>在此基础上可以按获利能力、亏损程度、未来亏损可能性进一步细分（如按内部报告的亏损程度拆出多个亏损组）。评估"显著可能性"要考虑：导致变为亏损的假设变化的可能性 + 内部报告提供的影响信息。</p>
+
+    <h3>1.2 一个重要的特殊规定：监管限制下的"强行同组"</h3>
+    <div class="guide-quote">
+      "如果企业针对具有不同特征的保单持有人设定不同价格或承诺不同利益水平的实际能力因法律法规或监管要求而受到限制，并将因此限制而导致合同组合中的合同被归入不同合同组，企业可以不考虑相关限制的影响，仍将这些合同归入同一合同组。"
+      <span class="src">——《应用指南2022》第五章（二）2</span>
+    </div>
+    <p>经典例子：车险定价<strong>法律禁止性别差异</strong>，不同性别驾驶员获利水平不同，本应分入不同组——但因限制源于监管，可以忽略该限制、归入同一组。</p>
+    <div class="callout callout-warning">
+      <div class="callout-title">⚠️ 不得类推</div>
+      该特殊规定<strong>仅限"法律法规或监管要求"造成的限制</strong>。如果只是企业自己出于品牌声誉等商业考虑不按地域差别定价（监管并未禁止），盈利地区与亏损地区的合同就<strong>必须</strong>分组——不同的获利水平是重要的经济差异，如实分组才能提供有用的信息。
+    </div>
+
+    <h3>1.3 确认时点：三时点取最早</h3>
+    <div class="guide-quote">
+      "企业应当在下列时点中的最早时点确认其签发的合同组：（1）责任期开始时；（2）保单持有人首付款到期日，或者未约定首付款到期日时企业实际收到首付款日；（3）发生亏损时。"
+      <span class="src">——《应用指南2022》第五章（三）</span>
+    </div>
+    <ul>
+      <li><strong>责任期开始时</strong>——开始提供保险服务的时点；</li>
+      <li><strong>首付款到期日</strong>（未约定到期日则按实际收到日）——保费索取权确立的时点；</li>
+      <li><strong>发生亏损时</strong>——哪怕合同尚未开始履行，一旦按现有信息判断已经亏损，立即确认。这与"亏损不递延"的总体理念一脉相承。</li>
+    </ul>
+    <p>合同组一经确认归属，<strong>后续不再重新评估</strong>（新合同继续按原标准归入既有组，或开新组，但已归组的不挪动）。</p>
+
+    <h3>1.4 保险获取现金流量：先花的钱先挂资产</h3>
+    <p>销售、核保、承保发生的、可直接归属于合同组合的现金流量（典型：佣金手续费），叫<strong>保险获取现金流量（IACF）</strong>。问题在于：佣金往往在合同组确认<strong>之前</strong>就支付了。处理办法：</p>
+    <ul>
+      <li>确认前已付/应付的 IACF → 确认为<strong>保险获取现金流量资产</strong>；合同组确认时，终止确认该资产、转入组内计量（影响 FCF，见第06章）；</li>
+      <li>分摊要<strong>系统合理</strong>，且覆盖<strong>预计续约</strong>的合同组（卖一单的佣金对应着未来的续期保费）；期末更新分摊参数；组已集齐所有合同后不再更新；</li>
+      <li><strong>减值</strong>：账面价值超过相关合同组履约现金流量净流入的部分，确认为保险合同赔付和费用；分摊至预计续约的，还要和"该组中预计续约合同产生的净流入"比较。减值因素消失可转回（计入当期损益）。</li>
+    </ul>
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 为什么 IACF 值得单独设计</div>
+      旧准则佣金在发生时直接进当期费用，造成"签单越多当期越亏"的扭曲。CAS25 把 IACF 资本化、随服务摊销进收入（第11章），使利润表与履约节奏匹配——这是"收入挤水"的另一面：<strong>成本也要跟着服务走</strong>。
+    </div>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解：佣金资产的确认、分摊与减值</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例19（指南第五章）：40,000 元佣金的三年之旅</summary>
+      <div class="fold-body">
+        <p><strong>题面：</strong>20×1 年初，甲公司支付可直接归属于将于 1 年内签发合同组的佣金 <strong>40,000 元</strong>（符合 IACF 定义）。预计持有人将在第 2、3、4 年续约。不考虑折现与 RA。分摊结果：</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>项目</th><th>第1组<br><small>第1年确认</small></th><th>第2组<br><small>第2年续约+新单</small></th><th>第3组<br><small>第3年续约+新单</small></th><th>第4组<br><small>第4年续约+新单</small></th><th>合计</th></tr></thead>
+            <tbody>
+              <tr><td>IACF 资产</td><td class="num">26,000</td><td class="num">5,000</td><td class="num">5,000</td><td class="num">4,000</td><td class="num total-row">40,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 20×1 年末</div>
+          第 1 组合同组确认 → 终止确认对应 IACF 资产 26,000（转入组计量）。其余无减值迹象 → 资产余额 = 40,000 − 26,000 = <strong>14,000</strong>。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 20×2 年末：减值迹象出现</div>
+          第 2 组确认，终止确认 5,000 → 账面剩 5,000（第3组）+ 4,000（第4组）。有迹象需减值测试。先按组预计履约现金流量净流入：
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>项目</th><th>第3组</th><th>第4组</th></tr></thead>
+              <tbody>
+                <tr><td>预计续约合同净流入</td><td class="num">3,000</td><td class="num">1,000</td></tr>
+                <tr><td>续约之外新确认合同净流入</td><td class="num">6,000</td><td class="num">1,000</td></tr>
+                <tr><td>合计净流入</td><td class="num">9,000</td><td class="num">2,000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 第一道比较：按组合计净流入</div>
+          第3组：9,000 ≥ 5,000 → 无超支；第4组：2,000 &lt; 4,000 → 超支 <strong>2,000</strong> → 先减值 2,000。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 4 步 · 第二道比较：按"预计续约合同"净流入</div>
+          覆盖续约的部分（5,000+4,000=9,000，对应续约净流入 4,000）再比一次：超出 <strong>3,000</strong>。两次合计减值 = 2,000 + 3,000 = <strong>5,000</strong>。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 5 步 · 账务处理</div>
+          借：保险合同赔付和费用 5,000；贷：保险获取现金流量资产 5,000。（20×3、20×4 年分析略。）
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-title">💡 两道比较的逻辑</div>
+          第一道问"这个组整体上养得活这笔佣金吗"，第二道问"其中对应<strong>续约</strong>的那部分佣金，续约本身养得活吗"——因为 IACF 分摊覆盖的是"预计续约"的组，续约落空就要认损。这正是"系统合理分摊 + 对应原则"的体现。
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch04">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">1</span>保险合同组的构成条件是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>同一产品线且统一管理</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>签发日间隔不超过 1 年且预计获利水平相似</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>同一渠道销售且保费规模相近</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>同一被保险人名下</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。A 描述的是"组合"（上一层）；合同组是组合的细分，以签发日间隔和获利水平为构成条件。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">2</span>某合同组责任期 20×4 年 7 月开始，首付款到期日 20×4 年 3 月，20×4 年 1 月判断已发生亏损。确认时点是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>20×4 年 1 月（发生亏损时）</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>20×4 年 3 月（首付款到期日）</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>20×4 年 7 月（责任期开始时）</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>20×4 年年报批准报出日</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。三时点取最早：发生亏损（1月）早于首付款到期（3月）早于责任期开始（7月）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">3</span>"底线三组"不包括下列哪一组？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>初始确认时存在亏损的合同组</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>初始确认时无显著可能性未来发生亏损的合同组</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>采用保费分配法的合同组</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>该组合中剩余合同组成的合同组</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。保费分配法是计量模型的选择（第16章），不属于"至少三分组"的底线分类。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>车险定价因法律禁止而不能区分性别，不同性别驾驶员获利水平不同。正确处理是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>必须按性别分为不同合同组</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>必须重新定价消除差异后再分组</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>不得确认该类合同</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>可忽略监管限制的影响，归入同一合同组</span></div>
+      </div>
+      <div class="quiz-explain">D 正确（指南第五章（二）2 特殊规定）。但注意商业性定价选择（如品牌声誉）不得类推适用。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">5</span>关于保险获取现金流量资产（IACF 资产），错误的是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>合同组确认前已付或应付的 IACF 确认为资产</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>减值一经计提不得转回</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>分摊应覆盖预计续约的合同组</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>减值因素消失时可转回，计入当期损益</span></div>
+      </div>
+      <div class="quiz-explain">B 错误（即本题答案）。指南明确：导致以前期间减值因素已经消失的，应当恢复原已减记的账面价值。与固定资产减值不同，IACF 资产减值可转回。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
+    </div>
+  </div>
+
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>两层结构</strong></td><td>组合（相似风险 + 统一管理）→ 组（签发日间隔≤1年 + 获利水平相似）</td></tr>
+          <tr><td><strong>底线三组</strong></td><td>亏损组 / 无显著可能未来亏损组 / 剩余组；可按获利能力、亏损程度再细分</td></tr>
+          <tr><td><strong>监管特殊规定</strong></td><td>定价能力受法律法规/监管限制的，可忽略限制强行同组；商业性定价选择不得类推</td></tr>
+          <tr><td><strong>确认三时点</strong></td><td>责任期开始 / 首付款到期（或实收）/ 发生亏损——取最早；确认后不再重新评估</td></tr>
+          <tr><td><strong>IACF</strong></td><td>销售核保承保的直接现金流量；确认前挂资产，确认时转入组计量；分摊覆盖预计续约</td></tr>
+          <tr><td><strong>IACF 减值</strong></td><td>两道比较：组整体净流入 → 续约净流入；超支计减值进赔付费用，可转回</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch04">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
+  <div class="section">
+    <h2><span class="icon">🔗</span>五、知识连接</h2>
+    <div class="link-map">
+      <div class="link-card prereq">
+        <h4>⬆ 前置知识</h4>
+        <a href="ch03.html">第03章 合并与分拆 <span class="why">——分拆后的保险成分才进入分组</span></a>
+        <a href="ch01.html">第01章 主线流程第③步 <span class="why">——"分组"在主线中的位置</span></a>
+      </div>
+      <div class="link-card next">
+        <h4>⬇ 后续哪里会用到</h4>
+        <a href="ch06.html">第06章 履约现金流 FCF <span class="why">——IACF 分摊进组后成为 FCF 的流入减项</span></a>
+        <a href="ch11.html">第11章 保险收入与费用 <span class="why">——IACF 摊销进保险服务收入的机制</span></a>
+        <a href="ch15.html">第15章 亏损部分 <span class="why">——亏损组确认后亏损部分的滚动规则</span></a>
+      </div>
+      <div class="link-card law">
+        <h4>📜 CAS25 原文对照</h4>
+        <a href="cas25.html#a12">第十二条 合同组分层</a>
+        <a href="cas25.html#a16">第十六条 确认时点</a>
+      </div>
+    </div>
+
+    <div class="chapter-nav">
+      <a href="ch03.html">
+        <span class="nav-label">上一章</span>
+        <div class="nav-title">← 第03章 合并与分拆</div>
+      </a>
+      <a class="next-ch" href="ch05.html">
+        <span class="nav-label">下一章</span>
+        <div class="nav-title">第05章 十三个会计科目总览 →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CAS25 精读 · 第04章 分组与确认</p>
+    <p style="margin-top:6px">内容依据《企业会计准则第25号——保险合同应用指南2022》编写 · 仅供学习交流</p>
+  </div>
+
+</div>
+<div class="brand-strip">
+  <div class="brand-strip-inner">
+    <img class="brand-logo" src="assets/xihong-logo.jpg" alt="西红精算 Logo">
+    <div class="brand-copy">
+      <div class="bt">西红精算 · 用数据讲保险，用真心做科普</div>
+      <div class="bs">本知识库由一线在职精算师维护，配套公众号长期连载与知识星球答疑社区。</div>
+      <div class="bl">
+        <a href="about.html">关于西红精算</a>
+        <a href="premium.html">完整版解锁</a>
+        <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球</a>
+      </div>
+    </div>
+    <div class="brand-qrs">
+      <div class="brand-qr">
+        <img src="assets/xihong-qrcode.jpg" alt="西红精算公众号二维码">
+        <div class="qn">公众号</div>
+      </div>
+      <div class="brand-qr zsxq">
+        <img src="assets/zsxq-qrcode.png" alt="西红精算知识星球二维码">
+        <div class="qn">知识星球</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>
