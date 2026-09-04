@@ -175,10 +175,16 @@ body{font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC",system-ui,
     </div>
     <div class="cards" id="cards"></div>
     <div class="anchor" id="math-anchor"></div>
-        <div class="unlock-box">
-      <div class="unlock-head">🔑 已有口令？</div>
-      <div class="unlock-msg">完整版随知识星球附件分发：星友下载附件包后，打开其中任意实战篇章节输入口令，一次输入、本机长期有效。</div>
+    <!-- UNLOCK:START -->
+    <div class="unlock-box">
+      <div class="unlock-head">🔑 已有口令？输入一次，本机长期有效</div>
+      <div class="unlock-row">
+        <input type="password" id="unlock-input" class="unlock-input" placeholder="星球置顶帖公布的阅读口令" autocomplete="off">
+        <button id="unlock-btn" class="unlock-btn">解锁</button>
+      </div>
+      <div class="unlock-msg" id="unlock-msg">校验在本机完成，一次输入、长期有效</div>
     </div>
+    <!-- UNLOCK:END -->
   </section>
 
   <section class="sec faq">
@@ -296,7 +302,45 @@ if(s.enable){
 }
 $("cards").innerHTML=cards;
 
-/* 公开版：无口令校验 */
+/* UNLOCK:START */
+(function(){
+  const PASS_HASH=4241769794, KEY='cas25_vip_unlocked';
+  const djb2=s=>{let h=5381;for(let i=0;i<s.length;i++)h=(h*33+s.charCodeAt(i))>>>0;return h>>>0;};
+  const box=document.querySelector('.unlock-box');
+  if(!box) return;
+  const inp=$("unlock-input"),btn=$("unlock-btn"),msg=$("unlock-msg");
+  function already(){try{return localStorage.getItem(KEY)==='1'}catch(e){return false}}
+  function showOk(){
+    const online=location.protocol.indexOf('http')===0;
+    if(online){
+      box.innerHTML='<div class="unlock-head">🔓 口令正确 · 已确认星友身份</div>'+
+        '<div class="unlock-msg ok">完整版随星球附件分发：在星球下载附件包，本地打开即读实战篇全文 · <a href="index.html">返回知识地图</a></div>';
+    }else{
+      box.innerHTML='<div class="unlock-head">🔓 本机已解锁 · 实战篇全站开放</div>'+
+        '<div class="unlock-msg ok">口令一次输入，本机长期有效 · <a href="ch13.html">前往第13章 VFA →</a> · <a href="index.html">返回知识地图</a></div>';
+    }
+  }
+  if(already()){showOk();return;}
+  function go(){
+    const v=(inp.value||'').trim();
+    if(!v){inp.focus();return;}
+    if(djb2(v)===PASS_HASH){
+      try{localStorage.setItem(KEY,'1')}catch(e){}
+      showOk();
+    }else{
+      msg.textContent='口令不对，请回星球置顶帖核对后重试';
+      msg.className='unlock-msg err';
+      inp.value='';
+      const row=box.querySelector('.unlock-row');
+      row.classList.add('shake');
+      setTimeout(()=>row.classList.remove('shake'),400);
+      inp.focus();
+    }
+  }
+  btn.addEventListener('click',go);
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+})();
+/* UNLOCK:END */
 
 $("faq").innerHTML=CONFIG.faq.map(f=>`
   <details><summary>${f.q}</summary><p>${f.a}</p></details>`).join("");
