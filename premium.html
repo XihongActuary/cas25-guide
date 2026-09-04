@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>完整版解锁 · CAS25 精读知识库</title>
+<style>
+:root{
+  --paper:#faf7f0; --card:#ffffff; --ink:#2c2c2a; --muted:#6f6b63;
+  --blue:#0c447c; --blue-bg:#e6f1fb; --blue-line:#b5d4f4;
+  --red:#b03a2e; --red-bg:#fceceb; --red-line:#e8b3ac;
+  --gold:#854f0b; --gold-bg:#faeeda; --gold-line:#efcf8f;
+  --green:#3b6d11; --green-bg:#eaf3de; --green-line:#c0dd97;
+  --purple:#6b4fa0; --purple-bg:#f3ecf9; --purple-line:#d8c8ec;
+  --line:#e5e0d5; --radius:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  background:var(--paper);color:var(--ink);line-height:1.75;font-size:15px}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px 64px}
+
+.top{background:linear-gradient(0deg,#fdfcf8,#fdfcf8);border-bottom:1px solid var(--line)}
+.top-in{max-width:820px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.logo{width:26px;height:26px;border-radius:6px;background:var(--red);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
+.brand{font-size:14px;font-weight:600;color:var(--blue);letter-spacing:.5px}
+.top-links{margin-left:auto;display:flex;gap:16px;font-size:13px}
+.top-links a{color:var(--muted);text-decoration:none;border-bottom:1px dashed var(--line)}
+.top-links a:hover{color:var(--blue);border-bottom-color:var(--blue)}
+
+.hero{padding:44px 0 8px;text-align:center}
+.hero .kb{display:inline-block;font-size:13px;color:var(--blue);background:var(--blue-bg);
+  border:1px solid var(--blue-line);border-radius:999px;padding:2px 14px;margin-bottom:14px}
+.hero h1{font-size:27px;font-weight:700;letter-spacing:.5px}
+.hero p{color:var(--muted);margin-top:10px;font-size:15px;max-width:560px;margin-left:auto;margin-right:auto}
+
+.sec{margin-top:36px}
+.sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+.sec-head .no{font-size:13px;font-weight:700;color:var(--red);letter-spacing:1px}
+.sec-head h2{font-size:19px;font-weight:700}
+.sec-head .sub{font-size:13px;color:var(--muted)}
+
+.list{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.item{display:flex;gap:14px;padding:16px 20px;border-bottom:1px solid var(--line);align-items:flex-start}
+.item:last-child{border-bottom:none}
+.ic{flex:none;width:26px;height:26px;border-radius:50%;margin-top:3px;
+  display:flex;align-items:center;justify-content:center}
+.ic-ok{background:var(--green-bg);border:1px solid var(--green-line)}
+.ic-lock{background:var(--gold-bg);border:1px solid var(--gold-line)}
+.item .tx{flex:1}
+.item .t{font-weight:600;font-size:15px}
+.item a.t{color:var(--blue);text-decoration:none;border-bottom:1px dashed var(--blue-line)}
+.item .d{color:var(--muted);font-size:13.5px;margin-top:2px}
+.tag{flex:none;margin-top:4px;font-size:12px;color:var(--red);background:var(--red-bg);
+  border:1px solid var(--red-line);border-radius:6px;padding:1px 9px;white-space:nowrap}
+
+.howto{background:var(--purple-bg);border:1px solid var(--purple-line);border-radius:var(--radius);
+  padding:20px 24px;margin-top:14px}
+.howto h3{font-size:15.5px;color:var(--purple);margin-bottom:10px}
+.howto ol{margin-left:20px;font-size:14px;color:var(--ink)}
+.howto ol li{margin:6px 0}
+.howto .note{font-size:12.5px;color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--purple-line)}
+
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:620px){.cards{grid-template-columns:1fr}}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:22px 22px 18px;position:relative;display:flex;flex-direction:column}
+.pcard.hot{border:2px solid var(--red);box-shadow:0 0 0 4px var(--red-bg)}
+.badge{position:absolute;top:-12px;left:20px;background:var(--red);color:#fff;
+  font-size:12px;border-radius:999px;padding:2px 12px;letter-spacing:1px}
+.pcard .pn{font-size:16px;font-weight:700}
+.pcard .pd{font-size:13px;color:var(--muted);margin-top:4px;min-height:40px}
+.price{margin-top:10px;display:flex;align-items:baseline;gap:6px}
+.price .cur{font-size:16px;font-weight:700;color:var(--red)}
+.price .num{font-size:34px;font-weight:700;color:var(--red);line-height:1}
+.price .unit{font-size:13px;color:var(--muted)}
+.pnote{font-size:12.5px;color:var(--gold);background:var(--gold-bg);border-radius:6px;
+  padding:6px 10px;margin-top:10px}
+.price-banner{margin-top:14px;border:1px solid var(--line);border-radius:10px;
+  padding:10px;background:var(--bg);text-align:center}
+.price-banner img{display:block;max-width:100%;height:auto;border-radius:6px}
+.btn{display:block;text-align:center;margin-top:14px;padding:11px 0;border-radius:9px;
+  font-size:15px;font-weight:600;text-decoration:none;transition:filter .15s}
+.btn:hover{filter:brightness(1.08)}
+.btn-hot{background:var(--red);color:#fff}
+.btn-plain{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-line)}
+.mini{text-align:center;font-size:12.5px;color:var(--muted);margin-top:10px}
+.anchor{font-size:12.5px;color:var(--muted);text-align:center;margin-top:14px}
+.anchor a{color:var(--blue)}
+
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:14px 20px;margin-bottom:10px}
+.faq summary{font-weight:600;cursor:pointer;font-size:14.5px;list-style:none;
+  display:flex;justify-content:space-between;align-items:center}
+.faq summary::after{content:"+";color:var(--red);font-weight:700;font-size:17px}
+.faq details[open] summary::after{content:"−"}
+.faq details p{color:var(--muted);font-size:13.5px;margin-top:10px}
+
+.foot{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+  text-align:center;font-size:12.5px;color:var(--muted)}
+.foot a{color:var(--blue)}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="top-in">
+  <div class="logo">西</div>
+  <div class="brand" id="brand">西红精算</div>
+  <div class="top-links">
+    <a href="index.html">← 返回知识地图</a>
+    <a href="about.html">关于西红精算</a>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="kb" id="hero-kb">知识库名</div>
+    <h1 id="hero-title">试读在这里，完整版在星球</h1>
+    <p id="hero-desc">一句话价值主张。</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="no">01</span><h2>本站免费内容</h2>
+      <span class="sub">随时可看，无需注册</span>
+    </div>
+    <div class="list" id="free-list"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="no">02</span><h2 id="locked-title">完整版追加内容</h2>
+      <span class="sub">加入知识星球后解锁</span>
+    </div>
+    <div class="list" id="locked-list"></div>
+    <div class="howto">
+      <h3>🔑 阅读口令 · 三步解锁</h3>
+      <ol>
+        <li>加入「西红精算 · 知识星球」，在<b>置顶帖</b>复制本库阅读口令；</li>
+        <li>回到本站任意实战篇章节（第13–20章），在解锁框中输入口令；</li>
+        <li>口令<b>一次输入、本机长期有效</b>——解锁后的阅读体验、自测判分、学习仪表盘与免费章节完全一致。</li>
+      </ol>
+      <div class="note">口令会不定期更新以保护完整版内容，更新会在星球发帖通知；已解锁的旧口令失效后重新输入新口令即可。</div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="no">03</span><h2>获得方式</h2>
+    </div>
+    <div class="cards" id="cards"></div>
+    <div class="anchor" id="math-anchor"></div>
+  </section>
+
+  <section class="sec faq">
+    <div class="sec-head">
+      <span class="no">04</span><h2>常见问题</h2>
+    </div>
+    <div id="faq"></div>
+  </section>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script>
+const CONFIG = {
+  kbName: "CAS25 精读知识库",
+  heroTitle: "框架免费学，实战在星球",
+  heroDesc: "免费部分覆盖三阶路径的前两阶：入门篇（懂框架）与进阶篇（懂计量），外加 CAS25 原文 120 条对照与全套速查工具；完整版追加实战篇 8 章特例精讲与配套演算。",
+  freeItems: [
+    {t:"入门篇 · 懂框架（第01–05章）", d:"一张图看懂 CAS25 · 保险合同识别 · 合并分拆 · 分组确认 · 十三科目总览", href:"ch01.html"},
+    {t:"进阶篇 · 懂计量（第06–12章）", d:"FCF · 折现率 · RA · CSM 滚动 · 收入费用 · OCI 三法，官方例题全解", href:"ch06.html"},
+    {t:"CAS25 原文 120 条对照", d:"准则全文逐条锚点，每条直链本站对应解读", href:"cas25.html"},
+    {t:"术语表 / 公式速查 / 例题库", d:"60+ 术语 · 十组公式卡 · 例1–例30 全索引", href:"glossary.html"},
+    {t:"学习仪表盘", d:"进度、自测均分与错题本，数据仅存本机", href:"index.html"}
+  ],
+  lockedTitle: "完整版追加内容 · 实战篇",
+  lockedItems: [
+    {t:"第13章 VFA 浮动收费法 + 第14章 间接分红", d:"直接参与分红三条件 · 相机抉择调 CSM · 例29/例30 完整演算", v:"核心"},
+    {t:"第15章 亏损部分 + 第16章 PAA", d:"亏损确认与摊回 · 保费分配法全流程 · 本站演算例A–例D", v:"核心"},
+    {t:"第17章 再保险 + 第18章 列报", d:"镜像原则四组科目 · 报表版例题 · 例E/例F 演算", v:"核心"},
+    {t:"第19章 披露 + 第20章 新旧衔接", d:"CSM 调节表 · 三法过渡对比 · 例G/例H 演算", v:"核心"},
+    {t:"例26 全流程 15 笔分录 · 例27 万能险五年五步", d:"从初始计量到报表落地的全链条演算，只在完整版", v:"演算"},
+    {t:"持续更新", d:"新监管口径、新例题、口径勘误第一时间在星球发布", v:"长期"}
+  ],
+  planet: {
+    name: "西红精算 · 知识星球",
+    price: "", unit: "",
+    desc: "解锁本库实战篇完整版，附各知识库持续更新与精算答疑社区。",
+    note: "",
+    link: "https://t.zsxq.com/kkpnw",
+    qr: "assets/zsxq-qrcode.png",
+    banner: "assets/zsxq-banner.png"
+  },
+  single: {
+    enable: false
+  },
+  faq: [
+    {q:"完整版和本站免费内容差别在哪？", a:"本站免费部分是前两阶（入门篇 + 进阶篇）与全套速查工具，已经覆盖准则的主干框架与计量逻辑。完整版追加第三阶「实战篇」8 章：VFA、间接分红、亏损、PAA、再保、列报、披露、新旧衔接，以及与之配套的官方例题完整演算和本站专属演算例（例A–例H）。"},
+    {q:"阅读口令是什么？在哪里获取？", a:"口令是解锁实战篇章节的一串字符，加入知识星球后在置顶帖即可看到。输入一次后保存在本机浏览器（localStorage），之后打开任意实战篇章节都自动解锁，不再重复输入。"},
+    {q:"解锁后阅读体验和免费章节一样吗？", a:"完全一样。实战篇 8 章沿用与免费章节相同的六段式结构：开篇三问、概念精讲、例题分步折叠演算、自测即时判分、一表小结、知识连接。学习进度和错题同样汇入首页仪表盘。"},
+    {q:"以后会更新吗？", a:"会。准则解释口径、应用指南勘误、新的例题拆解都会持续补充，更新内容在星球发帖通知；口令不定期轮换，失效后在星球获取新口令即可。"},
+    {q:"支持退款吗？", a:"虚拟内容一经售出不支持退款。请先充分阅读本站免费章节（共 12 章 + 全套工具），确认风格与深度适合自己后再决定。"}
+  ],
+  footNote: "西红精算 · 仅供学习交流 · 内容依据《企业会计准则第25号——保险合同应用指南2022》编写"
+};
+
+const $=id=>document.getElementById(id);
+const okSvg='<svg width="14" height="14" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 5" fill="none" stroke="#3b6d11" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const lockSvg='<svg width="12" height="14" viewBox="0 0 14 16"><rect x="1.5" y="7" width="11" height="7.5" rx="1.8" fill="none" stroke="#854f0b" stroke-width="1.8"/><path d="M4.5 7V5a2.5 2.5 0 0 1 5 0v2" fill="none" stroke="#854f0b" stroke-width="1.8"/><circle cx="7" cy="10.7" r="1.1" fill="#854f0b"/></svg>';
+
+$("brand").textContent="西红精算 · "+CONFIG.kbName;
+$("hero-kb").textContent=CONFIG.kbName;
+$("hero-title").textContent=CONFIG.heroTitle;
+$("hero-desc").textContent=CONFIG.heroDesc;
+$("locked-title").textContent=CONFIG.lockedTitle;
+document.title="完整版解锁 · "+CONFIG.kbName;
+
+$("free-list").innerHTML=CONFIG.freeItems.map(it=>`
+  <div class="item">
+    <div class="ic ic-ok">${okSvg}</div>
+    <div class="tx">
+      ${it.href?`<a class="t" href="${it.href}">${it.t}</a>`:`<div class="t">${it.t}</div>`}
+      <div class="d">${it.d}</div>
+    </div>
+  </div>`).join("");
+
+$("locked-list").innerHTML=CONFIG.lockedItems.map(it=>`
+  <div class="item">
+    <div class="ic ic-lock">${lockSvg}</div>
+    <div class="tx">
+      <div class="t">${it.t}</div>
+      <div class="d">${it.d}</div>
+    </div>
+    ${it.v?`<div class="tag">${it.v}</div>`:""}
+  </div>`).join("");
+
+const p=CONFIG.planet, s=CONFIG.single;
+let cards=`
+  <div class="pcard hot">
+    <div class="badge">推荐</div>
+    <div class="pn">${p.name}</div>
+    <div class="pd">${p.desc}</div>
+    <div class="price-banner"><img src="${p.banner}" alt="知识星球 · 微信扫码加入"></div>
+    <a class="btn btn-hot" href="${p.link}" target="_blank" rel="noopener">加入星球，解锁完整版</a>
+  </div>`;
+if(s.enable){
+  cards+=`
+  <div class="pcard">
+    <div class="pn">${s.name} <span style="font-size:12px;color:var(--muted);font-weight:400">· ${s.platform}</span></div>
+    <div class="pd">${s.desc}</div>
+    <div class="price"><span class="cur">¥</span><span class="num">${s.price}</span><span class="unit">${s.unit}</span></div>
+    ${s.note?`<div class="pnote">${s.note}</div>`:""}
+    <a class="btn btn-plain" href="${s.link}" target="_blank" rel="noopener">${s.platform}单件购买</a>
+    <div class="mini">即买即得，无需入群</div>
+  </div>`;
+  const n=Math.ceil((parseFloat(p.price)/parseFloat(s.price))*10)/10;
+  $("math-anchor").innerHTML=`单件 ¥${s.price} × ${n} 份 ≈ ¥${(parseFloat(s.price)*n).toFixed(0)}，已超过星球年费——
+    需要 ${n} 份以上内容的话，<a href="${p.link}" target="_blank" rel="noopener">直接进星球更划算</a>`;
+}else{
+  $("math-anchor").innerHTML=`一个星球账号，同步解锁西红精算系列全部知识库的完整版：<a href="about.html">查看知识库系列 →</a>`;
+}
+$("cards").innerHTML=cards;
+
+$("faq").innerHTML=CONFIG.faq.map(f=>`
+  <details><summary>${f.q}</summary><p>${f.a}</p></details>`).join("");
+
+$("foot").innerHTML=CONFIG.footNote+`<br>免费试读：<a href="index.html">返回知识地图</a> · <a href="about.html">关于西红精算</a>`;
+</script>
+</body>
+</html>
