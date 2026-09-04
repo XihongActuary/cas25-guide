@@ -39,23 +39,185 @@
     </div>
   </div>
 
-    <div class="gate-panel">
-    <div class="gate-card">
-      <div class="gate-lock">🔒</div>
-      <h2>实战篇 · 完整版章节</h2>
-      <p class="gate-ch">本章属于「实战篇 · 懂特例」完整版内容，随知识星球附件分发。</p>
-      <ul class="gate-points">
-        <li>8 章特例全景：VFA · 间接分红 · 亏损 · PAA · 再保 · 列报 · 披露 · 衔接</li>
-        <li>官方例题分步演算 + 本站专属演算例（例A–例H）+ 章末自测判分</li>
-        <li>加入星球即可下载完整版，本地打开即读</li>
-      </ul>
-      <div class="gate-links">
-        <a href="premium.html" class="gate-cta">如何获得完整版 →</a>
-        <a href="ch12.html">← 回免费章节继续读</a>
+  <div class="study-questions">
+    <h3>🎯 开篇三问——读完本章回来作答</h3>
+    <ol>
+      <li>三条过渡方法的差异，本质上是对"哪个时点的信息"和"重述多少历史"的不同选择——怎么用一句话区分？</li>
+      <li>过渡日哪些旧判断可以"免检"沿用（不用重新评估）？哪些必须重做？为什么分组偏偏必须重做？</li>
+      <li>过渡日 CSM 怎么定？为什么"公允价值法"可能让未来利润表永远少一块（或多一块）？</li>
+    </ol>
+    <p class="hint">提示：把过渡想成"旧账换新表"——账还是那些合同，表换了格式和口径；三条路是"重算多细"的档位选择，而<strong>不重述比较期间</strong>是修正追溯与公允价值法共同的代价与便利。</p>
+  </div>
+
+  <!-- ② 概念精讲 -->
+  <div class="section">
+    <h2><span class="icon">📜</span>一、过渡日与三条路径</h2>
+
+    <p>本站依据 CAS25 衔接规定归纳（指南第十二章原文未在精读素材范围内）：<strong>过渡日 = 首次执行日</strong>，企业自此按新准则列报。存量合同进入新世界有三条路（可按合同组合分别选择）：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>方法</th><th>做法</th><th>比较期间</th><th>信息需求</th></tr></thead>
+        <tbody>
+          <tr><td><strong>① 追溯调整法</strong></td><td>视同准则自始存在，用历史实际信息逐期重算</td><td>重述全部比较期间</td><td>最高（需要逐合同历史数据，多数保险公司做不到）</td></tr>
+          <tr><td><strong>② 修正追溯法</strong></td><td>用<strong>过渡日可获得的信息</strong>按新规则重算，如同存量合同"在过渡日才签发"</td><td>不重述（首日调整进期初留存收益）</td><td>中（过渡日单点数据即可）</td></tr>
+          <tr><td><strong>③ 公允价值法</strong></td><td>以过渡日履约现金流量为起点，<strong>整体拆借</strong>：FCF 可直接用过渡日市场假设估计，无需剥离历史假设；CSM = 过渡日保费对应的公允价值 − RA − 履约现金流量</td><td>不重述</td><td>最低（可借助过渡日市场数据与简化）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-key">
+      <div class="callout-title">🔑 三条路的经济学含义</div>
+      追溯调整 = "把历史拍成连续剧重放"（最忠实、最不可行）；修正追溯 = "从过渡日重看一遍"（默认主力）；公允价值法 = "以市场价切一刀"（数据最省，但把历史经验整体封存：若过渡日估计偏保守，未来将"多赚"一块首日差——这块差不是经营挣的，是切换送利，且永远无法与真实经验对账）。三法都要求把调整计入<strong>期初留存收益</strong>（不进当期损益）。
+    </div>
+
+    <h3>1.1 哪些旧判断可以"免检"</h3>
+    <p>为控制成本，准则明确过渡日<strong>无需重新评估</strong>（除非信息不可得或合同条款有变）：</p>
+    <ul>
+      <li>哪些合同是<strong>保险合同</strong>（含重大保险风险测试）；</li>
+      <li>合同的<strong>合并与分拆</strong>（嵌入衍生工具、投资成分等拆分判断）；</li>
+      <li>边界相关的判断（如是否构成实质义务）沿用原结论。</li>
+    </ul>
+    <p><strong>必须重做的</strong>：</p>
+    <ul>
+      <li><strong>合同分组</strong>——按过渡日的剩余责任期与盈利性重新分层（新准则的分组规则与旧准则完全不同，且亏损合同组要单独成组）；</li>
+      <li><strong>计量本身</strong>——FCF、RA、折现率、CSM 全部按新规则在过渡日建立；VFA 认定在特定条件下可沿用原有分红机制判断的合理部分。</li>
+    </ul>
+
+    <h3>1.2 过渡日 CSM 的确定（修正追溯示意）</h3>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><td><strong>过渡日 CSM</strong> = 保费与相关流量对价（过渡日口径）− RA − 履约现金流量（过渡日估计，用过渡日折现率折现）</td></tr>
+          <tr><td>若结果 &lt; 0 → 亏损部分计入过渡日留存收益（第15章机制）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>注意"折现率用过渡日的"——旧世界的历史利率不进新账。这一点与第07章"首日锁定"的衔接：过渡日就是存量合同的"新首日"。</p>
+
+    <h3>1.3 其他过渡要点</h3>
+    <ul>
+      <li><strong>PAA</strong>：过渡日符合 PAA 条件的合同组可直接用简化路径（已赚取/未赚取口径切换）；</li>
+      <li><strong>分出再保</strong>：分保摊回资产同样按三法之一过渡，与直接业务的方法选择相互独立（但需披露）；</li>
+      <li><strong>比较期间</strong>：选择修正追溯/公允价值法的，不重述——首份年报将出现"新旧两套口径并列"（本期新准则、比较期旧准则），<strong>过渡披露</strong>必须说清方法选择、期初调整构成与影响；</li>
+      <li><strong>首份年报后</strong>：OCI 分解政策、中期政策等从过渡日起按新准则确定，不再改。</li>
+    </ul>
+  </div>
+
+  <!-- ③ 例题精解 -->
+  <div class="section">
+    <h2><span class="icon">✏️</span>二、例题精解</h2>
+
+    <details class="fold example-fold">
+      <summary>📖 例H（本站演算）：一份存量合同的三法对比</summary>
+      <div class="fold-body">
+        <p><strong>背景（本站依据准则方法编制）：</strong>某五年期存量保障型合同组，过渡日剩余责任期 3 年。旧账：未到期责任准备金 1,200。过渡日新口径估计：剩余履约现金流量现值 1,050、RA 90；若在过渡日"重新签发"，客户对价（保费等流入现值）为 1,180。历史信息：若完整追溯（视同自始按新准则），首日 CSM 应为 150，此前已按旧准则确认利润 320。</p>
+
+        <div class="fold-step">
+          <div class="step-label">第 1 步 · 修正追溯法</div>
+          过渡日 CSM = 1,180 − 1,050 − 90 = <strong>40</strong>；负债 = 1,050 + 90 + 40 = 1,180。<br>
+          期初留存收益调整 = 1,200（旧准备金）− 1,180（新负债）= <strong>+20</strong>（旧账多提 20，释放进权益）。此后三年按新规则滚动（第10章）。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 2 步 · 公允价值法</div>
+          无需剥离"如果当年按新准则"的历史——直接用过渡日数据：负债公允价值口径 1,180 同上；差别在 CSM 确定可采用更简化的公允价值切分（如以过渡日同类新合同的 CSM 比例估计）。设结果 CSM' = 25，则留存收益调整 = 1,200 − (1,050+90+25) = <strong>+35</strong>。
+        </div>
+
+        <div class="fold-step">
+          <div class="step-label">第 3 步 · 追溯调整法（对照）</div>
+          需重述：首日 CSM 150 − 已确认利润 320 = 过渡日应有的 CSM <strong>−170</strong>？——负数意味着按新准则此组已亏损 170，应确认亏损部分、CSM 归零：负债 = 1,050 + 90 + 0 = 1,140，且历史比较期间全部重列。<strong>结论</strong>：三法给出三个不同的期初权益与未来利润轨迹——追溯法（−170 亏损 + 重述历史）最忠实也最痛；这就是"方法选择决定未来利润表形状"的含义。实务中因数据不可得，追溯法极少可完整执行。
+        </div>
       </div>
+    </details>
+  </div>
+
+  <!-- ④ 实战自测 -->
+  <div class="section quiz-section" data-ch="ch20">
+    <h2><span class="icon">🧪</span>三、实战自测</h2>
+
+    <div class="quiz-block" data-answer="2">
+      <div class="quiz-q"><span class="q-num">1</span>修正追溯法的核心特征是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>视同准则自始存在，重述全部比较期间</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>以过渡日公允价值为起点，历史经验整体封存</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>用过渡日可获得的信息按新规则重算，不重述比较期间，调整进期初留存收益</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>继续沿用旧准则直到合同到期</span></div>
+      </div>
+      <div class="quiz-explain">C 正确。A 是追溯调整法；B 是公允价值法；D 不存在（存量合同必须进新世界）。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">2</span>过渡日无需重新评估的事项是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>是否构成保险合同（含重大保险风险）</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>合同分组</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>履约现金流量的重新估计</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>折现率的重新确定</span></div>
+      </div>
+      <div class="quiz-explain">A 正确（除非信息不可得）。分组、FCF、RA、折现率、CSM 都必须在过渡日按新规则建立——"免检"只免判断，不免计量。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="1">
+      <div class="quiz-q"><span class="q-num">3</span>过渡方法选择对首份年报的影响，正确的说法是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>过渡调整计入当期损益</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>调整计入期初留存收益；选修正追溯/公允价值法的会出现新旧口径并列，须做过渡披露</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>所有合同组必须用同一方法</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>比较期间一律重述</span></div>
+      </div>
+      <div class="quiz-explain">B 正确。方法可按合同组合分别选择；调整进权益不动损益；不重述是比较期并列的根源。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="3">
+      <div class="quiz-q"><span class="q-num">4</span>"公允价值法可能让未来利润表多一块'切换送利'"指的是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>过渡日确认的收入</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>折现率变化带来的 OCI</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>比较期间重述产生的差异</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>若过渡日估计偏保守，未来经验好于估计时释放的差额——它来自方法切换而非经营</span></div>
+      </div>
+      <div class="quiz-explain">D 正确。公允价值法把历史经验封存在过渡日切分里，日后的经验差异会以"利润"面目出现，分析时须与真实经营区分。</div>
+    </div>
+
+    <div class="quiz-block" data-answer="0">
+      <div class="quiz-q"><span class="q-num">5</span>例H 修正追溯法下，过渡日 CSM 的计算是？</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt"><span class="opt-key">A</span><span>1,180 − 1,050 − 90 = 40</span></div>
+        <div class="quiz-opt"><span class="opt-key">B</span><span>1,200 − 1,050 = 150</span></div>
+        <div class="quiz-opt"><span class="opt-key">C</span><span>1,180 − 1,200 = −20</span></div>
+        <div class="quiz-opt"><span class="opt-key">D</span><span>150 − 320 = −170</span></div>
+      </div>
+      <div class="quiz-explain">A 正确。对价（过渡日口径）− RA − 履约现金流量 = CSM；B 混入旧准备金；C 是权益调整额；D 是追溯法的口径。</div>
+    </div>
+
+    <div class="quiz-score">
+      <span class="score-text">点击选项作答，即时判分</span>
+      <button class="quiz-reset">重做本章自测</button>
     </div>
   </div>
 
+  <!-- ⑤ 一表小结 -->
+  <div class="section">
+    <h2><span class="icon">📋</span>四、一表小结</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>要点</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><strong>过渡日</strong></td><td>首次执行日；存量合同全部进新准则</td></tr>
+          <tr><td><strong>三法</strong></td><td>追溯调整（重述全史）/ 修正追溯（过渡日信息重算、不重述）/ 公允价值法（市场价切分）</td></tr>
+          <tr><td><strong>调整去向</strong></td><td>期初留存收益，不当期损益</td></tr>
+          <tr><td><strong>免检清单</strong></td><td>是否保险合同、合并分拆、边界判断（信息不可得时除外）</td></tr>
+          <tr><td><strong>必做清单</strong></td><td>分组（按过渡日剩余责任期与盈利性）、全套计量、CSM/亏损建立</td></tr>
+          <tr><td><strong>过渡 CSM</strong></td><td>对价 − RA − 履约现金流量；负数 → 亏损进权益</td></tr>
+          <tr><td><strong>披露</strong></td><td>方法选择、期初调整构成、新旧口径并列说明</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="read-toggle" data-ch="ch20">○ 标记本章已读</button>
+  </div>
+
+  <!-- ⑥ 知识连接 -->
   <div class="section">
     <h2><span class="icon">🔗</span>五、知识连接</h2>
     <div class="link-map">
@@ -122,5 +284,6 @@
   </div>
 </div>
 <script src="guide.js"></script>
+  <script src="gate.js"></script>
 </body>
 </html>
