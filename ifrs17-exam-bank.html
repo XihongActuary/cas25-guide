@@ -97,13 +97,10 @@ a:hover{text-decoration:underline}
 .tabbar .tab-btn:hover{border-color:var(--gold)}
 .tabbar .tab-btn.active{background:var(--red);color:#fff;border-color:var(--red);font-weight:700}
 
-/* ══ 口令门（礼貌性门槛 · 参考 cas25-guide gate.js）══ */
-body.gated > *:not(.gate-panel){display:none !important}
-.gate-panel{display:none;position:fixed;inset:0;overflow:auto;background:var(--bg);
-  z-index:9999;align-items:flex-start;justify-content:center;padding:6vh 16px}
-body.gated .gate-panel{display:flex}
+/* ══ 会员解锁 Tab（口令门 + 知识星球引导 · 参考 cas25-guide gate.js）══ */
+.member-wrap{max-width:560px;margin:10px auto 40px}
 .gate-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;
-  max-width:480px;width:100%;padding:30px 28px;box-shadow:0 12px 44px rgba(0,0,0,.10);text-align:center}
+  max-width:480px;width:100%;padding:30px 28px;box-shadow:0 12px 44px rgba(0,0,0,.08);text-align:center;margin:0 auto}
 .gate-lock{font-size:34px;line-height:1}
 .gate-card h2{font-size:20px;color:var(--ink);margin:10px 0 6px;font-weight:700;letter-spacing:.5px}
 .gate-ch{font-size:13.5px;color:var(--mute);margin:0 0 16px;line-height:1.7}
@@ -136,32 +133,8 @@ body.gated .gate-panel{display:flex}
 </head>
 <body>
 
-<div class="gate-panel" id="gatePanel">
-  <div class="gate-card">
-    <div class="gate-lock">🔒</div>
-    <h2>新会计准则题库 · 会员专享</h2>
-    <p class="gate-ch">本题库为「西红精算」会员内容，含 8 套真题 / 模拟 / 拓展卷与逐题答案、评分标准。</p>
-    <ul class="gate-points">
-      <li>真题 3 套（IFRS17 / CAS25 历史真题按新准则重述 + 官方例题）</li>
-      <li>模拟 3 套（计算为主、问答为辅、无选择题）</li>
-      <li>拓展 2 套（问答卷 + 计算实践卷，含三时刻滚存与投资成分分拆）</li>
-      <li>逐题标注出处 · 折叠答案 · 评分标准</li>
-    </ul>
-    <div class="gate-input-row">
-      <input type="password" id="gatePass" class="gate-input" placeholder="输入星球公布的阅读口令" autocomplete="off">
-      <button id="gateBtn" class="gate-btn">解锁</button>
-    </div>
-    <p class="gate-hint">口令在知识星球置顶帖公布 · 一次输入，本机长期有效</p>
-    <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener" class="gate-cta">还没有口令？加入知识星球领取 →</a>
-    <div class="gate-zsxq">
-      <div class="ztitle">📡 扫码加入「西红精算 · 知识星球」</div>
-      <img class="qr" src="assets/zsxq-qrcode.png" alt="知识星球二维码">
-      <div class="zcap">扫码直达 · 进圈后在置顶帖领取阅读口令</div>
-      <div class="znote">星球配套 CAS25 精读、ALM、C-ROSS 等系列知识库持续更新与精算答疑</div>
-      <a class="btn-join" href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">加入星球，解锁本库</a>
-    </div>
-  </div>
-</div>
+<!-- 会员解锁浮层已移至「会员·解锁」Tab，题库正文默认开放，真题·卷一不再被遮盖 -->
+
 
 <header>
   <h1>新会计准则题库</h1>
@@ -192,6 +165,7 @@ body.gated .gate-panel{display:flex}
   <button class="tab-btn" data-target="m3">模拟·卷三</button>
   <button class="tab-btn" data-target="q">拓展·问答卷</button>
   <button class="tab-btn" data-target="cp">拓展·计算实践卷</button>
+  <button class="tab-btn" data-target="member">会员·解锁</button>
 </div>
 
 <!-- ════════════════════ 真题卷一 ════════════════════ -->
@@ -2115,6 +2089,38 @@ body.gated .gate-panel{display:flex}
   </div>
 </section>
 
+<section id="member">
+  <div class="member-wrap">
+    <div class="gate-card">
+      <div class="gate-lock">🔒</div>
+      <h2>会员专享 · 口令验证</h2>
+      <p class="gate-ch">本题库为「西红精算」会员内容，含 8 套真题 / 模拟 / 拓展卷与逐题答案、评分标准。输入星球公布的阅读口令，验证会员身份、解锁完整答疑权限。</p>
+      <ul class="gate-points">
+        <li>真题 3 套（IFRS17 / CAS25 历史真题按新准则重述 + 官方例题）</li>
+        <li>模拟 3 套（计算为主、问答为辅、无选择题）</li>
+        <li>拓展 2 套（问答卷 + 计算实践卷，含三时刻滚存与投资成分分拆）</li>
+        <li>逐题标注出处 · 折叠答案 · 评分标准</li>
+      </ul>
+      <div class="gate-input-row">
+        <input type="password" id="gatePass" class="gate-input" placeholder="输入星球公布的阅读口令" autocomplete="off">
+        <button id="gateBtn" class="gate-btn">验证</button>
+      </div>
+      <p class="gate-hint">口令在知识星球置顶帖公布 · 一次验证，本机长期有效</p>
+      <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener" class="gate-cta">还没有口令？加入知识星球领取 →</a>
+      <div class="gate-zsxq">
+        <div class="ztitle">📡 扫码加入「西红精算 · 知识星球」</div>
+        <img class="qr" src="assets/zsxq-qrcode.png" alt="知识星球二维码">
+        <div class="zcap">扫码直达 · 进圈后在置顶帖领取阅读口令</div>
+        <div class="znote">星球配套 CAS25 精读、ALM、C-ROSS 等系列知识库持续更新与精算答疑</div>
+        <a class="btn-join" href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">加入星球，解锁本库</a>
+      </div>
+      <div class="gate-unlocked-note" id="gateNote">
+        ✓ 已验证会员身份。完整逐题视频解析、配套演算器与精算答疑，请进入知识星球「西红精算」获取。首页「真题 · 卷一」已默认开放，欢迎先练手。
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <p>新会计准则题库 · 中国精算师（IFRS17 / CAS25）· 西红精算<br>
   真题3套 + 模拟3套 + 拓展2套（共 8 套） · 计算/问答/实践 · 逐题标注出处<br>
@@ -2142,33 +2148,34 @@ body.gated .gate-panel{display:flex}
 </script>
 
 <script>
-/* 口令门（礼貌性门槛）· 与 cas25-guide gate.js / premium.html 共用同一口令散列
-   口令：XHJS25  →  djb2 = 3664108585
-   说明：纯前端散列只能挡住随手翻看，挡不住懂开发者工具的人；定位是"会员标识"而非硬防线。
-   解锁后写入 localStorage，本机一次输入、长期有效。 */
+/* 会员解锁 Tab：口令门 + 知识星球引导（与 cas25-guide 共用口令 XHJS25 → djb2 3664108585）
+   定位：礼貌性会员标识。验证仅在本 Tab 内展示"已验证"提示与角标，不阻挡题库正文阅读（真题·卷一默认开放）。 */
 (function(){
   'use strict';
   var PASS_HASH = 3664108585;
   var STORE_KEY = 'cas25_exam_unlocked';
   function djb2(str){var h=5381;for(var i=0;i<str.length;i++){h=(h*33+str.charCodeAt(i))>>>0;}return h>>>0;}
-  function unlocked(){try{return localStorage.getItem(STORE_KEY)==='1';}catch(e){return false;}}
-  var panel=document.getElementById('gatePanel');
   var input=document.getElementById('gatePass');
   var btn=document.getElementById('gateBtn');
-  function open_(){
-    document.body.classList.remove('gated');
-    if(panel)panel.style.display='none';
-    var badge=document.createElement('div');
-    badge.className='gate-unlocked-badge';
-    badge.textContent='🔓 已解锁 · 本机长期有效';
-    document.body.appendChild(badge);
+  var note=document.getElementById('gateNote');
+  function showUnlocked(){
+    if(note)note.classList.add('show');
+    if(!document.getElementById('gateUnlockedBadge')){
+      var badge=document.createElement('div');
+      badge.id='gateUnlockedBadge';
+      badge.className='gate-unlocked-badge';
+      badge.textContent='🔓 已验证会员 · 本机长期有效';
+      document.body.appendChild(badge);
+    }
+    if(input)input.disabled=true;
+    if(btn)btn.disabled=true;
   }
   function tryUnlock(){
     var v=(input.value||'').trim();
     if(!v){input.focus();return;}
     if(djb2(v)===PASS_HASH){
       try{localStorage.setItem(STORE_KEY,'1');}catch(e){}
-      open_();
+      showUnlocked();
     }else{
       input.classList.add('gate-shake');
       input.value='';
@@ -2176,9 +2183,7 @@ body.gated .gate-panel{display:flex}
       input.focus();
     }
   }
-  if(unlocked()){open_();return;}
-  document.body.classList.add('gated');
-  if(panel)panel.style.display='flex';
+  try{ if(localStorage.getItem(STORE_KEY)==='1'){ showUnlocked(); } }catch(e){}
   if(btn)btn.addEventListener('click',tryUnlock);
   if(input)input.addEventListener('keydown',function(e){if(e.key==='Enter')tryUnlock();});
 })();
