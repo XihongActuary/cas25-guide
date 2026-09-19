@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAS25 一小时精读 · 西红精算</title>
+<style>
+:root{
+  --bg:#f5f1e6; --ink:#2a2a2a; --mute:#7a6f5d; --line:#d8cfb8;
+  --red:#b53d2e; --red-soft:#d97565; --gold:#c98a2b; --teal:#3a6e6f;
+}
+*{box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",serif;background:var(--bg);color:var(--ink);
+  max-width:680px;margin:0 auto;padding:28px 18px 60px;line-height:1.8;font-size:15.5px}
+header{text-align:center;border-bottom:2px solid var(--line);padding-bottom:20px;margin-bottom:32px}
+header h1{font-size:26px;margin:0 0 6px;color:var(--ink);font-weight:700}
+header .sub{color:var(--mute);font-size:13px;margin:0}
+header .meta{color:var(--red);font-size:12px;margin-top:8px;letter-spacing:1px}
+nav.toc{background:#fff;padding:14px 18px;border:1px solid var(--line);border-radius:6px;margin-bottom:28px}
+nav.toc strong{color:var(--red)}
+nav.toc ol{margin:6px 0 0;padding-left:22px}
+nav.toc li{margin:3px 0;font-size:14px}
+section{margin-bottom:36px;scroll-margin-top:20px}
+section h2{font-size:20px;color:var(--red);border-left:4px solid var(--red);padding-left:12px;
+  margin:0 0 6px;font-weight:700}
+section .time{color:var(--mute);font-size:12px;margin:0 0 14px;padding-left:16px}
+section h3{font-size:16px;color:var(--ink);margin:18px 0 8px;font-weight:600}
+section h3 .en{color:var(--mute);font-weight:400;font-size:13px;margin-left:6px}
+p{margin:8px 0}
+strong.k{color:var(--red);font-weight:700}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#ebe3cc;font-weight:600}
+.fig{margin:14px 0;padding:14px;background:#fff;border:1px solid var(--line);border-radius:6px;text-align:center}
+.fig svg{max-width:100%;height:auto}
+.fig .cap{font-size:12px;color:var(--mute);margin-top:6px}
+.callout{padding:12px 14px;border-left:3px solid var(--gold);background:#faf6e9;margin:12px 0;font-size:14px}
+.box3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+@media(max-width:640px){.box3{grid-template-columns:1fr}}
+.box3 .b{background:#fff;border:1px solid var(--line);border-radius:6px;padding:12px;text-align:center}
+.box3 .b .n{font-size:22px;color:var(--red);font-weight:700}
+.box3 .b .l{font-size:12px;color:var(--mute);margin-top:4px}
+
+/* ─── §3-§5 内嵌 1 分钟分屏（三联屏卡块）─── */
+.sub-frames{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 6px}
+@media(max-width:640px){.sub-frames{grid-template-columns:1fr}}
+.sub{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:6px;padding:12px;font-size:13px}
+.sub .sno{color:var(--red);font-weight:700;font-size:11px;letter-spacing:1px;margin-bottom:4px}
+.sub .sq{color:var(--ink);font-weight:600;margin-bottom:6px}
+.sub .sa{color:var(--mute);font-size:12px;line-height:1.6}
+.sub .st{color:var(--teal);font-size:11px;margin-top:6px;font-style:italic}
+
+/* ─── §6 线性陈述（公众号发表格式）─── */
+.frame{padding:16px 0;border-bottom:1px dashed var(--line);
+  scroll-margin-top:20px;margin:0}
+.frame:last-of-type{border-bottom:none}
+.frame .q{font-size:14px;color:var(--mute);margin:0 0 8px;letter-spacing:.5px}
+.frame .a{font-size:17px;color:var(--ink);font-weight:600;margin:0 0 12px;line-height:1.7}
+.frame .think{font-size:13px;color:var(--teal);background:#eef0ed;padding:10px 14px;
+  border-radius:0 4px 4px 0;border-left:3px solid var(--teal);margin:0}
+.frame .think::before{content:"一点思考 · ";font-weight:600;color:var(--teal)}
+/* 暂停回顾段（金色高亮） */
+.frame.review{background:#fbf6e6;border:1px solid var(--gold);border-radius:6px;
+  padding:14px 18px;margin:18px 0}
+.frame.review .a{color:var(--red)}
+
+footer{text-align:center;color:var(--mute);font-size:12px;border-top:1px solid var(--line);
+  padding-top:16px;margin-top:48px}
+a{color:var(--red);text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>CAS25 一小时精读</h1>
+  <p class="sub">把 CAS25 当一本"未来现金流的账本"看</p>
+  <p class="meta">30 段一问一答 · 零基础读到能用</p>
+</header>
+
+<nav class="toc" id="toc">
+  <strong>本篇看点</strong>
+  <ol>
+    <li>为什么要改</li>
+    <li>三图看懂 CAS25（量·赚·配）</li>
+    <li>三图逐释（每图配 3 分屏）</li>
+    <li>线性陈述：30 段一问一答</li>
+  </ol>
+</nav>
+
+<!-- ════════════════════════ §1 为什么要改 ════════════════════════ -->
+<section id="why">
+  <h2>一、为什么要改</h2>
+  <p class="time">Why</p>
+
+  <h3>1.1 一句话回答</h3>
+  <p>旧准则把保险合同当成<strong class="k">"先收钱、未来再说"</strong>的黑箱，新准则把它折成<strong class="k">"未来现金流的现值"</strong>，让利润<strong class="k">看得见、可对比、可解释</strong>。</p>
+
+  <h3>1.2 三个旧痛点</h3>
+  <table>
+    <tr><th>旧痛点</th><th>业务体感</th><th>新准则的解药</th></tr>
+    <tr><td>利润延迟释放</td><td>卖得多 ≠ 利润高；新单亏损要等多年才暴露</td><td><strong class="k">合同服务边际（CSM）</strong>：未来利润的现值在保障期按月释放</td></tr>
+    <tr><td>负债看不清</td><td>准备金一锅炖，分不清是"欠客户的"还是"未来赚的"</td><td>三段拆——<strong class="k">履约现金流（FCF）+ 风险调整（RA）+ CSM</strong></td></tr>
+    <tr><td>报表不可比</td><td>不同公司、不同产品没法直接对比</td><td>统一的<strong class="k">计量模型 + 披露口径</strong>，跨公司可比</td></tr>
+  </table>
+
+  <div class="callout">关键时间点：CAS25 于 2020 年发布、2023 年起在境内外同时上市企业执行，2026 年起覆盖所有保险公司。</div>
+</section>
+
+<!-- ════════════════════════ §2 一图看懂 ════════════════════════ -->
+<section id="overview">
+  <h2>二、一图看懂 CAS25</h2>
+  <p class="time">总览</p>
+
+  <p>CAS25 的全部内容，可以装进下面三张图。</p>
+
+  <div class="box3">
+    <div class="b"><div class="n">①</div><div class="l">怎么量<br/>FCF + RA + CSM</div></div>
+    <div class="b"><div class="n">②</div><div class="l">怎么赚<br/>利差 + 费差 + 死差</div></div>
+    <div class="b"><div class="n">③</div><div class="l">怎么配<br/>资产 ↔ 负债</div></div>
+  </div>
+
+  <div class="callout"><strong class="k">核心命题</strong>：<strong>计量 + 利润 + 资负匹配</strong>——三件事全在一个合同服务期内同步运转。</div>
+</section>
+
+<!-- ════════════════════════ §3 图 1 计量公式（7 min）════════════════════════ -->
+<section id="fig1">
+  <h2>三、图 1 · 计量公式</h2>
+  <p class="time">怎么量（主释 + 3 分屏）</p>
+
+  <div class="fig">
+    <svg viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#b53d2e"/>
+        </marker>
+      </defs>
+      <circle cx="340" cy="140" r="90" fill="none" stroke="#d8cfb8" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="340" y="135" text-anchor="middle" font-size="16" font-weight="700" fill="#2a2a2a">保险合同</text>
+      <text x="340" y="155" text-anchor="middle" font-size="13" fill="#7a6f5d">负债账面价值</text>
+      <path d="M80,140 A260,140 0 0,1 240,30" stroke="#b53d2e" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+      <text x="135" y="55" font-size="13" fill="#b53d2e" font-weight="700">FCF 履约现金流</text>
+      <text x="135" y="72" font-size="11" fill="#7a6f5d">未来保费·赔款·费用</text>
+      <text x="135" y="86" font-size="11" fill="#7a6f5d">按折现率折现到当下</text>
+      <path d="M40,140 L160,140" stroke="#3a6e6f" stroke-width="2" marker-end="url(#ar)"/>
+      <text x="40" y="125" font-size="13" fill="#3a6e6f" font-weight="700">RA 风险调整</text>
+      <text x="40" y="170" font-size="11" fill="#7a6f5d">承担风险应得的</text>
+      <text x="40" y="184" font-size="11" fill="#7a6f5d">补偿</text>
+      <path d="M80,140 A260,140 0 0,0 240,250" stroke="#c98a2b" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+      <text x="135" y="225" font-size="13" fill="#c98a2b" font-weight="700">CSM 合同服务边际</text>
+      <text x="135" y="242" font-size="11" fill="#7a6f5d">未来利润的现值</text>
+      <text x="135" y="256" font-size="11" fill="#7a6f5d">按保障期逐月释放</text>
+      <path d="M440,140 A110,110 0 1,1 430,40" stroke="#7a6f5d" stroke-width="1.5" fill="none" stroke-dasharray="3 3" marker-end="url(#ar)"/>
+      <text x="555" y="125" font-size="12" fill="#7a6f5d">合同期内逐期</text>
+      <text x="555" y="142" font-size="12" fill="#7a6f5d">释放为保险</text>
+      <text x="555" y="159" font-size="12" fill="#7a6f5d">服务收入</text>
+    </svg>
+    <p class="cap">图 1 · 保险合同负债 = FCF + RA + CSM，逐期释放</p>
+  </div>
+
+  <h3>3.1 三段负债，各司其职 <span class="en">4 分钟主释</span></h3>
+  <table>
+    <tr><th>段</th><th>名字</th><th>通俗解释</th><th>角色</th></tr>
+    <tr><td>FCF</td><td>履约现金流</td><td>未来<strong>收</strong>多少保费、<strong>付</strong>多少赔款、<strong>花</strong>多少费用，差额按折现率折到现在</td><td>精算估的"底" + 财务贴的"现"</td></tr>
+    <tr><td>RA</td><td>非金融风险调整</td><td>你承担了风险，应该得的<strong>补偿</strong>（监管要求 ≥ 0）</td><td>精算算的"风险溢价"</td></tr>
+    <tr><td>CSM</td><td>合同服务边际</td><td>未来<strong>利润的现值</strong>，合同期内按月慢慢认领</td><td>递延的"已赚未收"</td></tr>
+  </table>
+
+  <div class="callout"><strong class="k">管理者只需记住</strong>：三段加起来就是负债；三段变化不同步——FCF 跟着假设走，RA 跟着风险走，CSM 跟着盈利走。</div>
+
+  <h3>3.2 一分钟分屏释义</h3>
+  <div class="sub-frames">
+    <div class="sub">
+      <div class="sq">FCF · 未来的赚与付</div>
+      <div class="sa">把"未来 20 年保费、赔款、费用"的差额，按锁定折现率贴到现在。</div>
+      <div class="st">一点儿思考：该看的是首年 FCF 与上年假设差异——这反映精算判断变化。</div>
+    </div>
+    <div class="sub">
+      <div class="sq">RA · 给不确定留安全垫</div>
+      <div class="sa">承担赔款波动的对价。监管底线 ≥ 0，置信水平（如 75%）公司自选。</div>
+      <div class="st">一点儿思考：RA 越保守、利润释放越慢；要平衡稳健与股东回报。</div>
+    </div>
+    <div class="sub">
+      <div class="sq">CSM · 未来利润的待释放账户</div>
+      <div class="sa">当下不"赚"也不"亏"，放在账上按保障期逐月翻成收入。</div>
+      <div class="st">一点儿思考：CSM 余额是未来利润"藏在哪"——卖得多，余额就厚。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ §4 图 2 利润分解（7 min）════════════════════════ -->
+<section id="fig2">
+  <h2>四、图 2 · 利润分解</h2>
+  <p class="time">怎么赚（主释 + 3 分屏）</p>
+
+  <div class="fig">
+    <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#b53d2e"/>
+        </marker>
+      </defs>
+      <rect x="270" y="100" width="140" height="60" rx="6" fill="#fff" stroke="#b53d2e" stroke-width="2"/>
+      <text x="340" y="128" text-anchor="middle" font-size="14" font-weight="700" fill="#b53d2e">保险合同利润</text>
+      <text x="340" y="148" text-anchor="middle" font-size="11" fill="#7a6f5d">每期释放</text>
+      <rect x="40" y="30" width="130" height="50" rx="6" fill="#faf6e9" stroke="#c98a2b"/>
+      <text x="105" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#c98a2b">利 差</text>
+      <text x="105" y="70" text-anchor="middle" font-size="10" fill="#7a6f5d">投资回报 − 折现率</text>
+      <rect x="510" y="30" width="130" height="50" rx="6" fill="#faf6e9" stroke="#c98a2b"/>
+      <text x="575" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#c98a2b">费 差</text>
+      <text x="575" y="70" text-anchor="middle" font-size="10" fill="#7a6f5d">实际费用 − 预期费用</text>
+      <rect x="40" y="180" width="130" height="50" rx="6" fill="#faf6e9" stroke="#3a6e6f"/>
+      <text x="105" y="202" text-anchor="middle" font-size="13" font-weight="700" fill="#3a6e6f">死 差</text>
+      <text x="105" y="220" text-anchor="middle" font-size="10" fill="#7a6f5d">实际赔付 − 预期赔付</text>
+      <rect x="510" y="180" width="130" height="50" rx="6" fill="#faf6e9" stroke="#b53d2e"/>
+      <text x="575" y="202" text-anchor="middle" font-size="13" font-weight="700" fill="#b53d2e">分红差（VFA）</text>
+      <text x="575" y="220" text-anchor="middle" font-size="10" fill="#7a6f5d">分红险专属</text>
+      <line x1="170" y1="55" x2="270" y2="105" stroke="#c98a2b" stroke-width="1.5" marker-end="url(#ar2)"/>
+      <line x1="510" y1="55" x2="410" y2="105" stroke="#c98a2b" stroke-width="1.5" marker-end="url(#ar2)"/>
+      <line x1="170" y1="205" x2="270" y2="155" stroke="#3a6e6f" stroke-width="1.5" marker-end="url(#ar2)"/>
+      <line x1="510" y1="205" x2="410" y2="155" stroke="#b53d2e" stroke-width="1.5" marker-end="url(#ar2)"/>
+    </svg>
+    <p class="cap">图 2 · 利润三差（分红险再加一差：分红差）</p>
+  </div>
+
+  <h3>4.1 三差——老话题，新表达 <span class="en">4 分钟主释</span></h3>
+  <table>
+    <tr><th>差</th><th>来源</th><th>新准则下的"重新表达"</th></tr>
+    <tr><td><strong class="k">利差</strong></td><td>投资收益 > 负债折现率 → 赚</td><td>分两段：<strong>保险财务损益</strong>（负债折现）+ <strong>投资回报</strong>（资产端），一一对应看得清</td></tr>
+    <tr><td><strong class="k">费差</strong></td><td>实际费用 < 预期费用 → 赚</td><td>归入<strong>保险服务费用</strong>，与赔付同口径对比</td></tr>
+    <tr><td><strong class="k">死差</strong></td><td>实际赔付 < 预期赔付 → 赚</td><td>归入<strong>已发生赔款负债</strong>的释放，经验分析直接可读</td></tr>
+  </table>
+
+  <h3>4.2 报表口径的三个关键变化</h3>
+  <ol class="tight">
+    <li>利润表把<strong class="k">保费收入</strong>换成了<strong class="k">保险服务收入</strong>（不含投资部分）</li>
+    <li>单独列示<strong class="k">承保财务损益 / 保险财务损益</strong>，把利率波动的"假利润"隔开</li>
+    <li><strong class="k">VFA 模型</strong>（直接分红特征）的投资波动<strong>直接进负债</strong>，不再上下乱跳</li>
+  </ol>
+
+  <h3>4.3 一分钟分屏释义</h3>
+  <div class="sub-frames">
+    <div class="sub">
+      <div class="sq">利差 · 投资端与负债端</div>
+      <div class="sa">资产收益率 − 锁定折现率。新准则下首次出现"保险财务损益"独立列。</div>
+      <div class="st">一点儿思考：资产端策略调整（增配长久期债券）会显著影响利差与利润。</div>
+    </div>
+    <div class="sub">
+      <div class="sq">费差 · 管理与运营效率</div>
+      <div class="sa">实际费用 − 预期费用。手续费率、退保率、运营开支效率的总账。</div>
+      <div class="st">一点儿思考：费力高的产品/渠道要重新核算——费差会直接暴露。</div>
+    </div>
+    <div class="sub">
+      <div class="sq">死差 · 风险定价准不准</div>
+      <div class="sa">实际赔款 − 预期赔款。定价假设与实际经验一一比对。</div>
+      <div class="st">一点儿思考：死差大幅为负要立刻预警——意味着定价或承保有系统偏差。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ §5 图 3 资负匹配（7 min）════════════════════════ -->
+<section id="fig3">
+  <h2>五、图 3 · 资负匹配</h2>
+  <p class="time">怎么配（主释 + 3 分屏）</p>
+
+  <div class="fig">
+    <svg viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40" y="40" width="240" height="200" rx="6" fill="#fff" stroke="#3a6e6f" stroke-width="2"/>
+      <text x="160" y="62" text-anchor="middle" font-size="14" font-weight="700" fill="#3a6e6f">资 产 端</text>
+      <rect x="60" y="80" width="200" height="34" rx="4" fill="#faf6e9"/>
+      <text x="160" y="102" text-anchor="middle" font-size="12" fill="#2a2a2a">现金 &amp; 存款</text>
+      <rect x="60" y="120" width="200" height="34" rx="4" fill="#faf6e9"/>
+      <text x="160" y="142" text-anchor="middle" font-size="12" fill="#2a2a2a">债券 · 久期匹配</text>
+      <rect x="60" y="160" width="200" height="34" rx="4" fill="#faf6e9"/>
+      <text x="160" y="182" text-anchor="middle" font-size="12" fill="#2a2a2a">股票 · 权益投资</text>
+      <rect x="60" y="200" width="200" height="34" rx="4" fill="#faf6e9"/>
+      <text x="160" y="222" text-anchor="middle" font-size="12" fill="#2a2a2a">另类 · 长期资产</text>
+      <rect x="400" y="40" width="240" height="200" rx="6" fill="#fff" stroke="#b53d2e" stroke-width="2"/>
+      <text x="520" y="62" text-anchor="middle" font-size="14" font-weight="700" fill="#b53d2e">负 债 端</text>
+      <rect x="420" y="80" width="200" height="34" rx="4" fill="#faf6e9"/>
+      <text x="520" y="102" text-anchor="middle" font-size="12" fill="#2a2a2a">未到期责任负债（LRC）</text>
+      <rect x="420" y="120" width="200" height="34" rx="4" fill="#faf6e9"/>
+      <text x="520" y="142" text-anchor="middle" font-size="12" fill="#2a2a2a">已发生赔款负债（LIC）</text>
+      <rect x="420" y="160" width="200" height="34" rx="4" fill="#faf6e9"/>
+      <text x="520" y="182" text-anchor="middle" font-size="12" fill="#2a2a2a">合同服务边际（CSM）</text>
+      <rect x="420" y="200" width="200" height="34" rx="4" fill="#faf6e9"/>
+      <text x="520" y="222" text-anchor="middle" font-size="12" fill="#2a2a2a">非金融风险调整（RA）</text>
+      <line x1="280" y1="97" x2="400" y2="97" stroke="#7a6f5d" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <line x1="280" y1="137" x2="400" y2="137" stroke="#7a6f5d" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <line x1="280" y1="177" x2="400" y2="177" stroke="#7a6f5d" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <line x1="280" y1="217" x2="400" y2="217" stroke="#7a6f5d" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="340" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#c98a2b">久期 · 现金流 · 流动性</text>
+      <text x="340" y="265" text-anchor="middle" font-size="11" fill="#7a6f5d">监管 2026 新规：4 硬门槛 + 7 监测指标（含新增流动性匹配率）</text>
+    </svg>
+    <p class="cap">图 3 · 资产 ↔ 负债：按现金流特征与久期配对</p>
+  </div>
+
+  <h3>5.1 一句话 <span class="en">4 分钟主释</span></h3>
+  <p><strong class="k">资产跟着负债走</strong>——这是 CAS25 + 资产负债管理新规的共同要求。</p>
+
+  <h3>5.2 三个实操抓手</h3>
+  <ol class="tight">
+    <li><strong>久期匹配</strong>：负债是 20 年期，资产端就得找 20 年期债券顶上</li>
+    <li><strong>流动性匹配率</strong>（新规新增）：资产端现金回流能否覆盖负债端各期支出</li>
+    <li><strong>利率风险传导</strong>：折现率下降 → 负债上升 → 资产端也要跟上</li>
+  </ol>
+
+  <h3>5.3 一分钟分屏释义</h3>
+  <div class="sub-frames">
+    <div class="sub">
+      <div class="sq">久期匹配 · 时间对得上</div>
+      <div class="sa">资产久期 ≈ 负债久期。是过去最容易、最硬的硬门槛。</div>
+      <div class="st">一点儿思考：拉长久期压降利率风险，但承诺收益型产品要重新定价。</div>
+    </div>
+    <div class="sub">
+      <div class="sq">流动性匹配 · 现金流对得上</div>
+      <div class="sa">2026 新规新增：资产端未来现金回流覆盖负债端未来支出的能力。</div>
+      <div class="st">一点儿思考：这是新规"硬门槛"之一，每季报告一次，错位过大要解释。</div>
+    </div>
+    <div class="sub">
+      <div class="sq">利率传导 · 折现率一动两边都动</div>
+      <div class="sa">折现率↓ → 负债↑、CSM↑，资产端久期暴露也要跟上。</div>
+      <div class="st">一点儿思考：监管情景假设压力测试，要看极端利率下资产负债还能不能"自洽"。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ §6 30 段一问一答 ════════════════════════ -->
+<section id="micro">
+  <h2>六、30 段一问一答</h2>
+  <p class="time">线性陈述 · 一问一答一思考</p>
+
+  <p>每段同构：<strong class="k">一句提问 → 一句回答 → 一点思考</strong>。暂停回顾段以金色背景标注，便于放慢阅读节奏。</p>
+
+  
+  <div class="frame" id="f01">
+    <div class="q">保险公司靠什么赚钱？</div>
+    <div class="a">赚"现金流的时间差"——先收保费、按保险事故赔付、剩余就是利润。</div>
+    <div class="think">不要看名气，要看这家公司的"现金流差"在多年期合同里站不站得稳。</div></div>
+
+  
+  <div class="frame" id="f02">
+    <div class="q">这份钱从哪来？</div>
+    <div class="a">客户的<strong class="k">保费收入</strong>，按合同约定期限分摊。</div>
+    <div class="think">"保费规模"听着漂亮，但放到 20 年期里摊开看，真相不同。</div></div>
+
+  
+  <div class="frame" id="f03">
+    <div class="q">这份钱到哪去？</div>
+    <div class="a"><strong class="k">赔款 + 费用</strong>——客户出险的赔付 + 公司运营的开支。</div>
+    <div class="think">"一出一进"之间的差额才是真利润；只看保费或只看赔付都片面。</div></div>
+
+  
+  <div class="frame" id="f04">
+    <div class="q">中间差 = 利润来源？怎么拆？</div>
+    <div class="a">三差：<strong class="k">利差</strong>（投资端）+ <strong class="k">费差</strong>（费用端）+ <strong class="k">死差</strong>（赔付端）。</div>
+    <div class="think">三差各来自不同岗位——投资部 / 财务部 / 精算责任部，谁都不敢丢。</div></div>
+
+  
+  <div class="frame review" id="f05">
+    <div class="q">前 4 屏一句话</div>
+    <div class="a">保险公司赚的是现金流的时间差，三差（利/费/死）各司其职。</div>
+    <div class="think">CFO 关心三差归因，精算责任人关心分布，CEO 关心长期可持续。</div></div>
+
+  
+  <div class="frame" id="f06">
+    <div class="q">CAS25 在这场游戏中做什么？</div>
+    <div class="a">把保险合同的账本<strong class="k">拆成三段</strong>——FCF（未来的钱）+ RA（风险的补偿）+ CSM（未来利润的现值）。</div>
+    <div class="think">从此报表能看穿"黑箱"，业务决策→报表影响可以打通。</div></div>
+
+  
+  <div class="frame" id="f07">
+    <div class="q">为什么拆？</div>
+    <div class="a">三段变化<strong class="k">不同步</strong>——FCF 跟假设、RA 跟风险、CSM 跟盈利，谁都不能用别段的"利润"补账面。</div>
+    <div class="think">分得清才看得清——过去"准备金一锅炖"的时代结束了。</div></div>
+
+  
+  <div class="frame" id="f08">
+    <div class="q">这三段合起来是什么？</div>
+    <div class="a"><strong class="k">保险合同负债</strong>——也就是资产负债表右边那一栏的"未来要付/未来要赚"。</div>
+    <div class="think">判断"公司值不值钱"时，看 FCF+RA+CSM 三段各自的健康度，更靠谱。</div></div>
+
+  
+  <div class="frame" id="f09">
+    <div class="q">FCF · 履约现金流，怎么理解？</div>
+    <div class="a">未来<strong>收</strong>多少保费、<strong>付</strong>多少赔款、<strong>花</strong>多少费用，差额按<strong class="k">折现率</strong>贴到现在。</div>
+    <div class="think">FCF 是地基——精算把它估得准不准，决定了其他两段支不支得住。</div></div>
+
+  
+  <div class="frame" id="f10">
+    <div class="q">为什么 FCF 要"折现"？</div>
+    <div class="a">时间是有成本的——今天的 1 元 ≠ 未来的 1 元；折现就是把这层"时间的成本"算出来。</div>
+    <div class="think">折现率的"半个百分点"在不同产品上能差出数千万的负债。</div></div>
+
+  
+  <div class="frame" id="f11">
+    <div class="q">FCF 用什么折？</div>
+    <div class="a"><strong class="k">锁定折现率</strong>——合同生效时锁定，全程不变；与同业披露可比。</div>
+    <div class="think">同行业的折现率差异，是财务可比性最容易"被挑选"的地方。</div></div>
+
+  
+  <div class="frame review" id="f12">
+    <div class="q">FCF 一句话</div>
+    <div class="a">FCF = 未来赚与付的差额，按锁定折现率折到现在——这是负债的"地基"。</div>
+    <div class="think">FCF 是精算的地盘，但要追问三个数字——首年金额、同业差异、年度变化。</div></div>
+
+  
+  <div class="frame" id="f13">
+    <div class="q">RA · 风险调整，怎么理解？</div>
+    <div class="a">未来赔款会<strong class="k">波动</strong>，公司承担这份波动应该得的<strong class="k">补偿</strong>——就是 RA。</div>
+    <div class="think">RA 是公司"承压能力"的市场定价——风险承担得越多，RA 越厚。</div></div>
+
+  
+  <div class="frame" id="f14">
+    <div class="q">RA 用什么算？</div>
+    <div class="a">精算师选置信水平（如 75%），再按业务波动算出来；监管要求 ≥ 0。</div>
+    <div class="think">越保守（置信水平越高）→ RA 越厚 → 利润释放越慢；要权衡稳健与回报。</div></div>
+
+  
+  <div class="frame review" id="f15">
+    <div class="q">RA 一句话</div>
+    <div class="a">RA = 承担赔款波动的对价。监管底线 ≥ 0，置信水平由公司自选——这是精算的"风险溢价"。</div>
+    <div class="think">到这一段你应该听懂了三件事——FCF 估得准、RA 算得稳，都为下一段铺路。</div></div>
+
+  
+  <div class="frame" id="f16">
+    <div class="q">CSM · 合同服务边际，怎么理解？</div>
+    <div class="a">当下<strong class="k">不"赚"也不"亏"</strong>，放在账上的"待释放账户"——按保障期按月慢慢认领为收入。</div>
+    <div class="think">CSM 余额是"未来藏着的利润"——卖得越多、CSM 越厚、未来年份利润越稳。</div></div>
+
+  
+  <div class="frame" id="f17">
+    <div class="q">CSM 怎么"认领"？</div>
+    <div class="a">按<strong class="k">保障期单位</strong>逐期释放——一年期产品一次性，年金险按保障期分摊。</div>
+    <div class="think">终身寿险与短期健康险的 CSM 摊销模式选择，会显著影响首年报表。</div></div>
+
+  
+  <div class="frame" id="f18">
+    <div class="q">三要素如何配合？</div>
+    <div class="a">FCF 在前、RA 站岗、CSM 释放利润；任何一个变化都会跨段传导，但传导路径设计得<strong class="k">可解释</strong>。</div>
+    <div class="think">未来季度报里要追问："这三段各自走了多远？"——单一数字不再够用。</div></div>
+
+  
+  <div class="frame review" id="f19">
+    <div class="q">三要素账本结构</div>
+    <div class="a">负债 = FCF（估）+ RA（算）+ CSM（藏）；每段有不同的"管理者"，三者加总才是合同价值。</div>
+    <div class="think">到这里你可以和团队展开对话了——再往下是利润端的拆解。</div></div>
+
+  
+  <div class="frame" id="f20">
+    <div class="q">利差在 CAS25 下怎么表达？</div>
+    <div class="a">分两段：<strong class="k">保险财务损益</strong>（负债端折现）+ <strong class="k">投资回报</strong>（资产端收益），一一对应。</div>
+    <div class="think">过去利差在投资部账上"含混"——现在投资部和精算的责任拆得清清楚楚。</div></div>
+
+  
+  <div class="frame" id="f21">
+    <div class="q">费差在 CAS25 下？</div>
+    <div class="a">归入<strong class="k">保险服务费用</strong>，与保险服务收入同口径对比，直接读出"运营效率"。</div>
+    <div class="think">费差是公司"管理水平"的镜子——同行业比可比，自己比可追踪。</div></div>
+
+  
+  <div class="frame" id="f22">
+    <div class="q">死差在 CAS25 下？</div>
+    <div class="a">归入<strong class="k">已发生赔款负债（LIC）</strong>的释放，经验分析直接可读。</div>
+    <div class="think">死差为负数 → 立刻预警——意味着定价假设或承保有系统偏差。</div></div>
+
+  
+  <div class="frame" id="f23">
+    <div class="q">分红差是什么？</div>
+    <div class="a">分红险专属——<strong class="k">VFA 模型</strong>下投资波动直接进负债，不再上下乱跳；分红差 = 实际分红 vs 预期。</div>
+    <div class="think">分红险占比高的公司，资产负债的"联动"更敏感——月度跟踪红利率。</div></div>
+
+  
+  <div class="frame review" id="f24">
+    <div class="q">利润四差 · CAS25 的"重新表达"</div>
+    <div class="a">利差（投资·精算对账）/ 费差（运营效率）/ 死差（定价准度）/ 分红差（分红险专属）——四差在报表上各归各位。</div>
+    <div class="think">四差管理 = 公司四套核心能力建设，任一项"短板"都会拖整个报表。</div></div>
+
+  
+  <div class="frame" id="f25">
+    <div class="q">资产负债表的变化？</div>
+    <div class="a">保费进<strong class="k">LRC（未到期责任负债）</strong>，赔款进<strong class="k">LIC（已发生赔款负债）</strong>，CSM 与 RA 分列——三大变化。</div>
+    <div class="think">负债端结构变透明了，每段都能"追踪"，资产端也跟着"被动匹配"。</div></div>
+
+  
+  <div class="frame" id="f26">
+    <div class="q">利润表的变化？</div>
+    <div class="a">保费收入 → <strong class="k">保险服务收入</strong>（剔除投资部分）；新增<strong class="k">承保财务损益 / 保险财务损益</strong>独立列。</div>
+    <div class="think">估值逻辑要重写——"现金流 ≠ 利润"，分析师需要新口径教育。</div></div>
+
+  
+  <div class="frame review" id="f27">
+    <div class="q">报表三大变化</div>
+    <div class="a">资产负债表分三段列示，利润表新增保险服务收入 + 财务损益独立列，<strong class="k">现金流表基本不变</strong>。</div>
+    <div class="think">现金流几乎不变、利润剧变——这正是准则要做的"翻译"工作。</div></div>
+
+  
+  <div class="frame" id="f28">
+    <div class="q">衔接法的三种选择？</div>
+    <div class="a"><strong class="k">全面追溯</strong>（最准、最贵）→ <strong class="k">修正追溯</strong>（折中）→ <strong class="k">公允价值法</strong>（最简）。</div>
+    <div class="think">衔接法仅一次性选择——决定了"历史包袱"如何进新报表。</div></div>
+
+  
+  <div class="frame" id="f29">
+    <div class="q">什么时候必须执行？</div>
+    <div class="a"><strong class="k">2023</strong> 境内外同时上市企业执行；<strong class="k">2026</strong> 起覆盖所有保险公司（含中小公司）。</div>
+    <div class="think">节奏在前不在后——晚动的成本是"集中兑现 + 监管窗口关闭"。</div></div>
+
+  
+  <div class="frame review" id="f30">
+    <div class="q">一句话总结 + 行动起点</div>
+    <div class="a">CAS25 = 把保险合同当"未来现金流账本"，三段（FCF+RA+CSM）同步计量、四差（利费死分红）逐期归因。</div>
+</div>
+</section>
+
+<footer>
+  <p>CAS25 一小时精读 · 西红精算<br>
+  延伸阅读：<a href="https://xihongactuary.github.io/cas25-guide/">CAS25 精读知识库</a>（ch01–ch20 三阶路径）<br>
+  不替代准则原文与监管披露要求</p>
+</footer>
+
+</body>
+</html>
