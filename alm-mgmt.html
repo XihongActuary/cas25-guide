@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALM 一小时精读 · 西红精算</title>
+<style>
+:root{
+  --bg:#f5f1e6; --ink:#2a2a2a; --mute:#7a6f5d; --line:#d8cfb8;
+  --red:#b53d2e; --red-soft:#d97565; --gold:#c98a2b; --teal:#3a6e6f;
+}
+*{box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",serif;background:var(--bg);color:var(--ink);
+  max-width:680px;margin:0 auto;padding:28px 18px 60px;line-height:1.8;font-size:15.5px}
+header{text-align:center;border-bottom:2px solid var(--line);padding-bottom:20px;margin-bottom:32px}
+header h1{font-size:26px;margin:0 0 6px;color:var(--ink);font-weight:700}
+header .sub{color:var(--mute);font-size:13px;margin:0}
+header .meta{color:var(--red);font-size:12px;margin-top:8px;letter-spacing:1px}
+nav.toc{background:#fff;padding:14px 18px;border:1px solid var(--line);border-radius:6px;margin-bottom:28px}
+nav.toc strong{color:var(--red)}
+nav.toc ol{margin:6px 0 0;padding-left:22px}
+nav.toc li{margin:3px 0;font-size:14px}
+section{margin-bottom:36px;scroll-margin-top:20px}
+section h2{font-size:20px;color:var(--red);border-left:4px solid var(--red);padding-left:12px;
+  margin:0 0 6px;font-weight:700}
+section .time{color:var(--mute);font-size:12px;margin:0 0 14px;padding-left:16px}
+section h3{font-size:16px;color:var(--ink);margin:18px 0 8px;font-weight:600}
+section h3 .en{color:var(--mute);font-weight:400;font-size:13px;margin-left:6px}
+p{margin:8px 0}
+strong.k{color:var(--red);font-weight:700}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#ebe3cc;font-weight:600}
+.fig{margin:14px 0;padding:14px;background:#fff;border:1px solid var(--line);border-radius:6px;text-align:center}
+.fig svg{max-width:100%;height:auto}
+.fig .cap{font-size:12px;color:var(--mute);margin-top:6px}
+.callout{padding:12px 14px;border-left:3px solid var(--gold);background:#faf6e9;margin:12px 0;font-size:14px}
+.box3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+@media(max-width:640px){.box3{grid-template-columns:1fr}}
+.box3 .b{background:#fff;border:1px solid var(--line);border-radius:6px;padding:12px;text-align:center}
+.box3 .b .n{font-size:22px;color:var(--red);font-weight:700}
+.box3 .b .l{font-size:12px;color:var(--mute);margin-top:4px}
+
+/* ─── §3-§5 内嵌 1 分钟分屏（三联屏卡块）─── */
+.sub-frames{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 6px}
+@media(max-width:640px){.sub-frames{grid-template-columns:1fr}}
+.sub{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:6px;padding:12px;font-size:13px}
+.sub .sno{color:var(--red);font-weight:700;font-size:11px;letter-spacing:1px;margin-bottom:4px}
+.sub .sq{color:var(--ink);font-weight:600;margin-bottom:6px}
+.sub .sa{color:var(--mute);font-size:12px;line-height:1.6}
+.sub .st{color:var(--teal);font-size:11px;margin-top:6px;font-style:italic}
+
+/* ─── §6 线性陈述（公众号发表格式）─── */
+.frame{padding:16px 0;border-bottom:1px dashed var(--line);
+  scroll-margin-top:20px;margin:0}
+.frame:last-of-type{border-bottom:none}
+.frame .q{font-size:14px;color:var(--mute);margin:0 0 8px;letter-spacing:.5px}
+.frame .a{font-size:17px;color:var(--ink);font-weight:600;margin:0 0 12px;line-height:1.7}
+.frame .think{font-size:13px;color:var(--teal);background:#eef0ed;padding:10px 14px;
+  border-radius:0 4px 4px 0;border-left:3px solid var(--teal);margin:0}
+.frame .think::before{content:"一点思考 · ";font-weight:600;color:var(--teal)}
+/* 暂停回顾段（金色高亮） */
+.frame.review{background:#fbf6e6;border:1px solid var(--gold);border-radius:6px;
+  padding:14px 18px;margin:18px 0}
+.frame.review .a{color:var(--red)}
+
+footer{text-align:center;color:var(--mute);font-size:12px;border-top:1px solid var(--line);
+  padding-top:16px;margin-top:48px}
+a{color:var(--red);text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>ALM 一小时精读</h1>
+  <p class="sub">把资产负债管理当成"两根绳子的对账"看</p>
+  <p class="meta">30 段一问一答 · 零基础读到能用</p>
+</header>
+
+<nav class="toc" id="toc">
+  <strong>本篇看点</strong>
+  <ol>
+    <li>为什么要管：三个错配</li>
+    <li>一图看懂 ALM（量·赚·付）</li>
+    <li>图 1 · 治理架构（五层责任）</li>
+    <li>图 2 · 硬门槛（人身 4 + 财险 3）</li>
+    <li>图 3 · 监测指标（预警区）</li>
+    <li>线性陈述：30 段一问一答</li>
+  </ol>
+</nav>
+
+<!-- ════════════════════════ §1 为什么要管 ════════════════════════ -->
+<section id="why">
+  <h2>一、为什么要管</h2>
+  <p class="time">背景</p>
+
+  <h3>1.1 一句话回答</h3>
+  <p>旧规管的是<strong class="k">"报表上资产和负债各是多少"</strong>，新规管的是<strong class="k">"两边能不能长期对得上"</strong>——从<strong class="k">量的统计</strong>转向<strong class="k">质的匹配</strong>。</p>
+
+  <h3>1.2 三个错配风险</h3>
+  <table>
+    <tr><th>错配类型</th><th>业务体感</th><th>新规的解药</th></tr>
+    <tr><td>期限错配</td><td>负债 20 年、资产 3 年，利率一降两边就对不上</td><td><strong class="k">期限结构匹配</strong>：拉长资产久期，防利率风险与再投资风险</td></tr>
+    <tr><td>成本收益错配</td><td>承诺客户 3.0%，投资端只做到 2.5%——利差损</td><td><strong class="k">成本收益匹配</strong>：资产收益覆盖负债成本，保持持续盈利能力</td></tr>
+    <tr><td>流动性错配</td><td>平时没事，遇到集中退保或赔付时拿不出现金</td><td><strong class="k">流动性匹配</strong>：短期内能获得充足资金支付到期债务</td></tr>
+  </table>
+
+  <div class="callout">关键时间点：2026 年 8 月 20 日以<strong class="k">总局令 2026 年第 4 号</strong>公布，自<strong class="k">2027 年 1 月 1 日</strong>起施行；同时废止 2019 年《保险资产负债管理监管暂行办法》及监管规则第 1–5 号。</div>
+</section>
+
+<!-- ════════════════════════ §2 一图看懂 ════════════════════════ -->
+<section id="overview">
+  <h2>二、一图看懂 ALM</h2>
+  <p class="time">总览</p>
+
+  <p>《办法》的全部要求，可以装进三个词。</p>
+
+  <div class="box3">
+    <div class="b"><div class="n">①</div><div class="l">期限结构匹配<br/>时间对得上</div></div>
+    <div class="b"><div class="n">②</div><div class="l">成本收益匹配<br/>收益盖得住</div></div>
+    <div class="b"><div class="n">③</div><div class="l">流动性匹配<br/>随时拿得出</div></div>
+  </div>
+
+  <div class="callout"><strong class="k">核心命题</strong>：三个匹配都要在<strong>法人层面</strong>统一计算，且资产端与负债端必须<strong class="k">联动决策</strong>——不再是投资部、精算部各管各的。</div>
+</section>
+
+<!-- ════════════════════════ §3 图 1 治理架构 ════════════════════════ -->
+<section id="fig1">
+  <h2>三、图 1 · 治理架构</h2>
+  <p class="time">谁来管（主释 + 3 分屏）</p>
+
+  <div class="fig">
+    <svg viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#b53d2e"/>
+        </marker>
+      </defs>
+      <!-- 第一层 董事会 -->
+      <rect x="190" y="16" width="300" height="46" rx="5" fill="#fff" stroke="#b53d2e" stroke-width="2"/>
+      <text x="340" y="38" text-anchor="middle" font-size="14" font-weight="700" fill="#b53d2e">董事会 · 负最终责任</text>
+      <text x="340" y="55" text-anchor="middle" font-size="10" fill="#7a6f5d">设资产负债管理委员会 · 至少 3 名董事</text>
+      <!-- 第二层 高级管理层 -->
+      <rect x="150" y="86" width="380" height="46" rx="5" fill="#faf6e9" stroke="#c98a2b" stroke-width="2"/>
+      <text x="340" y="108" text-anchor="middle" font-size="14" font-weight="700" fill="#c98a2b">高级管理层 · 直接领导</text>
+      <text x="340" y="125" text-anchor="middle" font-size="10" fill="#7a6f5d">设执行委员会 · 主任由总经理担任</text>
+      <!-- 第三层 ALM部门 -->
+      <rect x="110" y="156" width="460" height="46" rx="5" fill="#fff" stroke="#3a6e6f" stroke-width="2"/>
+      <text x="340" y="178" text-anchor="middle" font-size="14" font-weight="700" fill="#3a6e6f">资产负债管理部门 · 设置或指定</text>
+      <text x="340" y="195" text-anchor="middle" font-size="10" fill="#7a6f5d">保持独立性 · 不受业务与投资部门干预</text>
+      <!-- 第四层 职能部门 -->
+      <rect x="70" y="226" width="540" height="46" rx="5" fill="#faf6e9" stroke="#7a6f5d" stroke-width="1.5"/>
+      <text x="340" y="248" text-anchor="middle" font-size="13" font-weight="700" fill="#2a2a2a">职能部门 · 相互协作</text>
+      <text x="340" y="265" text-anchor="middle" font-size="10" fill="#7a6f5d">产品 · 精算 · 销售渠道 · 投资 · 风险管理 · 财务</text>
+      <!-- 第五层 内审 -->
+      <rect x="230" y="296" width="220" height="26" rx="4" fill="#fff" stroke="#d8cfb8" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="340" y="313" text-anchor="middle" font-size="11" fill="#7a6f5d">内部审计 · 每年至少一次</text>
+      <!-- 连接线 -->
+      <line x1="340" y1="62" x2="340" y2="86" stroke="#b53d2e" stroke-width="1.5" marker-end="url(#a1)"/>
+      <line x1="340" y1="132" x2="340" y2="156" stroke="#c98a2b" stroke-width="1.5" marker-end="url(#a1)"/>
+      <line x1="340" y1="202" x2="340" y2="226" stroke="#3a6e6f" stroke-width="1.5" marker-end="url(#a1)"/>
+    </svg>
+    <p class="cap">图 1 · 五层治理架构：责任自上而下压实，报告自下而上汇聚</p>
+  </div>
+
+  <h3>3.1 五层责任，各管什么 <span class="en">4 分钟主释</span></h3>
+  <table>
+    <tr><th>层级</th><th>核心职责</th><th>新规的硬性要求</th></tr>
+    <tr><td>董事会</td><td>审批总体目标、战略、制度、业务规划、资产配置政策</td><td>须设<strong class="k">资产负债管理委员会</strong>，至少 3 名董事</td></tr>
+    <tr><td>高级管理层</td><td>制定并组织实施政策程序，控制错配风险</td><td>须设<strong class="k">执行委员会</strong>；<strong class="k">至少每季度</strong>听取汇报</td></tr>
+    <tr><td>ALM 部门</td><td>拟定制度、测算指标、出具专业意见、统筹系统</td><td>可设置或指定；履职<strong class="k">保持独立性</strong></td></tr>
+    <tr><td>职能部门</td><td>按分工提供数据与执行</td><td>牵头跨部门小组，<strong class="k">至少每季度</strong>开会</td></tr>
+    <tr><td>内部审计</td><td>审查评价充分性和有效性</td><td><strong class="k">每年至少一次</strong>，报告提交董事会</td></tr>
+  </table>
+
+  <div class="callout"><strong class="k">只需记住</strong>：五层架构里，最容易被低估的是"独立性"和"长周期考核"——前者决定 ALM 敢不敢说真话，后者决定长期资产配不配得进去。</div>
+
+  <h3>3.2 一分钟分屏释义</h3>
+  <div class="sub-frames">
+    <div class="sub">
+      <div class="sq">董事会 · 最终责任</div>
+      <div class="sa">不只是"知情"，还要审批业务规划、资产配置政策、年度 ALM 报告与绩效考核体系。</div>
+      <div class="st">一点儿思考：审批权落到董事会，等于把资负匹配从技术议题升格为治理议题。</div>
+    </div>
+    <div class="sub">
+      <div class="sq">执行层 · 直接领导</div>
+      <div class="sa">执行委员会主任由总经理担任，委员覆盖产品、精算、销售、投资、风控、财务六条线。</div>
+      <div class="st">一点儿思考：六条线缺一条就转不动——这条规定其实是在倒逼跨部门协同。</div>
+    </div>
+    <div class="sub">
+      <div class="sq">ALM 部门 · 独立履职</div>
+      <div class="sa">大公司设独立部门，中小公司可指定资管、精算或风险部承担，但不受业务与投资干预。</div>
+      <div class="st">一点儿思考：形式可以灵活，独立性没有商量——归投资部管就只会替资产端说话。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ §4 图 2 硬门槛指标 ════════════════════════ -->
+<section id="fig2">
+  <h2>四、图 2 · 硬门槛指标</h2>
+  <p class="time">及格线（主释 + 3 分屏）</p>
+
+  <div class="fig">
+    <svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- 标题 -->
+      <text x="170" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#b53d2e">人身保险公司 · 4 项</text>
+      <text x="510" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#3a6e6f">财产保险公司 · 3 项</text>
+      <!-- 人身险 4 项 -->
+      <rect x="40" y="34" width="260" height="50" rx="5" fill="#fff" stroke="#b53d2e" stroke-width="2"/>
+      <text x="170" y="56" text-anchor="middle" font-size="13" font-weight="700" fill="#b53d2e">利率风险对冲率</text>
+      <text x="170" y="73" text-anchor="middle" font-size="10" fill="#7a6f5d">标准 50% – 150%（正式版新设）</text>
+      <rect x="40" y="94" width="260" height="50" rx="5" fill="#faf6e9" stroke="#b53d2e" stroke-width="1.5"/>
+      <text x="170" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#b53d2e">综合投资收益覆盖率</text>
+      <text x="170" y="133" text-anchor="middle" font-size="10" fill="#7a6f5d">≥ 100%（过去 5 年滚动）</text>
+      <rect x="40" y="154" width="260" height="50" rx="5" fill="#faf6e9" stroke="#b53d2e" stroke-width="1.5"/>
+      <text x="170" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#b53d2e">净投资收益覆盖率</text>
+      <text x="170" y="193" text-anchor="middle" font-size="10" fill="#7a6f5d">≥ 100%（过去 3 年滚动）</text>
+      <rect x="40" y="214" width="260" height="50" rx="5" fill="#faf6e9" stroke="#b53d2e" stroke-width="1.5"/>
+      <text x="170" y="236" text-anchor="middle" font-size="13" font-weight="700" fill="#b53d2e">流动性覆盖率</text>
+      <text x="170" y="253" text-anchor="middle" font-size="10" fill="#7a6f5d">≥ 100%（按流动性风险规则）</text>
+      <!-- 财险 3 项 -->
+      <rect x="380" y="34" width="260" height="50" rx="5" fill="#fff" stroke="#3a6e6f" stroke-width="2"/>
+      <text x="510" y="56" text-anchor="middle" font-size="13" font-weight="700" fill="#3a6e6f">沉淀资金覆盖率</text>
+      <text x="510" y="73" text-anchor="middle" font-size="10" fill="#7a6f5d">≥ 100%（沉淀资金 ÷ 中长期资产）</text>
+      <rect x="380" y="94" width="260" height="50" rx="5" fill="#faf6e9" stroke="#3a6e6f" stroke-width="1.5"/>
+      <text x="510" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#3a6e6f">收入覆盖率</text>
+      <text x="510" y="133" text-anchor="middle" font-size="10" fill="#7a6f5d">≥ 100%（服务收入+综合投资收益）÷ 综合成本</text>
+      <rect x="380" y="154" width="260" height="50" rx="5" fill="#faf6e9" stroke="#3a6e6f" stroke-width="1.5"/>
+      <text x="510" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#3a6e6f">流动性覆盖率</text>
+      <text x="510" y="193" text-anchor="middle" font-size="10" fill="#7a6f5d">≥ 100%（按流动性风险规则）</text>
+      <!-- 底部说明 -->
+      <text x="340" y="288" text-anchor="middle" font-size="11" fill="#7a6f5d">监管指标设最低标准 · 不达标触发监管措施 · 可申请 3 年过渡期</text>
+    </svg>
+    <p class="cap">图 2 · 监管指标是"及格线"：法人层面计算，未达标触发监管措施</p>
+  </div>
+
+  <h3>4.1 人身险四项硬门槛 <span class="en">4 分钟主释</span></h3>
+  <table>
+    <tr><th>指标</th><th>计算口径</th><th>最低标准</th></tr>
+    <tr><td><strong class="k">利率风险对冲率</strong></td><td>现金流流入利率敏感度 ÷ 现金流流出利率敏感度</td><td><strong class="k">50% – 150%</strong>；低于 50% 时，流入敏感度不低于 5%</td></tr>
+    <tr><td><strong class="k">综合投资收益覆盖率</strong></td><td>过去 5 年综合投资收益之和 ÷ 过去 5 年负债资金成本之和</td><td><strong class="k">≥ 100%</strong>（5 年滚动）</td></tr>
+    <tr><td><strong class="k">净投资收益覆盖率</strong></td><td>过去 3 年净投资收益 ÷ 过去 3 年负债保证成本</td><td><strong class="k">≥ 100%</strong>（3 年滚动）</td></tr>
+    <tr><td><strong class="k">流动性覆盖率</strong></td><td>按监管有关流动性风险监管规则执行</td><td><strong class="k">≥ 100%</strong></td></tr>
+  </table>
+
+  <h3>4.2 最重磅的一处变化</h3>
+  <ol class="tight">
+    <li>正式版<strong class="k">用"利率风险对冲率"替换"久期缺口"</strong>——久期缺口降为监测指标</li>
+    <li>监管着力点从<strong class="k">"测量错配"</strong>转向<strong class="k">"要求行动"</strong>：不只看缺口多大，看你对冲了多少</li>
+    <li>同时完善了沉淀资金覆盖率、综合投资收益覆盖率、流动性覆盖率的计算口径</li>
+  </ol>
+
+  <h3>4.3 一分钟分屏释义</h3>
+  <div class="sub-frames">
+    <div class="sub">
+      <div class="sq">利率风险对冲率</div>
+      <div class="sa">流入敏感度 ÷ 流出敏感度。比值落在 50%–150% 之间，说明两边大致对冲上了。</div>
+      <div class="st">一点儿思考：这是新规里唯一"有上限"的指标——对冲过头同样不被鼓励。</div>
+    </div>
+    <div class="sub">
+      <div class="sq">两个覆盖率</div>
+      <div class="sa">综合口径看 5 年、净口径看 3 年；一个盯资金成本，一个盯保证成本。</div>
+      <div class="st">一点儿思考：滚动周期是刻意的——穿越周期的能力，比某一年做得多好更重要。</div>
+    </div>
+    <div class="sub">
+      <div class="sq">流动性覆盖率</div>
+      <div class="sa">财险、人身险共用，按统一的流动性风险监管规则计算。</div>
+      <div class="st">一点儿思考：这一项测的是"极端时刻拿不拿得出钱"，平时最好、压力时最险。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ §5 图 3 监测指标 ════════════════════════ -->
+<section id="fig3">
+  <h2>五、图 3 · 监测指标</h2>
+  <p class="time">预警区（主释 + 3 分屏）</p>
+
+  <div class="fig">
+    <svg viewBox="0 0 680 290" xmlns="http://www.w3.org/2000/svg">
+      <!-- 三个维度 -->
+      <rect x="30" y="24" width="190" height="46" rx="5" fill="#fff" stroke="#c98a2b" stroke-width="2"/>
+      <text x="125" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#c98a2b">期限结构</text>
+      <text x="125" y="63" text-anchor="middle" font-size="10" fill="#7a6f5d">有效久期缺口 · 基点价值变动率</text>
+      <rect x="245" y="24" width="190" height="46" rx="5" fill="#fff" stroke="#b53d2e" stroke-width="2"/>
+      <text x="340" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#b53d2e">成本收益</text>
+      <text x="340" y="63" text-anchor="middle" font-size="10" fill="#7a6f5d">利差三 · 利差四 · 压力情景利差</text>
+      <rect x="460" y="24" width="190" height="46" rx="5" fill="#fff" stroke="#3a6e6f" stroke-width="2"/>
+      <text x="555" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#3a6e6f">流动性</text>
+      <text x="555" y="63" text-anchor="middle" font-size="10" fill="#7a6f5d">流动性匹配率 · 分账户指标</text>
+      <!-- 连接 -->
+      <line x1="125" y1="70" x2="340" y2="106" stroke="#d8cfb8" stroke-width="1.5"/>
+      <line x1="340" y1="70" x2="340" y2="106" stroke="#d8cfb8" stroke-width="1.5"/>
+      <line x1="555" y1="70" x2="340" y2="106" stroke="#d8cfb8" stroke-width="1.5"/>
+      <!-- 中间汇总框 -->
+      <rect x="190" y="106" width="300" height="46" rx="5" fill="#faf6e9" stroke="#7a6f5d" stroke-width="1.5"/>
+      <text x="340" y="128" text-anchor="middle" font-size="13" font-weight="700" fill="#2a2a2a">人身险 7 项 · 财险 3 项监测指标</text>
+      <text x="340" y="145" text-anchor="middle" font-size="10" fill="#7a6f5d">识别与预警 · 设差异化预警区间</text>
+      <!-- 底部对照 -->
+      <rect x="30" y="180" width="290" height="80" rx="5" fill="#fff" stroke="#d8cfb8" stroke-width="1.5"/>
+      <text x="175" y="202" text-anchor="middle" font-size="12" font-weight="700" fill="#b53d2e">监管指标 = 及格线</text>
+      <text x="175" y="222" text-anchor="middle" font-size="11" fill="#7a6f5d">有最低标准 · 不达标触发措施</text>
+      <text x="175" y="242" text-anchor="middle" font-size="11" fill="#7a6f5d">答的是"及不及格"</text>
+      <rect x="360" y="180" width="290" height="80" rx="5" fill="#fff" stroke="#d8cfb8" stroke-width="1.5"/>
+      <text x="505" y="202" text-anchor="middle" font-size="12" font-weight="700" fill="#3a6e6f">监测指标 = 体温计</text>
+      <text x="505" y="222" text-anchor="middle" font-size="11" fill="#7a6f5d">无硬性阈值 · 趋势恶化被关注</text>
+      <text x="505" y="242" text-anchor="middle" font-size="11" fill="#7a6f5d">答的是"往哪变"</text>
+    </svg>
+    <p class="cap">图 3 · 监测指标围绕三匹配展开，用于错配风险的识别与预警</p>
+  </div>
+
+  <h3>5.1 一句话 <span class="en">4 分钟主释</span></h3>
+  <p>监测指标不设硬性阈值，但<strong class="k">趋势恶化会触发监管关注</strong>——它是"体温计"，不是"及格线"。</p>
+
+  <h3>5.2 人身险七项监测指标</h3>
+  <ol class="tight">
+    <li><strong>有效久期缺口</strong>：规模调整后的资产与负债久期之差（正式版降为监测指标）</li>
+    <li><strong>基点价值变动率</strong>：六种利率情景下基点价值变动最大合计 ÷ 实际资本</li>
+    <li><strong>利差三</strong>：会计投资收益率 − 负债保证成本率</li>
+    <li><strong>利差四</strong>：新增固收类资产到期收益率 − 新业务负债最低要求回报率</li>
+    <li><strong>压力情景下的利差</strong>：宏观、利率上行、利率下行三类情景分别测算</li>
+    <li><strong>流动性匹配率</strong>：按修正久期加权的现金流匹配程度</li>
+    <li><strong>分大类账户</strong>的成本收益匹配指标与流动性匹配指标</li>
+  </ol>
+
+  <h3>5.3 一分钟分屏释义</h3>
+  <div class="sub-frames">
+    <div class="sub">
+      <div class="sq">久期缺口 · 最直观</div>
+      <div class="sa">虽降为监测指标，仍是第一个被看的数字——它是最直接的错配信号。</div>
+      <div class="st">一点儿思考：降级不等于放松，而是把"测不准"的指标挪出及格线，改用可考核的对冲率。</div>
+    </div>
+    <div class="sub">
+      <div class="sq">基点价值 · 测伤害</div>
+      <div class="sa">平移、倾斜、扭转六种利率情景，取变动最大的合计值与实际资本比。</div>
+      <div class="st">一点儿思考：测的是"利率怎么动最伤"——答案往往不是简单加息或降息。</div>
+    </div>
+    <div class="sub">
+      <div class="sq">利差三 / 利差四</div>
+      <div class="sa">一个看已有资产的会计收益能否覆盖保证成本，一个看新配资产能否覆盖新业务要求。</div>
+      <div class="st">一点儿思考：正式版把这两项定义对调过——沿用征求意见稿的旧口径会算错。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ §6 30 段一问一答 ════════════════════════ -->
+<section id="micro">
+  <h2>六、30 段一问一答</h2>
+  <p class="time">线性陈述 · 一问一答一思考</p>
+
+  <p>每段同构：<strong class="k">一句提问 → 一句回答 → 一点思考</strong>。暂停回顾段以金色背景标注，便于放慢阅读节奏。</p>
+
+
+  <div class="frame" id="f01">
+    <div class="q">保险公司为什么怕"错配"？</div>
+    <div class="a">资产和负债像两根绳子——一根收钱、一根付钱，长度（期限）、粗细（收益）、结实度（流动性）对不上，就会断。</div>
+    <div class="think">过去靠"负债端刚性、资产端灵活"还能撑，低利率环境下这招不灵了。</div></div>
+
+
+  <div class="frame" id="f02">
+    <div class="q">新规到底管什么？</div>
+    <div class="a">三个匹配：<strong class="k">期限结构匹配</strong>、<strong class="k">成本收益匹配</strong>、<strong class="k">流动性匹配</strong>。</div>
+    <div class="think">从"报表上各是多少"转向"两边能不能长期对得上"——这是最本质的变化。</div></div>
+
+
+  <div class="frame" id="f03">
+    <div class="q">什么时候开始执行？</div>
+    <div class="a">2026 年 8 月 20 日以<strong class="k">总局令 2026 年第 4 号</strong>公布，自<strong class="k">2027 年 1 月 1 日</strong>起施行。</div>
+    <div class="think">2026 年四季度报告就要按新口径报送——不是等到 2027 年才开始准备。</div></div>
+
+
+  <div class="frame" id="f04">
+    <div class="q">它取代了谁？</div>
+    <div class="a">废止 2019 年《保险资产负债管理监管暂行办法》及监管规则第 1–5 号。</div>
+    <div class="think">从"暂行办法 + 五项规则"到"一部规章"——层级提高，约束力不是一个量级。</div></div>
+
+
+  <div class="frame review" id="f05">
+    <div class="q">前 4 屏一句话</div>
+    <div class="a">新规管三匹配：期限、成本收益、流动性；2027 年施行，2026 年四季度就要按新口径报。</div>
+    <div class="think">时间点比内容更早到——先把报送口径切换这件事排上日程。</div></div>
+
+
+  <div class="frame" id="f06">
+    <div class="q">谁负最终责任？</div>
+    <div class="a"><strong class="k">董事会</strong>。须设资产负债管理委员会，至少 3 名董事，主任由董事长或有 ALM 经验的董事担任。</div>
+    <div class="think">"最终责任"四个字落在董事会——这是治理层面最硬的一句话。</div></div>
+
+
+  <div class="frame" id="f07">
+    <div class="q">执行层具体做什么？</div>
+    <div class="a">直接领导，设<strong class="k">资产负债管理执行委员会</strong>；主任由总经理或 ALM 委员会成员担任。</div>
+    <div class="think">委员要覆盖产品、精算、销售渠道、投资、风控、财务——六条线缺一条就转不动。</div></div>
+
+
+  <div class="frame" id="f08">
+    <div class="q">ALM 部门怎么设？</div>
+    <div class="a">可以<strong class="k">设置或指定</strong>。大公司设独立部门，中小公司可指定资管、精算或风险部承担。</div>
+    <div class="think">形式给了弹性，说明监管理解中小公司的现实——但职责一条没减。</div></div>
+
+
+  <div class="frame" id="f09">
+    <div class="q">为什么反复强调独立性？</div>
+    <div class="a">因为 ALM 要同时约束业务端和投资端——两边天然都不想被约束。</div>
+    <div class="think">一个部门如果归投资部管，就只会替资产端说话；归业务口管，就只会替规模说话。</div></div>
+
+
+  <div class="frame" id="f10">
+    <div class="q">跨部门怎么协同？</div>
+    <div class="a">ALM 部门牵头跨部门工作小组，<strong class="k">至少每季度</strong>召开会议讨论相关事项。</div>
+    <div class="think">季度是最低频率——指标按季报送，会议跟不上节奏就变成事后补数。</div></div>
+
+
+  <div class="frame" id="f11">
+    <div class="q">考核周期怎么定？</div>
+    <div class="a">实施<strong class="k">长周期考核评价</strong>，防止因过度追求业务扩张和短期利润而放松 ALM。</div>
+    <div class="think">一年一考的公司，很难把长久期资产配进去——考核周期决定了配置行为。</div></div>
+
+
+  <div class="frame review" id="f12">
+    <div class="q">治理一句话</div>
+    <div class="a">董事会负最终责任、执行层直接领导、ALM 部门统筹、职能部门协作、内审每年检查。</div>
+    <div class="think">五层里最容易被忽略的是内审——它每年至少查一次，且报告直交董事会。</div></div>
+
+
+  <div class="frame" id="f13">
+    <div class="q">硬门槛有几项？</div>
+    <div class="a">人身险<strong class="k">4 项</strong>、财险<strong class="k">3 项</strong>，均在法人层面计算，不达标触发监管措施。</div>
+    <div class="think">先分清"及格线"和"体温计"——前者不达标有后果，后者只是被关注。</div></div>
+
+
+  <div class="frame" id="f14">
+    <div class="q">最重磅的一处变化是什么？</div>
+    <div class="a">正式版<strong class="k">用"利率风险对冲率"替换"久期缺口"</strong>，久期缺口降为监测指标。</div>
+    <div class="think">监管着力点从"测量错配"转向"要求行动"——不只看缺口多大，看你对冲了多少。</div></div>
+
+
+  <div class="frame" id="f15">
+    <div class="q">利率风险对冲率怎么算？</div>
+    <div class="a">现金流流入利率敏感度 ÷ 现金流流出利率敏感度，标准<strong class="k">50%–150%</strong>。</div>
+    <div class="think">低于 50% 的公司还要求流入敏感度不低于 5%——双重约束，堵住了"躺平"空间。</div></div>
+
+
+  <div class="frame" id="f16">
+    <div class="q">综合投资收益覆盖率？</div>
+    <div class="a">过去 5 年综合投资收益之和 ÷ 过去 5 年负债资金成本之和，<strong class="k">≥ 100%</strong>。</div>
+    <div class="think">5 年滚动——某一年做得好不算数，做差也不立刻暴露，看的是穿越周期的能力。</div></div>
+
+
+  <div class="frame" id="f17">
+    <div class="q">净投资收益覆盖率？</div>
+    <div class="a">过去 3 年净投资收益 ÷ 过去 3 年负债保证成本，<strong class="k">≥ 100%</strong>。</div>
+    <div class="think">这一项盯的是刚性成本——无论投资环境如何，保证成本必须先覆盖住。</div></div>
+
+
+  <div class="frame" id="f18">
+    <div class="q">财险的三项是什么？</div>
+    <div class="a"><strong class="k">沉淀资金覆盖率</strong>、<strong class="k">收入覆盖率</strong>、<strong class="k">流动性覆盖率</strong>，均不低于 100%。</div>
+    <div class="think">财险没有久期压力，但有"沉淀资金"这个财险独有的命题。</div></div>
+
+
+  <div class="frame review" id="f19">
+    <div class="q">硬门槛一句话</div>
+    <div class="a">利率风险对冲率 50%–150%；两个覆盖率、流动性覆盖率均 ≥ 100%。</div>
+    <div class="think">四个指标里三个是比值、一个是对冲程度——没有一个看绝对规模。</div></div>
+
+
+  <div class="frame" id="f20">
+    <div class="q">监测指标和监管指标什么区别？</div>
+    <div class="a">监管指标有<strong class="k">最低标准</strong>；监测指标用于<strong class="k">识别与预警</strong>，设差异化预警区间。</div>
+    <div class="think">一个答"及不及格"，一个答"往哪个方向变"——用途完全不同。</div></div>
+
+
+  <div class="frame" id="f21">
+    <div class="q">人身险监测几项？</div>
+    <div class="a"><strong class="k">7 项</strong>：有效久期缺口、基点价值变动率、利差三、利差四、压力情景利差、流动性匹配率、分账户指标。</div>
+    <div class="think">久期缺口虽降为监测指标，但依然排在第一位——它是最直观的错配信号。</div></div>
+
+
+  <div class="frame" id="f22">
+    <div class="q">基点价值变动率看什么？</div>
+    <div class="a">六种利率情景下基点价值变动最大合计值 ÷ 实际资本。</div>
+    <div class="think">平移、倾斜、扭转各上下——测的是"利率怎么动最伤"，答案常不是简单加息降息。</div></div>
+
+
+  <div class="frame" id="f23">
+    <div class="q">利差三和利差四怎么区分？</div>
+    <div class="a">利差三 = 会计投资收益率 − 负债保证成本率；利差四 = 新增固收到期收益率 − 新业务最低要求回报率。</div>
+    <div class="think">正式版把征求意见稿的这两项定义对调了——沿用旧口径会算错。</div></div>
+
+
+  <div class="frame review" id="f24">
+    <div class="q">监测指标一句话</div>
+    <div class="a">久期缺口、基点价值、四类利差、流动性匹配率、分账户指标——都是"体温计"。</div>
+    <div class="think">监管指标答"及不及格"，监测指标答"往哪变"，两套要一起看。</div></div>
+
+
+  <div class="frame" id="f25">
+    <div class="q">落地第一件事做什么？</div>
+    <div class="a">把报送口径切过来：2026 年四季度起按新口径报季报，年报次年<strong class="k">4 月 30 日</strong>前报，且须第三方审核。</div>
+    <div class="think">第三方审核是新增要求——数据口径、系统支撑、台账留痕要提前跑通。</div></div>
+
+
+  <div class="frame" id="f26">
+    <div class="q">第二件事？</div>
+    <div class="a">先算一遍自己的四个数：利率风险对冲率、两个覆盖率、流动性覆盖率。</div>
+    <div class="think">过渡期不是自动给的——要制定达标规划、董事会批准、2027 年 3 月底前报监管。</div></div>
+
+
+  <div class="frame" id="f27">
+    <div class="q">第三件事？</div>
+    <div class="a">把 ALM 嵌进决策流程：业务规划、产品定价、资产配置、重大投资、委托投资五个环节都要出具专业意见。</div>
+    <div class="think">重大投资指单一标的上季末总资产 3% 或 30 亿元——这条线以上的投资，ALM 要签字。</div></div>
+
+
+  <div class="frame" id="f28">
+    <div class="q">第四件事？</div>
+    <div class="a">建立两套常态化机制：<strong class="k">压力测试</strong>（涵盖资产端、负债端、资本端）与<strong class="k">年度回溯分析</strong>。</div>
+    <div class="think">回溯分析要能"打脸"——预期与实际的偏差要归因，只报好消息的回溯等于没做。</div></div>
+
+
+  <div class="frame" id="f29">
+    <div class="q">第五件事？</div>
+    <div class="a">拉长考核周期，把 ALM 指标纳入绩效考核体系，建立<strong class="k">传导机制与限额管理</strong>。</div>
+    <div class="think">考核是指挥棒——一年一考，长久期资产永远排不进配置清单。</div></div>
+
+
+  <div class="frame review" id="f30">
+    <div class="q">一句话总结</div>
+    <div class="a">新规 = 三匹配（期限 / 成本收益 / 流动性）+ 五层治理 + 人身险 4 项硬门槛 + 3 年过渡期。</div>
+    <div class="think">核心不是多报几张表，是让资产和负债坐到同一张桌子上做决策。</div></div>
+</section>
+
+<footer>
+  <p>ALM 一小时精读 · 西红精算<br>
+  延伸阅读：<a href="https://xihongactuary.github.io/alm-kb/">ALM 资产负债管理知识库</a>（六模块 + 制度专章）<br>
+  不替代规章原文与监管报送要求</p>
+</footer>
+
+</body>
+</html>
