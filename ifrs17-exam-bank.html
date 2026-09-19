@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新会计准则题库 · 中国精算师（真题3+模拟3+拓展2）| 西红精算</title>
+<style>
+:root{
+  --bg:#f5f1e6; --ink:#2a2a2a; --mute:#7a6f5d; --line:#d8cfb8;
+  --red:#b53d2e; --gold:#c98a2b; --teal:#3a6e6f; --paper:#fffdf7;
+}
+*{box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",serif;background:var(--bg);color:var(--ink);
+  max-width:880px;margin:0 auto;padding:28px 18px 60px;line-height:1.85;font-size:15.5px}
+header{text-align:center;border-bottom:2px solid var(--line);padding-bottom:20px;margin-bottom:28px}
+header h1{font-size:26px;margin:0 0 6px;color:var(--ink);font-weight:700}
+header .sub{color:var(--mute);font-size:13px;margin:0}
+header .meta{color:var(--red);font-size:12px;margin-top:8px;letter-spacing:1px}
+
+.notice{background:#faf6e9;border:1px solid var(--gold);border-radius:6px;padding:14px 18px;
+  margin:16px 0 24px;font-size:13.5px;line-height:1.8}
+.notice strong{color:var(--red)}
+.notice ol{margin:8px 0 0;padding-left:20px}
+.notice li{margin:4px 0}
+
+nav.toc{background:var(--paper);padding:14px 18px;border:1px solid var(--line);border-radius:6px;margin-bottom:28px}
+nav.toc strong{color:var(--red)}
+nav.toc ol{margin:6px 0 0;padding-left:22px}
+nav.toc li{margin:3px 0;font-size:14px}
+
+section{margin-bottom:44px;scroll-margin-top:20px}
+section h2{font-size:20px;color:var(--red);border-left:4px solid var(--red);padding-left:12px;
+  margin:0 0 6px;font-weight:700}
+section .time{color:var(--mute);font-size:12px;margin:0 0 14px;padding-left:16px}
+
+/* 卷头 */
+.pinfo{background:var(--paper);border:1px solid var(--line);border-radius:6px;
+  padding:12px 16px;margin-bottom:18px;font-size:13px;color:var(--mute)}
+.pinfo b{color:var(--ink)}
+
+/* 题目 */
+.q{background:var(--paper);border:1px solid var(--line);border-radius:6px;
+  padding:16px 18px;margin:14px 0}
+.qhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;
+  padding-bottom:8px;border-bottom:1px dashed var(--line)}
+.qno{font-size:15px;font-weight:700;color:var(--red)}
+.qscore{font-size:12px;color:var(--mute);background:#ebe3cc;padding:2px 8px;border-radius:3px}
+.qtype{font-size:12px;padding:2px 8px;border-radius:3px;color:#fff}
+.t-calc{background:var(--red)}
+.t-essay{background:var(--teal)}
+.src{font-size:11px;padding:2px 8px;border-radius:3px;border:1px solid}
+.src-real{color:var(--red);border-color:var(--red);background:#fdf2f0}
+.src-book{color:var(--gold);border-color:var(--gold);background:#fdf8ec}
+.src-ie{color:var(--teal);border-color:var(--teal);background:#eef3f3}
+.src-new{color:var(--mute);border-color:var(--line);background:#f7f4ec}
+.qbody{font-size:15px;line-height:1.85}
+.qbody p{margin:8px 0}
+.qbody ol,.qbody ul{margin:8px 0;padding-left:22px}
+.qbody li{margin:5px 0}
+
+/* 答案折叠 */
+details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-size:13.5px;color:var(--teal);font-weight:600;
+  list-style:none;padding:4px 0;user-select:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";}
+details[open] summary::before{content:"▾ ";}
+.ans{background:#fbfaf5;border-left:3px solid var(--teal);padding:12px 16px;margin-top:10px;
+  font-size:14px;line-height:1.85;border-radius:0 4px 4px 0}
+.ans p{margin:8px 0}
+.ans ol,.ans ul{margin:8px 0;padding-left:22px}
+.ans li{margin:5px 0}
+.ans b{color:var(--red)}
+.ans .hl{color:var(--red);font-weight:700}
+.grading{margin-top:10px;padding:8px 12px;background:#faf6e9;border-radius:4px;
+  font-size:12.5px;color:var(--mute)}
+.grading b{color:var(--gold)}
+.tip{margin-top:10px;padding:8px 12px;background:#eef3f3;border-radius:4px;
+  font-size:12.5px;color:var(--teal)}
+
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#ebe3cc;font-weight:600}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+
+footer{text-align:center;color:var(--mute);font-size:12px;border-top:1px solid var(--line);
+  padding-top:16px;margin-top:48px;line-height:1.9}
+a{color:var(--red);text-decoration:none}
+a:hover{text-decoration:underline}
+@media(max-width:640px){
+  body{padding:20px 12px 40px;font-size:15px}
+  .qhead{gap:6px}
+}
+
+.tabbar{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 26px;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:9;border-bottom:1px solid var(--line)}
+.tabbar .tab-btn{flex:1 1 auto;min-width:96px;padding:9px 8px;border:1px solid var(--line);background:var(--paper);color:var(--mute);border-radius:6px;font-size:13.5px;cursor:pointer;font-family:inherit;transition:.15s}
+.tabbar .tab-btn:hover{border-color:var(--gold)}
+.tabbar .tab-btn.active{background:var(--red);color:#fff;border-color:var(--red);font-weight:700}
+
+/* ══ 口令门（礼貌性门槛 · 参考 cas25-guide gate.js）══ */
+body.gated > *:not(.gate-panel){display:none !important}
+.gate-panel{display:none;position:fixed;inset:0;overflow:auto;background:var(--bg);
+  z-index:9999;align-items:flex-start;justify-content:center;padding:6vh 16px}
+body.gated .gate-panel{display:flex}
+.gate-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;
+  max-width:480px;width:100%;padding:30px 28px;box-shadow:0 12px 44px rgba(0,0,0,.10);text-align:center}
+.gate-lock{font-size:34px;line-height:1}
+.gate-card h2{font-size:20px;color:var(--ink);margin:10px 0 6px;font-weight:700;letter-spacing:.5px}
+.gate-ch{font-size:13.5px;color:var(--mute);margin:0 0 16px;line-height:1.7}
+.gate-points{list-style:none;margin:0 0 18px;padding:0;text-align:left;font-size:13px;color:var(--mute);line-height:1.7}
+.gate-points li{margin:7px 0;padding-left:22px;position:relative}
+.gate-points li::before{content:"✓";color:var(--red);position:absolute;left:0;font-weight:700}
+.gate-input-row{display:flex;gap:8px;margin-bottom:8px}
+.gate-input{flex:1;min-width:0;padding:11px 12px;border:1px solid var(--line);border-radius:8px;
+  font-size:15px;background:#fff;outline:none;color:var(--ink)}
+.gate-input:focus{border-color:var(--red)}
+.gate-btn{flex:none;padding:0 20px;border:none;border-radius:8px;background:var(--red);color:#fff;
+  font-size:15px;font-weight:600;cursor:pointer}
+.gate-btn:hover{filter:brightness(1.06)}
+.gate-hint{font-size:12px;color:var(--mute);margin:0 0 14px}
+.gate-cta{display:inline-block;margin-bottom:14px;color:var(--red);font-size:14px;font-weight:600;
+  text-decoration:none;border-bottom:1px dashed var(--red)}
+.gate-zsxq{background:#faf6e9;border:1px solid var(--gold);border-radius:10px;padding:16px;margin:6px 0 4px}
+.gate-zsxq .ztitle{font-size:14px;font-weight:700;color:var(--gold);margin-bottom:10px}
+.gate-zsxq img.qr{width:132px;height:132px;border-radius:8px;background:#fff;padding:6px;border:1px solid var(--line)}
+.gate-zsxq .zcap{font-size:13px;font-weight:600;margin-top:8px;color:var(--ink)}
+.gate-zsxq .znote{font-size:12px;color:var(--mute);margin-top:4px;line-height:1.6}
+.gate-zsxq a.btn-join{display:block;margin-top:12px;padding:10px 0;border-radius:8px;background:var(--gold);
+  color:#fff;font-size:14px;font-weight:600;text-decoration:none}
+.gate-zsxq a.btn-join:hover{filter:brightness(1.06)}
+.gate-unlocked-badge{position:fixed;right:14px;bottom:14px;z-index:9998;background:var(--teal);color:#fff;
+  font-size:12px;padding:5px 12px;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.gate-shake{animation:gshake .35s}
+@keyframes gshake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+</style>
+</head>
+<body>
+
+<div class="gate-panel" id="gatePanel">
+  <div class="gate-card">
+    <div class="gate-lock">🔒</div>
+    <h2>新会计准则题库 · 会员专享</h2>
+    <p class="gate-ch">本题库为「西红精算」会员内容，含 8 套真题 / 模拟 / 拓展卷与逐题答案、评分标准。</p>
+    <ul class="gate-points">
+      <li>真题 3 套（IFRS17 / CAS25 历史真题按新准则重述 + 官方例题）</li>
+      <li>模拟 3 套（计算为主、问答为辅、无选择题）</li>
+      <li>拓展 2 套（问答卷 + 计算实践卷，含三时刻滚存与投资成分分拆）</li>
+      <li>逐题标注出处 · 折叠答案 · 评分标准</li>
+    </ul>
+    <div class="gate-input-row">
+      <input type="password" id="gatePass" class="gate-input" placeholder="输入星球公布的阅读口令" autocomplete="off">
+      <button id="gateBtn" class="gate-btn">解锁</button>
+    </div>
+    <p class="gate-hint">口令在知识星球置顶帖公布 · 一次输入，本机长期有效</p>
+    <a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener" class="gate-cta">还没有口令？加入知识星球领取 →</a>
+    <div class="gate-zsxq">
+      <div class="ztitle">📡 扫码加入「西红精算 · 知识星球」</div>
+      <img class="qr" src="assets/zsxq-qrcode.png" alt="知识星球二维码">
+      <div class="zcap">扫码直达 · 进圈后在置顶帖领取阅读口令</div>
+      <div class="znote">星球配套 CAS25 精读、ALM、C-ROSS 等系列知识库持续更新与精算答疑</div>
+      <a class="btn-join" href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">加入星球，解锁本库</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <h1>新会计准则题库</h1>
+  <p class="sub">中国精算师 · IFRS17 / CAS25 · 真题3+模拟3+拓展2（共 8 套）</p>
+  <p class="meta">计算/问答/实践 · 8 套 tab · 答案可折叠自测</p>
+</header>
+
+<div class="notice">
+  <strong>关于"真题"的诚实说明（务必先读）</strong>
+  <p style="margin:6px 0 0">CAS25 / IFRS17 于 <b>2023 年</b> 才对境内外同时上市险企生效、<b>2026 年</b> 覆盖全体险企。而现行可考的精算师历史真题（本库收录 2007–2016 年）全部早于该准则——2007 年那道"新会计准则"题考的是 CAS22（2006 版）旧准则。因此：</p>
+  <ol>
+    <li><b>严格意义的"IFRS17 真题"并不存在</b>。本库"真题卷"按你确认的口径编写：以<b>历史真题按新准则重述</b>为骨架，辅以<b>教材/指南例题</b>与 <b>IFRS17 官方释例（IE）</b>，<b>逐题标注真实出处</b>。</li>
+    <li>凡标注 <span class="src src-real">历史真题·重述</span> 者，原题为旧准则口径，本卷已按 CAS25 重述，数字与结论以新准则为准。</li>
+    <li>凡标注 <span class="src src-book">教材/指南例题</span> 者，取自《精算财务管理》教材、应用指南或本知识库已有例题。</li>
+    <li>凡标注 <span class="src src-ie">官方IE释例</span> 者，取自 IFRS17 官方 Illustrative Examples。</li>
+    <li>凡标注 <span class="src src-new">自编模拟</span> 者，为本库基于准则原理新编，用于查漏补缺。</li>
+  </ol>
+  <p style="margin:8px 0 0"><b>拓展卷（问答卷 + 计算实践卷，本批新增）</b>：问答卷聚焦概念对比、适用条件与综合评价（5 题 / 125 分）；计算实践卷含计量·利润计算与一道全流程实践大题（5 题 / 200 分）。两卷充分复用 cas25-guide 例26、三时刻滚存、ifrs17-kb、ifrs17-bilingual 真实案例与方法。</p>
+  <p style="margin:8px 0 0">题量为每套 5 题 100 分（3–4 道计算 + 1–2 道问答）。建议闭卷限时完成后再展开答案。</p>
+</div>
+
+<div class="tabbar" id="tabbar">
+  <button class="tab-btn active" data-target="z1">真题·卷一</button>
+  <button class="tab-btn" data-target="z2">真题·卷二</button>
+  <button class="tab-btn" data-target="z3">真题·卷三</button>
+  <button class="tab-btn" data-target="m1">模拟·卷一</button>
+  <button class="tab-btn" data-target="m2">模拟·卷二</button>
+  <button class="tab-btn" data-target="m3">模拟·卷三</button>
+  <button class="tab-btn" data-target="q">拓展·问答卷</button>
+  <button class="tab-btn" data-target="cp">拓展·计算实践卷</button>
+</div>
+
+<!-- ════════════════════ 真题卷一 ════════════════════ -->
+<section id="z1">
+  <h2>真题卷一 · 合同识别与初始计量</h2>
+  <p class="time">100 分 · 建议 150 分钟 · 4 计算 + 1 问答</p>
+
+  <div class="pinfo">
+    <b>覆盖：</b>重大保险风险测试、合同分拆、履约现金流三要素、首日无利得原则、亏损组初始确认、五步法与分组。
+    <b>题源：</b>应用指南第二章/第三章例题、本知识库例 26 初始确认、exam2 主观题 2(1)。
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第一题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算分析</span>
+      <span class="src src-book">教材/指南例题</span>
+    </div>
+    <div class="qbody">
+      <p><b>重大保险风险测试与合同识别。</b>判断下列四份合同是否属于 CAS25 意义上的保险合同，并说明理由（每项 5 分）：</p>
+      <ol>
+        <li><b>甲合同</b>：投保人一次性支付保费 1,000 元，保险期间 1 年。若发生约定疾病，赔付 100,000 元；未发生则满期返还 1,000 元。</li>
+        <li><b>乙合同</b>：某车企售车时提供"三年免费保养"服务，收取固定服务费 6,000 元，无论是否实际使用保养服务均不退还。</li>
+        <li><b>丙合同</b>：投保人一次性支付 100 万元，约定 10 年后返还 120 万元；若投保人在第 5 年身故，按"已交保费 100 万元与当时账户价值二者较大者"给付（假设投资账户价值在早期因费用扣除可能低于已交保费）。</li>
+        <li><b>丁合同</b>：信贷保险，借款人死亡时由保险公司代为偿还剩余贷款本息（贷款本金 50 万元，按等额本息逐月递减）。</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 甲合同 —— 属于保险合同。</b>（5 分）</p>
+        <p>投保人支付 1,000 元，若发生保险事故可获 100,000 元赔付，赔付额为保费的 100 倍，<span class="hl">不利情景下赔付显著</span>，转移了重大保险风险。满期返还 1,000 元属投资成分，但保险成分重大，整份合同适用 CAS25。</p>
+
+        <p><b>(2) 乙合同 —— 不属于保险合同。</b>（5 分）</p>
+        <p>该合同提供的是<b>服务</b>（保养）而非对损失的赔付；投保人不因不确定事件遭受经济损失，未使用服务也不退还费用——保险公司承担的是履约义务而非保险风险。属于服务合同，适用<b>收入准则（CAS14）</b>。关键判别：<span class="hl">是否存在"投保人因不确定不利事件而遭受损失、由承保人补偿"的安排</span>。</p>
+
+        <p><b>(3) 丙合同 —— 属于保险合同，但需拆分投资成分。</b>（5 分）</p>
+        <p>死亡给付取"已交保费与账户价值"的较大者，在账户价值低于已交保费时，保险公司实际承担了<span class="hl">死亡风险保障</span>（补足差额部分），转移了保险风险。但同时，10 年后返还 120 万元中的投资回报部分构成<b>投资成分</b>。判断要点：若投资成分与保险成分<b>高度关联</b>（账户价值直接决定死亡给付），则不予拆分，统一按保险合同计量；本例中二者高度关联，故不拆分，全部履约现金流纳入保险合同计量。</p>
+
+        <p><b>(4) 丁合同 —— 属于保险合同。</b>（5 分）</p>
+        <p>借款人死亡（不确定事件）时，保险公司代为偿还剩余贷款，使借款人（或其继承人）免于经济损失，转移了<b>死亡风险</b>。赔付金额随剩余本金逐月递减，属于典型的<b>信用人寿保险</b>，适用 CAS25。</p>
+        <div class="tip"><b>易错点：</b>判断"重大"的核心是——在具有商业实质的情形下，保险事故是否会导致承保人支付<span class="hl">显著额外</span>的赔付。乙合同无论是否使用服务，公司付出成本相同（提供服务），无额外赔付，故非保险合同。</div>
+      </div>
+      <div class="grading"><b>评分：</b>每项 5 分 = 判断 2 分 + 理由 3 分。理由须点出"是否转移保险风险"及"赔付是否显著 / 是否有服务对价"。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第二题</span>
+      <span class="qscore">25 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-book">教材/指南例题</span>
+    </div>
+    <div class="qbody">
+      <p><b>初始计量：三要素与首日无利得原则。</b>某寿险公司签发一组 100 份三年期保单，趸交保费合计 <b>1,800 万元</b>（已收讫）。该合同组预期未来赔付与费用的流出现值合计 <b>1,089 万元</b>，非金融风险调整（RA）估计为 <b>120 万元</b>。折现率 5%。</p>
+      <ol>
+        <li>计算该合同组的履约现金流现值（FCF）。（5 分）</li>
+        <li>按首日无利得原则计算初始确认的合同服务边际（CSM），并判断该合同组是盈利还是亏损。（10 分）</li>
+        <li>计算初始确认日保险合同负债的账面价值，并解释为何该结果在趸交情形下成立。（10 分）</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 履约现金流现值</b>（5 分）</p>
+        <p>FCF = 未来流出现值 − 未来流入现值 = 1,089 − 1,800 = <span class="hl">−711 万元</span></p>
+        <p>负值表示净流入：该组合同预计未来现金流入（已收保费对应的义务履行）大于流出，即预计产生利润。</p>
+
+        <p><b>(2) 初始 CSM 与盈亏判断</b>（10 分）</p>
+        <p>先算"负债基准"：FCF + RA = −711 + 120 = <b>−591 万元</b></p>
+        <p>因其 <b>&lt; 0</b>（收取的对价足以覆盖履约成本与风险补偿），该组为 <span class="hl">盈利合同（厚利合同）</span>。按首日无利得原则：</p>
+        <p>CSM₀ = −(FCF + RA) = −(−591) = <span class="hl">591 万元</span></p>
+        <p>这 591 万元<span class="hl">不在首日确认为利得</span>，而是以 CSM 形式"暂存"，在保障期内随服务提供逐步释放为保险服务收入。</p>
+
+        <p><b>(3) 初始确认日保险合同负债</b>（10 分）</p>
+        <p>保险合同负债 = FCF + RA + CSM = −711 + 120 + 591 = <span class="hl">0 万元</span></p>
+        <p><b>为何为零：</b>首日无利得原则要求合同组在初始计量时<span class="hl">既不确认利得、也不确认损失</span>。盈利差额全部以 CSM（负债的减项）暂存，使负债账面价值恰好被抵销至零。其经济含义是——公司已收讫保费（资产增加 1,800），但对应的<span class="hl">未来服务义务尚未提供</span>，尚未赚取的部分（591 万元利润）不能进利润表，故负债净额为零。后续随着三年内逐步提供服务，CSM 摊销为收入，负债与利润同步实现。</p>
+        <div class="tip"><b>延伸：</b>若是期交保费（保费尚未全额收取），初始负债通常不为零——因为未来保费流入已计入 FCF，而已收部分与义务的差额会体现为负债余额。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 5 分（公式 3 分 + 结果 2 分）；(2) FCF+RA 计算 3 分、CSM 公式与结果 4 分、盈亏判断 3 分；(3) 负债计算 4 分、首日无利得解释 6 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第三题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-book">教材/指南例题</span>
+    </div>
+    <div class="qbody">
+      <p><b>亏损合同组的初始确认。</b>承第二题，若该合同组因精算假设恶化，预期未来赔付与费用的流出现值上升至 <b>1,960 万元</b>（保费仍为 1,800 万元、RA 仍为 120 万元）。</p>
+      <ol>
+        <li>计算此时的 FCF 与 FCF + RA。（5 分）</li>
+        <li>判断该组是否为亏损组，并计算首日应确认的亏损金额及其去向。（8 分）</li>
+        <li>写出初始确认的会计分录（不考虑收到保费的分录）。（7 分）</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) FCF 与 FCF + RA</b>（5 分）</p>
+        <p>FCF = 1,960 − 1,800 = <span class="hl">160 万元</span></p>
+        <p>FCF + RA = 160 + 120 = <span class="hl">280 万元</span></p>
+
+        <p><b>(2) 亏损判断与处理</b>（8 分）</p>
+        <p>FCF + RA = 280 &gt; 0，故该组为 <span class="hl">亏损合同组</span>。准则规定：<b>不确认负的 CSM</b>，亏损金额 <span class="hl">280 万元立即计入当期损益</span>（"亏损保险合同损益"），同时确认保险合同负债 280 万元。</p>
+        <p>这 280 万元同时构成该组的<span class="hl">亏损部分（loss component）</span>初始余额，后续按保障单位系统分摊，并随与未来服务相关的履约现金流变化而转回。</p>
+
+        <p><b>(3) 初始确认分录</b>（7 分）</p>
+        <table>
+          <tr><th>科目</th><th>借方</th><th>贷方</th></tr>
+          <tr><td>亏损保险合同损益</td><td class="num">280</td><td class="num">—</td></tr>
+          <tr><td>　未到期责任负债——未来现金流量现值</td><td class="num">—</td><td class="num">160</td></tr>
+          <tr><td>　未到期责任负债——非金融风险调整</td><td class="num">—</td><td class="num">120</td></tr>
+        </table>
+        <p style="font-size:13px;color:var(--mute)">（单位：万元。借贷合计均为 280，配平。）</p>
+        <div class="tip"><b>对比记忆：</b>盈利组 → 差额进 CSM（负债减项，首日负债为零）；亏损组 → 差额进损益（首日确认亏损），并单设"亏损部分"跟踪。这是首日无利得原则的<span class="hl">不对称性</span>——不确认首日利得，但确认首日损失。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) FCF 2.5 分、FCF+RA 2.5 分；(2) 亏损判断 3 分、金额 3 分、去向说明 2 分；(3) 损益科目 3 分、两个负债明细科目各 2 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第四题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-essay">问答</span>
+      <span class="src src-real">历史真题·重述</span>
+    </div>
+    <div class="qbody">
+      <p><b>五步法与合同分组。</b>简述 CAS25 下保险合同计量的"五步法"框架（15 分），并说明合同分组的三层要求（5 分）。</p>
+      <p style="color:var(--mute);font-size:13px">原题背景：本题源自知识库 exam2 主观题 2(1)，属教材/指南规定性内容，按 CAS25 口径作答。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>五步法框架</b>（每步 3 分，共 15 分）</p>
+        <ol>
+          <li><b>识别</b>：判断是否属于保险合同（重大保险风险测试）；识别应予分拆的成分——投资成分、嵌入衍生工具、可明确区分的服务成分。</li>
+          <li><b>分组</b>：按风险特征与管理方式的相似性归集为组合，再按盈利性分层（亏损组 / 无显著盈利可能组 / 其余组），且同组合同签发时间间隔不超过一年。</li>
+          <li><b>初始计量</b>：确定履约现金流（未来现金流估计 + 货币时间价值 + 非金融风险调整）。首日比较：对价 − 首日费用 ≥ 履约现金流 → 差额为 CSM；不足 → 亏损立即计入当期损益。</li>
+          <li><b>后续计量</b>：CSM 滚动（利息增值、与未来服务相关的假设变化、亏损转回、释放为收入）；负债的当期变动（当期服务成本、经验偏差）计入损益。</li>
+          <li><b>列报与披露</b>：保险服务收入与保险服务费用分开列示；披露 CSM 余额调节表、未到期责任负债与已发生赔款负债的调节表、风险调整信息等。</li>
+        </ol>
+
+        <p><b>合同分组的三层要求</b>（5 分）</p>
+        <ol>
+          <li>按<b>风险特征与管理方式</b>的相似性，将合同归集为组合（portfolio）；</li>
+          <li>组合内按<b>盈利性</b>分层：至少区分亏损合同组、无显著盈利可能的合同组、其余合同组；</li>
+          <li>每组合同的<b>签发时间间隔不超过一年</b>（年度 cohort），分组一经确定<span class="hl">不得重新分组</span>。</li>
+        </ol>
+        <div class="tip"><b>记忆口诀：</b>识别 → 分组 → 初始 → 后续 → 列报；分组三要素 = 相似性 + 盈利性 + 年度性。</div>
+      </div>
+      <div class="grading"><b>评分：</b>五步法每步 3 分（要点完整才给满分）；分组三层 5 分（任答两层给 3 分，三层齐全给 5 分）。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第五题</span>
+      <span class="qscore">15 分</span>
+      <span class="qtype t-calc">计算分析</span>
+      <span class="src src-book">教材/指南例题</span>
+    </div>
+    <div class="qbody">
+      <p><b>合同分拆：投资成分与服务成分。</b>某保险公司签发一份含账户价值的终身寿险合同，趸交保费 100 万元，主要条款如下：</p>
+      <ul>
+        <li>死亡给付 = max（账户价值，已交保费 × 105%）</li>
+        <li>满期或退保时返还账户价值</li>
+        <li>保险公司每年按账户价值的 0.5% 收取账户管理费</li>
+        <li>投保人可单独付费购买健康咨询增值服务，年费 2,000 元，该服务亦向非保险客户单独销售</li>
+      </ul>
+      <p>要求：指出上述四项内容中哪些应当从保险合同中<b>分拆</b>、哪些<b>不分拆</b>，并说明理由（每项 3.75 分）。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 死亡给付 —— 不分拆。</b>（3.75 分）</p>
+        <p>死亡给付 = max（账户价值，已交保费 × 105%），其中账户价值<b>直接决定</b>死亡给付金额，投资成分与保险成分<span class="hl">高度关联</span>，无法单独计量 → 不予分拆，整体作为保险合同计量。</p>
+
+        <p><b>(2) 满期/退保返还账户价值 —— 不分拆（因其与保险成分高度关联）。</b>（3.75 分）</p>
+        <p>投资成分若与保险成分高度关联，则不应分拆。本题中账户价值同时构成死亡给付的计算基础，故不满足"可单独计量且高度不关联"的分拆条件，随保险合同一并计量。</p>
+        <p style="color:var(--mute);font-size:13px">补充：若投资成分与保险成分<b>不高度关联</b>（例如一个独立的、可单独退保的储蓄账户），则应分拆，适用金融工具准则（CAS22）。</p>
+
+        <p><b>(3) 账户管理费（0.5%）—— 不分拆。</b>（3.75 分）</p>
+        <p>账户管理费是保险合同的履约现金流组成部分（未来现金流入），与保险服务高度关联，作为保险合同收入/费用的组成部分处理，不单独适用其他准则。</p>
+
+        <p><b>(4) 健康咨询增值服务 —— 应当分拆。</b>（3.75 分）</p>
+        <p>该服务<span class="hl">可单独购买、单独定价</span>，且向非保险客户也销售，与保险保障不高度关联 → 属于<b>可明确区分的服务成分</b>，应分拆并适用<b>收入准则（CAS14）</b>，作为单独履约义务在服务提供时确认收入。</p>
+        <div class="tip"><b>分拆判断树：</b>① 是否嵌入衍生工具（经济特征与主合同不密切相关）→ 分拆适用 CAS22；② 是否为可明确区分的服务成分（可单独出售）→ 分拆适用 CAS14；③ 是否为投资成分且与保险成分不高度关联 → 分拆适用 CAS22；④ 其余纳入保险合同。</div>
+      </div>
+      <div class="grading"><b>评分：</b>每项 3.75 分 = 结论 1.5 分 + 理由 2.25 分。理由须引用"高度关联 / 可单独计量 / 可单独出售"等准则判断标准。</div>
+    </details>
+  </div>
+</section>
+
+<!-- ════════════════════ 真题卷二 ════════════════════ -->
+<section id="z2">
+  <h2>真题卷二 · 后续计量与 CSM 滚存</h2>
+  <p class="time">100 分 · 建议 150 分钟 · 4 计算 + 1 问答</p>
+
+  <div class="pinfo">
+    <b>覆盖：</b>CSM 六要素滚存、三时刻 BEL/RA/CSM 滚存（含利率变动）、保险服务收入构成、保险财务损益与 OCI、CSM 闸门作用。
+    <b>题源：</b>exam2 主观题 2、知识库「2026 Excel 题 3 · 三时刻 BEL/RA/CSM」、本知识库例 26 第 1 年。
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第一题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-book">教材/指南例题</span>
+    </div>
+    <div class="qbody">
+      <p><b>CSM 滚存六要素辨析。</b>某寿险公司一组保单期初 CSM = <b>800 万元</b>，折现率（锁定利率）<b>3.5%</b>。本年度发生下列事项：</p>
+      <ol>
+        <li>与未来服务相关的精算假设变化，使履约现金流现值<b>减少 40 万元</b>；</li>
+        <li>按保障服务进度确认保险服务收入，释放 CSM <b>200 万元</b>；</li>
+        <li>当期实际发生赔付及相关维持费用 <b>60 万元</b>（与预期一致）；</li>
+        <li>期末履约现金流现值为 <b>650 万元</b>。</li>
+      </ol>
+      <p>要求：(1) 编制 CSM 滚存表并计算期末 CSM（12 分）；(2) 计算期末保险合同负债合计（4 分）；(3) 说明事项 ③ 是否影响 CSM，并说明理由（4 分）。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) CSM 滚存表</b>（12 分）</p>
+        <table>
+          <tr><th>项目</th><th>方向</th><th>计算</th><th>金额（万元）</th></tr>
+          <tr><td>期初 CSM</td><td>—</td><td>题干给定</td><td class="num">800</td></tr>
+          <tr><td>利息增值（锁定利率 3.5%）</td><td>+</td><td>800 × 3.5%</td><td class="num">+28</td></tr>
+          <tr><td>与未来服务相关的假设变化</td><td>+</td><td>现值减少 40 → 义务减轻，CSM 调增</td><td class="num">+40</td></tr>
+          <tr><td>释放为保险服务收入</td><td>−</td><td>按保障服务进度</td><td class="num">−200</td></tr>
+          <tr><td><b>期末 CSM</b></td><td>—</td><td>800 + 28 + 40 − 200</td><td class="num"><b>668</b></td></tr>
+        </table>
+        <p>期末 CSM = <span class="hl">668 万元</span></p>
+
+        <p><b>(2) 期末保险合同负债</b>（4 分）</p>
+        <p>期末负债 = 履约现金流现值 + CSM = 650 + 668 = <span class="hl">1,318 万元</span></p>
+        <p style="color:var(--mute);font-size:13px">（本题题干未单独给出 RA，按给定口径不另计。若存在 RA，应加计：负债 = FCF + RA + CSM。）</p>
+
+        <p><b>(3) 事项 ③ 不影响 CSM</b>（4 分）</p>
+        <p>当期已发生的赔付与维持费用属于<b>当期服务</b>的履约。其与预期一致时体现在"保险服务费用"中（与保险服务收入对应，净额为保险服务业绩）；即便与预期存在偏差，也属于<b>过去或当期服务</b>的经验偏差，<span class="hl">直接计入当期损益</span>，不调整面向未来的 CSM。</p>
+        <div class="tip"><b>核心考点：</b>CSM 的"闸门"——只有<b>未来</b>的变化才能改 CSM，<b>当期/过去</b>的偏差即刻冲利润。事项 ① 面向未来（调 CSM），事项 ③ 面向当期（进损益），二者方向相反，是本题设计的辨析陷阱。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 利息增值 3 分、假设变化方向 4 分（方向判断为本题关键）、释放 2 分、期末余额 3 分；(2) 4 分；(3) 判断 1 分 + 理由 3 分（须点出"未来 vs 当期/过去"）。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第二题</span>
+      <span class="qscore">25 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-real">历史真题·重述</span>
+    </div>
+    <div class="qbody">
+      <p><b>三时刻 BEL / RA / CSM 滚存（含利率变动）。</b>某趸交保单组，趸交保费 <b>1,050 元</b>（已收讫）。预期赔付：第 1 年 <b>300 元</b>、第 2 年 <b>400 元</b>、第 3 年 <b>400 元</b>（费用忽略）。t = 0 市场折现率 <b>5%</b>（发单日锁定）；t = 1 市场利率下降至 <b>4%</b>。RA 按剩余服务线性释放，RA₀ = <b>30 元</b>。<b>CSM 摊销方法：claims 比例法（按「剩余预期赔付」滚动分母释放，分母随已发生赔付递减）。</b></p>
+      <p>要求：计算 t = 0、t = 1、t = 1.5 三个时点的 BEL、RA、CSM 与保险合同负债（结果保留两位小数），并列出关键计算过程。</p>
+      <p style="color:var(--mute);font-size:13px">注：本题为知识库「2026 Excel 题 3 · BEL/RA/CSM 三时刻」的示例演算原型，考场按题目数字替换、方法不变。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>Step 1 · t = 0（发单日）</b>（8 分）</p>
+        <p>BEL₀ = 赔付流现值 − 保费流入</p>
+        <p>= (300 ÷ 1.05 + 400 ÷ 1.05² + 400 ÷ 1.05³) − 1,050</p>
+        <p>= 285.71 + 362.81 + 345.54 − 1,050 = <span class="hl">−55.94</span></p>
+        <p>RA₀ = <b>30</b></p>
+        <p>CSM₀ = −(BEL₀ + RA₀) = −(−55.94 + 30) = <span class="hl">25.94</span></p>
+        <p>验算负债 = −55.94 + 30 + 25.94 = <b>0</b> —— 首日无利得的数学验证。</p>
+
+        <p><b>Step 2 · t = 1（第一年末，利率 5% → 4%）</b>（10 分）</p>
+        <p>① BEL₁：剩余赔付 400、400 按<b>最新市场利率 4%</b> 折现</p>
+        <p>= 400 ÷ 1.04 + 400 ÷ 1.04² = 384.62 + 369.82 = <span class="hl">754.44</span>（利率下行 → 现值上升）</p>
+        <p>② RA₁ = 30 × 2/3 = <span class="hl">20</span>（第 1 年服务已释放 1/3）</p>
+        <p>③ CSM₁：期初 25.94 × 1.05 = <b>27.24</b>（按<b>锁定利率</b> 5% 计息）</p>
+        <p>释放比例（claims 比例法·剩余赔付分母；t=1 时剩余赔付 = 1,100）= 300 ÷ 1,100 = 27.27%；释放额 = 27.24 × 27.27% = 7.43</p>
+        <p>CSM₁ = 27.24 − 7.43 = <span class="hl">19.81</span></p>
+        <p>负债 = 754.44 + 20 + 19.81 = <span class="hl">794.25</span></p>
+
+        <p><b>Step 3 · t = 1.5（中期，半年口径）</b>（7 分）</p>
+        <p>① BEL₁.₅ = 400 ÷ 1.04<sup>0.5</sup> + 400 ÷ 1.04<sup>1.5</sup> = 392.23 + 377.15 = <span class="hl">769.38</span></p>
+        <p>② RA₁.₅ ≈ <span class="hl">15</span>（继续线性释放）</p>
+        <p>③ CSM₁.₅ = 19.81 × 1.02470 − 5.08 ≈ <span class="hl">15.22</span>（半年利息 ≈ 0.49；半年释放 = 20.30 × 200/800 = 5.08，200 为第 2 年上半段赔付、800 为 t=1 时剩余赔付，claims 比例法）</p>
+        <p>负债 = 769.38 + 15 + 15.22 = <span class="hl">799.60</span></p>
+
+        <table>
+          <tr><th>时点</th><th>BEL</th><th>RA</th><th>CSM</th><th>负债合计</th></tr>
+          <tr><td>t = 0</td><td class="num">−55.94</td><td class="num">30.00</td><td class="num">25.94</td><td class="num">0.00</td></tr>
+          <tr><td>t = 1</td><td class="num">754.44</td><td class="num">20.00</td><td class="num">19.81</td><td class="num">794.25</td></tr>
+          <tr><td>t = 1.5</td><td class="num">769.38</td><td class="num">15.00</td><td class="num">15.22</td><td class="num">799.60</td></tr>
+          <tr><td>t = 2</td><td class="num">384.62</td><td class="num">10.00</td><td class="num">11.69</td><td class="num">406.31</td></tr>
+          <tr><td>t = 3</td><td class="num">0.00</td><td class="num">0.00</td><td class="num">0.00</td><td class="num">0.00</td></tr>
+        </table>
+        <div class="tip"><b>三大易错点：</b>① BEL 折现用<b>当前市场利率</b>（每期变），CSM 利息增值用<b>锁定利率</b>（发单日锁定、全程不变）——二者不可混用；② 假设变化要分"与未来服务相关"（调 CSM）与"与过去/当期服务相关"（直接进损益）；③ <b>RA 不滚存利息</b>，只随服务释放而递减。</div>
+      </div>
+      <div class="grading"><b>评分：</b>t=0 共 8 分（BEL 4 / RA 1 / CSM 2 / 验算 1）；t=1 共 10 分（BEL 4 / RA 2 / CSM 计息 2 / CSM 释放 2）；t=1.5 共 7 分（BEL 3 / RA 2 / CSM 2）。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第三题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-book">教材/指南例题</span>
+    </div>
+    <div class="qbody">
+      <p><b>保险服务收入的构成分解。</b>某 100 份三年期合同组，初始确认时现值 <b>711 万元</b>、RA <b>120 万元</b>、CSM <b>591 万元</b>，折现率 5%。第 1 年实际发生赔付 <b>400 万元</b>（与预期一致）。已知第 1 年保险服务收入合计 <b>647 万元</b>，其中期初预计当年赔付 400 万元、非金融风险调整释放 40 万元。</p>
+      <ol>
+        <li>计算第 1 年 CSM 摊销金额。（5 分）</li>
+        <li>验证第 1 年末 CSM 余额（列出滚存过程）。（10 分）</li>
+        <li>指出保险服务收入的四个构成要素。（5 分）</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) CSM 摊销额</b>（5 分）</p>
+        <p>CSM 摊销 = 保险服务收入 − 预期赔付 − RA 释放 = 647 − 400 − 40 = <span class="hl">207 万元</span></p>
+
+        <p><b>(2) 期末 CSM 验证</b>（10 分）</p>
+        <p>期初 CSM 591</p>
+        <p>+ 利息增值（按锁定利率 5%）：591 × 5% = 29.55 ≈ <b>29</b></p>
+        <p>− 本年摊销释放：<b>207</b></p>
+        <p>= 期末 CSM = 591 + 29 − 207 = <span class="hl">413 万元</span></p>
+        <p><b>交叉验证：</b>该组 CSM 按 3 年直线摊销，年摊销额 = (591 + 29) ÷ 3 = 206.67 ≈ <b>207</b>，与倒挤结果一致 ✓</p>
+        <p><b>年末负债结构：</b>现值 744 + RA 80 + CSM 413 = <span class="hl">1,237 万元</span></p>
+        <p style="font-size:13px;color:var(--mute)">（其中现值 = 1,089 − 400 + 55 = 744；RA = 120 − 40 = 80）</p>
+
+        <p><b>(3) 保险服务收入的四个构成要素</b>（5 分）</p>
+        <ol>
+          <li><b>期初预计当期发生的赔付与费用</b>（预期赔付 + 预期维持费用）；</li>
+          <li><b>非金融风险调整（RA）的释放</b>；</li>
+          <li><b>合同服务边际（CSM）的摊销</b>；</li>
+          <li><b>其他</b>：与当期服务相关的经验调整、亏损部分的分摊、保险获取现金流量的摊销等。</li>
+        </ol>
+        <div class="tip"><b>要点：</b>保险服务收入<b>不含投资成分</b>（投资成分的收取不确认为收入），也<b>不含</b>已收保费中的储蓄部分。这与旧准则"保费收入"口径有本质区别。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 5 分；(2) 利息 4 分、摊销 3 分、期末余额 3 分（含交叉验证另加印象分）；(3) 每要素 1.25 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第四题</span>
+      <span class="qscore">15 分</span>
+      <span class="qtype t-calc">计算分析</span>
+      <span class="src src-book">教材/指南例题</span>
+    </div>
+    <div class="qbody">
+      <p><b>保险财务损益与 OCI 政策选择。</b>承第三题，第 1 年收保费后现值余额为 <b>1,089 万元</b>，CSM 591 万元，折现率 5%。已知第 1 年保险财务损益合计 <b>84 万元</b>，其中 CSM 计息 <b>29 万元</b>。</p>
+      <ol>
+        <li>计算现值部分的计息金额，并验证合计数。（6 分）</li>
+        <li>若公司选择将折现率变动导致的保险财务损益计入其他综合收益（OCI），说明该政策选择对利润表的影响机理。（9 分）</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 现值部分计息</b>（6 分）</p>
+        <p>现值部分计息 = 84 − 29 = <span class="hl">55 万元</span></p>
+        <p><b>验证：</b>1,089 × 5% = 54.45 ≈ <b>55</b> ✓（收保费后的现值余额按 5% 计息）</p>
+        <p>合计 = 55 + 29 = <b>84</b> ✓ 与题干一致</p>
+
+        <p><b>(2) OCI 选择的机理</b>（9 分，任答 3 点，每点 3 分）</p>
+        <ol>
+          <li><b>准则允许</b>：IFRS17 / CAS25 允许将<b>折现率变动</b>导致的保险财务损益计入 OCI，而非当期损益。</li>
+          <li><b>减少会计错配</b>：资产端通常持有大量 FVOCI 金融资产（债券），其公允价值变动计入 OCI；若负债端折现率变动也进 OCI，则两端在 OCI 中<b>自然匹配</b>，避免"资产进权益、负债进损益"的错配。</li>
+          <li><b>平滑利润表</b>：利率波动不再直接冲击净利润，而是进入权益（OCI），使利润表更能反映承保与服务的经营成果。</li>
+          <li><b>不改变经济实质</b>：OCI 选择只是<b>列报位置</b>的变化，总综合收益不变；且政策一经选择须<b>一致应用</b>并充分披露。</li>
+        </ol>
+        <div class="tip"><b>记忆：</b>"<b>保险财务损益</b> = 负债计息（现值部分 + CSM 部分）± 利率变动影响"。CSM 部分按<b>锁定利率</b>计息，不计利率变动；现值部分按<b>当前利率</b>计量，其变动可进损益或 OCI。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 计算 3 分 + 验证 3 分；(2) 每点 3 分，任答 3 点得满分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第五题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-essay">问答</span>
+      <span class="src src-book">教材/指南例题</span>
+    </div>
+    <div class="qbody">
+      <p><b>论述 CSM 的"闸门"作用。</b>说明哪些项目调整 CSM、哪些项目直接计入当期损益（16 分），并阐述这一设计对保险公司利润曲线的影响（4 分）。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>一、调整 CSM 的项目（面向未来）</b>（10 分，每点 2 分）</p>
+        <ol>
+          <li><b>与未来服务相关的履约现金流变化</b>：死亡率、退保率、费用率等假设变化引起的未来现金流变动；以及折现率变动中与未来服务相关的部分。</li>
+          <li><b>CSM 的利息增值</b>：按<b>发单日锁定利率</b>计息（非当前市场利率）。</li>
+          <li><b>亏损合同组的亏损转回</b>：以剩余 CSM 与亏损部分的限额为限。</li>
+          <li><b>汇率变动</b>：外币计价的合同组产生的汇兑差额中归属于 CSM 的部分。</li>
+          <li><b>合同组的增减变动</b>：新增合同加入既有组、或组内合同的终止等。</li>
+        </ol>
+
+        <p><b>二、直接计入当期损益的项目（当期 / 过去服务）</b>（6 分，每点 1.5 分）</p>
+        <ol>
+          <li><b>当期已发生的赔付与费用</b>（保险服务费用）；</li>
+          <li><b>与当期或过去服务相关的经验偏差</b>（实际与预期的差异，即刻进损益）；</li>
+          <li><b>亏损合同组的首日亏损及亏损部分的分摊</b>；</li>
+          <li><b>保险财务损益</b>（除非公司选择计入 OCI）。</li>
+        </ol>
+
+        <p><b>三、对利润曲线的影响</b>（4 分）</p>
+        <p>只有"<b>未来</b>"的变化才能改 CSM，"<b>当期/过去</b>"的偏差即刻冲利润。这一"闸门"设计使利润曲线从旧准则下的"大起大落"，变为新准则下的"<span class="hl">CSM 摊销主导的渐释曲线</span>"——首日利得进入 CSM 不进利润，后续与未来服务相关的假设变化调整 CSM 而非当期损益，只有当期/过去服务的偏差与投资业绩仍直接进损益。</p>
+        <p>因此分析师看新报表的口诀是：<b>利润 = CSM 摊销 + 投资业绩 + 经验偏差</b>——前一项平滑、后两项波动。CSM 余额及其增长率（ROEV / CSM 口径）成为估值锚。</p>
+      </div>
+      <div class="grading"><b>评分：</b>调整 CSM 项 10 分（每点 2 分）；进损益项 6 分（每点 1.5 分）；利润曲线影响 4 分（机理 2 分 + 口诀/估值含义 2 分）。</div>
+    </details>
+  </div>
+</section>
+
+<!-- ════════════════════ 真题卷三 ════════════════════ -->
+<section id="z3">
+  <h2>真题卷三 · VFA / 亏损组 / PAA 与列报</h2>
+  <p class="time">100 分 · 建议 150 分钟 · 3 计算 + 2 问答</p>
+
+  <div class="pinfo">
+    <b>覆盖：</b>浮动收费法（VFA）、保费分摊法（PAA）、亏损组后续计量与转回、新准则与偿二代双轨、过渡方法三选一。
+    <b>题源：</b>本知识库例 22/25/30（VFA）、IFRS17 官方 IE 释例 10（PAA）、exam3 主观题 5（双轨制）、CAS25 衔接规定。
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第一题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-book">教材/指南例题</span>
+    </div>
+    <div class="qbody">
+      <p><b>浮动收费法（VFA）下 CSM 的调整。</b>某分红险合同组适用 VFA。年初 CSM 余额 <b>500 万元</b>。本年度基础项目公允价值上升 <b>200 万元</b>，按 <b>18%</b> 的分成比例，其中归属于公司的浮动收费增加 <b>36 万元</b>。假定当年无其他变动事项。</p>
+      <ol>
+        <li>说明 VFA 下浮动收费变动对 CSM 的处理方式及理由。（6 分）</li>
+        <li>计算期末 CSM 余额。（8 分）</li>
+        <li>比较 VFA 与一般模型（BBA）在投资波动处理上的核心差异。（6 分）</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 处理方式与理由</b>（6 分）</p>
+        <p>VFA 下，与基础项目公允价值挂钩的<b>浮动收费变动</b>（即公司与保单持有人之间"分享"的投资业绩）<span class="hl">调整 CSM</span>，<b>不进当期损益</b>。</p>
+        <p><b>理由：</b>该变动与公司提供的<b>未来服务</b>相关——公司替保单持有人管理基础项目并分享业绩，这部分权益最终将以红利形式返还保单持有人，属于未来服务的对价调整，故按 CSM 的处理逻辑（面向未来的变动调 CSM）处理。</p>
+
+        <p><b>(2) 期末 CSM</b>（8 分）</p>
+        <p>期末 CSM = 500 + 36 = <span class="hl">536 万元</span></p>
+        <p><b>方向说明：</b>浮动收费<b>增加</b> → 公司未来可从基础项目中收取的对价增加 → 合同更有利 → <b>调增 CSM</b>（4 分方向判断）。反之，若浮动收费减少则调减 CSM；当调减至 CSM 为负时，超出部分应确认为当期亏损。</p>
+
+        <p><b>(3) VFA 与 BBA 的核心差异</b>（6 分，每点 2 分）</p>
+        <ol>
+          <li><b>BBA（一般模型）</b>：折现率变动导致的履约现金流变化中，与未来服务相关的部分调 CSM，与当期服务相关的部分进损益（或选 OCI）；投资业绩与保险负债的计量相对独立，<b>容易产生会计错配</b>。</li>
+          <li><b>VFA（浮动收费法）</b>：基础项目公允价值变动中与保单持有人分享的部分，<b>直接调整 CSM / 负债的浮动收费部分</b>，使负债与资产端<b>联动</b>，投资波动被 CSM 吸收 → <b>消除或大幅减少会计错配</b>。</li>
+          <li><b>结果差异</b>：VFA 下利润表更平稳（投资波动进 CSM / 负债，不进损益）；BBA 下利率波动对损益影响更直接（除非选用 OCI）。因此分红险、万能险等直接分红特征合同采用 VFA 后，利润波动显著小于 BBA。</li>
+        </ol>
+        <div class="tip"><b>适用判断：</b>VFA 适用于<b>具有直接分红特征</b>的保险合同——① 合同条款明确保单持有人分享基础项目公允价值变动；② 公司预期将公允价值变动的相当大部分返还保单持有人；③ 该变动的相当大部分随应付保单持有人金额变动而变动。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 处理方式 3 分 + 理由 3 分；(2) 方向 4 分 + 计算 4 分；(3) 每点 2 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第二题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-ie">官方IE释例</span>
+    </div>
+    <div class="qbody">
+      <p><b>保费分摊法（PAA）。</b>某财产保险公司一组一年期车险合同，适用 PAA。年初收取保费 <b>1,200 万元</b>，发生保险获取现金流量（手续费等）<b>180 万元</b>。假设保险责任在年度内均匀分布、风险发生也均匀。</p>
+      <ol>
+        <li>说明 PAA 的适用条件。（6 分）</li>
+        <li>计算第 1 季度末应确认的保险服务收入。（6 分）</li>
+        <li>说明保险获取现金流量（IACF）在 PAA 下的两种处理方式及其影响。（8 分）</li>
+      </ol>
+      <p style="color:var(--mute);font-size:13px">题源：IFRS17 官方 Illustrative Examples — Example 10（premium allocation approach）。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) PAA 适用条件</b>（6 分，每点 3 分）</p>
+        <p>满足下列条件<b>之一</b>即可采用 PAA：</p>
+        <ol>
+          <li>合同组的<b>保险责任期间不超过一年</b>；或</li>
+          <li>公司合理预期采用 PAA 计量的结果与采用一般模型（BBA）的结果<b>无重大差异</b>。</li>
+        </ol>
+        <p style="color:var(--mute);font-size:13px">补充：即使采用 PAA，<b>亏损合同组仍须进行亏损测试</b>并立即确认亏损；此外 PAA 下仍需计量"已发生赔款负债（LIC）"，包含未来现金流现值与非金融风险调整。</p>
+
+        <p><b>(2) 第 1 季度保险服务收入</b>（6 分）</p>
+        <p>按时间基础分摊：1,200 × 3/12 = <span class="hl">300 万元</span></p>
+        <p><b>方法说明：</b>保险服务收入按<b>保险责任期间的时间基础</b>系统分摊；若保险责任期间内<b>风险分布不均匀</b>，则应按<b>风险发生的时间基础</b>分摊，而非简单直线法。（本题已假定均匀分布，故用直线法。）</p>
+
+        <p><b>(3) 保险获取现金流量（IACF）的两种处理</b>（8 分，每点 2 分）</p>
+        <ol>
+          <li><b>简化做法</b>（适用于合同组保险责任期间 ≤ 1 年）：可将 IACF 于发生时<b>直接计入当期损益（费用）</b>，不资本化。本题手续费 180 万元若采用此法，则当期全额费用化。</li>
+          <li><b>一般做法（资本化摊销）</b>：将 IACF 确认为<b>保险获取现金流量资产</b>，随保险服务收入的确认<b>系统摊销</b>计入保险服务费用，并在亏损组情况下进行分摊调整。本题若资本化，一年期合同每季度摊销 180 ÷ 4 = <b>45 万元</b>。</li>
+          <li><b>影响差异</b>：简化法使费用前置（首期利润偏低），资本化法使费用与收入配比（利润平滑）。</li>
+          <li><b>一致性要求</b>：无论选择何种方式，须<b>一致应用于相似合同组</b>，并在报表中披露所采用的方法。</li>
+        </ol>
+        <div class="tip"><b>PAA 简化要点：</b>PAA 与 BBA 的最大差异在于——PAA <b>不计算 CSM</b>（除非合同组亏损），负债简化为"未到期责任负债（LRC）= 保费 − 已确认收入 − IACF 摊销"与"已发生赔款负债（LIC）"两部分，大幅降低计量复杂度。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 每点 3 分；(2) 公式 3 分 + 结果 3 分；(3) 每点 2 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第三题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-book">教材/指南例题</span>
+    </div>
+    <div class="qbody">
+      <p><b>亏损组的后续计量与亏损转回。</b>某三年期合同组初始确认为亏损组：初始确认时履约现金流现值 160 万元、RA 120 万元，首日亏损 <b>280 万元</b>已计入当期损益（构成"亏损部分"初始余额）。第 1 年末，因实际赔付优于预期，<b>与未来服务相关的履约现金流现值减少 40 万元</b>；同时按保障单位系统分摊亏损部分。</p>
+      <ol>
+        <li>计算因假设改善应转回的亏损金额，并说明其损益影响。（8 分）</li>
+        <li>计算第 1 年末"亏损部分"的余额（三年期合同按保障单位直线分摊）。（6 分）</li>
+        <li>说明亏损转回与分摊的限额规则。（6 分）</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 假设改善的转回</b>（8 分）</p>
+        <p>与未来服务相关的履约现金流现值<b>减少 40 万元</b> → 义务减轻 → <span class="hl">调减亏损部分 40 万元</span>，同时<b>确认收益</b>（减少当期保险服务费用 / 增加保险服务业绩）40 万元。</p>
+        <p><b>损益影响：</b>借：未到期责任负债——未来现金流量现值 40；贷：保险合同赔付和费用（或保险服务收入调整）40。</p>
+
+        <p><b>(2) 年末亏损部分余额</b>（6 分）</p>
+        <p>系统分摊额 = 280 ÷ 3 ≈ <b>93 万元</b>（三年期合同按保障单位直线分摊）</p>
+        <p>年末亏损部分 = 280 − 40（假设改善转回）− 93（系统分摊至当期）= <span class="hl">147 万元</span></p>
+        <table>
+          <tr><th>项目</th><th>金额（万元）</th></tr>
+          <tr><td>亏损部分——期初余额</td><td class="num">280</td></tr>
+          <tr><td>减：与未来服务相关的 FCF 改善转回</td><td class="num">−40</td></tr>
+          <tr><td>减：系统分摊至当期（280÷3）</td><td class="num">−93</td></tr>
+          <tr><td><b>亏损部分——期末余额</b></td><td class="num"><b>147</b></td></tr>
+        </table>
+
+        <p><b>(3) 限额规则</b>（6 分，每点 1.5 分）</p>
+        <ol>
+          <li>亏损转回额<b>以亏损部分余额为限</b>——转回后亏损部分不得为负。</li>
+          <li>系统分摊按<b>保障单位</b>（coverage units）进行，与 CSM 摊销采用一致的基础。</li>
+          <li>亏损部分<b>全部转回后</b>，若合同组转为盈利，此后与未来服务相关的有利变动才开始形成新的 CSM；在此之前，有利变动优先冲减亏损部分。</li>
+          <li>亏损组<b>不产生负的 CSM</b>——初始亏损立即进损益并以"亏损部分"单独跟踪，这是首日无利得原则不对称性的延续。</li>
+        </ol>
+        <div class="tip"><b>对比记忆：</b>盈利组 = CSM 滚存（利息增值 + 假设变化 − 释放）；亏损组 = 亏损部分滚存（− 假设改善转回 − 系统分摊）。两者方向相反、逻辑对称。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 金额 4 分 + 损益影响 4 分；(2) 分摊额 3 分 + 期末余额 3 分；(3) 每点 1.5 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第四题</span>
+      <span class="qscore">25 分</span>
+      <span class="qtype t-essay">问答</span>
+      <span class="src src-book">教材/指南例题</span>
+    </div>
+    <div class="qbody">
+      <p><b>新准则 × 偿二代：同一负债的"两种语言"。</b>某公司一组长期两全保单组，2026 年末数据如下：</p>
+      <ul>
+        <li>CAS25 口径：履约现金流现值 620 亿元 + CSM 余额 80 亿元 = 保险合同负债 <b>700 亿元</b>；</li>
+        <li>偿二代口径：认可负债 <b>660 亿元</b>（按监管约束下的评估假设、不含 CSM）。</li>
+      </ul>
+      <p>当年净利润 <b>12 亿元</b>，但综合偿付能力充足率由 128% 降至 106%。</p>
+      <ol>
+        <li>解释"利润为正、偿付能力下降"为何可能同时发生。（9 分）</li>
+        <li>从假设与计量目标出发，比较两套体系的至少三处差异。（10 分）</li>
+        <li>回答：CSM 余额为什么能"保护"当期利润，但不能"保护"偿付能力？（6 分）</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 为何"利润为正、偿付能力下降"同时发生</b>（9 分）</p>
+        <p>两套体系的<b>计量目标根本不同</b>：</p>
+        <ul>
+          <li><b>CAS25 面向投资者</b>：刻画<b>利润的形成与释放</b>。与未来服务相关的假设变化进 CSM 而非损益，故利润被平滑、仍为正。</li>
+          <li><b>偿二代面向监管者</b>：刻画<b>清算/压力情景下的资本充足</b>。假设变化（退保率上升、投资收益率下调、折现率变化等）立即冲击认可资产与认可负债，导致实际资本收缩、最低资本上升，充足率随即下降。</li>
+        </ul>
+        <p>此外，分红、投资浮亏、利率下行对认可资产端的侵蚀<b>只进偿付能力、不进（或滞后进）利润表</b>，进一步拉大两套口径的背离。</p>
+
+        <p><b>(2) 两套体系的差异（任答三条，每条约 3.3 分）</b></p>
+        <ol>
+          <li><b>折现率</b>：新准则用"反映负债特征的<b>现行市场利率</b>"（不锁定、每期变动）；偿二代用<b>监管曲线</b>（如 750 日移动平均，平滑、部分锁定）。</li>
+          <li><b>利润 / 盈余的处理</b>：CAS25 设 <b>CSM</b> 递延首日与未来利得；偿二代<b>无 CSM 概念</b>，盈余直接体现为实际资本。</li>
+          <li><b>假设导向</b>：会计用"无偏现行估计 + 非金融风险调整"；监管假设更<b>审慎</b>（终极利率、退保率约束等）。</li>
+          <li><b>资产端联动</b>：会计资产按 CAS22 分类计量；监管资产按<b>认可标准</b>（部分资产折扣甚至不认可，如部分长期股权投资）。</li>
+        </ol>
+
+        <p><b>(3) CSM 为何保护利润但不保护偿付能力</b>（6 分）</p>
+        <p>CSM 吸收的是<b>与未来服务相关的变动</b>，让当期损益免遭冲击 → 是"<span class="hl">利润的减震器</span>"。</p>
+        <p>但偿付能力看的是<b>资产 − 认可负债的差额</b>。认可负债中<b>不含 CSM</b>（监管认为 CSM 并非对保单持有人的现时义务），因此负债估计恶化会直接抬高认可负债、压缩实际资本——CSM 无法缓冲这一路径。故 CSM <span class="hl">不是"资本的减震器"</span>。</p>
+        <div class="tip"><b>实务意义：</b>这是当下保险公司 CFO / 总精算师的核心议题——<b>报表利润与监管资本的双轨制</b>。考场上写出"计量目标差异 + 具体传导路径"即可锁定高分。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 9 分（计量目标 4 分 + 传导路径 5 分）；(2) 每条 3.3 分，任答 3 条得 10 分；(3) 机理表述 6 分（须点出"认可负债不含 CSM"）。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第五题</span>
+      <span class="qscore">15 分</span>
+      <span class="qtype t-essay">问答</span>
+      <span class="src src-real">历史真题·重述</span>
+    </div>
+    <div class="qbody">
+      <p><b>过渡方法三选一。</b>保险公司在首次执行 CAS25 时，可选择哪三种过渡方法？请分别说明其适用条件、基本做法与优缺点。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>① 全面追溯法（Full Retrospective Approach）</b>（5 分）</p>
+        <ul>
+          <li><b>适用条件</b>：能够取得充分、适当的历史数据，且追溯应用切实可行、成本可接受。</li>
+          <li><b>基本做法</b>：如同自始即采用新准则——重新计算所有比较期间的合同组，按<b>发单日锁定利率</b>重新计量 FCF、RA 与 CSM。</li>
+          <li><b>优缺点</b>：最具可比性、最准确；但成本最高、数据要求最严（需历史逐单数据）。</li>
+        </ul>
+
+        <p><b>② 修正追溯法（Modified Retrospective Approach）</b>（5 分）</p>
+        <ul>
+          <li><b>适用条件</b>：全面追溯不可行，但可获得<b>合理且可支持</b>的信息（允许使用合理估计替代部分缺失的历史数据）。</li>
+          <li><b>基本做法</b>：采用简化假设与近似方法——如按合同组合并计算、使用过渡日（或过渡期初）的折现率确定 CSM 等。</li>
+          <li><b>优缺点</b>：在准确性与可行性之间折中，实务中最常用；需充分披露简化假设及其影响。</li>
+        </ul>
+
+        <p><b>③ 公允价值法（Fair Value Approach）</b>（5 分）</p>
+        <ul>
+          <li><b>适用条件</b>：上述两种方法均不可行。</li>
+          <li><b>基本做法</b>：以过渡日的<b>公允价值</b>确定合同组负债，即：CSM（过渡日）= 过渡日公允价值 − 过渡日履约现金流（FCF + RA）。</li>
+          <li><b>优缺点</b>：最简便、成本最低；但可比性最弱，过渡后的利润释放曲线与历史业务不衔接。</li>
+        </ul>
+        <p><b>共同要求：</b>方法选择须在<b>合同组层面</b>进行，一经选择须<b>一致应用</b>于相似合同组；且须披露所采用的方法、简化假设及其对财务报表的影响。</p>
+        <div class="tip"><b>中国口径：</b>CAS25 与 IFRS17 的过渡要求一致。财政部与监管另有衔接规定的，从其规定；保险公司还需同步满足《实施通知》的报送与披露要求。</div>
+      </div>
+      <div class="grading"><b>评分：</b>每种方法 5 分 = 适用条件 2 分 + 基本做法 2 分 + 优缺点 1 分。共同要求与口径说明可作为加分项。</div>
+    </details>
+  </div>
+</section>
+<!-- ════════════════════ 模拟卷一 ════════════════════ -->
+<section id="m1">
+  <h2>模拟卷一 · 初始计量与合同分组</h2>
+  <p class="time">100 分 · 建议 150 分钟 · 4 计算 + 1 问答</p>
+
+  <div class="pinfo">
+    <b>覆盖：</b>重大保险风险测试的边界情形、初始计量三要素（含亏损变体）、年度 cohort 与盈利性分层、履约现金流边界、保险获取现金流量。
+    <b>说明：</b>本卷全部为 <span class="src src-new">自编模拟</span>，用于检验初始计量模块的掌握程度。
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第一题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算分析</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>重大保险风险测试的边界。</b>判断下列四份合同是否属于保险合同，并说明理由（每项 5 分）：</p>
+      <ol>
+        <li><b>甲</b>：消费型意外险，投保人支付保费 500 元，保险期间 1 年内因意外身故赔付 50 万元，未发生保险事故无任何给付。</li>
+        <li><b>乙</b>：投保人一次性支付 10 万元，约定 5 年后无论生存与否均返还 12 万元；若期内身故，亦给付 12 万元（与满期给付金额相同）。</li>
+        <li><b>丙</b>：产品召回保险，某制造企业投保，若其产品因缺陷被监管部门要求召回，保险公司赔偿召回产生的直接费用，年度赔偿限额 500 万元。</li>
+        <li><b>丁</b>：会员制法律咨询合同，客户支付年费 2,000 元，享有全年不限次电话法律咨询服务；无论是否使用，年费均不退还。</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 甲 —— 属于保险合同。</b>（5 分）</p>
+        <p>保费 500 元、身故赔付 50 万元，赔付额为保费的 1,000 倍，<span class="hl">不利情景下赔付显著</span>，转移了重大保险风险。虽为消费型（无满期返还），但不影响保险合同定性。</p>
+
+        <p><b>(2) 乙 —— 不属于保险合同。</b>（5 分）<span class="hl">（本题陷阱）</span></p>
+        <p>身故给付（12 万元）<b>等于</b>生存满期给付（12 万元），即保险事故（身故）的发生<b>不会导致保险公司支付任何额外金额</b>，未转移保险风险 → 属于<b>投资合同</b>，适用<b>金融工具准则（CAS22）</b>。</p>
+        <p>判断要领：重大保险风险测试的核心是——<span class="hl">保险事故是否导致承保人支付显著额外的赔付</span>。若身故与生存给付金额完全相同，则保障成分为零，纯粹是储蓄/投资安排。</p>
+
+        <p><b>(3) 丙 —— 属于保险合同。</b>（5 分）</p>
+        <p>产品被召回属于<b>不确定事件</b>，发生后企业遭受经济损失（召回费用），由保险公司补偿 → 转移了保险风险，且赔付金额对单个事件而言显著 → 属于保险合同（责任保险类）。</p>
+
+        <p><b>(4) 丁 —— 不属于保险合同。</b>（5 分）</p>
+        <p>提供的是<b>服务</b>（法律咨询），客户无论是否使用均不获退款，保险公司（服务商）承担的是履约义务；客户未因不确定事件获得经济赔付 → 属于<b>服务合同</b>，适用<b>收入准则（CAS14）</b>。</p>
+        <div class="tip"><b>判别三步法：</b>① 是否存在<b>不确定未来事件</b>？② 该事件是否使投保人<b>遭受不利损失</b>？③ 承保人是否<b>赔付该损失</b>（金额显著）？三条全中才是保险合同。乙缺③，丁缺②。</div>
+      </div>
+      <div class="grading"><b>评分：</b>每项 5 分 = 判断 2 分 + 理由 3 分。第 (2) 问为关键陷阱，答对另加印象分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第二题</span>
+      <span class="qscore">25 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>初始计量三要素（含亏损变体）。</b>某公司签发一组五年期趸交保单，趸交保费 <b>5,000 万元</b>（已收讫）。预期未来赔付与费用的流出现值 <b>4,200 万元</b>，非金融风险调整（RA）<b>350 万元</b>，折现率 4.5%。</p>
+      <ol>
+        <li>计算履约现金流现值（FCF）。（4 分）</li>
+        <li>判断盈亏，按首日无利得原则计算初始 CSM。（7 分）</li>
+        <li>计算初始确认日保险合同负债，并说明趸交情形下该结果的经济含义。（7 分）</li>
+        <li><b>变体</b>：若因假设恶化，流出现值上升至 <b>5,300 万元</b>，重新计算并说明处理差异。（7 分）</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) FCF</b>（4 分）</p>
+        <p>FCF = 4,200 − 5,000 = <span class="hl">−800 万元</span></p>
+
+        <p><b>(2) 盈亏判断与初始 CSM</b>（7 分）</p>
+        <p>FCF + RA = −800 + 350 = <b>−450 万元</b> &lt; 0 → <span class="hl">盈利合同组</span></p>
+        <p>CSM₀ = −(FCF + RA) = 450 万元</p>
+
+        <p><b>(3) 初始负债与经济含义</b>（7 分）</p>
+        <p>负债 = FCF + RA + CSM = −800 + 350 + 450 = <span class="hl">0 万元</span></p>
+        <p><b>经济含义：</b>首日无利得原则下，盈利差额全额暂存于 CSM，使负债账面价值被抵销至零。公司已收讫 5,000 万元保费，但对应的五年服务义务<span class="hl">尚未提供</span>，450 万元利润须随服务逐步释放，不得在首日确认为利得。</p>
+
+        <p><b>(4) 变体：假设恶化</b>（7 分）</p>
+        <p>FCF = 5,300 − 5,000 = <b>300 万元</b></p>
+        <p>FCF + RA = 300 + 350 = <b>650 万元</b> &gt; 0 → <span class="hl">亏损合同组</span></p>
+        <p>按准则<b>不确认负的 CSM</b>，亏损 <b>650 万元立即计入当期损益</b>（亏损保险合同损益），同时确认保险合同负债 650 万元（其中 FCF 300 + RA 350），并设立"亏损部分"初始余额 650 万元。</p>
+        <div class="tip"><b>不对称性总结：</b>有利 → CSM（递延，首日负债为零）；不利 → 立即进损益（首日确认亏损）。这是首日无利得原则的<b>不对称</b>设计，也是最高频的考点之一。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 4 分；(2) FCF+RA 3 分、判断 2 分、CSM 2 分；(3) 计算 3 分、含义 4 分；(4) 计算 3 分、处理差异 4 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第三题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算分析</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>合同分组：年度 cohort 与盈利性分层。</b>某公司 2025–2026 年签发下列六组合同，请按 CAS25 的分组规则将其归入适当的合同组，并说明理由。</p>
+      <table>
+        <tr><th>编号</th><th>险种</th><th>签发时间</th><th>初始盈亏</th></tr>
+        <tr><td>A</td><td>终身寿险（传统）</td><td>2026 年 3 月</td><td>盈利</td></tr>
+        <tr><td>B</td><td>终身寿险（传统）</td><td>2026 年 8 月</td><td>盈利</td></tr>
+        <tr><td>C</td><td>终身寿险（传统）</td><td>2026 年 5 月</td><td>亏损</td></tr>
+        <tr><td>D</td><td>终身寿险（传统）</td><td>2025 年 11 月</td><td>盈利</td></tr>
+        <tr><td>E</td><td>年金保险</td><td>2026 年 6 月</td><td>盈利</td></tr>
+        <tr><td>F</td><td>分红保险（直接分红特征）</td><td>2026 年 9 月</td><td>盈利</td></tr>
+      </table>
+      <p>要求：(1) 给出分组结果（12 分）；(2) 说明分组的三条核心规则如何体现在本例中（8 分）。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 分组结果</b>（12 分，每组 2.4 分）</p>
+        <table>
+          <tr><th>合同组</th><th>包含</th><th>理由</th></tr>
+          <tr><td>组 1</td><td>A + B</td><td>同险种、同年度、均盈利 → 合并</td></tr>
+          <tr><td>组 2</td><td>C</td><td>同险种同年，但<b>亏损</b> → 必须单独分组</td></tr>
+          <tr><td>组 3</td><td>D</td><td>同险种，但 <b>2025 年签发</b> → 跨年度 cohort，不可并入组 1</td></tr>
+          <tr><td>组 4</td><td>E</td><td>险种不同（年金）→ 单独组合</td></tr>
+          <tr><td>组 5</td><td>F</td><td>险种不同（分红、直接分红特征，适用 VFA）→ 单独组合</td></tr>
+        </table>
+
+        <p><b>(2) 三条核心规则的体现</b>（8 分）</p>
+        <ol>
+          <li><b>相似性规则</b>（3 分）：按风险特征与管理方式归集组合。年金（E，长寿风险）与终身寿（A–D，死亡风险）风险方向相反 → 不同组合；分红险（F）适用 VFA 模型，计量方法不同 → 单独组合。</li>
+          <li><b>盈利性分层规则</b>（3 分）：组合内按盈利性分层，至少区分亏损组、无显著盈利可能组、其余组。<b>C 虽与 A、B 同险种同年，但因亏损必须单独成组</b>，不得与盈利合同抵销——这保证了亏损不被盈利掩盖。</li>
+          <li><b>年度 cohort 规则</b>（2 分）：同组合同签发时间间隔不超过一年。<b>D 虽同为终身寿且盈利，但签发于 2025 年</b>，与 2026 年的 A、B 跨年度，须分属不同组。分组一经确定<b>不得重新分组</b>。</li>
+        </ol>
+        <div class="tip"><b>实务意义：</b>年度 cohort 使 CSM 的锁定利率可按签发年份确定，便于追踪各年份业务的盈利性；盈利性分层则杜绝"以盈补亏"。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 每组 2.4 分（共 5 组 12 分）；(2) 相似性 3 分、盈利性 3 分、年度性 2 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第四题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-essay">问答</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>履约现金流（FCF）的构成与边界。</b>论述履约现金流的三个构成要素（9 分），并说明下列项目是否应纳入 FCF 边界及其理由（11 分）：</p>
+      <ul>
+        <li>① 未来保费流入</li><li>② 未来赔付与给付流出</li><li>③ 保单维护费用（如寄送对账单、客服）</li>
+        <li>④ 公司总部行政管理费用（与具体合同组无关）</li><li>⑤ 保险获取现金流量（手续费、核保费用）</li>
+        <li>⑥ 分红险支付给保单持有人的红利</li><li>⑦ 与合同相关的所得税现金流量</li>
+      </ul>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>一、履约现金流的三个构成要素</b>（9 分，每点 3 分）</p>
+        <ol>
+          <li><b>未来现金流量估计</b>：无偏、概率加权的期望值（非单一最可能结果），涵盖所有与合同履行直接相关的流入与流出，且反映<b>当前</b>对未来的估计（每个报告日更新）。</li>
+          <li><b>货币时间价值</b>：按反映保险合同负债特征的<b>折现率</b>对未来现金流折现（现行市场利率，每期更新；自下而上或自上而下法确定）。</li>
+          <li><b>非金融风险调整（RA）</b>：对承担非金融风险（保险风险）所要求的补偿，反映公司风险厌恶程度，须单独计量并披露置信水平。</li>
+        </ol>
+
+        <p><b>二、边界判断</b>（11 分）</p>
+        <table>
+          <tr><th>项目</th><th>是否纳入</th><th>理由</th></tr>
+          <tr><td>① 未来保费流入</td><td><b>纳入</b></td><td>FCF 是净额概念，须扣除未来保费流入（2 分）</td></tr>
+          <tr><td>② 未来赔付与给付</td><td><b>纳入</b></td><td>核心履约义务（2 分）</td></tr>
+          <tr><td>③ 保单维护费用</td><td><b>纳入</b></td><td>与履行当前及未来合同直接相关（2 分）</td></tr>
+          <tr><td>④ 总部行政管理费用</td><td><b>不纳入</b></td><td>与具体合同组无关，属期间费用，计入当期损益（2 分）</td></tr>
+          <tr><td>⑤ 保险获取现金流量</td><td><b>通常不纳入</b></td><td>已发生或按准则单独确认为 IACF 资产/费用；但<b>续期</b>获取现金流纳入（1.5 分）</td></tr>
+          <tr><td>⑥ 分红险红利</td><td><b>纳入</b></td><td>属于对保单持有人的给付义务，构成履约现金流（1 分）</td></tr>
+          <tr><td>⑦ 所得税现金流</td><td><b>不纳入</b></td><td>所得税按 CAS18 单独处理（0.5 分）</td></tr>
+        </table>
+        <div class="tip"><b>边界原则：</b>FCF 只包含<span class="hl">与履行保险合同直接相关</span>的现金流。判断标准是"若没有这份合同，该现金流是否还会发生"——不会发生的才纳入。</div>
+      </div>
+      <div class="grading"><b>评分：</b>三要素 9 分（每点 3 分）；边界判断 11 分（按表内分值）。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第五题</span>
+      <span class="qscore">15 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>保险获取现金流量（IACF）。</b>某三年期合同组发生保险获取现金流量合计 <b>120 万元</b>（其中手续费 100 万元、核保与体检费用 20 万元），保险责任期间 3 年，各年保障单位相等。</p>
+      <ol>
+        <li>若采用资本化摊销法，计算每年应摊销计入保险服务费用的金额。（5 分）</li>
+        <li>若该组被认定为亏损组，说明 IACF 的处理有何特殊之处。（6 分）</li>
+        <li>说明简化法（直接费用化）与资本化法对首年利润的影响差异。（4 分）</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 年度摊销额</b>（5 分）</p>
+        <p>年摊销 = 120 ÷ 3 = <span class="hl">40 万元/年</span></p>
+        <p>（按保障单位系统摊销；本题各年保障单位相等，故按直线法。若各年风险分布不均，应按保障单位加权。）</p>
+
+        <p><b>(2) 亏损组下的特殊处理</b>（6 分）</p>
+        <ul>
+          <li>亏损组确认首日亏损时，<b>应先以 IACF 抵减亏损部分</b>——因为在合同组层面，已发生的获取成本已"沉没"，其对应的未来服务能否回收存在不确定性。</li>
+          <li>具体做法：确认亏损部分时，将 IACF 相关金额<b>从保险获取现金流量资产中转出</b>，计入亏损（增加首日亏损确认额），并同步减少未到期责任负债。</li>
+          <li>后续年度不再摊销该部分 IACF（因已随亏损失效）。</li>
+        </ul>
+        <p style="color:var(--mute);font-size:13px">准则逻辑：亏损组的"亏损部分"应覆盖全部预计亏损，包括已付出但无法回收的获取成本。</p>
+
+        <p><b>(3) 两种方法对首年利润的影响</b>（4 分）</p>
+        <table>
+          <tr><th>方法</th><th>首年费用</th><th>首年利润影响</th></tr>
+          <tr><td>简化法（直接费用化）</td><td class="num">120 万元</td><td>费用前置，首年利润<b>偏低</b></td></tr>
+          <tr><td>资本化摊销法</td><td class="num">40 万元</td><td>费用与收入配比，首年利润<b>较高</b>、后续年度递减</td></tr>
+        </table>
+        <p>三年累计影响相同（均为 120 万元），差异仅在<b>时间分布</b>。选择须一致应用于相似合同组。</p>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 5 分；(2) 每点 2 分；(3) 4 分。</div>
+    </details>
+  </div>
+</section>
+
+<!-- ════════════════════ 模拟卷二 ════════════════════ -->
+<section id="m2">
+  <h2>模拟卷二 · CSM 全周期与报表列报</h2>
+  <p class="time">100 分 · 建议 150 分钟 · 4 计算 + 1 问答</p>
+
+  <div class="pinfo">
+    <b>覆盖：</b>CSM 三年全周期滚存、亏损组转盈利、保险服务业绩与投资业绩分解、财务损益的损益/OCI 划分、资产负债表与利润表列报。
+    <b>说明：</b>本卷全部为 <span class="src src-new">自编模拟</span>。
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第一题</span>
+      <span class="qscore">25 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>CSM 三年全周期滚存。</b>某三年期合同组初始 CSM = <b>900 万元</b>，发单日锁定利率 <b>4%</b>。各年预期赔付：第 1 年 400、第 2 年 350、第 3 年 250（合计 1,000），按赔付额作为保障单位分摊 CSM。</p>
+      <p>后续事项：第 1 年与未来服务相关的假设变化使履约现金流现值<b>减少 50 万元</b>；第 2 年与未来服务相关的假设变化使履约现金流现值<b>增加 30 万元</b>；第 3 年无假设变化。</p>
+      <p>要求：编制三年 CSM 滚存表（每年列示：期初余额、利息增值、假设变化、计息后小计、释放比例、释放额、期末余额），并验证第 3 年末 CSM 归零。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <table>
+          <tr><th>年度</th><th>期初</th><th>利息增值(4%)</th><th>假设变化</th><th>计息后小计</th><th>释放比例</th><th>释放额</th><th>期末</th></tr>
+          <tr><td>第 1 年</td><td class="num">900.00</td><td class="num">+36.00</td><td class="num">+50.00</td><td class="num">986.00</td><td class="num">40%</td><td class="num">−394.40</td><td class="num"><b>591.60</b></td></tr>
+          <tr><td>第 2 年</td><td class="num">591.60</td><td class="num">+23.66</td><td class="num">−30.00</td><td class="num">585.26</td><td class="num">58.33%</td><td class="num">−341.40</td><td class="num"><b>243.86</b></td></tr>
+          <tr><td>第 3 年</td><td class="num">243.86</td><td class="num">+9.75</td><td class="num">0.00</td><td class="num">253.61</td><td class="num">100%</td><td class="num">−253.61</td><td class="num"><b>0.00</b></td></tr>
+        </table>
+
+        <p><b>关键过程说明</b></p>
+        <p><b>第 1 年：</b>利息 = 900 × 4% = 36；小计 = 900 + 36 + 50 = 986；释放比例 = 400 ÷ 1,000 = 40%；释放 = 986 × 40% = 394.40；期末 = 591.60。</p>
+        <p><b>第 2 年：</b>利息 = 591.60 × 4% = 23.66；小计 = 591.60 + 23.66 − 30 = 585.26；释放比例 = 350 ÷ (350 + 250) = 58.33%；释放 = 585.26 × 58.33% = 341.40；期末 = 243.86。</p>
+        <p><b>第 3 年：</b>利息 = 243.86 × 4% = 9.75；小计 = 253.61；剩余保障单位全部释放 → 释放 253.61；期末 = <span class="hl">0</span> ✓</p>
+        <div class="tip"><b>两个关键点：</b>① 利息增值按<b>锁定利率 4%</b>（非当前市场利率），且<b>先计息再释放</b>——本表按"先计息后释放"处理；② 释放比例按<b>剩余</b>保障单位占比（第 2 年为 350/600 而非 350/1,000），这是最常见的计算错误。</div>
+      </div>
+      <div class="grading"><b>评分：</b>第 1 年 9 分（利息 2 / 假设变化 2 / 小计 1 / 释放比例 2 / 释放额 1 / 期末 1）；第 2 年 9 分（同）；第 3 年 7 分（利息 2 / 释放 3 / 归零验证 2）。第 2 年释放比例用 350/600 是得分关键。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第二题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>亏损组转盈利。</b>某合同组初始确认为亏损组，首日亏损 <b>200 万元</b>（已计入当期损益，构成"亏损部分"初始余额，且已考虑保险获取现金流量的影响）。</p>
+      <ul>
+        <li>第 1 年：与未来服务相关的履约现金流现值<b>减少 80 万元</b>（情形改善）；</li>
+        <li>第 2 年：与未来服务相关的履约现金流现值<b>再减少 150 万元</b>。</li>
+      </ul>
+      <p>要求：(1) 计算第 1 年末亏损部分余额及损益影响（8 分）；(2) 计算第 2 年末亏损部分与 CSM 的余额（8 分）；(3) 说明"转回以亏损部分为限"的含义（4 分）。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 第 1 年末</b>（8 分）</p>
+        <p>有利变动 80 万元 → <b>调减亏损部分 80 万元</b>，同时确认收益（减少当期保险服务费用 / 增加保险服务业绩）80 万元。</p>
+        <p>年末亏损部分 = 200 − 80 = <span class="hl">120 万元</span></p>
+
+        <p><b>(2) 第 2 年末</b>（8 分）</p>
+        <p>有利变动 150 万元，但亏损部分仅余 120 万元 → <b>转回以 120 万元为限</b>：</p>
+        <ul>
+          <li>转回 120 万元 → 亏损部分清零（余额 <b>0</b>）；</li>
+          <li>超出部分 150 − 120 = <b>30 万元</b>的有利变动 → 该合同组由此转为盈利，<span class="hl">确认 CSM = 30 万元</span>。</li>
+        </ul>
+        <table>
+          <tr><th>项目</th><th>金额（万元）</th></tr>
+          <tr><td>亏损部分——期初</td><td class="num">120</td></tr>
+          <tr><td>减：转回（以余额为限）</td><td class="num">−120</td></tr>
+          <tr><td><b>亏损部分——期末</b></td><td class="num"><b>0</b></td></tr>
+          <tr><td>加：超出部分形成 CSM</td><td class="num">+30</td></tr>
+          <tr><td><b>CSM——期末</b></td><td class="num"><b>30</b></td></tr>
+        </table>
+
+        <p><b>(3) "转回以亏损部分为限"的含义</b>（4 分）</p>
+        <ul>
+          <li>亏损转回的金额<b>不得超过亏损部分的账面余额</b>，转回后亏损部分<span class="hl">不得为负</span>；</li>
+          <li>亏损部分全部转回后，若仍有有利变动，则不再冲减损益（否则会确认过度收益），而是<b>开始形成新的 CSM</b>；</li>
+          <li>这一规则确保：亏损组先"填坑"，坑填平后才开始积累未来利润——与首日无利得原则的<b>不对称性</b>一脉相承。</li>
+        </ul>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 转回 4 分、期末余额 2 分、损益影响 2 分；(2) 转回限额 4 分、CSM 形成 4 分；(3) 每点约 1.3 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第三题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>保险服务业绩与综合收益的分解。</b>某公司某年度数据如下（单位：万元）：</p>
+      <table>
+        <tr><th>项目</th><th>金额</th><th>构成说明</th></tr>
+        <tr><td>保险服务收入</td><td class="num">1,200</td><td>CSM 摊销 300、RA 释放 80、预期赔付 700、预期费用 120</td></tr>
+        <tr><td>实际赔付</td><td class="num">720</td><td>预期 700，不利偏差 20</td></tr>
+        <tr><td>实际维持费用</td><td class="num">130</td><td>预期 120，不利偏差 10</td></tr>
+        <tr><td>投资收益</td><td class="num">400</td><td>资产端</td></tr>
+        <tr><td>保险财务损益</td><td class="num">150</td><td>其中 60 进损益、90 计入 OCI</td></tr>
+        <tr><td>其他损益</td><td class="num">−30</td><td>—</td></tr>
+      </table>
+      <p>要求：(1) 计算保险服务业绩并交叉验证（8 分）；(2) 计算净利润（6 分）；(3) 计算综合收益总额（6 分）。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 保险服务业绩</b>（8 分）</p>
+        <p>保险服务费用 = 实际赔付 720 + 实际费用 130 = <b>850</b></p>
+        <p>保险服务业绩 = 1,200 − 850 = <span class="hl">350 万元</span></p>
+        <p><b>交叉验证：</b>保险服务业绩 = CSM 摊销 300 + RA 释放 80 − 赔付偏差 20 − 费用偏差 10 = <b>350</b> ✓</p>
+        <p>两条路径一致，说明收入中的"预期赔付 + 预期费用"与实际发生的部分相互抵销，最终业绩只由<b>摊销、RA 释放与经验偏差</b>构成。</p>
+
+        <p><b>(2) 净利润</b>（6 分）</p>
+        <p>= 保险服务业绩 350 + 投资收益 400 − 保险财务损益（进损益部分）60 + 其他损益（−30）</p>
+        <p>= <span class="hl">660 万元</span></p>
+
+        <p><b>(3) 综合收益总额</b>（6 分）</p>
+        <p>= 净利润 660 + 其他综合收益（保险财务损益计入 OCI 部分，−90）</p>
+        <p>= <span class="hl">570 万元</span></p>
+        <p><b>总额验证：</b>350 + 400 − 150 − 30 = <b>570</b> ✓（按全部保险财务损益 150 计算，与分路径结果一致）</p>
+        <div class="tip"><b>看报表的口诀：</b><b>利润 = CSM 摊销 + RA 释放 + 投资业绩 + 经验偏差</b>。前两项平滑，后两项波动。OCI 选择只改变列报位置，<b>不改变综合收益总额</b>——本题 660 与 570 的差额正好是进 OCI 的 90。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 费用 3 分、业绩 3 分、交叉验证 2 分；(2) 6 分；(3) 计算 3 分、总额验证 3 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第四题</span>
+      <span class="qscore">15 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>保险财务损益的分解与 OCI 划分。</b>某合同组年初：履约现金流现值 1,000 万元、CSM 400 万元。锁定利率 4%，当期市场利率由 4% 降至 3.5%，导致履约现金流现值上升至 1,060 万元（其中 20 万元源于时间流逝的计息、40 万元源于折现率变动）。</p>
+      <p>要求：(1) 计算 CSM 计息额（4 分）；(2) 计算保险财务损益合计（5 分）；(3) 说明若选择 OCI 政策，如何在损益与 OCI 之间划分（6 分）。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) CSM 计息额</b>（4 分）</p>
+        <p>CSM 计息 = 400 × <b>4%（锁定利率）</b> = <span class="hl">16 万元</span></p>
+        <p><b>要点：</b>CSM 按发单日<b>锁定利率</b>计息，<b>不受当期市场利率变动影响</b>——这是 CSM 与 FCF 在计息上的根本区别。</p>
+
+        <p><b>(2) 保险财务损益合计</b>（5 分）</p>
+        <p>FCF 部分 = 计息 20 + 折现率变动影响 40 = <b>60 万元</b></p>
+        <p>CSM 部分 = <b>16 万元</b></p>
+        <p>保险财务损益合计 = 60 + 16 = <span class="hl">76 万元</span></p>
+
+        <p><b>(3) OCI 政策下的划分</b>（6 分）</p>
+        <table>
+          <tr><th>组成</th><th>金额</th><th>列报位置</th></tr>
+          <tr><td>FCF 计息（时间流逝，20 万元）</td><td class="num">20</td><td>计入<b>当期损益</b>（按锁定利率计息部分）</td></tr>
+          <tr><td>FCF 折现率变动影响（40 万元）</td><td class="num">40</td><td>选择 OCI → 计入<b>其他综合收益</b></td></tr>
+          <tr><td>CSM 计息（16 万元）</td><td class="num">16</td><td>计入<b>当期损益</b></td></tr>
+        </table>
+        <p>即：进损益 = 20 + 16 = <b>36 万元</b>；进 OCI = <b>40 万元</b>；合计 76 万元不变。</p>
+        <p><b>目的：</b>将负债端折现率变动（40）与资产端 FVOCI 金融资产的公允价值变动在 OCI 中匹配，<b>减少会计错配</b>，平滑利润表。</p>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 4 分（须强调锁定利率）；(2) FCF 部分 3 分、CSM 部分 2 分；(3) 划分表 4 分、目的说明 2 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第五题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-essay">问答</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>列报：资产负债表与利润表。</b>说明新准则下保险公司资产负债表与利润表的主要变化（与旧准则对比），各列举至少四项（每项 2.5 分）。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>一、资产负债表的变化</b>（10 分，每项 2.5 分）</p>
+        <ol>
+          <li><b>保险合同负债三段列示</b>：未到期责任负债（LRC）= 未来现金流量现值 + 非金融风险调整 + 合同服务边际；已发生赔款负债（LIC）。旧准则下为"未到期责任准备金 + 未决赔款准备金"等。</li>
+          <li><b>增设保险获取现金流量资产</b>：资本化的手续费等作为单独资产列示（旧准则下为递延保单获取成本 DAC，概念相近但计量不同）。</li>
+          <li><b>分出再保险单独列示</b>：分出再保险资产（或负债）单独列报，反映分保部分的履约现金流与 CSM。</li>
+          <li><b>投资成分不进负债</b>：已分拆的投资成分适用金融工具准则，不在保险合同负债中列示；未分拆的投资成分虽包含在履约现金流中，但对应的收支不进损益。</li>
+        </ol>
+
+        <p><b>二、利润表的变化</b>（10 分，每项 2.5 分）</p>
+        <ol>
+          <li><b>保费收入 → 保险服务收入</b>：剔除投资成分，仅反映与保障服务相关的对价（含 CSM 摊销、RA 释放、预期赔付与费用）。</li>
+          <li><b>保险服务费用单独列示</b>：实际赔付与费用、IACF 摊销、亏损部分分摊等，与保险服务收入对应，净额即<b>保险服务业绩</b>。</li>
+          <li><b>保险财务损益独立列示</b>：将负债计息与利率变动影响从承保业绩中分离，可进一步在损益与 OCI 之间划分。</li>
+          <li><b>承保业绩与投资业绩分列</b>：新准则下利润表清晰区分"承保赚多少"与"投资赚多少"，旧准则下二者混杂在"已赚保费 + 投资收益 − 赔付 − 费用"中。</li>
+        </ol>
+        <div class="tip"><b>记忆：</b>资产负债表看"三段 + 两负债"；利润表看"保险服务业绩 + 投资业绩 = 经营利润"。分析师新口诀：<b>利润 = CSM 摊销 + RA 释放 + 投资业绩 + 经验偏差</b>。</div>
+      </div>
+      <div class="grading"><b>评分：</b>资产负债表四项 10 分、利润表四项 10 分，每项 2.5 分（要点完整才给满分）。</div>
+    </details>
+  </div>
+</section>
+
+<!-- ════════════════════ 模拟卷三 ════════════════════ -->
+<section id="m3">
+  <h2>模拟卷三 · 综合：VFA / 再保 / 过渡 / ALM</h2>
+  <p class="time">100 分 · 建议 150 分钟 · 3 计算 + 2 问答</p>
+
+  <div class="pinfo">
+    <b>覆盖：</b>VFA 情景分析（含 CSM 调减至负）、分出再保险的初始与后续计量、过渡的公允价值法、新准则与资产负债管理的联动、CSM 调节表披露。
+    <b>说明：</b>本卷全部为 <span class="src src-new">自编模拟</span>，难度对标真实考试压轴题。
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第一题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>VFA 三情景分析。</b>某分红险合同组适用 VFA，年初 CSM = <b>400 万元</b>，基础项目公允价值 <b>2,000 万元</b>，公司与保单持有人的浮动收费分成比例为 <b>20%</b>。假定各情景下无其他变动事项。</p>
+      <table>
+        <tr><th>情景</th><th>年末基础项目公允价值</th></tr>
+        <tr><td>A</td><td class="num">2,300</td></tr>
+        <tr><td>B</td><td class="num">1,700</td></tr>
+        <tr><td>C</td><td class="num">1,200</td></tr>
+      </table>
+      <p>要求：(1) 分别计算三情景下浮动收费的变动额（6 分）；(2) 分别计算三情景下的期末 CSM 与损益影响（10 分）；(3) 总结 VFA 下 CSM 调减的一般规则（4 分）。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 浮动收费变动额</b>（6 分，每情景 2 分）</p>
+        <table>
+          <tr><th>情景</th><th>公允价值变动</th><th>浮动收费变动（×20%）</th></tr>
+          <tr><td>A</td><td class="num">+300</td><td class="num">+60</td></tr>
+          <tr><td>B</td><td class="num">−300</td><td class="num">−60</td></tr>
+          <tr><td>C</td><td class="num">−800</td><td class="num">−160</td></tr>
+        </table>
+
+        <p><b>(2) 期末 CSM 与损益影响</b>（10 分）</p>
+        <table>
+          <tr><th>情景</th><th>期初 CSM</th><th>调整</th><th>期末 CSM</th><th>损益影响</th></tr>
+          <tr><td>A</td><td class="num">400</td><td class="num">+60</td><td class="num"><b>460</b></td><td class="num">0（全部调 CSM）</td></tr>
+          <tr><td>B</td><td class="num">400</td><td class="num">−60</td><td class="num"><b>340</b></td><td class="num">0（CSM 足以吸收）</td></tr>
+          <tr><td>C</td><td class="num">400</td><td class="num">−160</td><td class="num"><b>240</b></td><td class="num">0（CSM 足以吸收）</td></tr>
+        </table>
+        <p><b>说明：</b>三情景下 CSM 均未跌破零，故<b>无当期损益影响</b>——这正是 VFA 平滑利润的核心机制：投资波动被 CSM 吸收，不进利润表。</p>
+
+        <p><b>(3) CSM 调减的一般规则（含跌破零情形）</b>（4 分）</p>
+        <ul>
+          <li>浮动收费<b>增加</b> → 调增 CSM；<b>减少</b> → 调减 CSM。</li>
+          <li>调减<span class="hl">以 CSM 余额为限</span>：若调减额超过 CSM 余额，超出部分应<b>立即确认为当期亏损</b>（计入保险服务费用或单独列示的亏损）。</li>
+          <li>例：若情景 C 中浮动收费减少 <b>500</b>（而非 160），则 CSM 400 − 500 = −100 → 期末 CSM = 0，确认<b>亏损 100 万元</b>计入当期损益。</li>
+          <li>此后若基础项目回升，先<b>恢复已确认的亏损</b>（转回），恢复完毕后才重新累积 CSM。</li>
+        </ul>
+        <div class="tip"><b>与 BBA 对比：</b>BBA 下折现率变动中与未来服务相关的部分也调 CSM，但资产端波动通常不进 CSM（而是进损益或 OCI），故<b>会计错配</b>难以消除；VFA 下资产与负债联动，错配大幅降低。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 每情景 2 分；(2) A 情景 3 分、B 情景 3 分、C 情景 4 分；(3) 每点 1 分（须含"跌破零"的规则与举例）。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第二题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>分出再保险的初始计量。</b>某保险公司将一组原保险合同（初始 FCF −800 万元、RA 350 万元、CSM 450 万元）按 <b>30%</b> 比例分出给再保人，分保保费按同比例确定，再保人未额外收取手续费。</p>
+      <ol>
+        <li>计算分出部分的履约现金流现值与 RA。（6 分）</li>
+        <li>计算分出部分的 CSM。（4 分）</li>
+        <li>计算初始确认日分出再保险资产（或负债）的金额，并说明为何该结果成立。（6 分）</li>
+        <li>若再保人要求额外分保手续费 30 万元（公司另行支付），重新计算并说明处理。（4 分）</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 分出部分的 FCF 与 RA</b>（6 分）</p>
+        <p>分出 FCF = −800 × 30% = <span class="hl">−240 万元</span></p>
+        <p>分出 RA = 350 × 30% = <span class="hl">105 万元</span></p>
+
+        <p><b>(2) 分出部分的 CSM</b>（4 分）</p>
+        <p>分出 CSM = 450 × 30% = <span class="hl">135 万元</span></p>
+
+        <p><b>(3) 初始分出再保险资产 / 负债</b>（6 分）</p>
+        <p>分出再保险净资产 = −(分出 FCF + 分出 RA + 分出 CSM)</p>
+        <p>= −(−240 + 105 + 135) = −0 = <span class="hl">0 万元</span></p>
+        <p><b>为何为零：</b>与分出前原保险合同组初始负债为零的逻辑一致——分保条件与原合同条件<b>完全一致</b>（同比例分出、无额外手续费），故分出部分的首日盈亏也为零，全部以分出 CSM 形式暂存，分出再保险净资产为零。</p>
+        <p>后续随保障期间推进，分出 CSM 逐步释放，<b>减少</b>分出再保险资产的摊销或直接冲减分保费用，反映在利润表的"分出保费/摊回赔付"口径中。</p>
+
+        <p><b>(4) 额外分保手续费 30 万元</b>（4 分）</p>
+        <p>公司额外支付 30 万元，意味着分出成本上升 → <b>分出 CSM 相应减少</b>：</p>
+        <p>调整后分出 CSM = 135 − 30 = <b>105 万元</b></p>
+        <p>分出再保险净资产 = −(−240 + 105 + 105) = <span class="hl">30 万元（资产）</span></p>
+        <p><b>解释：</b>公司多付出的 30 万元形成对再保人的<b>预付/应收性质的权利</b>（将在未来通过摊回赔付等形式回收），故确认为分出再保险资产。若该成本无法回收（如分保条件显著不利），则应<b>立即确认为当期亏损</b>。</p>
+        <div class="tip"><b>要点：</b>分出再保险合同与<b>原保险合同对称计量</b>（方向相反），但不确认首日利得；若分保条件不利（成本超过分出部分的收益），须立即确认亏损。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) FCF 3 分、RA 3 分；(2) 4 分；(3) 计算 3 分、原因 3 分；(4) 调整 CSM 2 分、资产计算与解释 2 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第三题</span>
+      <span class="qscore">20 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>过渡：公允价值法。</b>某公司首次执行 CAS25，因历史数据不可得，对某合同组采用公允价值法。过渡日数据：该组合同公允价值 <b>1,200 万元</b>，过渡日履约现金流（含 RA）现值 <b>1,050 万元</b>。</p>
+      <ol>
+        <li>计算过渡日应确认的 CSM。（6 分）</li>
+        <li><b>变体</b>：若该组公允价值为 <b>980 万元</b>，重新计算并说明处理。（8 分）</li>
+        <li>说明公允价值法的适用条件与主要缺点。（6 分）</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 过渡日 CSM</b>（6 分）</p>
+        <p>CSM（过渡日）= 公允价值 − 过渡日履约现金流 = 1,200 − 1,050 = <span class="hl">150 万元</span></p>
+        <p>即：以公允价值作为"合同组的整体价值"，扣除履约现金流后的差额即为尚未赚取的未来利润，计入 CSM，后续在剩余保障期内摊销。</p>
+
+        <p><b>(2) 变体：公允价值低于履约现金流</b>（8 分）</p>
+        <p>CSM = 980 − 1,050 = <b>−70 万元</b></p>
+        <p>因 <b>CSM 不得为负</b>，故：CSM = <span class="hl">0</span>，差额 <b>70 万元立即确认为当期亏损</b>（过渡日一次性进损益，或按准则规定调整期初留存收益/其他综合收益，视过渡衔接的具体规定而定）。</p>
+        <p>后续该组按亏损组处理——设立"亏损部分"跟踪，随与未来服务相关的履约现金流改善而转回。</p>
+
+        <p><b>(3) 适用条件与缺点</b>（6 分）</p>
+        <ul>
+          <li><b>适用条件</b>：仅在<b>全面追溯法与修正追溯法均不可行</b>时采用（历史数据缺失、系统无法还原等）。</li>
+          <li><b>主要缺点</b>：① <b>可比性最弱</b>——公允价值反映的是过渡日的 market view，与按历史成本/锁定利率推演的结果口径不同；② <b>利润释放曲线与历史业务不衔接</b>——过渡后 CSM 的摊销基于过渡日的假设，与业务的真实盈利路径可能偏离；③ 需要<b>可靠估计公允价值</b>，本身存在估值不确定性。</li>
+          <li><b>优点</b>：最简便、成本最低，是数据条件受限公司唯一可行的过渡路径。</li>
+        </ul>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 公式 3 分、结果 3 分；(2) 计算 4 分、处理 4 分（须点出"CSM 不得为负"）；(3) 条件 2 分、缺点 3 分、优点 1 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第四题</span>
+      <span class="qscore">25 分</span>
+      <span class="qtype t-essay">问答</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>新准则与资产负债管理（ALM）的联动。</b>《保险公司资产负债管理办法》（总局令 2026 年第 4 号，2027 年 1 月 1 日施行）与 CAS25 同期落地。请论述：</p>
+      <ol>
+        <li>新准则为何会放大利率波动对公司报表的影响？（8 分）</li>
+        <li>OCI 会计政策选择与 ALM 久期匹配之间存在怎样的内在联系？（9 分）</li>
+        <li>作为总精算师，你会如何协调"会计口径的 CSM 管理"与"监管口径的资负匹配指标"？（8 分）</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>(1) 新准则放大利率波动的机理</b>（8 分）</p>
+        <ul>
+          <li><b>负债端更敏感</b>：CAS25 下负债按<b>现行市场利率</b>折现（不锁定、每期更新），利率下行直接推高履约现金流现值，负债规模随之膨胀。</li>
+          <li><b>两端同时动</b>：资产端（多为债券）公允价值也随利率变动，形成"资产与负债同向但幅度不同"的联动，若久期不匹配则产生<b>会计错配</b>，净利润与权益同时波动。</li>
+          <li><b>OCI 选择只能部分缓解</b>：将折现率变动计入 OCI 可平滑<b>利润表</b>，但<b>综合收益与权益仍波动</b>，且不影响偿付能力口径。</li>
+          <li><b>与旧准则对比</b>：旧准则下准备金折现率相对稳定（如 750 日移动平均），利率波动传导钝化；新准则下传导<b>即时且充分</b>。</li>
+        </ul>
+
+        <p><b>(2) OCI 选择与久期匹配的内在联系</b>（9 分）</p>
+        <ul>
+          <li><b>OCI 选择是"会计层面的匹配"</b>：把负债端折现率变动与资产端 FVOCI 债券的公允价值变动放在同一列报位置（OCI），使利润表不受利率波动冲击。它<b>消除的是列报错配</b>。</li>
+          <li><b>久期匹配是"经济层面的匹配"</b>：通过 ALM 使资产久期 ≈ 负债久期，让资产与负债的价值变动在<b>经济实质上相互抵销</b>，稳定的是实际资本与偿付能力。</li>
+          <li><b>二者互补而非替代</b>：OCI 选择只改变"在哪里报告"，<b>不改变经济敞口</b>；久期匹配才真正降低风险。若只选 OCI 而不做久期匹配，报表看似平稳，但综合收益与偿付能力仍在波动。</li>
+          <li><b>新规背景下的强化</b>：《保险公司资产负债管理办法》以<b>利率风险对冲率</b>（50%–150%）替代久期缺口作为监管指标，正是引导公司从"测量错配"转向"主动对冲"——与 OCI 选择的逻辑相通，但要求的是<b>真实的风险管理行动</b>。</li>
+        </ul>
+
+        <p><b>(3) 协调 CSM 管理与资负匹配指标</b>（8 分，任答 4 点）</p>
+        <ul>
+          <li><b>口径分离、目标合一</b>：CSM 服务于<b>利润平滑与投资者沟通</b>，资负匹配指标服务于<b>监管合规与资本安全</b>；二者不可混为一谈，但应在同一套资产负债策略下统筹。</li>
+          <li><b>建立统一的情景分析平台</b>：同一利率情景同时测算"对 CSM 的影响"（会计口径）与"对利率风险对冲率/覆盖率的影响"（监管口径），避免两套模型给出矛盾信号。</li>
+          <li><b>产品端与资产端联动决策</b>：新准则下产品定价（预定利率、分红政策）直接影响负债现金流与 CSM；资产端久期配置影响监管指标。重大投资（单一标的上季末总资产 3% 或 30 亿元）须由 ALM 部门出具专业意见。</li>
+          <li><b>长周期考核</b>：将 CSM 增长率、利差、久期缺口等纳入<b>3–5 年滚动考核</b>，防止为短期利润放松资负匹配。</li>
+          <li><b>披露与沟通</b>：向董事会同步报告"会计利润"与"监管资本"的双轨结果，解释二者背离的原因（如本库真题卷三第四题的"利润为正、偿付能力下降"情形）。</li>
+        </ul>
+        <div class="tip"><b>一句话总结：</b>CSM 是<b>利润的减震器</b>，不是<b>资本的减震器</b>；OCI 是<b>列报的匹配</b>，不是<b>风险的消除</b>。真正的安全垫来自久期与现金流的实质匹配。</div>
+      </div>
+      <div class="grading"><b>评分：</b>(1) 8 分（每点 2 分）；(2) 9 分（机制 4 分 + 互补关系 5 分）；(3) 8 分（每点 2 分，任答 4 点）。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">第五题</span>
+      <span class="qscore">15 分</span>
+      <span class="qtype t-essay">问答</span>
+      <span class="src src-new">自编模拟</span>
+    </div>
+    <div class="qbody">
+      <p><b>披露：CSM 余额调节表。</b>准则要求披露合同服务边际（CSM）期初至期末的余额调节表。请完整列出该调节表应包含的主要调节项目，并简述每一项的含义。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p>CSM 余额调节表应包含以下主要项目（每项约 1.9 分）：</p>
+        <table>
+          <tr><th>调节项目</th><th>含义</th></tr>
+          <tr><td>① 期初余额</td><td>上期末 CSM 结转数</td></tr>
+          <tr><td>② 与未来服务相关的履约现金流变化</td><td>假设变化（死亡率、退保率、费用率、折现率等）引起的未来现金流变动，调增或调减 CSM</td></tr>
+          <tr><td>③ 经验调整（与未来服务相关部分）</td><td>当期实际与预期差异中，归属于未来服务部分的调整</td></tr>
+          <tr><td>④ CSM 利息增值</td><td>按<b>发单日锁定利率</b>计算的计息</td></tr>
+          <tr><td>⑤ 汇率变动影响</td><td>外币计价合同组的汇兑差额中归属于 CSM 的部分</td></tr>
+          <tr><td>⑥ 新增合同的影响</td><td>当期新签发合同计入既有组所增加的 CSM</td></tr>
+          <tr><td>⑦ 亏损合同组亏损转回</td><td>亏损部分转回形成的 CSM 增加（以限额为限）</td></tr>
+          <tr><td>⑧ 释放为保险服务收入</td><td>当期按保障单位摊销、确认为收入的金额（<b>减项</b>）</td></tr>
+          <tr><td>⑨ 期末余额</td><td>上述各项轧差后的余额</td></tr>
+        </table>
+        <p><b>公式表达：</b>期末 CSM = 期初 + ② + ③ + ④ + ⑤ + ⑥ + ⑦ − ⑧</p>
+        <div class="tip"><b>披露意义：</b>调节表把"利润是怎么被 CSM 平滑的"完整摊开——分析师可据此判断利润质量：若 CSM 释放占比高、经验偏差为负，说明利润质量好；若频繁出现大额假设变化调减 CSM，则需警惕。</div>
+      </div>
+      <div class="grading"><b>评分：</b>共 9 项，每项约 1.7 分（答对 8 项及以上给满分）；公式表达正确另加印象分。</div>
+    </details>
+  </div>
+</section>
+
+<!-- ════════════════════ 拓展·问答卷 ════════════════════ -->
+<section id="q">
+  <h2>问答卷 · 概念·适用条件·综合评价·论述（11 题 / 185 分）</h2>
+  <p class="time">题型：问答题与论述题为主，先结论后展开，按要点给分；Q1–Q5 各 25 分，Q6–Q11（论述题）各 10 分。</p>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">Q1</span><span class="qscore">25 分</span>
+      <span class="qtype t-essay">问答</span>
+      <span class="src src-book">cas25-guide ch01 / ifrs17-kb 01</span>
+    </div>
+    <div class="qbody">
+      <p>请比较<b>现行会计准则（即 I4／旧准则，以 CAS22 等为代表）下的保险合同负债计量</b>与<b>新会计准则（IFRS17 / CAS25）下的负债计量</b>的主要区别。至少从五个维度展开，并说明这种改变对利润释放形态的影响。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>一、五个维度对比</b></p>
+        <table>
+          <tr><th>维度</th><th>现行准则（I4 类）</th><th>新准则（IFRS17/CAS25）</th></tr>
+          <tr><td>计量单元</td><td>以「保单／保单组」为计量单元，准备金按"最佳估计负债+风险边际"汇总</td><td>以「<b>合同组</b>」为计量单元（同质风险、同一保单签发日±1年、同一计量模型）</td></tr>
+          <tr><td>负债构成</td><td>未到期责任准备金＋未决赔款准备金，常含保费不足测试</td><td><b>履约现金流量 FCF ＋ 非金融风险调整 RA ＋ 合同服务边际 CSM</b>（BBA 三要素）</td></tr>
+          <tr><td>利润来源与释放</td><td>利润主要在赔付发生时体现，前期利润薄、释放不平滑</td><td>首日确定 CSM（利润"蓄水池"），在<b>服务期内按服务进度释放</b>，利润前移且平滑</td></tr>
+          <tr><td>折现处理</td><td>折现率多为监管规定或锁定的"评估利率"</td><td>折现率<b>反映当前市场利率</b>（自顶向下/自下而上法），但 CSM 用<b>锁定利率</b>计息</td></tr>
+          <tr><td>列报</td><td>"已赚保费、赔付支出"体系</td><td>新增<b>保险服务收入／保险服务费用</b>，金融变动（折现率）单独列示为承保财务损益</td></tr>
+        </table>
+        <p><b>二、对利润释放形态的影响</b></p>
+        <p>旧准则下，利润随赔付节奏后置于发生期；新准则下，<b>CSM 在签发日即锁定未来利润</b>，并随保障服务（或 claims 比例、时间比例）在服务期均匀释放——利润<b>前移、平滑、可预期</b>。这正是新准则"资产负债匹配、利润可视"的核心意图（参见 cas25-guide ch01「一张图看懂」）。</p>
+        <p><b>三、易错提示</b>：新准则并非"利润更多"，而是"利润更易被看出在哪一年实现"。总利润由保费与赔付/费用差决定，CSM 只是把这笔利润按服务期摊销。</p>
+      </div>
+      <div class="grading"><b>评分：</b>五维度每点 4 分（结论+一句解释）；利润释放影响 4 分；易错提示 1 分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">Q2</span><span class="qscore">25 分</span>
+      <span class="qtype t-essay">问答</span>
+      <span class="src src-book">cas25-guide ch02</span>
+    </div>
+    <div class="qbody">
+      <p>什么是<b>重大风险测试（Significant Risk Test, SRT）</b>？它在保险合同识别中解决什么问题？请说明测试的判断标准、结论的两种走向，以及它和"可明确区分的商品或服务"判断的关系。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>一、定义与目的</b></p>
+        <p>重大风险测试是判断一份合同<b>是否转移了重大保险风险</b>的程序。它解决的是：<b>这份合同到底是不是"保险合同"</b>——只有转移了重大保险风险的合同，才适用 IFRS17/CAS25；否则按金融工具或收入准则处理。</p>
+        <p><b>二、判断标准</b></p>
+        <ul>
+          <li>看<b>保单持有人是否承担了"发生显著可能性下的显著不利变动"风险</b>：即某事件发生（或不变）会导致保险人向持有人支付显著多于（或显著少于）不发生时金额。</li>
+          <li>关键二要素：① 发生概率"显著"（不要求必然）；② 金额变动"显著"（不要求大额绝对值，相对保费有实质影响即可）。</li>
+        </ul>
+        <p><b>三、两种走向</b></p>
+        <table>
+          <tr><th>测试结果</th><th>会计归属</th><th>示例</th></tr>
+          <tr><td>转移重大保险风险</td><td>保险合同 → 适用 CAS25</td><td>终身寿险、重疾险、车险</td></tr>
+          <tr><td>未转移重大保险风险</td><td>投资合同／存款／收入合同 → 不适用 CAS25</td><td>部分投资连结（无保底）、纯储蓄存款</td></tr>
+        </table>
+        <p><b>四、与"可明确区分"判断的关系</b></p>
+        <p>两者是<b>不同环节</b>：SRT 先回答"整体是不是保险合同"；若含<b>非保险成分（投资成分、商品/服务成分）</b>，再按"可明确区分且可单独出售/单独计量"标准决定是否<b>分拆</b>出保险部分单独计量（见 Q4）。即：<b>SRT 管"定性"、分拆管"定量拆分"</b>。</p>
+      </div>
+      <div class="grading"><b>评分：</b>定义4分、标准6分（显著可能性+显著不利变动）、两走向6分、与可区分关系7分、表述2分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">Q3</span><span class="qscore">25 分</span>
+      <span class="qtype t-essay">问答</span>
+      <span class="src src-book">ifrs17-kb 03-models</span>
+    </div>
+    <div class="qbody">
+      <p>简述<b>变动费用法（VFA，又称可变费用法）</b>的<b>适用条件</b>。并说明：为什么 VFA 下通常<b>不单独确认 CSM</b>，分红变动是如何进入损益的？它和 BBA 在利润波动性上有何差别？</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>一、适用条件（须同时满足）</b></p>
+        <p>VFA 仅适用于具有<b>直接参与分红特征</b>的保险合同，需满足：</p>
+        <ol>
+          <li><b>合同特征</b>：保单持有人具有"参与分享"保险人几乎全部（a substantial share）相关可分配利润的权利；</li>
+          <li><b>主体商业模式</b>：保险人通过向持有人支付可变费用（如保单红利）将相关资产投资回报的几乎所有影响转移给持有人；</li>
+          <li>通常表现为<b>分红险、直接参与型投连险</b>等。</li>
+        </ol>
+        <p class="tip">对照：BBA 是默认模型（不满足 VFA/PAA 即适用）；PAA 适用于<b>保障期 ≤ 18 个月</b>的短期合同或满足简化条件的合同。</p>
+        <p><b>二、为何不单独确认 CSM</b></p>
+        <p>VFA 下，<b>与未来服务相关的利润直接体现为"预期向持有人支付的红利"（可变费用）</b>，它随资产投资回报实时变动，已直接反映在履约现金流（FCF）中。因此利润不再"蓄"在 CSM 里，而是<b>期初 CSM 通常为零</b>，后续通过<b>调整 FCF（而非调整 CSM）</b>来吸收分红变动。</p>
+        <p><b>三、分红变动如何入损益</b></p>
+        <p>当期实际分红与预期分红的差额 → 调整 FCF → 若 FCF 仍≥0，差额<b>直接计入当期保险财务损益／保险服务业绩</b>（不进入 CSM 蓄水池）。即：分红多→FCF上升→当期利润下降，反之亦然。</p>
+        <p><b>四、与 BBA 的波动性差别</b></p>
+        <p>BBA 把利润锁在 CSM 慢慢释放，<b>平滑</b>；VFA 让分红/投资回报变动直接穿过利润表，<b>利润随市场与投资回报同频波动、更透明但不平滑</b>。</p>
+      </div>
+      <div class="grading"><b>评分：</b>三条件10分、不确认CSM原因6分、分红入损益路径5分、波动性对比4分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">Q4</span><span class="qscore">25 分</span>
+      <span class="qtype t-essay">问答</span>
+      <span class="src src-book">cas25-guide ch03</span>
+    </div>
+    <div class="qbody">
+      <p>IFRS17/CAS25 下，保险合同的<b>组合（portfolio）→ 组（group）</b>分层的意义是什么？当一个保单同时包含<b>主险与附加险</b>（如"终身寿＋附加医疗"），二者是否必须分拆为两个合同分别计量？请说明分拆的判断标准与实务处理。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>一、组合→组的层级意义</b></p>
+        <p>准则要求先按<b>保险合同组合</b>（同一类产品、同一签发日区间）汇集，再细分为<b>合同组</b>作为计量单元。分层目的：① 同质性（相似风险、相似利润释放）；② 避免"亏损合同"与"盈利合同"混抵消、掩盖真实承保结果；③ 为 CSM 初始确认与后续释放提供稳定单元。</p>
+        <p><b>二、主险+附加险是否要分拆</b></p>
+        <p><b>一般不需要分拆为两个保险合同</b>。判断逻辑：</p>
+        <ol>
+          <li>主险与附加险若由<b>同一签发、不可单独购买、构成一揽子</b>，准则允许将二者作为一个<b>保险合同组合</b>整体计量（合并为一组）；</li>
+          <li>仅当附加险成分<b>"可明确区分"且"可单独出售或单独计量"</b>（如独立的意外险条款可单独投保）时，才考虑将可区分部分<b>分拆</b>出去——但分拆后是作为<b>另一个保险合同</b>还是作为<b>非保险服务成分</b>，取决于该成分本身是否转移保险风险（再走 SRT）。</li>
+        </ol>
+        <p><b>三、真正要"分拆"的是非保险成分</b></p>
+        <p>实务中更常见的是按<b>成分</b>分拆：一份合同往往同时含 ①保险成分（适用 CAS25）、②<b>投资成分</b>（如满期返还的储蓄部分，不转移风险）、③<b>商品/服务成分</b>（如免费体检）。其中投资成分与商品服务成分须<b>分拆出保险合同</b>，按相关准则（金融工具/收入）处理，仅保险成分留在 CAS25 计量。</p>
+        <p class="tip">结论：主险+附加险（同风险、一揽子）→ 可合并计量；投资成分/商品服务成分 → 必须分拆出保险部分。前者是"合同合并"，后者是"成分分拆"，不要混淆。</p>
+      </div>
+      <div class="grading"><b>评分：</b>组合→组意义6分、主附险合并结论6分、分拆判断标准7分、投资/服务成分分拆6分。</div>
+    </details>
+  </div>
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">Q5</span><span class="qscore">25 分</span>
+      <span class="qtype t-essay">问答·综合</span>
+      <span class="src src-book">综合（实践卷 P1 + cas25-guide 各章）</span>
+    </div>
+    <div class="qbody">
+      <p>结合本卷<b>实践卷 P1（趸交 5 年期两全保险全流程案例）</b>，综合评价<b>新会计准则（IFRS17 / CAS25）对保险公司经营的利弊与影响</b>。要求从以下维度展开（不少于四个），并尽量引用 P1 的具体数据：① 资产负债匹配与信息透明度；② 利润释放形态与波动性（含 OCI 选择权、利率风险）；③ 产品设计与定价（如两全 / 年金的投资成分分拆）；④ 资本与偿付能力联动；⑤ 数据、系统与精算估值的实施成本。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>一、资产负债匹配与信息透明度（利）</b></p>
+        <p>新准则以「<b>合同组</b>」为计量单元，负债按 FCF＋RA＋CSM 三要素透明列示（见 P1 的 M1 表：保险负债 2,438.5 = FCF 1,588.7＋RA 200＋CSM 649.8）。相比旧准则准备金"黑箱"，新准则让负债驱动因素<b>可视、可归因、可穿透到业务假设</b>，为资产负债匹配管理（如利率风险对冲）提供清晰抓手。</p>
+        <p><b>二、利润释放形态与波动性（利 + 挑战）</b></p>
+        <p>首日确认 CSM（利润"蓄水池"），在服务期按服务进度释放，利润<b>前移、平滑、可预期</b>（参考 Q1 / C3）；同时又引入<b>OCI 选择权</b>（参考 C4）：利率下行致负债上升 400 时，选 OCI 可把冲击暂存权益、净利润保持 150 而非 −250。<b>挑战在于</b>：利润对销售节奏极度敏感——新业务贡献在签发当年即确认（P1 中 CSM₀ = 649.8 全在 t=0 锁定），存量释放逐年递减，经营上需平衡"冲新单"与"存量消耗"。</p>
+        <p><b>三、产品设计与定价（利 + 倒逼）</b></p>
+        <p>P1 分拆投资成分后，<b>保险服务业绩持续为负</b>（t=1 −142.5、t=5 −186.7），真实盈利来自<b>投资成分对应的投资财务收益</b>（投资负债 7,561.5 对应年财务成本 ≈302）。这<b>倒逼产品回归保障本源</b>——不能再靠利差隐性补贴保障、用"满期高返还"包装成保险卖点；两全 / 年金类产品必须显式拆分储蓄与保障，定价与披露的复杂度上升。</p>
+        <p><b>四、资本与偿付能力联动（挑战）</b></p>
+        <p>新准则负债（即期折现率、CSM 释放）与偿二代 II 资本计量口径存在差异，公司需建立"会计—资本"双口径映射；负债对利率 / 风险的敏感度上升，使<b>资产负债匹配（利率风险对冲率、流动性匹配率等，参见 ALM 新规）</b>从"合规项"变成"经营核心指标"。</p>
+        <p><b>五、实施成本（挑战）</b></p>
+        <p>需建设精细化计量系统：分合同组、CSM 滚动、OCI 选择、投资成分拆分、FCF 多情景估计，<b>数据治理与精算假设管理成本显著上升</b>，对中小险企压力尤大。但长期看，透明化也降低沟通成本、提升投资者与监管信任。</p>
+        <p><b>小结</b>：新准则的"利"在<b>透明、可比、利润可视</b>；"弊 / 挑战"在<b>波动性前置、产品重构、系统投入</b>。P1 的案例是最直观的注脚——它把"保险赚不赚钱、赚在哪"拆得清清楚楚。</p>
+      </div>
+      <div class="grading"><b>评分：</b>五个维度每点约 4–5 分（结论 + 解释），须至少覆盖四个维度；引用 P1 数据（保险业绩为负、投资成分 7,561.5、CSM 前移等）加 1–3 分；小结 1 分。未结合实践卷案例最高扣 5 分。</div>
+    </details>
+  </div>
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">Q6</span><span class="qscore">10 分</span>
+      <span class="qtype t-essay">论述</span>
+      <span class="src src-book">培训测试卷·论述题</span>
+    </div>
+    <div class="qbody">
+<p>请结合 X 公司数据，阐述新准则下“<b>保险服务收入</b>”与旧准则“<b>保险业务收入</b>”的本质区别，并分析 X 公司收入下降 75.6% 的主要原因及管理启示。（10 分）</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+<p class="tip">📘 <b>考察知识点：</b>保险服务收入的计量逻辑 · 投资成分剔除 · 权责发生制</p>
+<p><b>解答：</b></p>
+<p><b>一、本质区别</b></p>
+<ul>
+<li>旧准则“保险业务收入”按收付实现制逻辑，收到保费（含投资成分）即全额确认，未区分保障与储蓄部分；</li>
+<li>新准则“保险服务收入”按权责发生制逻辑，仅在提供保障服务期间逐步确认，由五部分构成：<b>预期保险成分赔付 + 预期维持费用 + 获取费用摊销 + CSM 摊销 + RA 变动</b>；</li>
+<li><b>投资成分</b>（退保金、满期金、生存金等）不得计入保险服务收入；</li>
+<li>收入确认期间从“缴费期”拉长至“整个保险期间”，即使缴费期结束，只要保障期未结束，仍需确认收入。</li>
+</ul>
+<p><b>二、X 公司收入下降 75.6% 的主因</b></p>
+<p>是<b>“投资成分剔除”</b>与<b>“收入确认期间拉长（权责发生制）”</b>共同作用的结果：</p>
+<ul>
+<li>投资成分剔除：储蓄型产品占比高，剔除约 <span class="hl">2,278</span> 亿元投资成分，是主因；</li>
+<li>期间拉长：即使保障型产品，收入也在整个保险期间分摊，而非缴费期全部确认，导致首年收入进一步下降。</li>
+</ul>
+<p><b>三、管理启示</b></p>
+<p>① 考核指标应从保费转向<b>保险服务收入</b>和<b>新业务 CSM</b>；② 调整产品结构，增加保障型产品占比；③ 内部沟通需解释收入下降为会计口径变化，非业务萎缩。</p>
+      </div>
+      <div class="grading"><b>评分：</b>本质区别 4 分（收付/权责、五构成、投资成分剔除、期间拉长各 1 分）；主因分析 4 分；管理启示 2 分。</div>
+    </details>
+  </div>
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">Q7</span><span class="qscore">10 分</span>
+      <span class="qtype t-essay">论述</span>
+      <span class="src src-book">培训测试卷·论述题</span>
+    </div>
+    <div class="qbody">
+<p>什么是<b>合同服务边际（CSM）</b>？请根据 X 公司 CSM 滚存数据（期初 2,240，新业务贡献 143，计息 30，吸收 −15，其他 −12，摊销 −167，期末 2,219），解释每一项的含义，并评价 X 公司 CSM 的健康状况。（10 分）</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+<p class="tip">📘 <b>考察知识点：</b>CSM 定义 · CSM 滚存逻辑 · 健康度判断</p>
+<p><b>解答：</b></p>
+<p>CSM（合同服务边际）是<b>未赚利润蓄水池</b>，代表未来将在提供服务时确认的利润。后续计量采用滚动公式：</p>
+<p><em>期末 CSM = 期初 CSM + 新业务贡献 + 计息 + 吸收变动 ± 其他调整 − 摊销释放</em></p>
+<p>其中，计息使用<b>锁定折现率</b>，吸收变动反映非经济假设变动对 CSM 的影响。</p>
+<p><b>各项含义：</b></p>
+<ul>
+<li>期初（<span class="hl">2,240</span>）：存量利润底盘；</li>
+<li>新业务贡献（143）：新保单创造的价值；</li>
+<li>计息（30）：锁定利率下的时间价值；</li>
+<li>吸收（−15）：不利假设变动被 CSM 平滑；</li>
+<li>其他（−12）：汇率等微小调整；</li>
+<li>摊销（−167）：本期释放至利润表的金额。</li>
+</ul>
+<p><b>评价：</b>新业务覆盖度 = 143 / 167 ≈ <span class="hl">85.6%</span>，基本覆盖摊销；期末微降但幅度很小，吸收可控，蓄水池<b>健康稳定</b>。</p>
+      </div>
+      <div class="grading"><b>评分：</b>CSM 定义 2 分；公式 1 分；六项含义各 0.5 分（共 3 分）；覆盖度计算 2 分；健康状况评价 2 分。</div>
+    </details>
+  </div>
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">Q8</span><span class="qscore">10 分</span>
+      <span class="qtype t-essay">论述</span>
+      <span class="src src-book">培训测试卷·论述题</span>
+    </div>
+    <div class="qbody">
+<p>新准则利润表将利润拆解为“<b>保险服务业绩</b>”和“<b>投资业绩</b>”。请以 X 公司数据（保险服务业绩 436 亿，投资业绩 16 亿，非履约费用 21 亿，营业利润 −66 亿）为例，分析这两大板块的构成及对净利润的影响，并说明管理者应如何解读这两个指标。（10 分）</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+<p class="tip">📘 <b>考察知识点：</b>新利润表结构 · 保险服务业绩 vs 投资业绩 · 利源分析</p>
+<p><b>解答：</b></p>
+<p>新准则营业利润：<em>营业利润 = 保险服务业绩 + 投资业绩 − 非履约费用 ± 其他</em></p>
+<ul>
+<li>保险服务业绩 = 保险服务收入 − 保险服务费用（反映死差+费差）；</li>
+<li>投资业绩 = 投资收益 + 利息 + 公允价值变动 − 承保财务损失 + 再保收益（反映利差及市场波动）。</li>
+</ul>
+<p>X 公司保险服务业绩 436 亿，<b>保险服务业绩率 59%</b>，说明承保端盈利强；投资业绩 16 亿（基础收益 194 亿，但公允价值亏损 −118 亿、承保财务损失 61 亿侵蚀）。营业利润 −66 亿主要因公允价值亏损，<b>非主业亏损</b>。</p>
+<p><b>管理者解读：</b>① 关注保险服务业绩的长期趋势，它是公司可控的核心利润；② 区分投资业绩中的已实现收益和未实现公允价值波动；③ 向投资者解释净利润波动来源，强调承保盈利能力稳定。</p>
+      </div>
+      <div class="grading"><b>评分：</b>公式 2 分；两项构成各 2 分（共 4 分）；X 公司测算 2 分；管理解读 2 分。</div>
+    </details>
+  </div>
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">Q9</span><span class="qscore">10 分</span>
+      <span class="qtype t-essay">论述</span>
+      <span class="src src-book">培训测试卷·论述题</span>
+    </div>
+    <div class="qbody">
+<p>什么是 <b>OCI 选择权</b>？X 公司选择了 OCI 选择权，其净利润为 −66 亿，其他综合收益为 23 亿，综合收益总额为 −43 亿。请解释 OCI 选择权的作用，以及为什么选择 OCI 后净资产仍会波动。（10 分）</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+<p class="tip">📘 <b>考察知识点：</b>OCI 选择权定义 · 净利润平滑机制 · 净资产波动来源</p>
+<p><b>解答：</b></p>
+<p>OCI 选择权允许公司将<b>利率变动对保险合同负债的影响计入其他综合收益</b>，而非当期损益。即：计入损益的利息成本使用锁定折现率，即期与锁定折现率的差异部分计入 OCI。</p>
+<p>选择 OCI 后净利润更平稳，但<b>净资产（所有者权益）仍会因 OCI 科目金额变化而波动</b>。</p>
+<p>X 公司净利润 −66 亿、OCI +23 亿、综合收益 −43 亿。若不选择 OCI，利率变动对负债的影响会直接计入净利润，导致净利润更大幅度下降（如旧准则的 −412 亿）。</p>
+<p>净资产波动原因：OCI 计入所有者权益，利率变动导致的负债价值变化直接冲减或增加其他综合收益，从而影响净资产总额。<b>净资产下降不代表经营恶化，而是会计处理的结果。</b></p>
+      </div>
+      <div class="grading"><b>评分：</b>OCI 定义 3 分；净利润平滑作用 3 分；净资产仍波动的原因 4 分。</div>
+    </details>
+  </div>
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">Q10</span><span class="qscore">10 分</span>
+      <span class="qtype t-essay">论述</span>
+      <span class="src src-book">培训测试卷·论述题</span>
+    </div>
+    <div class="qbody">
+<p>新准则下资产负债表从 15 个保险项目简化为 4 个核心项目，并采用<b>净额列示</b>。请结合 X 公司新旧资产负债表变化（负债合计从 15,977 亿升至 17,556 亿，净资产从 8,891 亿降至 7,279 亿），说明净额列示的具体体现及净资产下降的主要原因。（10 分）</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+<p class="tip">📘 <b>考察知识点：</b>资产负债表简化 · 净额列示 · 净资产下降原因</p>
+<p><b>解答：</b></p>
+<p>新准则下保险合同相关项目浓缩为四类：保险合同资产/负债、分出再保险合同资产/负债。<b>净额列示</b>指不再分别列示应收/应付，只列示合同组合的净额。</p>
+<p><b>净额列示体现：</b>应收保费并入保险合同负债（作为减项），应付分保账款并入分出再保险合同资产，使总资产、总负债更真实，不再“虚胖”。</p>
+<p>X 公司负债从 15,977 亿升至 17,556 亿，净资产从 8,891 亿降至 7,279 亿，下降 18.1%。<b>主因是折现率即期化</b>（从 750 天移动平均改为报告日即期利率，利率下行导致保险合同负债评估值上升），而非经营亏损。这是会计规则变化，不代表公司实际价值减少。</p>
+      </div>
+      <div class="grading"><b>评分：</b>四核心项目 2 分；净额列示体现 3 分；净资产下降主因 5 分。</div>
+    </details>
+  </div>
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">Q11</span><span class="qscore">10 分</span>
+      <span class="qtype t-essay">论述</span>
+      <span class="src src-book">培训测试卷·论述题</span>
+    </div>
+    <div class="qbody">
+<p>作为保险公司管理者，面对新准则带来的收入下降、利润波动、净资产缩水，请提出至少四项具体的管理转型措施（如考核指标、产品策略、费用管理、资产负债管理、投资者沟通、业务管理等），并说明理由。（10 分）</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+<p class="tip">📘 <b>考察知识点：</b>管理转型措施 · 经营落地</p>
+<p><b>解答（六项措施，至少选四项）：</b></p>
+<ul>
+<li><b>① 考核指标重构</b>：从保费收入转向保险服务收入、新业务 CSM 贡献、CSM 余额增长率，引导价值创造；</li>
+<li><b>② 产品策略调整</b>：提高保障型产品占比（投资成分为 0、收入含金量高）；谨慎定价储蓄型产品，避免亏损合同；</li>
+<li><b>③ 费用精细化管理</b>：建立费用归集规则，确保获取费用资本化准确；严控费用率，防止侵蚀 CSM；</li>
+<li><b>④ 资产负债管理联动</b>：选择 OCI 时资产端债券应分类为 FVOCI 以减少会计错配；定期利率压力测试；</li>
+<li><b>⑤ 投资者沟通</b>：主动解释收入下降、净资产缩水的会计准则原因，突出保险服务业绩和 CSM 增长趋势；</li>
+<li><b>⑥ 业务管理强化</b>：将新业务 CSM 贡献作为产品定价和渠道准入的硬约束，对持续亏损产品实行退出机制；预算中引入 CSM 增量目标，将价值指标分解至各业务单元。</li>
+</ul>
+      </div>
+      <div class="grading"><b>评分：</b>每项措施 2 分，至少四项；说明理由充分酌情加分，满分 10 分。</div>
+    </details>
+  </div>
+</section>
+
+<!-- ════════════════════ 拓展·计算实践卷 ════════════════════ -->
+<section id="cp">
+  <h2>计算实践卷 · 计量·利润·全流程·案例（7 题 / 243 分）</h2>
+  <p class="time">题型：计算题、综合实践与案例分析。计算题给出分步算式与评分标准；实践大题（P1）贯通全流程与列报表（数据自估须自洽）；含 1 道综合案例分析题（CA1）与 1 道管理论述附加题（AD1）。</p>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">C1</span><span class="qscore">25 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-book">cas25-guide 例26 + ifrs17-kb 03-models</span>
+    </div>
+    <div class="qbody">
+      <p>某 3 年期趸交保险合同，签发日收保费 <b>1,200</b>（现金流单位：万元，下同）。预期未来赔付与费用（均于各年末发生）现值（按当前折现率 4% 折现至 t=0）：未来赔付现值 <b>900</b>、未来费用现值 <b>60</b>。非金融风险调整 RA 初始 <b>40</b>。锁定利率 5%。要求：</p>
+      <ol>
+        <li>用 <b>BBA 一般模型</b>计算初始 CSM₀（首日无利得）；</li>
+        <li>若改用 <b>VFA（直接参与分红）</b>计量，说明初始 CSM 应为多少、后续分红变动如何入账；</li>
+        <li>若该合同保障期仅 12 个月、满足 <b>PAA 保费分配法</b>简化条件，说明其"初始确认时差额"在 PAA 下如何处理。</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>（1）BBA 初始 CSM</b></p>
+        <p>FCF（未来净流出现值）= 900（赔付）+ 60（费用）= <span class="hl">960</span></p>
+        <p>初始计量：对价（保费）= 1,200；FCF = 960；RA = 40</p>
+        <p>CSM₀ = 1,200 − 960 − 40 = <span class="hl">200</span>（正值，首日无利得 ✓）</p>
+        <p class="tip">对照 cas25-guide 例26 口径：例26 中 FCF=1,089−400+55=744、RA=80、CSM₀=413，结构完全一致（保费−FCF−RA）。</p>
+        <p><b>（2）VFA 下的 CSM 与分红入账</b></p>
+        <ul>
+          <li>VFA 适用条件：合同具<b>直接参与分红特征</b>（本题假设满足）。</li>
+          <li>初始 CSM：VFA 下利润直接体现为预期支付给持有人的可变费用（红利），已含于 FCF，故<b>初始 CSM = 0</b>。</li>
+          <li>后续：若实际分红 <b>高于</b>预期 → FCF 上升 → 当期保险服务业绩（或财务损益）<b>下降</b>；低于预期则相反。<b>差额调整 FCF，不进 CSM。</b></li>
+        </ul>
+        <p><b>（3）PAA 简化法下的"差额"</b></p>
+        <p>PAA 不单独计量 FCF/RA/CSM 三要素，而以"<b>保费 − 合理预估赔付 − 合理预估费用 + 期初已发生赔款负债调整</b>"近似。若签发日出现正差额（保费大于预估赔付费用），该差额在 PAA 下<b>直接确认为初始 CSM（或类似"未赚利润"余额）</b>，随短期保障期快速释放；负差额则计提亏损准备。本题 BBA 的 200 在 PAA 下即表现为该初始正差额。</p>
+      </div>
+      <div class="grading"><b>评分：</b>BBA计算10分（FCF 4 + CSM 6）；VFA 8分（CSM=0 占4、分红入账4）；PAA 7分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">C2</span><span class="qscore">25 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-book">cas25-guide ch06 + 例26</span>
+    </div>
+    <div class="qbody">
+      <p>某合同组 t=1 末的保险合同负债构成：FCF=500、RA=30、CSM=120。t=2 内发生以下三件事（独立发生，分别列式）：</p>
+      <ol>
+        <li><b>假设变更</b>：精算假设更新使未来赔付增加 20（FCF 由 500→520）；</li>
+        <li><b>经验调整</b>：实际赔付低于预期，经验差异使 FCF 减少 15（500→485）；</li>
+        <li><b>折现率变动</b>：市场利率下行，FCF 由 500→530（上升 30）。</li>
+      </ol>
+      <p>要求：分别说明上述三类变动应记入<b>哪个科目</b>（CSM 吸收 / 当期损益 / OCI），并计算对 t=2 末 CSM 与当期利润的影响（假设初始 CSM 足够大、未出现亏损组）。</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>核心规则（cas25-guide ch06「履约现金流量」）</b>：FCF 变动按"是否与<b>未来服务</b>相关"分流——</p>
+        <table>
+          <tr><th>变动类型</th><th>入账科目</th><th>对 CSM / 利润影响</th></tr>
+          <tr><td>① 假设变更</td><td>调整 <b>CSM</b>（未来服务相关）</td><td>FCF +20 → CSM 减少 20；不影响当期损益</td></tr>
+          <tr><td>② 经验调整</td><td>调整 <b>CSM</b>（与过去/当期服务相关，但准则规定经验差异也调 CSM）</td><td>FCF −15 → CSM 增加 15；不影响当期损益</td></tr>
+          <tr><td>③ 折现率变动</td><td>未选 OCI 时进 <b>当期损益</b>；选 OCI 时进 <b>OCI</b></td><td>FCF +30 → 未选 OCI 则当期利润 −30；选 OCI 则利润不变、暂存权益</td></tr>
+        </table>
+        <p><b>对 t=2 末 CSM 的影响（逐项）</b></p>
+        <ul>
+          <li>① 假设变更：CSM 120 − 20 = <span class="hl">100</span></li>
+          <li>② 经验调整：CSM 在上一项基础上 + 15 = 100 + 15 = <span class="hl">115</span></li>
+          <li>③ 折现率变动：<b>不调 CSM</b>（走损益/OCI），CSM 仍为 115；但 FCF 在计量表上体现 530。</li>
+        </ul>
+        <p><b>对当期利润的影响</b></p>
+        <ul>
+          <li>未选择 OCI：仅第③项影响利润 = <span class="hl">−30</span>（第①②项已被 CSM 吸收）；</li>
+          <li>选择 OCI：三项均不直接影响利润（③进 OCI，①②进 CSM），当期利润仅受 CSM 释放节奏影响。</li>
+        </ul>
+        <p class="tip">这正是 OCI 选择权的"利润平滑"作用的来源（详见 C4 与 ifrs17-kb 06 章）。</p>
+      </div>
+      <div class="grading"><b>评分：</b>三项入账科目各5分（共15）；CSM影响计算6分；利润影响4分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">C3</span><span class="qscore">25 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-book">cas25-guide 例26 + 三时刻滚存</span>
+    </div>
+    <div class="qbody">
+      <p>已知某产品组合新业务价值（VNB / 新业务贡献）= 初始 CSM 合计 <b>800</b>。存量业务（往年签发、仍在服务期）当年释放：CSM 释放 <b>320</b>、RA 释放 <b>60</b>、当年已发生赔付与费用净额（保险服务费用 − 投资成分返还）体现为保险服务业绩减项 <b>−40</b>。要求：</p>
+      <ol>
+        <li>计算当年<b>保险服务业绩（保险利润）</b>总额，并拆解为"新业务贡献"与"存量业务释放"；</li>
+        <li>若该组合第 2 年新签 CSM 降至 600、存量释放降至 280，说明利润结构的变化趋势及其经营含义。</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>（1）当年保险服务业绩</b></p>
+        <p>保险服务业绩（保险利润核心）= CSM 释放 + RA 释放 +（已发生赔付费用净额）</p>
+        <p>存量业务释放 = 320 + 60 + (−40) = <span class="hl">340</span></p>
+        <p>新业务贡献 = 当年新签初始 CSM = <span class="hl">800</span></p>
+        <p>当年保险服务业绩总额 = 800（新业务）+ 340（存量）= <span class="hl">1,140</span></p>
+        <p class="tip">注意：新业务贡献体现在<b>签发当年即确认</b>初始 CSM（利润"前移"），存量释放是往年保单在本年的服务兑现。这正是例26 中"净利 163/361/296"所展示的"存量逐年释放"逻辑。</p>
+        <p><b>（2）第 2 年结构变化</b></p>
+        <p>第 2 年：新业务 600 + 存量释放（280+60−40=300）= <span class="hl">900</span></p>
+        <p>趋势：新业务贡献由 800→600（<b>获客/销售放缓或定价收紧</b>），存量释放由 340→300（<b>业务规模自然收缩或进入释放后期</b>）。总业绩 1,140→900，<b>增长动能从"新单驱动"转向"存量消耗"</b>。经营含义：需关注新单恢复，否则利润将随存量耗尽而阶梯下行（"存量释放"终有归零日，见三时刻滚存 t=3 归零）。</p>
+      </div>
+      <div class="grading"><b>评分：</b>公式4分、当年拆解10分（新800/存量340/总1140）；第2年计算6分；趋势与含义5分。</div>
+    </details>
+  </div>
+
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">C4</span><span class="qscore">25 分</span>
+      <span class="qtype t-calc">计算</span>
+      <span class="src src-book">ifrs17-kb 06-discount-oci</span>
+    </div>
+    <div class="qbody">
+      <p>某寿险合同组 t=0 保险合同负债中，FCF 部分对应资产组合市值 <b>10,000</b>，锁定折现率 4%、当前即期折现率 4%。t=1 市场利率<b>下行 100bp</b>（即期折现率降至 3%），导致 FCF 现值上升 <b>400</b>（负债增加）。该组当年保险服务业绩（不含折现率影响）为 <b>150</b>。要求：</p>
+      <ol>
+        <li>若<b>不选择 OCI 选择权</b>，计算 t=1 计入利润表的"承保财务损益"与当期净利润；</li>
+        <li>若<b>选择 OCI 选择权</b>，计算上述两项；</li>
+        <li>说明 OCI 选择对利润波动与资产负债表的影响差异。</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>机制（ifrs17-kb 06 章）</b>：FCF 用当前即期折现率，利率下行→FCF现值上升→负债上升→产生"<b>承保财务损失</b>"。OCI 选择权决定这笔损失进损益还是进 OCI。</p>
+        <p><b>（1）不选择 OCI</b></p>
+        <p>折现率变动引起的 FCF 上升 400 → 全额计入利润表"承保财务损益"（损失）</p>
+        <p>承保财务损益 = <span class="hl">−400</span></p>
+        <p>当期净利润 = 保险服务业绩 150 + 承保财务损益 (−400) = <span class="hl">−250</span></p>
+        <p><b>（2）选择 OCI</b></p>
+        <p>400 的 FCF 变动 → 计入<b>其他综合收益 OCI</b>（权益暂存），不进利润表</p>
+        <p>承保财务损益（利润表）= <span class="hl">0</span></p>
+        <p>当期净利润 = 150 + 0 = <span class="hl">150</span></p>
+        <p><b>（3）差异对比</b></p>
+        <table>
+          <tr><th>项目</th><th>不选择 OCI</th><th>选择 OCI</th></tr>
+          <tr><td>当期净利润</td><td>−250（利率敏感、大幅波动）</td><td>150（平滑）</td></tr>
+          <tr><td>资产负债表负债</td><td>同样 +400</td><td>同样 +400</td></tr>
+          <tr><td>OCI / 权益</td><td>不变</td><td>+400（暂存，未来利率回升时回转）</td></tr>
+        </table>
+        <p class="tip">结论：<b>OCI 选择权只平滑利润表，不平滑资产负债表</b>；负债两端同样上升，差异只是 400 落在"净利润"还是"其他综合收益"。寿险公司普遍选择 OCI 以缓解利率波动对利润的冲击。</p>
+      </div>
+      <div class="grading"><b>评分：</b>不选择OCI计算8分；选择OCI计算8分；差异对比9分。</div>
+    </details>
+  </div>
+<div class="pinfo"><b>实践卷 · 综合大题（1 大题 / 100 分）</b>：以趸交 5 年期两全保险贯通全流程，要求编制初始计量（含投资成分分拆）、CSM 滚动表、M1（资产负债表）、M2（利润表）、CSM 调节表；数据自估须自洽。</div>
+<div class="q">
+    <div class="qhead">
+      <span class="qno">P1</span><span class="qscore">100 分</span>
+      <span class="qtype t-calc">综合</span>
+      <span class="src src-new">综合自编（框架：例26；列报：ifrs17-bilingual 财务报表章）</span>
+    </div>
+    <div class="qbody">
+      <p><b>背景</b>：保险公司签发一份<b>趸交、5 年期两全保险</b>，于 t=0 一次性收取保费 <b>10,000</b>（万元，下同）。投保人若在保险期间内身故，给付保额；若生存至 t=5 满期，给付满期金。<b>两全保险的满期生存金属于"投资成分"（不转移保险风险、系储蓄返还），按 CAS25 第八条 / IFRS17 第 11–12 条须分拆出保险合同，作为金融负债单独计量</b>。假设：</p>
+      <table>
+        <tr><th>参数</th><th>取值</th><th>说明</th></tr>
+        <tr><td>趸交保费（t=0 收讫）</td><td>10,000</td><td>已收，不计入未来 FCF</td></tr>
+        <tr><td>获取费用（t=0）</td><td>500</td><td>首年佣金+出单费</td></tr>
+        <tr><td>维持费用（t=1~5 各年）</td><td>80 / 年</td><td>合计 400</td></tr>
+        <tr><td>身故给付（预期，t=1~5）</td><td>200 / 240 / 280 / 320 / 360</td><td>逐年略增</td></tr>
+        <tr><td>满期生存金（t=5）</td><td>9,200</td><td>生存者给付，<b>投资成分 · 须分拆</b></td></tr>
+        <tr><td>折现率（即期）</td><td>4%</td><td>各期计量用当前利率</td></tr>
+        <tr><td>锁定利率（CSM 计息）</td><td>5%</td><td>签发日锁定、不变</td></tr>
+        <tr><td>非金融风险调整 RA₀</td><td>200</td><td>按剩余服务期线性释放</td></tr>
+        <tr><td>CSM 摊销方法</td><td>claims 比例法·剩余赔付滚动分母</td><td>保证 t=5 归零</td></tr>
+      </table>
+      <p><b>要求</b>：</p>
+      <ol>
+        <li><b>（30 分）初始计量与分拆</b>：先识别并分拆投资成分——满期金 9,200 及其对应保费移出保险合同；再估算保险成分 FCF 现值（分身故、费用两项），计算保险成分保费、t=0 保险侧 FCF、RA、CSM₀，并列出投资成分负债初始值；</li>
+        <li><b>（25 分）CSM 滚动表</b>：用"剩余赔付滚动分母法"编制 t=1~5 的 CSM 滚动表（期初、计息、释放比例、释放额、期末），验证 t=5 归零；</li>
+        <li><b>（20 分）资产负债表 M1</b>：给出 M1 表项目结构，并填列 t=0 与 t=5 的"保险合同负债"构成（FCF现值＋RA＋CSM）；</li>
+        <li><b>（15 分）利润表 M2</b>：给出 M2 表项目结构，并填列 t=1 与 t=5 的保险服务收入、保险服务费用、承保财务损益、净利润（示例）；</li>
+        <li><b>（10 分）CSM 调节表</b>：编制 t=0→t=5 的 CSM 调节表（期初、利息增值、释放、期末）。</li>
+      </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+        <p><b>一、初始计量（t=0）— 先分拆投资成分</b></p>
+        <p>折现因子 @4%：df1=0.9615, df2=0.9246, df3=0.8890, df4=0.8548, df5=0.8219</p>
+        <p><b>① 投资成分分拆</b>：满期金 9,200 不转移保险风险，属投资成分，对应保费与现金流移出保险合同：</p>
+        <ul>
+          <li>满期金现值 = 9,200×0.8219 = <b>7,561.5</b> → 列为<b>投资成分负债</b>（金融负债，按实际利率 4% 滚存，t=5 到期支付 9,200）；</li>
+          <li>对应的保险成分保费 = 总保费 − 投资成分现值 = 10,000 − 7,561.5 = <b>2,438.5</b>。</li>
+        </ul>
+        <p><b>② 保险成分 FCF（仅含身故给付与费用）</b>：</p>
+        <ul>
+          <li>身故给付现值 = 200×0.9615+240×0.9246+280×0.8890+320×0.8548+360×0.8219 = <b>1,232.6</b></li>
+          <li>维持费用现值 = 80×4.4518 = <b>356.1</b></li>
+        </ul>
+        <p>保险成分 FCF = 1,232.6 + 356.1 = <span class="hl">1,588.7</span></p>
+        <p>RA₀ = 200；CSM₀ = 保险成分保费 − 保险 FCF − RA = 2,438.5 − 1,588.7 − 200 = <span class="hl">649.8</span>（首日无利得 ✓）</p>
+        <p class="tip">巧记：分拆只是把"满期金现值 7,561.5"从 FCF 移到投资成分负债，保费同步扣减同一金额，故 CSM₀ 与未分拆时同为 ≈649.8，但负债结构更清晰、保险服务业绩不再被满期返还扭曲。</p>
+
+        <p><b>二、CSM 滚动表（保险成分 · 剩余赔付滚动分母法）</b></p>
+        <p>保险成分名义赔付 = 身故合计 1,400；期初剩余名义赔付：t1=1,400、t2=1,200、t3=960、t4=680、t5=360（分母仅含身故，不含已分拆的满期金）。</p>
+        <table>
+          <tr><th>时点</th><th>期初 CSM</th><th>计息×1.05</th><th>当期身故</th><th>期初剩余</th><th>释放比例</th><th>释放额</th><th>期末 CSM</th></tr>
+          <tr><td>t=1</td><td class="num">649.8</td><td class="num">682.3</td><td class="num">200</td><td class="num">1,400</td><td class="num">14.29%</td><td class="num">97.5</td><td class="num">584.8</td></tr>
+          <tr><td>t=2</td><td class="num">584.8</td><td class="num">614.1</td><td class="num">240</td><td class="num">1,200</td><td class="num">20.00%</td><td class="num">122.8</td><td class="num">491.3</td></tr>
+          <tr><td>t=3</td><td class="num">491.3</td><td class="num">515.8</td><td class="num">280</td><td class="num">960</td><td class="num">29.17%</td><td class="num">150.5</td><td class="num">365.4</td></tr>
+          <tr><td>t=4</td><td class="num">365.4</td><td class="num">383.7</td><td class="num">320</td><td class="num">680</td><td class="num">47.06%</td><td class="num">180.5</td><td class="num">203.1</td></tr>
+          <tr><td>t=5</td><td class="num">203.1</td><td class="num">213.3</td><td class="num">360</td><td class="num">360</td><td class="num">100%</td><td class="num">213.3</td><td class="num"><b>0.0</b></td></tr>
+        </table>
+        <p class="tip">剩余法下，t=5 释放比例=100%，CSM 精确归零 ✓。RA 每年线性释放 40（200/5）。</p>
+
+        <p><b>三、资产负债表 M1（拆分保险侧 / 投资成分侧，单位：万元）</b></p>
+        <table>
+          <tr><th>M1 项目</th><th>t=0</th><th>t=5</th></tr>
+          <tr><td>【保险合同负债】FCF 现值（保险成分）</td><td class="num">1,588.7</td><td class="num">0.0</td></tr>
+          <tr><td>【保险合同负债】RA</td><td class="num">200.0</td><td class="num">0.0</td></tr>
+          <tr><td>【保险合同负债】CSM</td><td class="num">649.8</td><td class="num">0.0</td></tr>
+          <tr><td><b>保险合同负债合计</b></td><td class="num"><b>2,438.5</b></td><td class="num"><b>0.0</b></td></tr>
+          <tr><td>【投资成分负债】满期金负债（4% 滚存）</td><td class="num">7,561.5</td><td class="num">0.0（t=5 已支付）</td></tr>
+          <tr><td><b>负债总计</b></td><td class="num"><b>10,000.0</b></td><td class="num"><b>0.0</b></td></tr>
+          <tr><td>（对照）趸交保费收入 t=0</td><td class="num">10,000.0</td><td class="num">—</td></tr>
+        </table>
+        <p>结构说明：M1 负债侧分列"保险合同负债"（=FCF+RA+CSM）与"投资成分负债"（金融负债）。t=0 保险负债 2,438.5 + 投资负债 7,561.5 = 10,000 = 已收保费（首日无利得）；t=5 全部释出归零。</p>
+
+        <p><b>四、利润表 M2（保险侧，单位：万元）</b></p>
+        <table>
+          <tr><th>M2 项目</th><th>t=1</th><th>t=5</th></tr>
+          <tr><td>保险服务收入</td><td class="num">≈ 137.5</td><td class="num">≈ 253.3</td></tr>
+          <tr><td>　其中：CSM 释放</td><td class="num">97.5</td><td class="num">213.3</td></tr>
+          <tr><td>　　　RA 释放</td><td class="num">40.0</td><td class="num">40.0</td></tr>
+          <tr><td>保险服务费用（身故赔付+维持费）</td><td class="num">≈ 280.0</td><td class="num">≈ 440.0</td></tr>
+          <tr><td><b>保险服务业绩</b></td><td class="num"><b>≈ −142.5</b></td><td class="num"><b>≈ −186.7</b></td></tr>
+        </table>
+        <p class="tip">分拆后保险服务业绩持续为负——两全的保险成分本身微亏，真实盈利来自<b>投资成分对应的投资财务收益</b>（投资资产收益 − 投资成分负债财务费用 7,561.5×4%≈302/年）。这正是新准则将"保险服务"与"金融投资"分列、并强制分拆投资成分的意义。</p>
+
+        <p><b>五、CSM 调节表（保险成分，t=0→t=5，单位：万元）</b></p>
+        <table>
+          <tr><th>项目</th><th>t=0</th><th>t=1</th><th>t=2</th><th>t=3</th><th>t=4</th><th>t=5</th></tr>
+          <tr><td>期初余额</td><td class="num">—</td><td class="num">649.8</td><td class="num">584.8</td><td class="num">491.3</td><td class="num">365.4</td><td class="num">203.1</td></tr>
+          <tr><td>利息增值(×5%)</td><td class="num">—</td><td class="num">32.5</td><td class="num">29.2</td><td class="num">24.6</td><td class="num">18.3</td><td class="num">10.2</td></tr>
+          <tr><td>当期释放</td><td class="num">—</td><td class="num">(97.5)</td><td class="num">(122.8)</td><td class="num">(150.5)</td><td class="num">(180.5)</td><td class="num">(213.3)</td></tr>
+          <tr><td>期末余额</td><td class="num">649.8</td><td class="num">584.8</td><td class="num">491.3</td><td class="num">365.4</td><td class="num">203.1</td><td class="num">0.0</td></tr>
+        </table>
+        <p class="tip">利息增值 = 期初×5%（如 649.8×0.05=32.5）；释放见滚动表；期末=期初+利息−释放，t=5 归零。
+      </div>
+      <div class="grading">
+        <b>评分：</b>初始计量与分拆 30（投资成分识别与保费扣减 8、保险 FCF 两项现值各 6、保险保费 2、RA 2、CSM₀ 6）；CSM 滚动表 25（分母仅含身故 / 计息 / 比例 / 释放 / 归零验证）；M1 20（结构 8 + 保险侧与投资侧数字 12）；M2 15（结构 6 + 两年示例 9，含投资侧提示）；CSM 调节表 10（结构 4 + 数据 6）。
+        <br><b>核心考点</b>：投资成分分拆（CAS25 第八条）是两全 / 年金类产品的必考点——分拆后保险服务业绩反映"纯保障盈亏"，投资成分走金融工具准则，二者不可混同。
+      </div>
+    </details>
+  </div>  <div class="q">
+    <div class="qhead">
+      <span class="qno">CA1</span><span class="qscore">33 分</span>
+      <span class="qtype t-calc">案例</span>
+      <span class="src src-book">复合型测试卷·案例分析</span>
+    </div>
+    <div class="qbody">
+    <div class="pinfo">📋 <b>某寿险公司经营案例分析</b><br>
+    该公司正处于新准则实施关键期，2026 年 1 季度部分经营数据（单位：万元）：<br>
+    <b>利润表数据：</b>保险服务收入 12,000；保险服务费用 8,500；投资收益 1,500；公允价值变动收益 −300；承保财务损失 500；非履约费用 200。<br>
+    <b>CSM 相关数据：</b>期初 CSM 余额 24,286；新业务 CSM 贡献 3,000；CSM 计息（3%）729；CSM 摊销释放 2,500；吸收的未来现金流量变动 −200；期末 CSM 余额 25,315。<br>
+    <b>资产负债表数据：</b>旧准则净资产 18,700；新准则净资产 15,300。<br>
+    <b>其他信息：</b>产品以储蓄型为主，投资成分占比约 85%；公司选择了 OCI 选择权；开账日采用公允价值法，税前 ROE 假设 10.5%。</div>
+    <p>请结合上述案例，回答以下四方面问题：</p>
+    <ol>
+      <li>（6 分）<b>收入与业务结构分析</b>：根据新旧准则收入口径差异，分析保险服务收入 12,000 万元与旧准则保费收入的可能差距，判断产品结构特征，并提出优化建议；</li>
+      <li>（9 分）<b>CSM 分析</b>：根据 CSM 滚存数据（期初 24,286 → 期末 25,315），分析变动原因，计算新业务覆盖度，评估新业务价值创造能力；</li>
+      <li>（8 分）<b>利润来源分析</b>：拆解利润来源，判断“承保驱动”还是“投资驱动”，评价盈利可持续性；</li>
+      <li>（10 分）<b>资产负债联动与净资产管理</b>：分析净资产从 18,700 降至 15,300 的可能原因，结合 OCI 选择权和公允价值法假设，评价资产负债匹配策略并提优化方案。</li>
+    </ol>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+<p class="tip">📘 <b>综合考察：</b>业务结构分析 · CSM 滚存 · 利源分析 · 资产负债管理</p>
+<p><b>（1）收入与业务结构分析（6 分）</b></p>
+<p>投资成分占比约 85%，意味着旧准则保费收入约为保险服务收入的 6–7 倍（投资成分剔除比例高）。产品结构以储蓄型为主，保障属性弱，新准则下收入“缩水”严重。<br>
+<b>优化建议：</b>① 逐步提高保障型产品（定期寿险、重疾险等）占比，其投资成分为 0，收入含金量高；② 重新评估储蓄型产品定价与利润贡献，新业务 CSM 贡献低者应审慎发展；③ 将“保险服务收入”纳入产品线考核，引导结构优化。</p>
+<p><b>（2）CSM 分析（9 分）</b></p>
+<p>CSM 变动验证：24,286 + 3,000 + 729 − 2,500 − 200 = <span class="hl">25,315</span>，与期末一致。<br>
+新业务覆盖度 = 3,000 / 2,500 = <span class="hl">120%</span>。<br>
+<b>评价：</b>覆盖度 &gt; 100%，新业务 CSM 贡献完全覆盖当期摊销释放，蓄水池在扩大，价值创造能力强。吸收变动 −200 万元为不利假设变动被 CSM 吸收，平滑了利润——体现 CSM“缓冲垫”功能。</p>
+<p><b>（3）利润来源分析（8 分）</b></p>
+<p>保险服务业绩 = 12,000 − 8,500 = <span class="hl">3,500</span> 万元；投资业绩 = 1,500 + (−300) − 500 = <span class="hl">700</span> 万元；保险服务业绩率 = 3,500 / 12,000 = <span class="hl">29.2%</span>。<br>
+<b>结论：</b>保险服务业绩（3,500 万）远大于投资业绩（700 万），属“<b>承保驱动</b>”型。承保驱动型利润更稳定（死差+费差来自精算假设与实际经验偏差），受资本市场波动影响小，可持续性优于投资驱动型；但 29.2% 处中等水平，建议优化定价与费用管控。</p>
+<p><b>（4）资产负债联动与净资产管理（10 分）</b></p>
+<p><b>净资产下降原因：</b>① <b>折现率即期化</b>：新准则用报告日即期利率，利率下行致负债评估值上升、净资产下降（主因）；② <b>公允价值法假设</b>：税前 ROE 10.5% 影响开账日 CSM 与净资产起点；③ <b>OCI 选择权</b>：虽平滑净利润，但利率变动对负债的影响仍通过 OCI 减少净资产。<br>
+<b>优化建议：</b>① 资产端债券分类为 <b>FVOCI</b>，使资产与负债利率影响均计入 OCI 形成对冲，减少净资产波动；② 定期<b>利率压力测试</b>（评估利率变动 50bp 对净资产与偿付能力的影响）；③ 关注<b>偿付能力充足率</b>变化，提前规划资本补充或业务调整；④ 向董事会与投资者解释：净资产下降主要是会计规则变化（折现率即期化）所致，不代表经营恶化。</p>
+      </div>
+      <div class="grading"><b>评分：</b>（1）收入差距分析 3 分、优化建议 3 分；（2）CSM 验证 2 分、覆盖度 2 分、评价 3 分、吸收变动解释 2 分；（3）保险服务业绩 2 分、投资业绩 2 分、业绩率 2 分、驱动判断与可持续性 2 分；（4）净资产下降原因 4 分、优化建议 6 分。</div>
+    </details>
+  </div>
+  <div class="q">
+    <div class="qhead">
+      <span class="qno">AD1</span><span class="qscore">10 分</span>
+      <span class="qtype t-essay">附加</span>
+      <span class="src src-book">复合型测试卷·附加题</span>
+    </div>
+    <div class="qbody">
+      <p>新准则下，你作为公司管理者，面临“做大保费规模以保持市场排名”与“聚焦保险服务收入以提升价值”之间的矛盾。请结合新准则的核心变化（投资成分剔除、CSM 蓄水池、利润来源拆分等），阐述你的管理思路和具体行动方案。要求：从考核机制、产品策略、渠道管理、资产负债管理等维度展开，500–800 字。（10 分）</p>
+    </div>
+    <details>
+      <summary>展开答案与评分标准</summary>
+      <div class="ans">
+<p class="tip">📘 <b>考察维度：</b>战略思维 · 新准则综合应用 · 管理决策</p>
+<p><b>参考要点：</b></p>
+<p><b>一、核心矛盾的本质理解</b></p>
+<p>保费规模在新准则下含金量大幅下降——投资成分（退保金、满期金、生存金等）对应的保费不计入保险服务收入。追求保费规模可能导致过度销售储蓄型产品，市占率好看但保险服务收入低、新业务 CSM 贡献低，属“虚假繁荣”。聚焦保险服务收入则要求回归保障本源，销售保障型产品（定期寿、重疾、医疗），这些产品投资成分为 0、收入含金量高、新业务 CSM 贡献更扎实。</p>
+<p><b>二、具体行动方案</b></p>
+<p><b>1. 考核机制重构</b>：将“保险服务收入”和“新业务 CSM 贡献”纳入核心 KPI，取代单纯保费排名；设置“新业务 CSM 贡献/标准保费”比率引导高价值销售；将 CSM 余额增长率作为长期价值指标，避免短期行为。</p>
+<p><b>2. 产品策略调整</b>：逐步提高保障型产品（定期寿险、重疾险、医疗险）占比；对储蓄型产品做价值评估，新业务 CSM 贡献低者应审慎发展或重新定价；创新“保障+储蓄”组合产品，平衡收入与价值。</p>
+<p><b>3. 渠道管理优化</b>：将“新业务 CSM 贡献”纳入渠道激励，取代单纯保费佣金；对渠道分级，高价值产品更高激励；加强渠道培训，让销售人员理解价值导向。</p>
+<p><b>4. 资产负债管理升级</b>：负债端选 OCI 平滑净利润，资产端债券分类 FVOCI 减少会计错配；定期利率压力测试，评估净资产波动对偿付能力的影响；关注 CSM 余额与投资资产匹配。</p>
+<p><b>5. 投资者沟通</b>：主动解释保费收入下降是投资成分剔除所致、非业务恶化；重点展示保险服务收入增长、新业务 CSM 贡献与 CSM 余额；用新准则指标体系重塑市场对公司价值的认知。</p>
+      </div>
+      <div class="grading"><b>评分：</b>矛盾本质理解 2 分；考核机制 2 分；产品策略 2 分；渠道管理 2 分；资产负债管理 2 分；500–800 字且结构清晰酌情加分。</div>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <p>新会计准则题库 · 中国精算师（IFRS17 / CAS25）· 西红精算<br>
+  真题3套 + 模拟3套 + 拓展2套（共 8 套） · 计算/问答/实践 · 逐题标注出处<br>
+  延伸阅读：<a href="https://xihongactuary.github.io/cas25-guide/">CAS25 精读知识库</a> · <a href="https://xihongactuary.github.io/alm-kb/">ALM 资产负债管理知识库</a><br>
+  配套完整版与精算答疑：<a href="https://t.zsxq.com/kkpnw" target="_blank" rel="noopener">知识星球 · 西红精算</a><br>
+  题目数值以准则原理与本知识库演算为准，考试请以当年度考纲与官方教材为准</p>
+</footer>
+
+
+<script>
+(function(){
+  var bar=document.getElementById('tabbar');
+  if(!bar)return;
+  var btns=bar.querySelectorAll('.tab-btn');
+  var map={};
+  document.querySelectorAll('section[id]').forEach(function(s){map[s.id]=s;});
+  function show(id){
+    btns.forEach(function(b){b.classList.toggle('active',b.getAttribute('data-target')===id);});
+    for(var k in map){map[k].style.display=(k===id)?'block':'none';}
+    window.scrollTo(0,0);
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('data-target'));});});
+  show('z1');
+})();
+</script>
+
+<script>
+/* 口令门（礼貌性门槛）· 与 cas25-guide gate.js / premium.html 共用同一口令散列
+   口令：XHJS25  →  djb2 = 3664108585
+   说明：纯前端散列只能挡住随手翻看，挡不住懂开发者工具的人；定位是"会员标识"而非硬防线。
+   解锁后写入 localStorage，本机一次输入、长期有效。 */
+(function(){
+  'use strict';
+  var PASS_HASH = 3664108585;
+  var STORE_KEY = 'cas25_exam_unlocked';
+  function djb2(str){var h=5381;for(var i=0;i<str.length;i++){h=(h*33+str.charCodeAt(i))>>>0;}return h>>>0;}
+  function unlocked(){try{return localStorage.getItem(STORE_KEY)==='1';}catch(e){return false;}}
+  var panel=document.getElementById('gatePanel');
+  var input=document.getElementById('gatePass');
+  var btn=document.getElementById('gateBtn');
+  function open_(){
+    document.body.classList.remove('gated');
+    if(panel)panel.style.display='none';
+    var badge=document.createElement('div');
+    badge.className='gate-unlocked-badge';
+    badge.textContent='🔓 已解锁 · 本机长期有效';
+    document.body.appendChild(badge);
+  }
+  function tryUnlock(){
+    var v=(input.value||'').trim();
+    if(!v){input.focus();return;}
+    if(djb2(v)===PASS_HASH){
+      try{localStorage.setItem(STORE_KEY,'1');}catch(e){}
+      open_();
+    }else{
+      input.classList.add('gate-shake');
+      input.value='';
+      setTimeout(function(){input.classList.remove('gate-shake');},400);
+      input.focus();
+    }
+  }
+  if(unlocked()){open_();return;}
+  document.body.classList.add('gated');
+  if(panel)panel.style.display='flex';
+  if(btn)btn.addEventListener('click',tryUnlock);
+  if(input)input.addEventListener('keydown',function(e){if(e.key==='Enter')tryUnlock();});
+})();
+</script>
+</body>
+</html>
